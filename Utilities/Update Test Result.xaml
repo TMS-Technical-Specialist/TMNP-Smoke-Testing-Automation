@@ -107,6 +107,7 @@
       <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -114,46 +115,46 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Add_Guardian" sap:VirtualizedContainerService.HintSize="836.4000000000001,2032" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Add_Guardian" sap:VirtualizedContainerService.HintSize="1211,2358" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="739.2,2008.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
+    <Sequence sap:VirtualizedContainerService.HintSize="780,2335" sap2010:WorkflowViewState.IdRef="Sequence_12">
       <Sequence.Variables>
-        <Variable x:TypeArguments="x:String" Default="C:\Users\jseroy\Desktop\Timeless\Important\SmokeTestScenariosAndResults.xlsx" Name="testResultFilePath" />
+        <Variable x:TypeArguments="x:String" Default="Assets\\Excel\\SmokeTestScenariosAndResults.xlsx" Name="testResultFilePath" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="740.8,2141.6" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2">
+      <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="746,2252" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2">
         <ueab:ExcelProcessScopeX.Body>
           <ActivityAction x:TypeArguments="ui:IExcelProcess">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="707.2,2055.2" sap2010:WorkflowViewState.IdRef="Sequence_16">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="712,2142" sap2010:WorkflowViewState.IdRef="Sequence_16">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" SensitivityLabel="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="673.6,1995.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ResizeWindow="None" SensitivityOperation="None">
+              <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" SensitivityLabel="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="678,2082" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ResizeWindow="None" SensitivityOperation="None">
                 <ueab:ExcelApplicationCard.Body>
                   <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="640,1702.4" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="644,1750" sap2010:WorkflowViewState.IdRef="Sequence_13">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ueab:ExcelForEachRowX DisplayName="For Each Excel Row" EmptyRowBehavior="Stop" HasHeaders="True" sap:VirtualizedContainerService.HintSize="606.4,1642.4" sap2010:WorkflowViewState.IdRef="ExcelForEachRowX_3" SaveAfterEachRow="False">
+                      <ueab:ExcelForEachRowX DisplayName="For Each Excel Row" EmptyRowBehavior="Stop" HasHeaders="True" sap:VirtualizedContainerService.HintSize="610,1690" sap2010:WorkflowViewState.IdRef="ExcelForEachRowX_3" SaveAfterEachRow="False">
                         <ueab:ExcelForEachRowX.Body>
                           <ActivityAction x:TypeArguments="ue:CurrentRowQuickHandle, x:Int32">
                             <ActivityAction.Argument1>
@@ -162,39 +163,39 @@
                             <ActivityAction.Argument2>
                               <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                             </ActivityAction.Argument2>
-                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="572.8,1426.4" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="576,1477" sap2010:WorkflowViewState.IdRef="Sequence_15">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <If sap:VirtualizedContainerService.HintSize="539.2,1366.4" sap2010:WorkflowViewState.IdRef="If_3">
+                              <If sap:VirtualizedContainerService.HintSize="542,1417" sap2010:WorkflowViewState.IdRef="If_3">
                                 <If.Condition>
                                   <InArgument x:TypeArguments="x:Boolean">
                                     <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">scenario.ByIndex[1].RawValue.ToString() == inScenarioName</CSharpValue>
                                   </InArgument>
                                 </If.Condition>
                                 <If.Then>
-                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="537.6,1147.2" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="540,1199" sap2010:WorkflowViewState.IdRef="Sequence_17">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <If sap:VirtualizedContainerService.HintSize="504,1087.2" sap2010:WorkflowViewState.IdRef="If_4">
+                                    <If sap:VirtualizedContainerService.HintSize="506,1091" sap2010:WorkflowViewState.IdRef="If_4">
                                       <If.Condition>
                                         <InArgument x:TypeArguments="x:Boolean">
-                                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">InTestResult == true &amp;&amp; scenario.ByIndex[2].RawValue.ToString() == "FALSE" &amp;&amp; scenario.ByIndex[3].RawValue.ToString() == ""</CSharpValue>
+                                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_54">InTestResult == true &amp;&amp; scenario.ByIndex[2].RawValue.ToString().ToUpper().Equals("FALSE") &amp;&amp; scenario.ByIndex[3].RawValue == null</CSharpValue>
                                         </InArgument>
                                       </If.Condition>
                                       <If.Then>
-                                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="502.4,243.2" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="504,242" sap2010:WorkflowViewState.IdRef="Sequence_19">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ueab:WriteCellX DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="468.8,183.2" sap2010:WorkflowViewState.IdRef="WriteCellX_5">
+                                          <ueab:WriteCellX DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="470,182" sap2010:WorkflowViewState.IdRef="WriteCellX_5">
                                             <ueab:WriteCellX.Cell>
                                               <InArgument x:TypeArguments="ue:IReadWriteCellRef">
                                                 <CSharpValue x:TypeArguments="ue:IReadWriteCellRef" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">scenario.ByIndex[2]</CSharpValue>
@@ -209,26 +210,26 @@
                                         </Sequence>
                                       </If.Then>
                                       <If.Else>
-                                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="502.4,714.4" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="504,711" sap2010:WorkflowViewState.IdRef="Sequence_20">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <If sap:VirtualizedContainerService.HintSize="468.8,654.4" sap2010:WorkflowViewState.IdRef="If_5">
+                                          <If sap:VirtualizedContainerService.HintSize="470,651" sap2010:WorkflowViewState.IdRef="If_5">
                                             <If.Condition>
                                               <InArgument x:TypeArguments="x:Boolean">
                                                 <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_36">InTestResult == false</CSharpValue>
                                               </InArgument>
                                             </If.Condition>
                                             <If.Then>
-                                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="467.2,435.2" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,433" sap2010:WorkflowViewState.IdRef="Sequence_23">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ueab:WriteCellX DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="433.6,192" sap2010:WorkflowViewState.IdRef="WriteCellX_8">
+                                                <ueab:WriteCellX DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,191" sap2010:WorkflowViewState.IdRef="WriteCellX_8">
                                                   <ueab:WriteCellX.Cell>
                                                     <InArgument x:TypeArguments="ue:IReadWriteCellRef">
                                                       <CSharpValue x:TypeArguments="ue:IReadWriteCellRef" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">scenario.ByIndex[2]</CSharpValue>
@@ -240,7 +241,7 @@
                                                     </InArgument>
                                                   </ueab:WriteCellX.Value>
                                                 </ueab:WriteCellX>
-                                                <ueab:WriteCellX DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="433.6,183.2" sap2010:WorkflowViewState.IdRef="WriteCellX_7">
+                                                <ueab:WriteCellX DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,182" sap2010:WorkflowViewState.IdRef="WriteCellX_7">
                                                   <ueab:WriteCellX.Cell>
                                                     <InArgument x:TypeArguments="ue:IReadWriteCellRef">
                                                       <CSharpValue x:TypeArguments="ue:IReadWriteCellRef" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">scenario.ByIndex[3]</CSharpValue>
@@ -248,14 +249,14 @@
                                                   </ueab:WriteCellX.Cell>
                                                   <ueab:WriteCellX.Value>
                                                     <InArgument x:TypeArguments="x:Object">
-                                                      <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">scenario.ByIndex[3].RawValue.ToString() != "" ? "\n" + inFailureReason : inFailureReason</CSharpValue>
+                                                      <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_57">scenario.ByIndex[3].RawValue != null ? scenario.ByIndex[3].RawValue.ToString() + "\n" + inFailureReason : inFailureReason</CSharpValue>
                                                     </InArgument>
                                                   </ueab:WriteCellX.Value>
                                                 </ueab:WriteCellX>
                                               </Sequence>
                                             </If.Then>
                                             <If.Else>
-                                              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="467.2,89.6" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,89" sap2010:WorkflowViewState.IdRef="Sequence_24">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -267,10 +268,11 @@
                                         </Sequence>
                                       </If.Else>
                                     </If>
+                                    <ui:Break sap:VirtualizedContainerService.HintSize="506,48" sap2010:WorkflowViewState.IdRef="Break_2" />
                                   </Sequence>
                                 </If.Then>
                                 <If.Else>
-                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="537.6,89.6" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="540,89" sap2010:WorkflowViewState.IdRef="Sequence_18">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
