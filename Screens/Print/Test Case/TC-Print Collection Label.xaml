@@ -231,19 +231,28 @@
                 </uix:NGetText.Target>
                 <uix:NGetText.TextString>
                   <OutArgument x:TypeArguments="x:String">
-                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">containerListStr</CSharpReference>
+                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">
+                      <CSharpReference.Result>
+                        <OutArgument x:TypeArguments="Location(x:String)" />
+                      </CSharpReference.Result>containerListStr</CSharpReference>
                   </OutArgument>
                 </uix:NGetText.TextString>
               </uix:NGetText>
               <Assign sap:VirtualizedContainerService.HintSize="486,114" sap2010:WorkflowViewState.IdRef="Assign_1">
                 <Assign.To>
                   <OutArgument x:TypeArguments="s:String[]">
-                    <CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">GlobalVariablesNamespace.GlobalVariables.containerList</CSharpReference>
+                    <CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">
+                      <CSharpReference.Result>
+                        <OutArgument x:TypeArguments="Location(s:String[])" />
+                      </CSharpReference.Result>GlobalVariablesNamespace.GlobalVariables.containerList</CSharpReference>
                   </OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="s:String[]">
-                    <CSharpValue x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">containerListStr.Replace("Containers: ", "").Split(new string[]{","}, StringSplitOptions.None).Select(s =&gt; s.Trim()).ToArray()</CSharpValue>
+                    <CSharpValue x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">
+                      <CSharpValue.Result>
+                        <OutArgument x:TypeArguments="s:String[]" />
+                      </CSharpValue.Result>containerListStr.Replace("Containers: ", "").Split(new string[]{","}, StringSplitOptions.None).Select(s =&gt; s.Trim()).ToArray()</CSharpValue>
                   </InArgument>
                 </Assign.Value>
               </Assign>

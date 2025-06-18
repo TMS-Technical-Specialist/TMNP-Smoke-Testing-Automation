@@ -96,6 +96,12 @@
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
       <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>TNMP Smoke Testing Automation.Core</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="TC___Dose_Prepared_EHM_Container" sap:VirtualizedContainerService.HintSize="1217,412.04" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -118,19 +124,19 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Nutrition Platform ™(8)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,1434" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="fd7c6b2a-a9f5-45d7-824c-d26104855546" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Nutrition Platform ™(8)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,1398" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="fd7c6b2a-a9f5-45d7-824c-d26104855546" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1194" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1158" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Dosing'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,225" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fd7c6b2a-a9f5-45d7-824c-d26104855546" Version="V4">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Dosing'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fd7c6b2a-a9f5-45d7-824c-d26104855546" Version="V4">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/formula-receive" CVScreenId="6fcbfb02-75cd-47a0-a816-59750cdf65cb" ContentHash="1_dRN8onYkmoaldaXSJ3RQ" CvTextArea="50, 594, 32, 12" CvTextArgument="Dosing" CvType="Text" DesignTimeRectangle="51, 591, 110, 19" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Dosing' tag='SPAN' /&gt;" Guid="6b972bca-5bd5-4a97-8ba6-d260804a5d21" InformativeScreenshot="f14e9149734033162712c10148820df4.png" Reference="BkxQ1887pEidR6av2KDcrw/to7IGyBga0CFR8qnYnPS7w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
@@ -140,16 +146,6 @@
                     </uix:TargetAnchorable.Anchors>
                   </uix:TargetAnchorable>
                 </uix:NClick.Target>
-                <uix:NClick.VerifyOptions>
-                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                    <uix:VerifyExecutionOptions.Retry>
-                      <InArgument x:TypeArguments="x:Boolean" />
-                    </uix:VerifyExecutionOptions.Retry>
-                    <uix:VerifyExecutionOptions.Timeout>
-                      <InArgument x:TypeArguments="x:Double" />
-                    </uix:VerifyExecutionOptions.Timeout>
-                  </uix:VerifyExecutionOptions>
-                </uix:NClick.VerifyOptions>
               </uix:NClick>
               <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Scan Items'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,250" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="fd7c6b2a-a9f5-45d7-824c-d26104855546" Text="EHM000004" Version="V4">
                 <uix:NTypeInto.Target>
