@@ -114,55 +114,41 @@
       <AssemblyReference>TNMP Smoke Testing Automation.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC___Add_EHM_Only_Order" sap:VirtualizedContainerService.HintSize="1217,412.04" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC___Add_EHM_Only_Order" sap:VirtualizedContainerService.HintSize="1309,4360" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="484,311" sap2010:WorkflowViewState.IdRef="Sequence_6">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="450,251" sap2010:WorkflowViewState.IdRef="Sequence_2">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Clinical Management - Navigate to Clinical Management - Invoke Workflow File (Components\\Clinical Management - Navigate to Clinical Management.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Components\\Clinical Management - Navigate to Clinical Management.xaml">
-              <ui:InvokeWorkflowFile.Arguments>
-                <scg:Dictionary x:TypeArguments="x:String, Argument" />
-              </ui:InvokeWorkflowFile.Arguments>
-            </ui:InvokeWorkflowFile>
-          </Sequence>
-        </Sequence>
-      </ui:CommentOut.Body>
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="518,260" sap2010:WorkflowViewState.IdRef="Sequence_10">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="currentURL" />
+      </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Clinical Management - Navigate to Clinical Management - Invoke Workflow File (Components\\Clinical Management - Navigate to Clinical Management.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Components\\Clinical Management - Navigate to Clinical Management.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <scg:Dictionary x:TypeArguments="x:String, Argument" />
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+    </Sequence>
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="518,2382" sap2010:WorkflowViewState.IdRef="Sequence_9">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Sequence_9">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Chrome Nutrition Platform ™(4)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,2479" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="6b27e427-f310-4d6a-83d4-2a217e7e003a" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Chrome Nutrition Platform ™(4)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,2290" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="6b27e427-f310-4d6a-83d4-2a217e7e003a" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,2239" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,2050" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <Sequence.Variables>
                 <Variable x:TypeArguments="scg:List(x:String)" Name="orderBaseList" />
                 <Variable x:TypeArguments="scg:List(x:String)" Name="milkbaseDropdownList" />
@@ -172,26 +158,9 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Clinical Management(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6b27e427-f310-4d6a-83d4-2a217e7e003a" Version="V4">
-                <uix:NClick.Target>
-                  <uix:TargetAnchorable BrowserURL="localhost/babies" CVScreenId="a3fa8b51-7170-4b15-811a-73ffaf8214a1" ContentHash="6s3BYh4nOEOscez3ZRDHMQ" CvTextArea="50, 499, 96, 12" CvTextArgument="Clinical Management" CvType="Text" DesignTimeRectangle="51, 496, 110, 19" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Clinical Management' tag='SPAN' /&gt;" Guid="7908ca12-b1bb-4ab3-8373-91b4f8563403" InformativeScreenshot="d5b9f3fbf4a6c762e4944079d683d174.png" Reference="BkxQ1887pEidR6av2KDcrw/VL_tpZyivkGuOXfSiop3wA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
-                    <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                        <uix:Target CVScreenId="a3fa8b51-7170-4b15-811a-73ffaf8214a1" CvElementArea="17, 492, 21, 22" CvType="Icon" DesignTimeRectangle="21, 496, 14, 14" ElementType="Icon" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;a&amp;gt;span&amp;gt;svg' idx='10' tag='svg' /&gt;" Guid="60099d88-8e20-4500-b887-33ed166be21c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADcSURBVDhPrZOxDcIwEEWzDnuwR3agpGYEmIGOmg0QFOno0pEKiYKOzuhZ+tHZnC0B/tIpJ8v3/M++dKGRunzhVxVB0+MVtsdbWKxOYbkZYl5TEdTvrjPgcLnHnCjJBVGIE1xJ5Kydx2eyV3JBuPBOr7XogjiVIs8Rbj25IIp0RxTKIWsluSDU7NW+lQuSG4J2iPV+jG3ae7P6AOnpCQEUmiWvzQTEawFQoZ0ZcsC6t3yeEhCnCZBPsn1FtWuVgDQngumr34T7ESwf2Bmk2eGrNrRZLuyeqqN/1Az0BhZprXGduy6JAAAAAElFTkSuQmCC" SearchSteps="Selector, CV" />
-                      </scg:List>
-                    </uix:TargetAnchorable.Anchors>
-                  </uix:TargetAnchorable>
-                </uix:NClick.Target>
-              </uix:NClick>
               <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Manage Patient Feeding …'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6b27e427-f310-4d6a-83d4-2a217e7e003a" Version="V4">
                 <uix:NClick.Target>
-                  <uix:TargetAnchorable BrowserURL="localhost/manage-clinical" CVScreenId="e8304635-0afb-4d21-874f-d9d9e2752a2f" ContentHash="wksvjRkqFEGEIWCwkohQtQ" CvElementArea="537, 271, 27, 32" CvType="Icon" DesignTimeRectangle="545, 273, 17, 25" ElementType="Icon" FuzzySelectorArgument="&lt;webctrl class='fa-primary' type='' parentid='app' tag='path' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="2c758afe-47f4-41aa-a9ce-9942ece76ba3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABUAAAAdCAYAAABFRCf7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEmSURBVEhLtdS/CsIwEAbwvo7P4Vv4EA6ODi7OLm5OIg6is6MguggOTjoIOghS0EHo6FT5hJPzctde/BP4EGLya3JpmuR/aIns+EVL5rtbPl5dSjNYpHKu2RI52Uqtu82bo4Ocr7YotNJYueBo1AN/hJbBH6NF8FeoBbvR1uQYgBbsRofL9AljxVr4e+xGPVFRrKY3O78FfXKylQDtTE9BrSjYtgS0FKLV9uaVGNhEUXQ+kE4dD5CITDRa7+8DRMZEta0j+F8iMiaqxVPPQhQrxKtEK8UvR+kSaCs3UaopJtN9J5j3aTUOUKxODuYID+2mFAUAUA6mfo7KMSZqhXbAYx2cC+UgysA/fxrsQuXhIUWXwYUiWv2sL5cb9WZ9yH6PXrP7C30AkgnlD784FFUAAAAASUVORK5CYII=" InformativeScreenshot="83a5da3e40d141c782fd16f16f595107.png" Reference="BkxQ1887pEidR6av2KDcrw/_7sxC6u87UGoKTOKXaN3NQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
-                    <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                        <uix:Target CVScreenId="e8304635-0afb-4d21-874f-d9d9e2752a2f" CvTextArea="498, 303, 106, 12" CvTextArgument="Manage Patient Feeding" CvType="Text" DesignTimeRectangle="498, 303, 106, 12" ElementType="Text" Guid="6a8fe803-8adf-4e3a-ba02-5d3398742616" SearchSteps="CV" TargetType="ComputerVisionBased" />
-                      </scg:List>
-                    </uix:TargetAnchorable.Anchors>
-                  </uix:TargetAnchorable>
+                  <uix:TargetAnchorable BrowserURL="localhost/manage-clinical" ContentHash="cy8HpWo1dky1SF3l863MKQ" DesignTimeRectangle="541, 359, 85, 50" FuzzySelectorArgument="&lt;webctrl type='' class='col-xl-1 col-lg-2 col-md-2 col-sm-3 col-6 mt-2 text-center manage-card' parentid='app' tag='DIV' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;&lt;webctrl tag='A' href='/orders' check:innerText='Manage Patient Feeding Orders' /&gt;" Guid="303853b9-3240-438f-a539-f131ac98f454" InformativeScreenshot="50e1c1c8b32653df3795eeb60ddcaf42.png" Reference="BkxQ1887pEidR6av2KDcrw/_7sxC6u87UGoKTOKXaN3NQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
                 </uix:NClick.Target>
               </uix:NClick>
               <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Add Patient Order'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,225" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6b27e427-f310-4d6a-83d4-2a217e7e003a" Version="V4">
@@ -347,14 +316,14 @@
           </ActivityAction>
         </uix:NApplicationCard.Body>
         <uix:NApplicationCard.TargetApp>
-          <uix:TargetApp Area="-1928, -124, 1936, 1048" BrowserType="Chrome" ContentHash="WyHPQugdVk2Lbf0rUTyHPA" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABg2lDQ1BJQ0MgcHJvZmlsZQAAKM+VkT1Iw0AcxV9TtaIVh3YQccjQdrKLijhqFYpQIdQKrTqYXPoFTRqSFBdHwbXg4Mdi1cHFWVcHV0EQ/ABxdnBSdJES/5cUWoQKHhz34929x907QGhUmGb1zAKabpvpZELM5lbFwCv6MIgQoojJzDLmJCmFruPrHj6+3sV5Fv43htS8xQCfSDzLDNMm3iCe3rQNzvvEYVaSVeJz4nGTLkj8yHXF4zfORZcFnhk2M+l54jCxWOxgpYNZydSIp4gjqqZTvpD1WOW8xVmr1FjrnvyFwby+ssx1mmNIYhFLkCBCQQ1lVGAjTqtOioU07Se6+Eddv0QuhVxlMHIsoAoNsusH/4Pf3VqFyQkvKZgAel8c5yMKBHaBZt1xvo8dp3kC+J+BK73trzaAmU/S620tcgQMbwMX121N2QMud4CRJ0M2ZVfy0xQKBeD9jL4pB4RugYE1r7fWPk4fgAx1lboBDg6BWJGy17u8u7+ztz/PtPr7AbLmcsD2vzboAAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJTUUH6AYLEyknka52RwAAAuxJREFUWEfNV1uIjlEUnSFN8irJG0/TNMbkLmmacsmDlDIvRPLirkimRF7cclkPKIoHr/yrpMaDZOVBEopMuV+KN7dI7rd29qcz+z/m+pFVq/n/M/vsvc7Z5+x9/pqaXoDQCEJthJYTmkyoNtr8NRBaS+gdoR/O74TOm6hoWzoILfCARfCUFwgNinNKBaHLmcApJ8U5pYHQYELPM0FTLonzDITqKmXsDqGbmaApW4P9TELXCL0l9ITQxgGlidDqTNCCnRVoSGI7gdDHjF17V699QOVXGg5nDuIDQvWpLaFjmeDGZ5bO1LbPIDSF0HZCewktJTQsY1PJBDdaOn7vVK9AaDihTYQaPY/7A9cTGk9oF6EWn/OndHVE/93C1CaHr4nQ+4zTI4R2++evhObaeSB0KtjdIzQ6xugWhBoSB/Y5zf8rT0MzofvJOHxuLaHpXj2tiA316zzfb0jPN8JXXTi2iXatiu+L3Mac3iH0mdAaQnMIbSG0NXCxs5h/osc+EgR0+KEr0rDSbWxlds/bbfWJfeRZF5aOTYsxuyAIsG0eRWgsoZOEPvjfW4S+EJpI6FsmcME3foNst+y72TbFmF0QBBwltI/Qa3fUmfzPzkNLJmjkbUKz7aCa4BivCkGAFZc9yecN/RBQ0BbRGONVIQh45LXgCqFLhK4PQICxOcarQhBgtMeH5T46+2cCcvxEaBuhkX5VL2ZscixNwApCh3xnnhKaRehqxi6yFAG2eqt26Zidj3UZ28hSBFj1mxru/zlvXtE2shQB1qjGENpM6C4heW/YmbGN7JWA+szEglaSrSA9JPTSu58dQHu2L3QxcU7KcTFeFfwVZD0gTjba6q03xHHjab8ZcbzgDeshMV4W1jYJzcs4sUK0LDNuPJNpPAXtfNTFON3CXzzRUX8FtEX/PeJ/FfDYi058JRsPEjqQGS9VgHEVoR1hzHbG3gYvMvb9FmA/ya39RtotmEHoeEJ7JbdmnmQFG6L/Aj8BDEOt5eLl2GYAAAAASUVORK5CYII=" InformativeScreenshot="be863cf8e038f9f69c962c745112093a.jpg" Reference="BkxQ1887pEidR6av2KDcrw/KU6GPrK-hkyPu3mSXjPShg" Selector="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" Url="http://localhost/babies?id=2" Version="V2" />
+          <uix:TargetApp Area="-1928, -124, 1936, 1048" BrowserType="Chrome" ContentHash="WyHPQugdVk2Lbf0rUTyHPA" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABg2lDQ1BJQ0MgcHJvZmlsZQAAKM+VkT1Iw0AcxV9TtaIVh3YQccjQdrKLijhqFYpQIdQKrTqYXPoFTRqSFBdHwbXg4Mdi1cHFWVcHV0EQ/ABxdnBSdJES/5cUWoQKHhz34929x907QGhUmGb1zAKabpvpZELM5lbFwCv6MIgQoojJzDLmJCmFruPrHj6+3sV5Fv43htS8xQCfSDzLDNMm3iCe3rQNzvvEYVaSVeJz4nGTLkj8yHXF4zfORZcFnhk2M+l54jCxWOxgpYNZydSIp4gjqqZTvpD1WOW8xVmr1FjrnvyFwby+ssx1mmNIYhFLkCBCQQ1lVGAjTqtOioU07Se6+Eddv0QuhVxlMHIsoAoNsusH/4Pf3VqFyQkvKZgAel8c5yMKBHaBZt1xvo8dp3kC+J+BK73trzaAmU/S620tcgQMbwMX121N2QMud4CRJ0M2ZVfy0xQKBeD9jL4pB4RugYE1r7fWPk4fgAx1lboBDg6BWJGy17u8u7+ztz/PtPr7AbLmcsD2vzboAAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJTUUH6AYLEyknka52RwAAAuxJREFUWEfNV1uIjlEUnSFN8irJG0/TNMbkLmmacsmDlDIvRPLirkimRF7cclkPKIoHr/yrpMaDZOVBEopMuV+KN7dI7rd29qcz+z/m+pFVq/n/M/vsvc7Z5+x9/pqaXoDQCEJthJYTmkyoNtr8NRBaS+gdoR/O74TOm6hoWzoILfCARfCUFwgNinNKBaHLmcApJ8U5pYHQYELPM0FTLonzDITqKmXsDqGbmaApW4P9TELXCL0l9ITQxgGlidDqTNCCnRVoSGI7gdDHjF17V699QOVXGg5nDuIDQvWpLaFjmeDGZ5bO1LbPIDSF0HZCewktJTQsY1PJBDdaOn7vVK9AaDihTYQaPY/7A9cTGk9oF6EWn/OndHVE/93C1CaHr4nQ+4zTI4R2++evhObaeSB0KtjdIzQ6xugWhBoSB/Y5zf8rT0MzofvJOHxuLaHpXj2tiA316zzfb0jPN8JXXTi2iXatiu+L3Mac3iH0mdAaQnMIbSG0NXCxs5h/osc+EgR0+KEr0rDSbWxlds/bbfWJfeRZF5aOTYsxuyAIsG0eRWgsoZOEPvjfW4S+EJpI6FsmcME3foNst+y72TbFmF0QBBwltI/Qa3fUmfzPzkNLJmjkbUKz7aCa4BivCkGAFZc9yecN/RBQ0BbRGONVIQh45LXgCqFLhK4PQICxOcarQhBgtMeH5T46+2cCcvxEaBuhkX5VL2ZscixNwApCh3xnnhKaRehqxi6yFAG2eqt26Zidj3UZ28hSBFj1mxru/zlvXtE2shQB1qjGENpM6C4heW/YmbGN7JWA+szEglaSrSA9JPTSu58dQHu2L3QxcU7KcTFeFfwVZD0gTjba6q03xHHjab8ZcbzgDeshMV4W1jYJzcs4sUK0LDNuPJNpPAXtfNTFON3CXzzRUX8FtEX/PeJ/FfDYi058JRsPEjqQGS9VgHEVoR1hzHbG3gYvMvb9FmA/ya39RtotmEHoeEJ7JbdmnmQFG6L/Aj8BDEOt5eLl2GYAAAAASUVORK5CYII=" sap2010:WorkflowViewState.IdRef="TargetApp_1" InformativeScreenshot="be863cf8e038f9f69c962c745112093a.jpg" Reference="BkxQ1887pEidR6av2KDcrw/KU6GPrK-hkyPu3mSXjPShg" Selector="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" Url="http://localhost/babies?id=2" Version="V2" />
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
     </Sequence>
-    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="518,1695" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
