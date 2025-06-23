@@ -114,9 +114,10 @@
       <AssemblyReference>UiPathImportedTypes.aEp0x19RewK1KPG9W39CZvM4</AssemblyReference>
       <AssemblyReference>UiPathImportedTypes.pEggR3ZA1uM1dJNE52s6OiI3</AssemblyReference>
       <AssemblyReference>TNMP Smoke Testing Automation.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC_Add_Guardian" sap:VirtualizedContainerService.HintSize="1444,860.04" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC_Add_Guardian" sap:VirtualizedContainerService.HintSize="1309,2369" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="guardianNameList" />
     </Sequence.Variables>
@@ -125,10 +126,10 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="450,260" sap2010:WorkflowViewState.IdRef="Sequence_13">
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="624,57" sap2010:WorkflowViewState.IdRef="Sequence_13">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -138,31 +139,49 @@
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="624,57" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Chrome Nutrition Platform ™" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="522,3143" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="b1e19bce-4d38-4892-941e-f7df09d9909e" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Chrome Nutrition Platform ™" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="554,3419" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="b1e19bce-4d38-4892-941e-f7df09d9909e" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="488,2903" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="520,3179" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Manage Guardians'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="454,189" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b1e19bce-4d38-4892-941e-f7df09d9909e" Timeout="0.1" Version="V4">
-                <uix:NClick.Target>
-                  <uix:TargetAnchorable BrowserURL="localhost/manage-clinical" CVScreenId="3c9b3caf-9493-45ca-80a7-9ef551110e71" ContentHash="XCUjiAIwA0OLUN6Hmap2MA" CvTextArea="222, 303, 84, 12" CvTextArgument="Manage Guardians" CvType="Text" DesignTimeRectangle="222, 303, 84, 12" FuzzySelectorArgument="&lt;webctrl class='col-xl-1 col-lg-2 col-md-2 col-sm-3 col-6 mt-2 text-center manage-card' tag='DIV' /&gt;&lt;webctrl href='\guardians' tag='A' check:innerText='Manage Guardians' /&gt;" Guid="59937847-6d4d-431e-80f9-675a1cb62367" ImageBase64="" InformativeScreenshot="810c91061cd1bfde88b1ce90a5ce4847.png" Reference="BkxQ1887pEidR6av2KDcrw/AEjQRNEZm0eCH3Juorr3YA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
-                </uix:NClick.Target>
-              </uix:NClick>
-              <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="454,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Guardian">
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,351" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,240" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Manage Guardians'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,180" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b1e19bce-4d38-4892-941e-f7df09d9909e" Timeout="0.1" Version="V4">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="localhost/manage-clinical" CVScreenId="3c9b3caf-9493-45ca-80a7-9ef551110e71" ContentHash="XCUjiAIwA0OLUN6Hmap2MA" CvTextArea="222, 303, 84, 12" CvTextArgument="Manage Guardians" CvType="Text" DesignTimeRectangle="222, 303, 84, 12" FuzzySelectorArgument="&lt;webctrl class='col-xl-1 col-lg-2 col-md-2 col-sm-3 col-6 mt-2 text-center manage-card' tag='DIV' /&gt;&lt;webctrl href='\guardians' tag='A' check:innerText='Manage Guardians' /&gt;" Guid="59937847-6d4d-431e-80f9-675a1cb62367" ImageBase64="" InformativeScreenshot="810c91061cd1bfde88b1ce90a5ce4847.png" Reference="BkxQ1887pEidR6av2KDcrw/AEjQRNEZm0eCH3Juorr3YA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                  </Sequence>
+                </ui:CommentOut.Body>
+              </ui:CommentOut>
+              <uix:NGoToUrl DisplayName="Go To URL - " sap:VirtualizedContainerService.HintSize="486,114" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Version="V4">
+                <uix:NGoToUrl.Url>
+                  <InArgument x:TypeArguments="x:String">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">$"{GlobalVariablesNamespace.GlobalVariables.websiteUrl}/guardians"</CSharpValue>
+                  </InArgument>
+                </uix:NGoToUrl.Url>
+              </uix:NGoToUrl>
+              <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="486,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Guardian">
                 <ui:ReadRange.DataTable>
                   <OutArgument x:TypeArguments="sd:DataTable">
                     <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">guardianNameList</CSharpReference>
@@ -174,7 +193,7 @@
                   </InArgument>
                 </ui:ReadRange.WorkbookPath>
               </ui:ReadRange>
-              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="454,2532" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="486,2532" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
@@ -381,23 +400,23 @@
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
     </Sequence>
-    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="624,2039" sap2010:WorkflowViewState.IdRef="Sequence_20">
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="624,2232" sap2010:WorkflowViewState.IdRef="Sequence_20">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="testResult" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Nutrition Platform ™(1)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="590,1979" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="e1fc7cbc-84ca-44aa-9692-f928f6f9d850" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Nutrition Platform ™(1)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="590,2149" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="e1fc7cbc-84ca-44aa-9692-f928f6f9d850" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="556,1739" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="556,1909" sap2010:WorkflowViewState.IdRef="Sequence_8">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -414,13 +433,13 @@
                   </uix:TargetAnchorable>
                 </uix:NClick.Target>
               </uix:NClick>
-              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Guardian Sheet" sap:VirtualizedContainerService.HintSize="522,1488" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Guardian Sheet" sap:VirtualizedContainerService.HintSize="522,1551" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="sd:DataRow" Name="guardian" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="520,1315" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="520,1371" sap2010:WorkflowViewState.IdRef="Sequence_10">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="numberOfSearchResult" />
                       </Sequence.Variables>
@@ -501,7 +520,7 @@
                           </Sequence>
                         </ui:CommentOut.Body>
                       </ui:CommentOut>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Test Result - Invoke Workflow File (Components\\Update Test Result.xaml)" sap:VirtualizedContainerService.HintSize="486,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Utilities\\Update Test Result.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Test Result - Invoke Workflow File (Components\\Update Test Result.xaml)" sap:VirtualizedContainerService.HintSize="486,224" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Utilities\\Update Test Result.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="x:String" x:Key="inScenarioName">Add Guardian</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="inFailureReason">
@@ -521,6 +540,13 @@
                   </InArgument>
                 </ui:ForEachRow.DataTable>
               </ui:ForEachRow>
+              <uix:NGoToUrl DisplayName="Go To URL - " sap:VirtualizedContainerService.HintSize="522,107" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Version="V4">
+                <uix:NGoToUrl.Url>
+                  <InArgument x:TypeArguments="x:String">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_38">GlobalVariables.websiteUrl</CSharpValue>
+                  </InArgument>
+                </uix:NGoToUrl.Url>
+              </uix:NGoToUrl>
             </Sequence>
           </ActivityAction>
         </uix:NApplicationCard.Body>
