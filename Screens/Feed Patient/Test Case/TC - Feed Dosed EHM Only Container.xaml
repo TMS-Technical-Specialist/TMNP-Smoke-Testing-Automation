@@ -110,13 +110,13 @@
       <AssemblyReference>TNMP Smoke Testing Automation.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC___Feed_Dosed_EHM_Only_Container" sap:VirtualizedContainerService.HintSize="1217,412.04" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC___Feed_Dosed_EHM_Only_Container" sap:VirtualizedContainerService.HintSize="1315,492.04" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="450,121" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -124,15 +124,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Sequence>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="588,57" sap2010:WorkflowViewState.IdRef="Sequence_9">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </Sequence>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Sequence_12">
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Sequence_14">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -220,13 +212,13 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Nutrition Platform ™(17)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="554,768" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="2083d666-031f-479c-b9cf-4316ccaf2a19" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Nutrition Platform ™(17)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="554,945" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="2083d666-031f-479c-b9cf-4316ccaf2a19" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="520,528" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="520,705" sap2010:WorkflowViewState.IdRef="Sequence_8">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="feedResult" />
               </Sequence.Variables>
@@ -245,6 +237,18 @@
                   </OutArgument>
                 </uix:NGetText.TextString>
               </uix:NGetText>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Test Result - Invoke Workflow File (Utilities\\Update Test Result.xaml)" sap:VirtualizedContainerService.HintSize="486,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Utilities\\Update Test Result.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="inScenarioName">Dosed EHM</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="inFailureReason">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9" xml:space="preserve">"•Feed Dose EHM Only container \n     •Expected output: Container EHM000005 can now be fed to Patient BABY A TIMELESS and will be disposed of by the system." +  "\n     •Actual Output: " + feedResult</CSharpValue>
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:Boolean" x:Key="inTestResult">
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15" xml:space="preserve">feedResult == "Container  EHM000005  can now be fed to  Patient BABY A  TIMELESS and will be disposed of by the system.".ToString()</CSharpValue>
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:Boolean" x:Key="inSaveResult">True</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
               <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,277" sap2010:WorkflowViewState.IdRef="CommentOut_2">
                 <ui:CommentOut.Body>
                   <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,173" sap2010:WorkflowViewState.IdRef="Sequence_7">
