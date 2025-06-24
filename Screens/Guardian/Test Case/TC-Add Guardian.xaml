@@ -51,6 +51,10 @@
       <x:String>UiPathImportedTypes</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -115,29 +119,71 @@
       <AssemblyReference>UiPathImportedTypes.pEggR3ZA1uM1dJNE52s6OiI3</AssemblyReference>
       <AssemblyReference>TNMP Smoke Testing Automation.Core</AssemblyReference>
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC_Add_Guardian" sap:VirtualizedContainerService.HintSize="1309,3639" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC_Add_Guardian" sap:VirtualizedContainerService.HintSize="1309,4198" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="guardianNameList" />
+      <Variable x:TypeArguments="x:String" Name="mrnSettings" />
+      <Variable x:TypeArguments="x:String" Name="accountNumberSettings" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="588,57" sap2010:WorkflowViewState.IdRef="Sequence_13">
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="588,616" sap2010:WorkflowViewState.IdRef="Sequence_13">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Clinical Management - Navigate to Clinical Management - Invoke Workflow File (Components\\Clinical Management - Navigate to Clinical Management.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Components\\Clinical Management - Navigate to Clinical Management.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get App Settings Value - Invoke Workflow File (Utilities\\Get App Settings Value.xaml)" sap:VirtualizedContainerService.HintSize="479,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Utilities\\Get App Settings Value.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <scg:Dictionary x:TypeArguments="x:String, Argument" />
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Clinical Management - Navigate to Clinical Management - Invoke Workflow File (Components\\Clinical Management - Navigate to Clinical Management.xaml)" sap:VirtualizedContainerService.HintSize="479,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Components\\Clinical Management - Navigate to Clinical Management.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <scg:Dictionary x:TypeArguments="x:String, Argument" />
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,170" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">mrnSettings</CSharpReference>
+                </OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_50">GlobalVariablesNamespace.GlobalVariables.appSettings["UI"].FirstOrDefault(jt =&gt; (string)jt["settingName"] == "ui/text/mrn_number")["settingValue"].ToString()</CSharpValue>
+                </InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">accountNumberSettings</CSharpReference>
+                </OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_51">GlobalVariablesNamespace.GlobalVariables.appSettings["UI"].FirstOrDefault(jt =&gt; (string)jt["settingName"] == "ui/text/account_number")["settingValue"].ToString()</CSharpValue>
+                </InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+          </scg:List>
+        </ui:MultipleAssign.AssignOperations>
+      </ui:MultipleAssign>
     </Sequence>
     <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="588,3511" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
@@ -263,12 +309,28 @@
                             </sap:WorkflowViewStateService.ViewState>
                             <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'DAutomatically generate…'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,241" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="b1e19bce-4d38-4892-941e-f7df09d9909e" Version="V4">
                               <uix:NTypeInto.Target>
-                                <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="3570b8d8-be52-4d8e-a002-1cf5dd18716a" ContentHash="-3fCj0qn1kCgwY3s-v_1Cg" CvElementArea="565, 332, 480, 31" CvType="InputBox" DesignTimeRectangle="566, 334, 479, 28" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='motherMRN' tag='INPUT' type='text' class='form-control mb-2' aaname='MRN:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="b265a218-b0e2-45db-afc5-ac47c6588ad1" InformativeScreenshot="49a9eb819fb1268d176b86a44a2802eb.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/oR8cLBaUaUWmeBQa8XbODA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                                <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="3570b8d8-be52-4d8e-a002-1cf5dd18716a" ContentHash="R-I5T6afRU6MzmaI0z8hZw" CvElementArea="565, 332, 480, 31" CvType="InputBox" DesignTimeRectangle="566, 334, 479, 28" ElementType="InputBox" Guid="b265a218-b0e2-45db-afc5-ac47c6588ad1" InformativeScreenshot="49a9eb819fb1268d176b86a44a2802eb.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/oR8cLBaUaUWmeBQa8XbODA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
                                   <uix:TargetAnchorable.Anchors>
                                     <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                      <uix:Target CVScreenId="3570b8d8-be52-4d8e-a002-1cf5dd18716a" CvTextArea="559, 318, 29, 9" CvTextArgument="*MRN:" CvType="Text" DesignTimeRectangle="566, 317, 22, 12" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='motherMRN_label' tag='LABEL' type='' class='' aaname='MRN:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='MRN:' /&gt;" Guid="04211fe8-ccd3-4928-826a-81ef5c7501f8" SearchSteps="FuzzySelector, CV" />
+                                      <uix:Target CVScreenId="3570b8d8-be52-4d8e-a002-1cf5dd18716a" CvTextArea="559, 318, 29, 9" CvType="Text" DesignTimeRectangle="566, 317, 22, 12" ElementType="Text" Guid="04211fe8-ccd3-4928-826a-81ef5c7501f8" SearchSteps="FuzzySelector, CV">
+                                        <uix:Target.CvTextArgument>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_71">$"*{mrnSettings}:"</CSharpValue>
+                                          </InArgument>
+                                        </uix:Target.CvTextArgument>
+                                        <uix:Target.FuzzySelectorArgument>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_70">$"&lt;webctrl id='motherMRN_label' tag='LABEL' type='' class='' aaname='{mrnSettings}:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='{mrnSettings}:' /&gt;"</CSharpValue>
+                                          </InArgument>
+                                        </uix:Target.FuzzySelectorArgument>
+                                      </uix:Target>
                                     </scg:List>
                                   </uix:TargetAnchorable.Anchors>
+                                  <uix:TargetAnchorable.FuzzySelectorArgument>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_72">$"&lt;webctrl id='motherMRN' tag='INPUT' type='text' class='form-control mb-2' aaname='{mrnSettings}:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;"</CSharpValue>
+                                    </InArgument>
+                                  </uix:TargetAnchorable.FuzzySelectorArgument>
                                 </uix:TargetAnchorable>
                               </uix:NTypeInto.Target>
                               <uix:NTypeInto.Text>
@@ -315,12 +377,28 @@
                             </sap:WorkflowViewStateService.ViewState>
                             <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'INPUT motherAccountNumb…'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,241" sap2010:WorkflowViewState.IdRef="NTypeInto_9" ScopeIdentifier="b1e19bce-4d38-4892-941e-f7df09d9909e" Version="V4">
                               <uix:NTypeInto.Target>
-                                <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="3570b8d8-be52-4d8e-a002-1cf5dd18716a" ContentHash="vnOjr_ARo0Og2kZw2BkrGw" CvElementArea="566, 414, 478, 31" CvType="InputBox" DesignTimeRectangle="566, 416, 479, 28" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='motherAccountNumber' tag='INPUT' type='text' class='form-control mb-2' aaname='Account Number:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="ee2471af-b2e2-4c85-88f6-2102ad62ad9a" InformativeScreenshot="b0469f93bc223aa10013c308192e3202.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/fSPrBiB_5U2vXFM0ch-Zfg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                                <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="3570b8d8-be52-4d8e-a002-1cf5dd18716a" ContentHash="Lu8mYqkKv0CM8X8Cn4mG0A" CvElementArea="566, 414, 478, 31" CvType="InputBox" DesignTimeRectangle="566, 416, 479, 28" ElementType="InputBox" Guid="ee2471af-b2e2-4c85-88f6-2102ad62ad9a" InformativeScreenshot="b0469f93bc223aa10013c308192e3202.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/fSPrBiB_5U2vXFM0ch-Zfg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
                                   <uix:TargetAnchorable.Anchors>
                                     <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                      <uix:Target CVScreenId="3570b8d8-be52-4d8e-a002-1cf5dd18716a" CvTextArea="560, 400, 78, 9" CvTextArgument="*Account Number:" CvType="Text" DesignTimeRectangle="566, 399, 72, 12" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='motherAccountNumber_label' tag='LABEL' type='' class='' aaname='Account Number:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Account Number:' /&gt;" Guid="5a23f175-798b-487d-b670-4bb272a9485e" SearchSteps="FuzzySelector, CV" />
+                                      <uix:Target CVScreenId="3570b8d8-be52-4d8e-a002-1cf5dd18716a" CvTextArea="560, 400, 78, 9" CvType="Text" DesignTimeRectangle="566, 399, 72, 12" ElementType="Text" Guid="5a23f175-798b-487d-b670-4bb272a9485e" SearchSteps="FuzzySelector, CV">
+                                        <uix:Target.CvTextArgument>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_62">$"*{accountNumberSettings}:"</CSharpValue>
+                                          </InArgument>
+                                        </uix:Target.CvTextArgument>
+                                        <uix:Target.FuzzySelectorArgument>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_61">$"&lt;webctrl id='motherAccountNumber_label' tag='LABEL' type='' class='' aaname='{accountNumberSettings}:' /&gt;"</CSharpValue>
+                                          </InArgument>
+                                        </uix:Target.FuzzySelectorArgument>
+                                      </uix:Target>
                                     </scg:List>
                                   </uix:TargetAnchorable.Anchors>
+                                  <uix:TargetAnchorable.FuzzySelectorArgument>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_63">$"&lt;webctrl id='motherAccountNumber' tag='INPUT' type='text' class='form-control mb-2' aaname='{accountNumberSettings}:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;"</CSharpValue>
+                                    </InArgument>
+                                  </uix:TargetAnchorable.FuzzySelectorArgument>
                                 </uix:TargetAnchorable>
                               </uix:NTypeInto.Target>
                               <uix:NTypeInto.Text>
