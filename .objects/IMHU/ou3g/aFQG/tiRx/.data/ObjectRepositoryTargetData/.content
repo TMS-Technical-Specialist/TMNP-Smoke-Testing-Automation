@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="6_dB75uQiUOEtcZt7KwGWg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="WE2SHsMxu0ef_kCc8Cfuzg" Reference="BkxQ1887pEidR6av2KDcrw/tiRxA_WFlUSVGxGxrOkQWg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="localhost/feedbottles" CVScreenId="706837d7-f743-46c8-b353-ab0820d44de3" CvElementArea="561, 364, 975, 30" CvType="InputBox" DesignTimeRectangle="566, 366, 971, 28" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='bottle' tag='INPUT' type='text' class='scanbottle form-control form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="10312f2c-a9e7-47fc-a9b9-5abdf738a5a3" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="localhost/feedbottles" CVScreenId="0456e598-fa6f-4c42-870b-5da2af4cc437" CvElementArea="554, 365, 974, 30" CvType="InputBox" DesignTimeRectangle="558, 366, 972, 28" ElementType="InputBox" Guid="655e3c39-6c15-4a40-81ee-38d1e7b9493e" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
       <TargetAnchorable.Anchors>
-        <scg:List x:TypeArguments="ITarget" Capacity="4">
-          <Target CVScreenId="706837d7-f743-46c8-b353-ab0820d44de3" CvTextArea="564, 353, 120, 9" CvTextArgument="Scan the containers barcode" CvType="Text" DesignTimeRectangle="566, 352, 971, 12" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Scan the containers barcode' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Scan the containers barcode' /&gt;" Guid="de6c237b-a7de-487e-89a2-8044302d0874" SearchSteps="FuzzySelector, CV" />
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="0456e598-fa6f-4c42-870b-5da2af4cc437" CvTextArea="557, 353, 120, 9" CvType="Text" DesignTimeRectangle="558, 352, 972, 12" ElementType="Text" Guid="18f99c22-5c0a-4164-b906-da4632874131" SearchSteps="FuzzySelector, CV">
+            <Target.CvTextArgument>
+              <p:InArgument x:TypeArguments="x:String">
+                <p:CSharpValue x:TypeArguments="x:String">allowMultipleFeed == true ? "Scan Container(s)" : "Scan the containers barcode"</p:CSharpValue>
+              </p:InArgument>
+            </Target.CvTextArgument>
+            <Target.FuzzySelectorArgument>
+              <p:InArgument x:TypeArguments="x:String">
+                <p:CSharpValue x:TypeArguments="x:String">allowMultipleFeed == true ? "&lt;webctrl id='bottle_for_list_label' tag='LABEL' type='' class='' aaname='Scan Container(s)' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Scan Container(s)' /&gt;" : "&lt;webctrl tag='LABEL' type='' class='' aaname='Scan the containers barcode' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Scan the containers barcode' /&gt;"</p:CSharpValue>
+              </p:InArgument>
+            </Target.FuzzySelectorArgument>
+          </Target>
         </scg:List>
       </TargetAnchorable.Anchors>
-      <imageRef attrName="InformativeScreenshot" originalValue="21168c3de038c380ab9f4c17d43d44b2.png" xmlns="">0MS5RJ5eLn0KIInXeTtZuaw</imageRef>
+      <TargetAnchorable.FuzzySelectorArgument>
+        <p:InArgument x:TypeArguments="x:String">
+          <p:CSharpValue x:TypeArguments="x:String">allowMultipleFeed == true ? "&lt;webctrl id='bottle_for_list' tag='INPUT' type='text' class='multiscan form-control scanbottle form-control form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;":"&lt;webctrl id='bottle' tag='INPUT' type='text' class='scanbottle form-control form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;"</p:CSharpValue>
+        </p:InArgument>
+      </TargetAnchorable.FuzzySelectorArgument>
+      <imageRef attrName="InformativeScreenshot" originalValue="edec514d1c7d0d397ec1197277dd72e9.png" xmlns="">08JsAFeDebEuiLKZssx5rLw</imageRef>
     </TargetAnchorable>
     <x:String x:Key="ActivityType">TypeInto</x:String>
   </ObjectRepositoryTargetData.Data>
