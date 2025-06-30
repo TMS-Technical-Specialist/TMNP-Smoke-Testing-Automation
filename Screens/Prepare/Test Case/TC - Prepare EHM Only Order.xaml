@@ -42,10 +42,14 @@
       <x:String>System.Reflection</x:String>
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
-      <x:String>GlobalVariablesNamespace</x:String>
-      <x:String>GlobalConstantsNamespace</x:String>
       <x:String>UiPath.Testing.Activities</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -107,9 +111,13 @@
       <AssemblyReference>System.Linq.Parallel</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC___Prepare_EHM_Only_Order" sap:VirtualizedContainerService.HintSize="1303,4359" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC___Prepare_EHM_Only_Order" sap:VirtualizedContainerService.HintSize="1303,2094" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -122,10 +130,10 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Sequence>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="738,2322" sap2010:WorkflowViewState.IdRef="Sequence_16">
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="738,57" sap2010:WorkflowViewState.IdRef="Sequence_22">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -259,7 +267,7 @@
                 <uix:NGetAttributeGeneric.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/prepare" CVScreenId="89a48ee0-9345-4763-b8d4-283f467a2ab6" ContentHash="GjvOUFYMeUmJuJ0XxcMeQg" CvElementArea="1633, 472, 206, 30" CvType="InputBox" DesignTimeRectangle="1634, 473, 204, 28" ElementType="DropDown" FuzzySelectorArgument="&lt;webctrl name='storage' tag='SELECT' type='' class='mr-4 form-control slim-select' aaname='' matching:name='fuzzy' fuzzylevel:name='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="d48f4f72-401b-474c-b174-b24749d3e329" InformativeScreenshot="9cc2fbbaad74d52cec466d060529bde9.png" Reference="BkxQ1887pEidR6av2KDcrw/8tnElfwe0kG_4Uk6vit4Jg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target CVScreenId="89a48ee0-9345-4763-b8d4-283f467a2ab6" CvElementArea="1848, 472, 49, 31" CvType="InputBox" DesignTimeRectangle="1849, 473, 46, 28" ElementType="DropDown" FullSelectorArgument="&lt;webctrl name='containers' tag='SELECT' /&gt;" Guid="e23342da-2778-4646-9bab-8587bb59867f" SearchSteps="Selector, CV" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
@@ -302,7 +310,7 @@
                 <uix:NSelectItem.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/prepare" CVScreenId="d9374465-62ad-4946-9596-b527706f0a07" ContentHash="0zUyLMDATUuRzUaProm8KA" CvElementArea="1633, 472, 206, 30" CvType="InputBox" DesignTimeRectangle="1634, 473, 204, 28" ElementType="DropDown" FuzzySelectorArgument="&lt;webctrl name='storage' tag='SELECT' type='' class='mr-4 form-control slim-select' aaname='' matching:name='fuzzy' fuzzylevel:name='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="fc0e24fa-a38b-492a-b99f-3c778c5d76ce" InformativeScreenshot="d9b9736ad508cfc7fa4f29ca4b9a7802.png" Reference="BkxQ1887pEidR6av2KDcrw/TNPf8rcNsEGWax1hK-Jwgw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target CVScreenId="d9374465-62ad-4946-9596-b527706f0a07" CvElementArea="1848, 472, 49, 31" CvType="InputBox" DesignTimeRectangle="1849, 473, 46, 28" ElementType="DropDown" FullSelectorArgument="&lt;webctrl name='containers' tag='SELECT' /&gt;" Guid="04db959d-73cc-42cf-802b-fa9e9bf090c9" SearchSteps="Selector, CV" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
@@ -389,10 +397,10 @@
                           <ui:InvokeWorkflowFile.Arguments>
                             <InArgument x:TypeArguments="x:String" x:Key="inScenarioName">EHM Only</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="inFailureReason">
-                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26" xml:space="preserve">"•Prepare EHM Only order \n     •Expected output: " + (CurrentIndex == 2 ? $"{GlobalVariablesNamespace.GlobalVariables.containerList[0]} (restored) | " + CurrentLabel_1 + $"={GlobalVariablesNamespace.GlobalVariables.containerList[0]}" : $"Container {CurrentIndex} (10.00 mL) | " + CurrentLabel_1 + $"!={GlobalVariablesNamespace.GlobalVariables.containerList[0]}") + "\n     •Actual Output: " + (CurrentIndex == 2 ?  preparedContainerLabel + " | " + CurrentLabel_1 + $"={GlobalVariablesNamespace.GlobalVariables.containerList[0]}" : preparedContainerLabel + $" | {CurrentLabel_1}!={GlobalVariablesNamespace.GlobalVariables.containerList[0]}")</CSharpValue>
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_38" xml:space="preserve">"•Prepare EHM Only order \n     •Expected output: " + (CurrentIndex == 2 ? $"{GlobalVariables.containerList[0]} (restored) | " + CurrentLabel_1 + $"={GlobalVariables.containerList[0]}" : $"Container {CurrentIndex} (10.{new string('0', GlobalVariables.defaultDecimalRounding)} mL) | " + CurrentLabel_1 + $"!={GlobalVariables.containerList[0]}") + "\n     •Actual Output: " + (CurrentIndex == 2 ?  preparedContainerLabel + " | " + CurrentLabel_1 + $"={GlobalVariables.containerList[0]}" : preparedContainerLabel + $" | {CurrentLabel_1}!={GlobalVariables.containerList[0]}")</CSharpValue>
                             </InArgument>
                             <InArgument x:TypeArguments="x:Boolean" x:Key="inTestResult">
-                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">CurrentIndex == 2 ? preparedContainerLabel == $"{GlobalVariablesNamespace.GlobalVariables.containerList[0]} (restored)" &amp;&amp; CurrentLabel_1 == GlobalVariablesNamespace.GlobalVariables.containerList[0] : preparedContainerLabel == $"Container {CurrentIndex} (10.00 mL)" &amp;&amp; CurrentLabel_1 != GlobalVariablesNamespace.GlobalVariables.containerList[0]</CSharpValue>
+                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_39">CurrentIndex == 2 ? preparedContainerLabel == $"{GlobalVariables.containerList[0]} (restored)" &amp;&amp; CurrentLabel_1 == GlobalVariables.containerList[0] : preparedContainerLabel == $"Container {CurrentIndex} (10.{new string('0', GlobalVariables.defaultDecimalRounding)} mL)" &amp;&amp; CurrentLabel_1 != GlobalVariables.containerList[0]</CSharpValue>
                             </InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
@@ -463,7 +471,7 @@
                   </scg:List>
                 </uix:NForEachUiElement.VariablesMetadata>
               </uix:NForEachUiElement>
-              <uix:NGoToUrl DisplayName="Go To URL - " sap:VirtualizedContainerService.HintSize="636,107" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Version="V4">
+              <uix:NGoToUrl DisplayName="Go To URL - " sap:VirtualizedContainerService.HintSize="636,107" sap2010:WorkflowViewState.IdRef="NGoToUrl_3" Version="V4">
                 <uix:NGoToUrl.Url>
                   <InArgument x:TypeArguments="x:String">
                     <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">GlobalVariables.websiteUrl</CSharpValue>
