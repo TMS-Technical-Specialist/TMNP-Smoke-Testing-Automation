@@ -1,0 +1,293 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="TC___Print_Guardian" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap2010:WorkflowViewState.IdRef="TC___Print_Guardian_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="TC___Print_Guardian" sap:VirtualizedContainerService.HintSize="1303,2486" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="518,121" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Sequence>
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="518,915" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Nutrition Platform ™(22)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,823" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="f90108fd-0716-4da9-9b18-a70c6fde2da1" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,583" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NGoToUrl DisplayName="Go To URL - " sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Version="V4">
+                <uix:NGoToUrl.Url>
+                  <InArgument x:TypeArguments="x:String">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">$"{GlobalVariables.websiteUrl}/guardians"</CSharpValue>
+                  </InArgument>
+                </uix:NGoToUrl.Url>
+              </uix:NGoToUrl>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Click for Actions'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f90108fd-0716-4da9-9b18-a70c6fde2da1" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/guardians" CVScreenId="fe14fbf4-cd6a-423d-b30d-b4519c816667" ContentHash="a3WyRDLxuEiSwkpRL074Eg" CvElementArea="300, 349, 29, 29" CvType="Icon" DesignTimeRectangle="304, 352, 24, 24" FullSelectorArgument="&lt;webctrl id='dropdownMenuButton' tag='SPAN' /&gt;" Guid="106aa571-5b41-4656-9cc2-3c9eeb1dd2fd" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEsSURBVEhLvZZNCsIwEIW9jngFl15DvIEHcKdrQbyA4s6VuHbrAXRXECkK/mz83bqJvMKUdJK0aUmn8KGNM+814yRN4/H6KkkafKBuvAx38VNNNlfVncWqPT6o1ihKwHeM4TfE8DwbuYYQ6S9PqjmMvEBskbHTcL69J7PgokUgB7lcL9cQJeJCZYEG17Ua4ul4clVsM80Yov5VyugCWvw/zRiWaRBfoGk1xJPw4FDos0wNQzSKC72BUkMsYB4YCmgbhtg1eCDRmR6N+97ibIzxPALahqGrOwfrm8J1ef/SMbrIdLX/JPf45PkA2t6GENUNMZMghmVLqo/ZSqxjLal404gvC/GFD0S3Npqlq1urULh5A9HXExGigbxfwIToEYMQPURxY5FjYh2IG/4Bpb5o548H7iYAAAAASUVORK5CYII=" InformativeScreenshot="84dac7a83bca3a7948ab7e85520aead3.png" Reference="BkxQ1887pEidR6av2KDcrw/M71QYmoRWEOIm7aN9oo8qg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="fe14fbf4-cd6a-423d-b30d-b4519c816667" CvElementArea="289, 303, 52, 37" CvType="Button" DesignTimeRectangle="291, 305, 50, 35" ElementType="Button" FullSelectorArgument="&lt;webctrl parentid='app' tag='BUTTON' /&gt;" Guid="c4fbde2b-2529-40fe-a51f-629aa7624caf" SearchSteps="Selector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Print'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f90108fd-0716-4da9-9b18-a70c6fde2da1" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/guardians" CVScreenId="131cc7ee-9e92-4f0a-bddc-7f3ec2f86f34" ContentHash="VDSzvR9MO0eQGVMoqyWEJg" CvElementArea="309, 442, 148, 28" CvTextArea="367, 449, 32, 13" CvTextArgument="Print" CvType="Button" DesignTimeRectangle="312, 444, 144, 25" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Print' class='action-button' parentid='app' tag='BUTTON' /&gt;" Guid="15cc59a7-8ad6-4c1c-9311-2703f14bdfc5" InformativeScreenshot="0545defa95f50c267453c3e250baf408.png" Reference="BkxQ1887pEidR6av2KDcrw/I2vdj3TCx0mqvViMD5mOnw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="131cc7ee-9e92-4f0a-bddc-7f3ec2f86f34" CvElementArea="310, 413, 148, 28" CvTextArea="367, 420, 32, 12" CvTextArgument="View" CvType="Button" DesignTimeRectangle="312, 415, 144, 25" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aaname='View' class='action-button' parentid='app' tag='BUTTON' type='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' check:innerText='View' /&gt;" Guid="0d268870-e387-4171-ba24-f6c70a97b1fa" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="1911, -125, 1938, 1158" BrowserType="Chrome" ContentHash="teXjdMHFw0q2rse7XnwP_A" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABg2lDQ1BJQ0MgcHJvZmlsZQAAKM+VkT1Iw0AcxV9TtaIVh3YQccjQdrKLijhqFYpQIdQKrTqYXPoFTRqSFBdHwbXg4Mdi1cHFWVcHV0EQ/ABxdnBSdJES/5cUWoQKHhz34929x907QGhUmGb1zAKabpvpZELM5lbFwCv6MIgQoojJzDLmJCmFruPrHj6+3sV5Fv43htS8xQCfSDzLDNMm3iCe3rQNzvvEYVaSVeJz4nGTLkj8yHXF4zfORZcFnhk2M+l54jCxWOxgpYNZydSIp4gjqqZTvpD1WOW8xVmr1FjrnvyFwby+ssx1mmNIYhFLkCBCQQ1lVGAjTqtOioU07Se6+Eddv0QuhVxlMHIsoAoNsusH/4Pf3VqFyQkvKZgAel8c5yMKBHaBZt1xvo8dp3kC+J+BK73trzaAmU/S620tcgQMbwMX121N2QMud4CRJ0M2ZVfy0xQKBeD9jL4pB4RugYE1r7fWPk4fgAx1lboBDg6BWJGy17u8u7+ztz/PtPr7AbLmcsD2vzboAAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJTUUH6AYLEyknka52RwAAAuxJREFUWEfNV1uIjlEUnSFN8irJG0/TNMbkLmmacsmDlDIvRPLirkimRF7cclkPKIoHr/yrpMaDZOVBEopMuV+KN7dI7rd29qcz+z/m+pFVq/n/M/vsvc7Z5+x9/pqaXoDQCEJthJYTmkyoNtr8NRBaS+gdoR/O74TOm6hoWzoILfCARfCUFwgNinNKBaHLmcApJ8U5pYHQYELPM0FTLonzDITqKmXsDqGbmaApW4P9TELXCL0l9ITQxgGlidDqTNCCnRVoSGI7gdDHjF17V699QOVXGg5nDuIDQvWpLaFjmeDGZ5bO1LbPIDSF0HZCewktJTQsY1PJBDdaOn7vVK9AaDihTYQaPY/7A9cTGk9oF6EWn/OndHVE/93C1CaHr4nQ+4zTI4R2++evhObaeSB0KtjdIzQ6xugWhBoSB/Y5zf8rT0MzofvJOHxuLaHpXj2tiA316zzfb0jPN8JXXTi2iXatiu+L3Mac3iH0mdAaQnMIbSG0NXCxs5h/osc+EgR0+KEr0rDSbWxlds/bbfWJfeRZF5aOTYsxuyAIsG0eRWgsoZOEPvjfW4S+EJpI6FsmcME3foNst+y72TbFmF0QBBwltI/Qa3fUmfzPzkNLJmjkbUKz7aCa4BivCkGAFZc9yecN/RBQ0BbRGONVIQh45LXgCqFLhK4PQICxOcarQhBgtMeH5T46+2cCcvxEaBuhkX5VL2ZscixNwApCh3xnnhKaRehqxi6yFAG2eqt26Zidj3UZ28hSBFj1mxru/zlvXtE2shQB1qjGENpM6C4heW/YmbGN7JWA+szEglaSrSA9JPTSu58dQHu2L3QxcU7KcTFeFfwVZD0gTjba6q03xHHjab8ZcbzgDeshMV4W1jYJzcs4sUK0LDNuPJNpPAXtfNTFON3CXzzRUX8FtEX/PeJ/FfDYi058JRsPEjqQGS9VgHEVoR1hzHbG3gYvMvb9FmA/ya39RtotmEHoeEJ7JbdmnmQFG6L/Aj8BDEOt5eLl2GYAAAAASUVORK5CYII=" InformativeScreenshot="05f37721b37baf1659d6a69277d31027.jpg" Reference="BkxQ1887pEidR6av2KDcrw/OLnApmsQoEyH4BmpbJrcTw" Selector="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" Version="V2">
+            <uix:TargetApp.Url>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">GlobalVariables.websiteUrl</CSharpValue>
+              </InArgument>
+            </uix:TargetApp.Url>
+          </uix:TargetApp>
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="518,1427" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Nutrition Platform ™(23)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,1344" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="9e47344f-419c-43f2-8cf8-7313cc143312" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1104" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="printGuardianSuccessMessage" />
+                <Variable x:TypeArguments="x:String" Name="manageGuardianURL" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Print Label'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,225" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9e47344f-419c-43f2-8cf8-7313cc143312" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/guardians/label.php" CVScreenId="7a6230d8-59fc-4ffa-bc0a-2374eb030081" ContentHash="y4H5cNQJy02whzLcgP4oWQ" CvElementArea="375, 432, 106, 37" CvTextArea="394, 444, 69, 12" CvTextArgument="Print Label" CvType="Button" DesignTimeRectangle="378, 434, 102, 34" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='INPUT' type='submit' /&gt;" Guid="711c5301-a4d4-4408-8972-97f9cfade1da" InformativeScreenshot="2ab7d66ffd9c80a18ccc03374e66e562.png" Reference="BkxQ1887pEidR6av2KDcrw/03c-HFzKq029l08KbJRGug" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="7a6230d8-59fc-4ffa-bc0a-2374eb030081" CvElementArea="293, 432, 78, 37" CvTextArea="310, 444, 42, 12" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="295, 434, 75, 34" ElementType="Button" FuzzySelectorArgument="&lt;webctrl parentid='legacyPage' tag='BUTTON' type='' class='btn btn-outline-primary mr-2' aaname='Cancel' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Cancel' /&gt;" Guid="a8b193f3-559e-4320-af0f-99e02b268c9f" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+              <uix:NGetText DisplayName="Get Text 'Go to Guardians Listing'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="9e47344f-419c-43f2-8cf8-7313cc143312" Version="V4">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/guardians/label.php" ContentHash="iESX2eEqp0mOfs5En6UOWw" DesignTimeRectangle="320, 333, 318, 56" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='P' class='' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="7c09fa49-bb99-4837-b08d-d8d70d91f347" InformativeScreenshot="974e9643b2bd94340cae2342f14c6162.png" Reference="BkxQ1887pEidR6av2KDcrw/aft4OYQ4XEKZJWJ_YoarcA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target CVScreenId="a3a43d68-0a1f-43ed-9320-a6aa1261b987" CvTextArea="294, 420, 154, 17" CvTextArgument="Go to Guardians Listing" CvType="Text" DesignTimeRectangle="296, 418, 152, 19" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='' aaname='Go to Guardians Listing' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Go to Guardians Listing' /&gt;" Guid="f19f6934-fad6-410c-8289-c4d851311652" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NGetText.Target>
+                <uix:NGetText.TextString>
+                  <OutArgument x:TypeArguments="x:String">
+                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">printGuardianSuccessMessage</CSharpReference>
+                  </OutArgument>
+                </uix:NGetText.TextString>
+              </uix:NGetText>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Go to Guardians Listing(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,225" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9e47344f-419c-43f2-8cf8-7313cc143312" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/guardians/label.php" CVScreenId="a3a43d68-0a1f-43ed-9320-a6aa1261b987" ContentHash="DAaG16kOYEKvql7NwflF9A" CvTextArea="294, 420, 154, 17" CvTextArgument="Go to Guardians Listing" CvType="Text" DesignTimeRectangle="296, 418, 152, 19" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='' aaname='Go to Guardians Listing' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Go to Guardians Listing' /&gt;" Guid="f1e10bb2-2108-400b-9c15-e0d392e9e54f" InformativeScreenshot="da832f01252e0b96416b9d9d1f0777e6.png" Reference="BkxQ1887pEidR6av2KDcrw/LqG5_uZ7VEmUBLenx2nD8g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+              <uix:NGetUrl DisplayName="Get URL" sap:VirtualizedContainerService.HintSize="416,119" sap2010:WorkflowViewState.IdRef="NGetUrl_1" Version="V4">
+                <uix:NGetUrl.CurrentUrl>
+                  <OutArgument x:TypeArguments="x:String">
+                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">manageGuardianURL</CSharpReference>
+                  </OutArgument>
+                </uix:NGetUrl.CurrentUrl>
+              </uix:NGetUrl>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Test Result - Invoke Workflow File (Utilities\\Update Test Result.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Utilities\\Update Test Result.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="inScenarioName">Print Guardian</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="inFailureReason">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4" xml:space="preserve">$"•Print Guardian \n     •Expected output: \n      Success message = A new label for Guardian has been sent to printer \n      Guardian listing url = {GlobalVariables.websiteUrl}/guardians \n     •Actual Output: \n      Success message = {printGuardianSuccessMessage} \n      Guardian listing url = {manageGuardianURL}"</CSharpValue>
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:Boolean" x:Key="inTestResult">
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">printGuardianSuccessMessage.Contains("A new label for") &amp;&amp; manageGuardianURL == $"{GlobalVariables.websiteUrl}/guardians"</CSharpValue>
+                  </InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <uix:NGoToUrl DisplayName="Go To URL - " sap:VirtualizedContainerService.HintSize="416,107" sap2010:WorkflowViewState.IdRef="NGoToUrl_3" Version="V4">
+                <uix:NGoToUrl.Url>
+                  <InArgument x:TypeArguments="x:String">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">GlobalVariables.websiteUrl</CSharpValue>
+                  </InArgument>
+                </uix:NGoToUrl.Url>
+              </uix:NGoToUrl>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="1911, -125, 1938, 1158" BrowserType="Chrome" ContentHash="TcCjuPiPEkObQY179mixOg" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABg2lDQ1BJQ0MgcHJvZmlsZQAAKM+VkT1Iw0AcxV9TtaIVh3YQccjQdrKLijhqFYpQIdQKrTqYXPoFTRqSFBdHwbXg4Mdi1cHFWVcHV0EQ/ABxdnBSdJES/5cUWoQKHhz34929x907QGhUmGb1zAKabpvpZELM5lbFwCv6MIgQoojJzDLmJCmFruPrHj6+3sV5Fv43htS8xQCfSDzLDNMm3iCe3rQNzvvEYVaSVeJz4nGTLkj8yHXF4zfORZcFnhk2M+l54jCxWOxgpYNZydSIp4gjqqZTvpD1WOW8xVmr1FjrnvyFwby+ssx1mmNIYhFLkCBCQQ1lVGAjTqtOioU07Se6+Eddv0QuhVxlMHIsoAoNsusH/4Pf3VqFyQkvKZgAel8c5yMKBHaBZt1xvo8dp3kC+J+BK73trzaAmU/S620tcgQMbwMX121N2QMud4CRJ0M2ZVfy0xQKBeD9jL4pB4RugYE1r7fWPk4fgAx1lboBDg6BWJGy17u8u7+ztz/PtPr7AbLmcsD2vzboAAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJTUUH6AYLEyknka52RwAAAuxJREFUWEfNV1uIjlEUnSFN8irJG0/TNMbkLmmacsmDlDIvRPLirkimRF7cclkPKIoHr/yrpMaDZOVBEopMuV+KN7dI7rd29qcz+z/m+pFVq/n/M/vsvc7Z5+x9/pqaXoDQCEJthJYTmkyoNtr8NRBaS+gdoR/O74TOm6hoWzoILfCARfCUFwgNinNKBaHLmcApJ8U5pYHQYELPM0FTLonzDITqKmXsDqGbmaApW4P9TELXCL0l9ITQxgGlidDqTNCCnRVoSGI7gdDHjF17V699QOVXGg5nDuIDQvWpLaFjmeDGZ5bO1LbPIDSF0HZCewktJTQsY1PJBDdaOn7vVK9AaDihTYQaPY/7A9cTGk9oF6EWn/OndHVE/93C1CaHr4nQ+4zTI4R2++evhObaeSB0KtjdIzQ6xugWhBoSB/Y5zf8rT0MzofvJOHxuLaHpXj2tiA316zzfb0jPN8JXXTi2iXatiu+L3Mac3iH0mdAaQnMIbSG0NXCxs5h/osc+EgR0+KEr0rDSbWxlds/bbfWJfeRZF5aOTYsxuyAIsG0eRWgsoZOEPvjfW4S+EJpI6FsmcME3foNst+y72TbFmF0QBBwltI/Qa3fUmfzPzkNLJmjkbUKz7aCa4BivCkGAFZc9yecN/RBQ0BbRGONVIQh45LXgCqFLhK4PQICxOcarQhBgtMeH5T46+2cCcvxEaBuhkX5VL2ZscixNwApCh3xnnhKaRehqxi6yFAG2eqt26Zidj3UZ28hSBFj1mxru/zlvXtE2shQB1qjGENpM6C4heW/YmbGN7JWA+szEglaSrSA9JPTSu58dQHu2L3QxcU7KcTFeFfwVZD0gTjba6q03xHHjab8ZcbzgDeshMV4W1jYJzcs4sUK0LDNuPJNpPAXtfNTFON3CXzzRUX8FtEX/PeJ/FfDYi058JRsPEjqQGS9VgHEVoR1hzHbG3gYvMvb9FmA/ya39RtotmEHoeEJ7JbdmnmQFG6L/Aj8BDEOt5eLl2GYAAAAASUVORK5CYII=" InformativeScreenshot="7f6ae325ddb8a7e3a08983ce1fc4da54.jpg" Reference="BkxQ1887pEidR6av2KDcrw/66yqTj_N6kazHRPa6NGuVA" Selector="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" Version="V2" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
+  </Sequence>
+</Activity>
