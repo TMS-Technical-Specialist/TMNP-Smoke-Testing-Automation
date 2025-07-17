@@ -30,6 +30,7 @@
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
       <x:String>UiPath.Shared.Activities.Business</x:String>
       <x:String>UiPath.Testing.Activities</x:String>
+      <x:String>System.Reflection</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -94,12 +95,17 @@
       <AssemblyReference>System.Collections.Specialized</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC___Dose_Prepared_EHM_Container" sap:VirtualizedContainerService.HintSize="1303,1731" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC___Dose_Prepared_EHM_Container" sap:VirtualizedContainerService.HintSize="1303,3610" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get App Settings Value - Invoke Workflow File (Utilities\\Get App Settings Value.xaml)" sap:VirtualizedContainerService.HintSize="686,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Utilities\\Get App Settings Value.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
     <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="686,121" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -107,10 +113,10 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Sequence>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="686,57" sap2010:WorkflowViewState.IdRef="Sequence_16">
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="686,1759" sap2010:WorkflowViewState.IdRef="Sequence_16">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -128,10 +134,10 @@
               </sap:WorkflowViewStateService.ViewState>
               <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Dosing'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fd7c6b2a-a9f5-45d7-824c-d26104855546" Version="V4">
                 <uix:NClick.Target>
-                  <uix:TargetAnchorable BrowserURL="localhost" CVScreenId="c4bdc782-7d32-41e9-9b05-447c93001ab4" ContentHash="0ZfEEGA4EUmjsuQ2KwaTMA" CvTextArea="50, 569, 32, 12" CvTextArgument="Dosing" CvType="Text" DesignTimeRectangle="51, 566, 110, 18" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Dosing' tag='SPAN' /&gt;" Guid="820dbf95-6c1a-4c75-a70d-25dead6661fd" InformativeScreenshot="eef9caa3574783c569819770b17d57a5.png" Reference="BkxQ1887pEidR6av2KDcrw/to7IGyBga0CFR8qnYnPS7w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                  <uix:TargetAnchorable BrowserURL="localhost" CVScreenId="241c07de-d71d-4eb4-9193-ab56d1a02e50" ContentHash="9PZlas0g5Um0bCCXnuoIeg" CvTextArea="61, 646, 40, 15" CvTextArgument="Dosing" CvType="Text" DesignTimeRectangle="63, 642, 138, 23" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Dosing' type='' tag='SPAN' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Dosing' /&gt;" Guid="2c00a1aa-3391-45ac-ae3e-c7adf5514926" InformativeScreenshot="310d41dc476892a75e2fde69bb06685e.png" Reference="BkxQ1887pEidR6av2KDcrw/to7IGyBga0CFR8qnYnPS7w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
                       <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                        <uix:Target CVScreenId="1a2e5a81-9c12-409c-902c-265614e8a2a8" CvElementArea="17, 562, 21, 19" CvType="Icon" DesignTimeRectangle="21, 565, 14, 14" ElementType="Icon" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;a&amp;gt;span&amp;gt;svg' idx='9' tag='svg' /&gt;" Guid="3b2e95a2-ca7b-4956-81ca-f075dcc54210" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADISURBVDhPzZMxDsIwDEV7He7BPbgDIzNHgDOwMXMDBEM3tm4wITGwsQW9St9yTCq1EUh8yYpiO892mjbpS2qio1a/A+3P97Tadf06RRno1D3TbHk0uz1ePtwLH3kxloEIbg5XMw7EuIoQ98pAGmuxvZjhU3VW9lgsYiAq6CBJMoGBzNdtNrrvykAkxQsmUYASiL1kIAJeug91RZEIKnZUAxrVEVLFIdCojrwmgUjyb8gbsfhYB0fTXZRMXxOo9/u39PGv1er/QG9cPJBUa20rgQAAAABJRU5ErkJggg==" SearchSteps="Selector, CV" />
+                        <uix:Target CVScreenId="241c07de-d71d-4eb4-9193-ab56d1a02e50" CvElementArea="20, 639, 27, 24" CvType="Icon" DesignTimeRectangle="26, 643, 17, 17" ElementType="Icon" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;a&amp;gt;span&amp;gt;svg' idx='11' tag='svg' /&gt;" Guid="21b96eef-894a-492f-807f-1c5cd44a9b4f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADtSURBVDhP1ZOxDcIwFESzDnuwR3agpGYEMgMdNRsgKOjo0kGFREFHF3SWzrr8bycQGSROOiVy8t/P2T9V9wVVdqGEfge93p/doX2E6xQ5KGCzxT54vjpNAjsogQpOCc3Wu0uwbeyg2+OtZ1tA1c05Nsa9qgdld7ykXm7a0ECFbaJt4wjFA8ZlLJpfBTjENbxLY81BUWBjqHiAuAJi957PoAjFizYixC1gEv1ya9ZHqHZSMR7vAUUqC9QpKQbV+lEoTx8ag74dX8dlCPpRfNUQVOsjlHOHgpxZmDt9B0VMzmrOHPDUX5cc/pL6H+gLgKoaoCprPHgAAAAASUVORK5CYII=" SearchSteps="Selector, CV" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
                   </uix:TargetAnchorable>
@@ -341,6 +347,7 @@
                 <uix:NForEachUiElement.Variables>
                   <Variable x:TypeArguments="ui:UiElement" Name="CurrentElement" />
                   <Variable x:TypeArguments="x:String" Name="CurrentLabel_1" />
+                  <Variable x:TypeArguments="x:String" Name="CurrentElement_Label" />
                 </uix:NForEachUiElement.Variables>
                 <uix:NForEachUiElement.VariablesMetadata>
                   <scg:List x:TypeArguments="uuam:VariableMetadata" x:Key="Column0" Capacity="4">
