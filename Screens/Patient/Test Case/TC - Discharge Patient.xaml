@@ -23,6 +23,12 @@
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>UiPath.UIAutomationNext.Models</x:String>
       <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -82,7 +88,7 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC___Discharge_Patient" sap:VirtualizedContainerService.HintSize="1303,2902" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC___Discharge_Patient" sap:VirtualizedContainerService.HintSize="1303,6089" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -142,23 +148,27 @@
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
     </Sequence>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="518,2002" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="518,5189" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(3)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,1910" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="878abedf-e5c6-43df-a67c-d04eb39b9706" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(3)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,5097" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="878abedf-e5c6-43df-a67c-d04eb39b9706" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1670" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,4857" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="selectedPatientFromDischargeSideMenu" />
                 <Variable x:TypeArguments="sd:DataRow" Name="patient" />
                 <Variable x:TypeArguments="x:String" Name="selectedPatientFromDischargePatientList" />
+                <Variable x:TypeArguments="x:String" Name="dischargePatientConfirmationMessage" />
+                <Variable x:TypeArguments="x:String" Name="successDischargeMessage" />
+                <Variable x:TypeArguments="x:String" Name="inActivePatientSearchResult" />
+                <Variable x:TypeArguments="x:String" Name="activePatientSearchResult" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -207,7 +217,7 @@
                   </OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Manage Patient - Search Patient - Invoke Workflow File (Components\\Manage Patient - Search Patient.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Components\\Manage Patient - Search Patient.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Manage Patient - Search Patient - Invoke Workflow File (Components\\Manage Patient - Search Patient.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Components\\Manage Patient\\Manage Patient - Search Patient.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="sd:DataRow" x:Key="inPatient">
                     <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">patient</CSharpValue>
@@ -230,7 +240,7 @@
                   </uix:TargetAnchorable>
                 </uix:NClick.Target>
               </uix:NClick>
-              <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Attribute 'PT000001 TIMELESS, BAB…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,232" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_3" ScopeIdentifier="878abedf-e5c6-43df-a67c-d04eb39b9706" Version="V4">
+              <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Attribute 'PT000001 TIMELESS, BAB…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,239" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_3" ScopeIdentifier="878abedf-e5c6-43df-a67c-d04eb39b9706" Version="V4">
                 <uix:NGetAttributeGeneric.Result>
                   <OutArgument x:TypeArguments="x:String">
                     <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">selectedPatientFromDischargePatientList</CSharpReference>
@@ -246,6 +256,190 @@
                   </uix:TargetAnchorable>
                 </uix:NGetAttributeGeneric.Target>
               </uix:NGetAttributeGeneric>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Cancel'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="878abedf-e5c6-43df-a67c-d04eb39b9706" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/babies/discharge/index.php" CVScreenId="8acb806f-c528-4599-bea8-4bfb7e4cb670" ContentHash="GKHJACJS90eRQHXZh_bIFg" CvElementArea="1544, 456, 69, 32" CvTextArea="1559, 466, 38, 11" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="1546, 458, 66, 29" ElementType="Button" FullSelectorArgument="&lt;webctrl id='_submit__cancel' tag='INPUT' /&gt;" Guid="cce444ed-dd69-4ecc-93e9-4a2ad9ee63c7" InformativeScreenshot="80b922d5b03a3312cda325111e061a35.png" Reference="BkxQ1887pEidR6av2KDcrw/U1RXpuf8TUOEdyNHRrk2Jg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target CVScreenId="8acb806f-c528-4599-bea8-4bfb7e4cb670" CvElementArea="1617, 456, 58, 32" CvTextArea="1631, 466, 28, 11" CvTextArgument="Next" CvType="Button" DesignTimeRectangle="1619, 458, 55, 29" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='_submit__next' tag='INPUT' type='submit' class='btn btn- btn btn-primary mr-2' aaname='Next' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Next' /&gt;" Guid="9dcd093f-1cc2-4f67-b1dd-9aa39873f014" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NNavigateBrowser DisplayName="Navigate Browser - Go Back" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_1" Version="V4" />
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="878abedf-e5c6-43df-a67c-d04eb39b9706" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/babies/discharge/index.php" CVScreenId="8acb806f-c528-4599-bea8-4bfb7e4cb670" ContentHash="PSEZbj6IxEacqIqT3an8Pw" CvElementArea="1617, 456, 58, 32" CvTextArea="1631, 466, 28, 11" CvTextArgument="Next" CvType="Button" DesignTimeRectangle="1619, 458, 55, 29" ElementType="Button" FullSelectorArgument="&lt;webctrl id='_submit__next' tag='INPUT' /&gt;" Guid="519b87e7-9e52-4999-8067-5ace033d7649" InformativeScreenshot="e92aebf5db4cca37879ce95e3cffe668.png" Reference="BkxQ1887pEidR6av2KDcrw/H5ds43jdaEejRc7DcptGsw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target CVScreenId="8acb806f-c528-4599-bea8-4bfb7e4cb670" CvElementArea="1544, 456, 69, 32" CvTextArea="1559, 466, 38, 11" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="1546, 458, 66, 29" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='_submit__cancel' tag='INPUT' type='submit' class='btn btn- btn btn-outline-primary mr-2' aaname='Cancel' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Cancel' /&gt;" Guid="ca54e39f-2768-4e31-9d3e-8524f5a6d080" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NGetText DisplayName="Get Text 'Are you sure you would …'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="878abedf-e5c6-43df-a67c-d04eb39b9706" Version="V4">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/babies/discharge/index.php" CVScreenId="1830f818-20f5-47df-9a29-946e2acd2544" ContentHash="D9PB_Vq0VEGSw7xZEmlAgQ" CvType="AnyWordGroup" DesignTimeRectangle="466, 309, 1215, 23" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='P' /&gt;" Guid="3e902636-4d29-4d65-a187-1620b4e2b907" InformativeScreenshot="dcfe074efce4d3eb6036f3c2fdea3ba5.png" Reference="BkxQ1887pEidR6av2KDcrw/MOSoWIa3k0WzmUMvDviZIA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
+                </uix:NGetText.Target>
+                <uix:NGetText.TextString>
+                  <OutArgument x:TypeArguments="x:String">
+                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">dischargePatientConfirmationMessage</CSharpReference>
+                  </OutArgument>
+                </uix:NGetText.TextString>
+              </uix:NGetText>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Previous'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,225" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="878abedf-e5c6-43df-a67c-d04eb39b9706" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/babies/discharge/index.php" CVScreenId="1830f818-20f5-47df-9a29-946e2acd2544" ContentHash="kwRo7sCV_0CB28WO2sqLfg" CvElementArea="464, 347, 80, 32" CvTextArea="479, 356, 50, 11" CvTextArgument="Previous" CvType="Button" DesignTimeRectangle="466, 349, 77, 29" ElementType="Button" FullSelectorArgument="&lt;webctrl id='_submit__previous' tag='INPUT' /&gt;" Guid="39c6079f-c9f5-4057-8c27-9e3878546ccc" InformativeScreenshot="aa894395ccf0f8978df56206526e5e96.png" Reference="BkxQ1887pEidR6av2KDcrw/I2CVkbTl9E2fWPxMl83J5A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target CVScreenId="1830f818-20f5-47df-9a29-946e2acd2544" CvElementArea="1537, 347, 69, 31" CvTextArea="1552, 356, 37, 11" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="1539, 349, 66, 29" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='_submit__cancel' tag='INPUT' type='submit' class='btn btn- btn btn-outline-primary mr-2' aaname='Cancel' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Cancel' /&gt;" Guid="7dd017d2-284f-45f7-a622-8599dd6e483f" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="878abedf-e5c6-43df-a67c-d04eb39b9706" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/babies/discharge/index.php" CVScreenId="8acb806f-c528-4599-bea8-4bfb7e4cb670" ContentHash="PSEZbj6IxEacqIqT3an8Pw" CvElementArea="1617, 456, 58, 32" CvTextArea="1631, 466, 28, 11" CvTextArgument="Next" CvType="Button" DesignTimeRectangle="1619, 458, 55, 29" ElementType="Button" FullSelectorArgument="&lt;webctrl id='_submit__next' tag='INPUT' /&gt;" Guid="519b87e7-9e52-4999-8067-5ace033d7649" InformativeScreenshot="e92aebf5db4cca37879ce95e3cffe668.png" Reference="BkxQ1887pEidR6av2KDcrw/H5ds43jdaEejRc7DcptGsw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="8acb806f-c528-4599-bea8-4bfb7e4cb670" CvElementArea="1544, 456, 69, 32" CvTextArea="1559, 466, 38, 11" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="1546, 458, 66, 29" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='_submit__cancel' tag='INPUT' type='submit' class='btn btn- btn btn-outline-primary mr-2' aaname='Cancel' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Cancel' /&gt;" Guid="ca54e39f-2768-4e31-9d3e-8524f5a6d080" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Finish'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NClick_9" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="878abedf-e5c6-43df-a67c-d04eb39b9706" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/babies/discharge/index.php" CVScreenId="eafddd51-5b38-41b3-8dfe-b1bb35445ed8" ContentHash="LdcPz8VEaUuGu8USIA_y1Q" CvElementArea="1610, 346, 66, 33" CvTextArea="1624, 356, 36, 11" CvTextArgument="Finish" CvType="Button" DesignTimeRectangle="1612, 349, 62, 29" ElementType="Button" FullSelectorArgument="&lt;webctrl id='_submit__finish' tag='INPUT' /&gt;" Guid="54293b5b-4027-4d38-be1b-802d5ec2a8da" InformativeScreenshot="759a0ea469b43d333184c5ca463caa4b.png" Reference="BkxQ1887pEidR6av2KDcrw/ZJjcU45nhUCN58eKjYLVfw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target CVScreenId="eafddd51-5b38-41b3-8dfe-b1bb35445ed8" CvElementArea="1537, 347, 69, 31" CvTextArea="1552, 356, 37, 11" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="1539, 349, 66, 29" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='_submit__cancel' tag='INPUT' type='submit' class='btn btn- btn btn-outline-primary mr-2' aaname='Cancel' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Cancel' /&gt;" Guid="cbd6a7b0-da3e-422a-8336-c4bb066a7058" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NGetText DisplayName="Get Text 'TIMELESS, BABY A (PT000…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="878abedf-e5c6-43df-a67c-d04eb39b9706" Version="V4">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/babies/discharge/index.php" CVScreenId="136e16cb-4e82-4000-9ba5-e8a4c5693038" ContentHash="ZPHg4AUxOUihl-ErX0XiQw" CvType="AnyWordGroup" DesignTimeRectangle="247, 309, 796, 43" ElementType="Text" FullSelectorArgument="&lt;webctrl isleaf='1' parentid='legacyPage' tag='DIV' /&gt;" Guid="1f8ce16a-15ba-47eb-8c74-3dfb19f46e45" InformativeScreenshot="2fc7a9722e8df0298fd2cb52eb963285.png" Reference="BkxQ1887pEidR6av2KDcrw/9LBkKbQ3NECDRN9k0BwxvA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
+                </uix:NGetText.Target>
+                <uix:NGetText.TextString>
+                  <OutArgument x:TypeArguments="x:String">
+                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">successDischargeMessage</CSharpReference>
+                  </OutArgument>
+                </uix:NGetText.TextString>
+              </uix:NGetText>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Discharge another Patie…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NClick_10" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="878abedf-e5c6-43df-a67c-d04eb39b9706" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/babies/discharge/index.php" CVScreenId="48a581ae-b919-46f8-895f-d3d3f3cabe52" ContentHash="_QTCLIO6Ekq_Z3ojMvEZhA" CvElementArea="246, 357, 168, 32" CvTextArea="260, 369, 139, 12" CvTextArgument="Discharge another Patient" CvType="Button" DesignTimeRectangle="247, 360, 166, 29" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='legacyPage' tag='A' /&gt;" Guid="6c3d5ba1-6e7f-490b-b104-d46d57abd299" InformativeScreenshot="7eb5509188fab38c6d7158089cf53250.png" Reference="BkxQ1887pEidR6av2KDcrw/ZvUsFyIiqEKgH08Bo2GgpA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target CVScreenId="48a581ae-b919-46f8-895f-d3d3f3cabe52" CvElementArea="417, 358, 174, 32" CvTextArea="432, 369, 144, 12" CvTextArgument="Dispose Patient's Inventory" CvType="Button" DesignTimeRectangle="419, 360, 171, 29" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Dispose Patient’s Inventory' parentid='legacyPage' tag='A' type='' class='btn btn-outline-primary' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Dispose Patient’s Inventory' /&gt;" Guid="2b557b39-aaa3-4a07-820d-f4fed59ef198" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NNavigateBrowser DisplayName="Navigate Browser - Go Back" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_2" Version="V4" />
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Dispose Patient’s Inven…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NClick_11" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="878abedf-e5c6-43df-a67c-d04eb39b9706" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/babies/discharge/index.php" CVScreenId="48a581ae-b919-46f8-895f-d3d3f3cabe52" ContentHash="ArK4n_EgP0mklUQZzS4kcg" CvElementArea="417, 358, 174, 32" CvTextArea="432, 369, 144, 12" CvTextArgument="Dispose Patient's Inventory" CvType="Button" DesignTimeRectangle="419, 360, 171, 29" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Dispose Patient’s Inventory' parentid='legacyPage' tag='A' /&gt;" Guid="4b682b4b-3751-4c07-aaa8-228c461dec47" InformativeScreenshot="91544fe99f6cf74955552d353ef27ce7.png" Reference="BkxQ1887pEidR6av2KDcrw/nGpCdSq5Zka7VNbndNe4iQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target CVScreenId="48a581ae-b919-46f8-895f-d3d3f3cabe52" CvElementArea="246, 357, 168, 32" CvTextArea="260, 369, 139, 12" CvTextArgument="Discharge another Patient" CvType="Button" DesignTimeRectangle="247, 360, 166, 29" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='legacyPage' tag='A' type='' class='btn btn-primary mr-2' aaname='Discharge another Patient' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Discharge another Patient' /&gt;" Guid="e9209461-c2f5-414e-97fd-d086be6cbde8" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NNavigateBrowser DisplayName="Navigate Browser - Go Back" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_3" Version="V4" />
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Patients'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NClick_12" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="878abedf-e5c6-43df-a67c-d04eb39b9706" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/babies/discharge/index.php" CVScreenId="48a581ae-b919-46f8-895f-d3d3f3cabe52" ContentHash="7-bxNlIeK0iW02cAsA-Zrg" CvTextArea="306, 242, 46, 12" CvTextArgument="Patients" CvType="Text" DesignTimeRectangle="308, 242, 44, 15" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Patients' parentid='breadcrumb' tag='A' /&gt;" Guid="268dbd90-4ad4-4771-bcc6-685259606459" InformativeScreenshot="1f63bd46d699eac4fa0a6b35a6b7c9ac.png" Reference="BkxQ1887pEidR6av2KDcrw/rDX8BaTfVUSjp65WFQ912Q" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target CVScreenId="48a581ae-b919-46f8-895f-d3d3f3cabe52" CvTextArea="370, 242, 105, 15" CvTextArgument="Discharge Patient" CvType="Text" DesignTimeRectangle="372, 242, 103, 15" FuzzySelectorArgument="&lt;webctrl parentid='breadcrumb' tag='SPAN' type='' class='' aaname='Discharge Patient ' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Discharge Patient' /&gt;" Guid="854d8b8b-8fa2-4aba-98ae-e21915db8cf2" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Manage Patient - Search Patient - Invoke Workflow File (Components\\Manage Patient\\Manage Patient - Search Patient.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Components\\Manage Patient\\Manage Patient - Search Patient.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="sd:DataRow" x:Key="inPatient">
+                    <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">patient</CSharpValue>
+                  </InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <uix:NGetText DisplayName="Get Active Patient Search Result" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="878abedf-e5c6-43df-a67c-d04eb39b9706" Version="V4">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/babies" CVScreenId="e2cc358c-d826-494c-b043-54d2ce2289ec" ContentHash="ETABxqULHk-ZJ04Vy-s-qQ" CvType="AnyWordGroup" DesignTimeRectangle="255, 436, 1545, 30" ElementType="Text" FullSelectorArgument="&lt;webctrl class='footer-count' parentid='app' tag='DIV' /&gt;" Guid="b3d37a2f-dbfb-4977-aaa8-92b42bab0408" InformativeScreenshot="4ea792dafe8f80d5b3a9ef4969106873.png" Reference="BkxQ1887pEidR6av2KDcrw/4qo_2e-lUEG2eOabxYI1dg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target CVScreenId="e2cc358c-d826-494c-b043-54d2ce2289ec" CvElementArea="1798, 434, 94, 33" CvTextArea="1810, 444, 68, 12" CvTextArgument="Add Patient" CvType="Button" DesignTimeRectangle="1800, 436, 91, 30" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aaname='Add Patient' parentid='app' tag='BUTTON' type='' class='py-[0.5em] px-[1.1em] rounded-[0.2rem] font-semibold font-[&amp;apos;Open_Sans&amp;apos;] transition-colors ease-in-out w-fit h-fit primary' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Add Patient' /&gt;" Guid="c645dee9-93cb-45f9-8a39-0a96ff56a68b" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NGetText.Target>
+                <uix:NGetText.TextString>
+                  <OutArgument x:TypeArguments="x:String">
+                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">activePatientSearchResult</CSharpReference>
+                  </OutArgument>
+                </uix:NGetText.TextString>
+              </uix:NGetText>
+              <uix:NSelectItem DisplayName="Select Inactive" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="Inactive" ScopeIdentifier="878abedf-e5c6-43df-a67c-d04eb39b9706" Version="V4">
+                <uix:NSelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="2">
+                    <x:String>Active</x:String>
+                    <x:String>Inactive</x:String>
+                  </scg:List>
+                </uix:NSelectItem.Items>
+                <uix:NSelectItem.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/babies" CVScreenId="e81c2ca7-4f67-4824-b417-c0f94e0955ad" ContentHash="grPvNVP000a8DEuX4eIKxg" CvElementArea="1813, 330, 94, 36" CvType="InputBox" DesignTimeRectangle="1816, 332, 90, 32" ElementType="Button" FullSelectorArgument="&lt;webctrl class='relative w-full min-h-[2.4rem] cursor-default text-left rounded-md bg-white py-2 pl-2 pr-10 border border-[#888888]' tag='BUTTON' /&gt;" Guid="5e776297-77ae-4c69-8204-66f1d544e9fe" InformativeScreenshot="285b9e51b2b040f156743b1b33c35579.png" Reference="BkxQ1887pEidR6av2KDcrw/N_H1RjKzdEya1c8uiT05Kw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="e81c2ca7-4f67-4824-b417-c0f94e0955ad" CvTextArea="1815, 300, 36, 12" CvTextArgument="Status" CvType="Text" DesignTimeRectangle="1808, 289, 107, 34" FuzzySelectorArgument="&lt;webctrl aaname='Status ' parentid='app' tag='DIV' type='' class='font-[14px] font-semibold p-[10px] flex gap-2 cursor-pointer' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Status' /&gt;" Guid="efc7656e-00ce-4f0e-a785-8eecf38ea8cf" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NSelectItem.Target>
+              </uix:NSelectItem>
+              <uix:NGetText DisplayName="Get Active Patient Search Result" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="878abedf-e5c6-43df-a67c-d04eb39b9706" Version="V4">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/babies" CVScreenId="e2cc358c-d826-494c-b043-54d2ce2289ec" ContentHash="ETABxqULHk-ZJ04Vy-s-qQ" CvType="AnyWordGroup" DesignTimeRectangle="255, 436, 1545, 30" ElementType="Text" FullSelectorArgument="&lt;webctrl class='footer-count' parentid='app' tag='DIV' /&gt;" Guid="b3d37a2f-dbfb-4977-aaa8-92b42bab0408" InformativeScreenshot="4ea792dafe8f80d5b3a9ef4969106873.png" Reference="BkxQ1887pEidR6av2KDcrw/4qo_2e-lUEG2eOabxYI1dg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="e2cc358c-d826-494c-b043-54d2ce2289ec" CvElementArea="1798, 434, 94, 33" CvTextArea="1810, 444, 68, 12" CvTextArgument="Add Patient" CvType="Button" DesignTimeRectangle="1800, 436, 91, 30" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aaname='Add Patient' parentid='app' tag='BUTTON' type='' class='py-[0.5em] px-[1.1em] rounded-[0.2rem] font-semibold font-[&amp;apos;Open_Sans&amp;apos;] transition-colors ease-in-out w-fit h-fit primary' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Add Patient' /&gt;" Guid="c645dee9-93cb-45f9-8a39-0a96ff56a68b" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NGetText.Target>
+                <uix:NGetText.TextString>
+                  <OutArgument x:TypeArguments="x:String">
+                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">inActivePatientSearchResult</CSharpReference>
+                  </OutArgument>
+                </uix:NGetText.TextString>
+              </uix:NGetText>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info">
+                <ui:LogMessage.Message>
+                  <InArgument x:TypeArguments="x:Object">
+                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">successDischargeMessage + " | " + activePatientSearchResult + " | " + inActivePatientSearchResult</CSharpValue>
+                  </InArgument>
+                </ui:LogMessage.Message>
+              </ui:LogMessage>
             </Sequence>
           </ActivityAction>
         </uix:NApplicationCard.Body>
