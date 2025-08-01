@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="P-sCrxD5p0m98nbESmkSog" Reference="BkxQ1887pEidR6av2KDcrw/XxP7CwKKOE61OrcnTSMksw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="localhost/guardians/edit.php" CVScreenId="f889edf0-46bb-42d2-b9bf-5651ef14e4fe" CvElementArea="310, 618, 647, 50" CvType="InputBox" DesignTimeRectangle="308, 618, 648, 49" Guid="0c1b7e65-ed99-4e07-bb17-a31b78b8e6e8" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Nutrition Platform ™ - Google Chrome' /&gt;" SearchSteps="FuzzySelector, CV" SelectionStrategy="AA" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="f889edf0-46bb-42d2-b9bf-5651ef14e4fe" CvTextArea="299, 499, 43, 12" CvType="Text" DesignTimeRectangle="308, 496, 35, 19" ElementType="InputBox" FullSelectorArgument="&lt;ctrl name='Nutrition Platform ™' role='document' /&gt;&lt;ctrl idx='7' role='editable text' /&gt;" Guid="2a6756a7-8ccb-497c-9397-ce465ae8586c" SearchSteps="Selector, CV">
+            <Target.CvTextArgument>
+              <p:InArgument x:TypeArguments="x:String">
+                <p:CSharpValue x:TypeArguments="x:String">string.Format("*{0}:", mrnSettings)</p:CSharpValue>
+              </p:InArgument>
+            </Target.CvTextArgument>
+          </Target>
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <TargetAnchorable.FuzzySelectorArgument>
+        <p:InArgument x:TypeArguments="x:String">
+          <p:CSharpValue x:TypeArguments="x:String">string.Format("&lt;ctrl name='Nutrition Platform ™' matching:name='fuzzy' fuzzylevel:name='0.0' role='document' /&gt;&lt;ctrl automationid='' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' role='grouping' text='{0} is required.' /&gt;", mrnSettings)</p:CSharpValue>
+        </p:InArgument>
+      </TargetAnchorable.FuzzySelectorArgument>
+      <imageRef attrName="InformativeScreenshot" originalValue="1fbd6096c020464b760c682dd4a0b462.png" xmlns="">0NK4iDzxBhUibDG6fx5TRYQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData DefaultValue="MRN" Name="mrnSettings" />
+    </scg:List>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
