@@ -27,6 +27,9 @@
       <x:String>UiPath.Platform.ObjectLibrary</x:String>
       <x:String>UiPath.Platform.SyncObjects</x:String>
       <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Linq.Expressions</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -84,80 +87,107 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC___Edit_Breastmilk___2_Fortifiers" sap:VirtualizedContainerService.HintSize="1274,1341" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC___Edit_Breastmilk___2_Fortifiers" sap:VirtualizedContainerService.HintSize="1274,1876" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="518,437" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="518,857" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get test patient - Invoke Workflow File (Utilities\\Get test patient.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Utilities\\Get test patient.xaml">
-        <ui:InvokeWorkflowFile.Arguments>
-          <OutArgument x:TypeArguments="sd:DataRow" x:Key="outTestPatient">
-            <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">GlobalVariables.testPatient</CSharpReference>
-          </OutArgument>
-        </ui:InvokeWorkflowFile.Arguments>
-      </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Search Order Template - Invoke Workflow File (Components\\Search Order Template.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Components\\Search Order Template.xaml">
-        <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:Boolean" x:Key="inIsActive">True</InArgument>
-          <InArgument x:TypeArguments="x:Int32" x:Key="inCal">24</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="inAdditive">pwd</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="inOrderBase">Breastmilk</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="inMilkBase">
-            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">inMilkBase</CSharpValue>
-          </InArgument>
-          <InArgument x:TypeArguments="sd:DataRow" x:Key="inPatient">
-            <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">GlobalVariables.testPatient</CSharpValue>
-          </InArgument>
-        </ui:InvokeWorkflowFile.Arguments>
-      </ui:InvokeWorkflowFile>
-    </Sequence>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="518,768" sap2010:WorkflowViewState.IdRef="Sequence_3">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(6)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,676" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="c8d7f3df-dcff-4479-abbc-a1c02670c8f1" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,765" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" IsDisplayNameAuto="True" ScopeGuid="f0611233-ee16-462e-bcd0-4fd4006a769f" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,435" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,524" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Click for Actions'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,190" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c8d7f3df-dcff-4479-abbc-a1c02670c8f1" Version="V4">
+              <uix:NGoToUrl DisplayName="Go To URL - " sap:VirtualizedContainerService.HintSize="416,115" sap2010:WorkflowViewState.IdRef="NGoToUrl_3" Version="V4">
+                <uix:NGoToUrl.Url>
+                  <InArgument x:TypeArguments="x:String">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">$"{GlobalVariables.websiteUrl}/orders"</CSharpValue>
+                  </InArgument>
+                </uix:NGoToUrl.Url>
+              </uix:NGoToUrl>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get test patient - Invoke Workflow File (Utilities\\Get test patient.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Utilities\\Get test patient.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <OutArgument x:TypeArguments="sd:DataRow" x:Key="outTestPatient">
+                    <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">GlobalVariables.testPatient</CSharpReference>
+                  </OutArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Search Order Template - Invoke Workflow File (Components\\Search Order Template.xaml)" sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Components\\Search Order Template.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:Boolean" x:Key="inIsActive">True</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="inCal">24</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="inAdditive">pwd</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="inOrderBase">Breastmilk</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="inMilkBase">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">inMilkBase</CSharpValue>
+                  </InArgument>
+                  <InArgument x:TypeArguments="sd:DataRow" x:Key="inPatient">
+                    <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">GlobalVariables.testPatient</CSharpValue>
+                  </InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="0, 0, 0, 0" sap2010:WorkflowViewState.IdRef="TargetApp_1" Selector="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" Version="V2">
+            <uix:TargetApp.Url>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">GlobalVariables.websiteUrl</CSharpValue>
+              </InArgument>
+            </uix:TargetApp.Url>
+          </uix:TargetApp>
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="518,883" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(6)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,791" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="c8d7f3df-dcff-4479-abbc-a1c02670c8f1" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,550" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Click for Actions'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,190" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c8d7f3df-dcff-4479-abbc-a1c02670c8f1" Version="V4">
                 <uix:NClick.Target>
-                  <uix:TargetAnchorable BrowserURL="localhost/orders" CVScreenId="e3aa9f3d-f49c-409e-8dd7-e8907dbc3802" ContentHash="GibcM4QG4EuN0MYM7yDyLw" CvElementArea="282, 472, 29, 30" CvType="Icon" DesignTimeRectangle="286, 474, 22, 23" FullSelectorArgument="&lt;webctrl id='dropdownMenuButton' tag='SPAN' /&gt;" Guid="3430d10b-de8d-47ce-bbe5-2835e5c318c6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABoAAAAbCAYAAABiFp9rAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEqSURBVEhLzZY9CsJAEIVzHfEOVh7AGwgew04LOwtB0DYXEBtrbQULO0EiQZQ0/kQLG5uRF8i6zm5iTHRQ+MDZzLyX2d1s4hzPV5LA4QO/4n+MNkFIw2lADdenSndN5fYqAv8xhmvI4XWcVKPOZBeJllrpIAe5vP6t0cI7UW3gGYLvQA1quZ7VCImYFi6SFdTazAyjPJ1woMF1X4wwz7woL3zNlBF2TpaFzwq09N2ojLBNeXJRoGkY4ZngiUWBpmFUZKclAU3DyLY+1Z5H/dmB6u5WjSFujp/TjBjwWgBNw4gnxSL47cN7FMNAj3EDemzDMErqaO7fVEeIR8uL6ojHHGtHYmsktuvEniOxkwGInHUxIqc3EHsfxWZ5OvvoDavz828GHZGvoG/yAM4NcSGsWZ31AAAAAElFTkSuQmCC" InformativeScreenshot="575aa9b747ecaa8c8f5534133113edf6.png" Reference="BkxQ1887pEidR6av2KDcrw/RlVyKMUjtkWLqOQaVpHQlQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
-                    <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                        <uix:Target CVScreenId="e3aa9f3d-f49c-409e-8dd7-e8907dbc3802" CvElementArea="271, 365, 51, 36" CvType="Button" DesignTimeRectangle="273, 366, 48, 33" ElementType="Button" FullSelectorArgument="&lt;webctrl parentid='app' tag='BUTTON' /&gt;" Guid="9ff65f52-c883-4142-8c58-f2df9ed6d01b" SearchSteps="Selector, CV" />
-                      </scg:List>
-                    </uix:TargetAnchorable.Anchors>
-                  </uix:TargetAnchorable>
+                  <uix:TargetAnchorable BrowserURL="localhost/orders" CVScreenId="2ea7cc4d-9777-42ad-bcb7-11e89b3fbe63" ContentHash="PV70q96nOUu-6qvMhCHEkw" CvElementArea="300, 429, 30, 30" CvType="Icon" DesignTimeRectangle="304, 432, 24, 24" FullSelectorArgument="&lt;webctrl id='dropdownMenuButton' tag='SPAN' /&gt;" Guid="03346e86-98a4-4af1-a1a0-97e7b73cac00" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEsSURBVEhLvZZNCsIwEIW9jngFl15DvIEHcKdrQbyA4s6VuHbrAXRXECkK/mz83bqJvMKUdJK0aUmn8KGNM+814yRN4/H6KkkafKBuvAx38VNNNlfVncWqPT6o1ihKwHeM4TfE8DwbuYYQ6S9PqjmMvEBskbHTcL69J7PgokUgB7lcL9cQJeJCZYEG17Ua4ul4clVsM80Yov5VyugCWvw/zRiWaRBfoGk1xJPw4FDos0wNQzSKC72BUkMsYB4YCmgbhtg1eCDRmR6N+97ibIzxPALahqGrOwfrm8J1ef/SMbrIdLX/JPf45PkA2t6GENUNMZMghmVLqo/ZSqxjLal404gvC/GFD0S3Npqlq1urULh5A9HXExGigbxfwIToEYMQPURxY5FjYh2IG/4Bpb5o548H7iYAAAAASUVORK5CYII=" InformativeScreenshot="cb936789a36be9f5cf8efb321ef52f9a.png" Reference="BkxQ1887pEidR6av2KDcrw/htPDEj0R1EOLh4YxmCjCgQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
                 </uix:NClick.Target>
               </uix:NClick>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Edit'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,183" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c8d7f3df-dcff-4479-abbc-a1c02670c8f1" Version="V4">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Edit'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,190" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c8d7f3df-dcff-4479-abbc-a1c02670c8f1" Version="V4">
                 <uix:NClick.Target>
-                  <uix:TargetAnchorable BrowserURL="localhost/orders" CVScreenId="af0e8419-68d2-49d7-8d61-cbda4452dc44" ContentHash="jN5kVLg_HEmF5I2oRBsNcA" CvElementArea="291, 504, 140, 29" CvTextArea="349, 512, 23, 12" CvTextArgument="Edit" CvType="Button" DesignTimeRectangle="293, 506, 135, 24" ElementType="Button" FullSelectorArgument="&lt;webctrl class='action-button' parentid='app' tag='BUTTON' /&gt;" Guid="4c6c1ca1-968a-4ff7-8bb1-37e5e3a16d58" InformativeScreenshot="0e41b71d4495d2db727f9cb2013c60dd.png" Reference="BkxQ1887pEidR6av2KDcrw/vI8vlSdcfUqA31kHdTqrnQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
-                    <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                        <uix:Target CVScreenId="af0e8419-68d2-49d7-8d61-cbda4452dc44" CvElementArea="291, 504, 140, 29" CvTextArea="349, 512, 23, 12" CvTextArgument="Edit" CvType="Button" DesignTimeRectangle="286, 498, 150, 39" FuzzySelectorArgument="&lt;webctrl aria-labelledby='dropdownMenuButton' tag='DIV' type='' class='dropdown-menu action-menu show' aaname='' matching:aria-labelledby='fuzzy' fuzzylevel:aria-labelledby='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Edit' /&gt;" Guid="efba6a85-c5fd-417d-bb2a-c464431c468e" SearchSteps="FuzzySelector, CV" />
-                      </scg:List>
-                    </uix:TargetAnchorable.Anchors>
-                  </uix:TargetAnchorable>
+                  <uix:TargetAnchorable BrowserURL="localhost/orders" CVScreenId="94577593-342e-4f74-81e6-0d85343c72b9" ContentHash="WFvG7zKYeEiSS-T3M2PltQ" CvElementArea="309, 463, 149, 31" CvTextArea="370, 470, 26, 13" CvTextArgument="Edit" CvType="Button" DesignTimeRectangle="312, 466, 144, 26" ElementType="Button" FullSelectorArgument="&lt;webctrl class='action-button' parentid='app' tag='BUTTON' /&gt;" Guid="528adfd9-b200-4a01-93fc-0cc7811545a9" InformativeScreenshot="b8a4492c291adfe60515b32caad8bb81.png" Reference="BkxQ1887pEidR6av2KDcrw/NMimHeEeKUKcVFemj4t29g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
                 </uix:NClick.Target>
               </uix:NClick>
+              <uix:NGoToUrl DisplayName="Go To URL - " sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Version="V4">
+                <uix:NGoToUrl.Url>
+                  <InArgument x:TypeArguments="x:String">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">GlobalVariables.websiteUrl</CSharpValue>
+                  </InArgument>
+                </uix:NGoToUrl.Url>
+              </uix:NGoToUrl>
             </Sequence>
           </ActivityAction>
         </uix:NApplicationCard.Body>
