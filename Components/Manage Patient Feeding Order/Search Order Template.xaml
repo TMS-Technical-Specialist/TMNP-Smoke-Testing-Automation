@@ -50,6 +50,10 @@
       <x:String>System.Reflection</x:String>
       <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -109,14 +113,37 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Search_Order_Template" sap:VirtualizedContainerService.HintSize="1274,2144" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Search_Order_Template" sap:VirtualizedContainerService.HintSize="1274,2259" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="uiCalOz" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="484,115" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">uiCalOz</CSharpReference>
+        </OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">GlobalVariables.appSettings["cal_per_ui"].ToString()</CSharpValue>
+        </InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
     <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Nutrition Platform ™(18)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,2121" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="8c69fb25-8d84-4a8b-bb7d-e646319cc18f" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
@@ -210,7 +237,7 @@
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="localhost/orders" CVScreenId="c004e68d-bd41-4a91-9823-542595325008" ContentHash="ydqfGUkOnkq7ATxLw7xbNg" CvElementArea="1509, 410, 131, 40" CvType="InputBox" DesignTimeRectangle="1511, 411, 127, 37" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl class='outline-0 rounded-lg w-full p-2 border border-[#AAAAAA] disabled:bg-[#EEEEEE]' tag='INPUT' type='text' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="6e785ca1-e8c4-4bd4-b73d-6e7f9b806cbe" InformativeScreenshot="1c567b19a8d2da80d631077fa2afe968.png" Reference="BkxQ1887pEidR6av2KDcrw/sCEjPdEBXkqPLqHymwD8zg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target CVScreenId="c004e68d-bd41-4a91-9823-542595325008" CvTextArea="1509, 375, 60, 13" CvTextArgument="Additives" CvType="Text" DesignTimeRectangle="1501, 363, 146, 39" FuzzySelectorArgument="&lt;webctrl aaname='Additives ' parentid='app' tag='DIV' type='' class='font-[14px] font-semibold p-[10px] flex gap-2 cursor-pointer' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Additives' /&gt;" Guid="a6337e70-584d-4c7b-bc54-47a5b32cbacf" SearchSteps="FuzzySelector, CV" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
@@ -224,10 +251,21 @@
             </uix:NTypeInto>
             <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Prepared Kcal/Oz'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,251" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="8c69fb25-8d84-4a8b-bb7d-e646319cc18f" Version="V4">
               <uix:NTypeInto.Target>
-                <uix:TargetAnchorable BrowserURL="localhost/orders" CVScreenId="648a3af9-ca4a-422f-8dc8-4ea863a6b4ce" ContentHash="06RLjAkis0me21oJ0gQemw" CvElementArea="1654, 409, 132, 41" CvType="InputBox" DesignTimeRectangle="1657, 411, 127, 37" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl class='outline-0 rounded-lg w-full p-2 border border-[#AAAAAA] disabled:bg-[#EEEEEE]' tag='INPUT' type='text' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="d90f51a0-f6ec-4aa4-8749-8924e7d55ab4" InformativeScreenshot="6c8766339ed0d4c8d26946e3486463cd.png" Reference="BkxQ1887pEidR6av2KDcrw/GH6HPs8lPEarqQUePsBp3w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                <uix:TargetAnchorable BrowserURL="localhost/orders" CVScreenId="648a3af9-ca4a-422f-8dc8-4ea863a6b4ce" ContentHash="jFZia1sIUEyuLzIBx0PsEQ" CvElementArea="1654, 409, 132, 41" CvType="InputBox" DesignTimeRectangle="1657, 411, 127, 37" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl class='outline-0 rounded-lg w-full p-2 border border-[#AAAAAA] disabled:bg-[#EEEEEE]' tag='INPUT' type='text' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="d90f51a0-f6ec-4aa4-8749-8924e7d55ab4" InformativeScreenshot="6c8766339ed0d4c8d26946e3486463cd.png" Reference="BkxQ1887pEidR6av2KDcrw/GH6HPs8lPEarqQUePsBp3w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
                   <uix:TargetAnchorable.Anchors>
                     <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
-                      <uix:Target CVScreenId="648a3af9-ca4a-422f-8dc8-4ea863a6b4ce" CvTextArea="1655, 375, 111, 16" CvTextArgument="Prepared Kcal/Oz" CvType="Text" DesignTimeRectangle="1647, 363, 146, 39" FuzzySelectorArgument="&lt;webctrl aaname='Prepared Kcal/Oz ' parentid='app' tag='DIV' type='' class='font-[14px] font-semibold p-[10px] flex gap-2 cursor-pointer' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Prepared Kcal/Oz' /&gt;" Guid="8d2c61aa-1627-4bcf-a0bb-c2505b7a4ba2" SearchSteps="FuzzySelector, CV" />
+                      <uix:Target CVScreenId="648a3af9-ca4a-422f-8dc8-4ea863a6b4ce" CvTextArea="1655, 375, 111, 16" CvType="Text" DesignTimeRectangle="1647, 363, 146, 39" Guid="8d2c61aa-1627-4bcf-a0bb-c2505b7a4ba2" SearchSteps="FuzzySelector, CV">
+                        <uix:Target.CvTextArgument>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">$"Prepared {uiCalOz}"</CSharpValue>
+                          </InArgument>
+                        </uix:Target.CvTextArgument>
+                        <uix:Target.FuzzySelectorArgument>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">$"&lt;webctrl aaname='Prepared {uiCalOz} ' parentid='app' tag='DIV' type='' class='font-[14px] font-semibold p-[10px] flex gap-2 cursor-pointer' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Prepared {uiCalOz}' /&gt;"</CSharpValue>
+                          </InArgument>
+                        </uix:Target.FuzzySelectorArgument>
+                      </uix:Target>
                       <uix:Target CVScreenId="648a3af9-ca4a-422f-8dc8-4ea863a6b4ce" CvTextArea="1509, 375, 60, 13" CvTextArgument="Additives" CvType="Text" DesignTimeRectangle="1501, 363, 146, 39" FuzzySelectorArgument="&lt;webctrl aaname='Additives ' parentid='app' tag='DIV' type='' class='font-[14px] font-semibold p-[10px] flex gap-2 cursor-pointer' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Additives' /&gt;" Guid="907729f9-9d1a-4bb2-a9cb-24b05d9c2d5f" SearchSteps="FuzzySelector, CV" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
@@ -252,11 +290,11 @@
                 </scg:List>
               </uix:NSelectItem.Items>
               <uix:NSelectItem.Target>
-                <uix:TargetAnchorable BrowserURL="localhost/orders" CVScreenId="d3c169f2-7cbc-4c9e-8712-2cc9fe2af8dd" ContentHash="7VRB41i-g0WQQYWhi5vSAg" CvElementArea="1800, 410, 106, 40" CvType="InputBox" DesignTimeRectangle="1802, 411, 102, 36" ElementType="Button" FullSelectorArgument="&lt;webctrl id='headlessui-listbox-button-15' tag='BUTTON' /&gt;" Guid="dc8c44f8-804a-4c58-8c47-09e2ea9379be" InformativeScreenshot="7910ad5519176a363636239d2957cfb7.png" Reference="BkxQ1887pEidR6av2KDcrw/RuuYzdnSJ0GZqQSfU53Dvg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                <uix:TargetAnchorable BrowserURL="localhost/orders" CVScreenId="266a61a4-b287-44bc-b1c1-5d5d1910fb15" ContentHash="kslEBng_RkeKqe2dwt4YBQ" CvElementArea="1799, 429, 106, 40" CvType="InputBox" DesignTimeRectangle="1802, 431, 102, 36" ElementType="Button" FullSelectorArgument="&lt;webctrl id='headlessui-listbox-button-31' tag='BUTTON' /&gt;" Guid="367e599b-3d6d-46cf-b74c-ae67fc2c25f4" InformativeScreenshot="7eb27aac032b71243824011fac50c68d.png" Reference="BkxQ1887pEidR6av2KDcrw/RuuYzdnSJ0GZqQSfU53Dvg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
                   <uix:TargetAnchorable.Anchors>
                     <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
-                      <uix:Target CVScreenId="d3c169f2-7cbc-4c9e-8712-2cc9fe2af8dd" CvTextArea="1801, 376, 41, 12" CvTextArgument="Status" CvType="Text" DesignTimeRectangle="1793, 363, 120, 39" FuzzySelectorArgument="&lt;webctrl aaname='Status ' parentid='app' tag='DIV' type='' class='font-[14px] font-semibold p-[10px] flex gap-2 cursor-pointer' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Status' /&gt;" Guid="49f47d2a-6eaf-43d4-95d4-4980044a89ee" SearchSteps="FuzzySelector, CV" />
-                      <uix:Target CVScreenId="d3c169f2-7cbc-4c9e-8712-2cc9fe2af8dd" CvElementArea="1655, 410, 131, 40" CvType="InputBox" DesignTimeRectangle="1657, 411, 127, 37" ElementType="InputBox" FullSelectorArgument="&lt;webctrl idx='7' tag='INPUT' type='text' /&gt;" Guid="bb01ad88-b6a5-4856-8888-cfd00cb8e034" SearchSteps="Selector, CV" />
+                      <uix:Target CVScreenId="266a61a4-b287-44bc-b1c1-5d5d1910fb15" CvTextArea="1801, 376, 41, 12" CvTextArgument="Status" CvType="Text" DesignTimeRectangle="1793, 363, 120, 39" FuzzySelectorArgument="&lt;webctrl aaname='Status ' parentid='app' tag='DIV' type='' class='font-[14px] font-semibold p-[10px] flex gap-2 cursor-pointer' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Status' /&gt;" Guid="2bb77c55-3d2c-4b2a-b110-539b0f9b3855" SearchSteps="FuzzySelector, CV" />
+                      <uix:Target CVScreenId="266a61a4-b287-44bc-b1c1-5d5d1910fb15" CvElementArea="1741, 546, 147, 37" CvTextArea="1755, 557, 118, 13" CvTextArgument="Add Patient Order" CvType="Button" DesignTimeRectangle="1743, 548, 144, 33" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aaname='Add Patient Order' parentid='app' tag='BUTTON' type='' class='py-[0.5em] px-[1.1em] rounded-[0.2rem] font-semibold font-[&amp;apos;Open_Sans&amp;apos;] transition-colors ease-in-out w-fit h-fit primary' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Add Patient Order' /&gt;" Guid="58c935fa-c8f1-4cd7-9790-80442d1d8ed6" SearchSteps="FuzzySelector, CV" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
