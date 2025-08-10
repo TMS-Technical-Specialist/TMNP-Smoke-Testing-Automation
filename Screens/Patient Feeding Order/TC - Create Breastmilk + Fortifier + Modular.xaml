@@ -56,6 +56,7 @@
       <x:String>UiPath.Platform.SyncObjects</x:String>
       <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
       <x:String>UiPath.Activities.System.Text</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -118,19 +119,24 @@
       <AssemblyReference>System.Data.Common</AssemblyReference>
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC___Create_Breastmilk___Fortifier___Modular" sap:VirtualizedContainerService.HintSize="1156,5026" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC___Create_Breastmilk___Fortifier___Modular" sap:VirtualizedContainerService.HintSize="1156,5106" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="uiCalOz" />
       <Variable x:TypeArguments="x:String" Name="modularTracking" />
+      <Variable x:TypeArguments="x:Int32" Name="roundingCalDecimal" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="554,440" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="554,502" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:Int32" Name="roundingMlDecimal" />
+      </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -144,7 +150,7 @@
           <InArgument x:TypeArguments="x:String" x:Key="inOrderBase">Breastmilk</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,171" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,233" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -171,23 +177,47 @@
                 </InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:Int32">
+                  <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">roundingCalDecimal</CSharpReference>
+                </OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:Int32">
+                  <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">(int)GlobalVariables.appSettings["ui/decimal/rounding/cals"]</CSharpValue>
+                </InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:Int32">
+                  <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">roundingMlDecimal</CSharpReference>
+                </OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:Int32">
+                  <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">(int)GlobalVariables.appSettings["ui/decimal/rounding/ml"]</CSharpValue>
+                </InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
     </Sequence>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="554,3291" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="554,3309" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(5)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="520,3199" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="d261946d-3479-4521-b374-cb7d63381c58" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(5)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="520,3217" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="d261946d-3479-4521-b374-cb7d63381c58" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,2958" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,2976" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <Sequence.Variables>
                 <Variable x:TypeArguments="scg:List(x:String)" Name="additiveList" />
               </Sequence.Variables>
@@ -284,7 +314,12 @@
                   </uix:TargetAnchorable>
                 </uix:NSelectItem.Target>
               </uix:NSelectItem>
-              <uix:NSelectItem DisplayName="Select first Mix to Cal" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,190" sap2010:WorkflowViewState.IdRef="NSelectItem_2" Item="22" ScopeIdentifier="d261946d-3479-4521-b374-cb7d63381c58" Version="V4">
+              <uix:NSelectItem DisplayName="Select first Mix to Cal" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,190" sap2010:WorkflowViewState.IdRef="NSelectItem_2" ScopeIdentifier="d261946d-3479-4521-b374-cb7d63381c58" Version="V4">
+                <uix:NSelectItem.Item>
+                  <InArgument x:TypeArguments="x:String">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20" xml:space="preserve">roundingCalDecimal== 0 ?  "22" : $"22.{new string('0', roundingCalDecimal)}"</CSharpValue>
+                  </InArgument>
+                </uix:NSelectItem.Item>
                 <uix:NSelectItem.Items>
                   <scg:List x:TypeArguments="x:String" Capacity="50">
                     <x:String></x:String>
@@ -455,7 +490,7 @@
                   </uix:TargetAnchorable>
                 </uix:NClick.Target>
               </uix:NClick>
-              <Switch x:TypeArguments="x:String" DisplayName="Switch" sap:VirtualizedContainerService.HintSize="452,1271" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+              <Switch x:TypeArguments="x:String" DisplayName="Switch" sap:VirtualizedContainerService.HintSize="452,1289" sap2010:WorkflowViewState.IdRef="Switch`1_1">
                 <Switch.Default>
                   <Sequence DisplayName="Default" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_7">
                     <sap:WorkflowViewStateService.ViewState>
@@ -480,7 +515,7 @@
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="653d8d80-75ec-4c4e-867b-8be01aa1a028" ContentHash="pwDn2ullLE-piXQOyNyKIg" CvElementArea="1209, 837, 376, 43" CvType="InputBox" DesignTimeRectangle="1211, 838, 372, 39" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl class='form-control' tag='INPUT' type='text' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="690a7f5f-c2e9-4912-aa0c-90fd9a6ff4ad" InformativeScreenshot="c3710d29d813a40ce82fc2d13b844610.png" Reference="BkxQ1887pEidR6av2KDcrw/mXjRFBSGnUuXWwsJYs89Ag" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
                         <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
                             <uix:Target CVScreenId="653d8d80-75ec-4c4e-867b-8be01aa1a028" CvElementArea="1579, 837, 54, 42" CvTextArea="1596, 850, 21, 12" CvTextArgument="mL" CvType="Button" DesignTimeRectangle="1582, 838, 50, 39" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='mod_vol_text__array__2' type='' tag='SPAN' class='input-group-text text-dark pt-2' aaname='mL' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='mL' /&gt;" Guid="07c9c2f1-9d15-412d-9985-e1886f0893da" SearchSteps="FuzzySelector, CV" />
                             <uix:Target CVScreenId="653d8d80-75ec-4c4e-867b-8be01aa1a028" CvElementArea="949, 839, 88, 36" CvTextArea="967, 851, 51, 11" CvTextArgument="Modular" CvType="Button" DesignTimeRectangle="950, 839, 87, 36" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aaname='Modular' type='' tag='LABEL' class='btn btn-primary active' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Modular' /&gt;" Guid="f3b612a6-f172-409e-a907-5f3fe22989b2" SearchSteps="FuzzySelector, CV" />
                           </scg:List>
@@ -499,7 +534,7 @@
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="5420be34-a32e-4e16-85b9-8139d16fbd46" ContentHash="wZY0oUeMGUq4ZEyj4J8yxQ" CvElementArea="1185, 837, 382, 42" CvType="InputBox" DesignTimeRectangle="1187, 838, 378, 39" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl class='form-control' tag='INPUT' type='text' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="ea6c7c1d-f676-488b-9080-ad884b0dedac" InformativeScreenshot="5a801082371c58142186818afca0a05e.png" Reference="BkxQ1887pEidR6av2KDcrw/HdIuPA1eukqV9HDAHiE9wA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
                         <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
                             <uix:Target CVScreenId="5420be34-a32e-4e16-85b9-8139d16fbd46" CvElementArea="1562, 836, 78, 42" CvTextArea="1577, 850, 46, 12" CvTextArgument="mL/mL" CvType="Button" DesignTimeRectangle="1564, 838, 74, 39" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='mod_vol_text__array__2' type='' tag='SPAN' class='input-group-text text-dark pt-2' aaname='mL/mL' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='mL/mL' /&gt;" Guid="27c9d3d9-c9de-4157-b291-24b241d28e66" SearchSteps="FuzzySelector, CV" />
                             <uix:Target DesignTimeRectangle="935, 839, 87, 36" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aaname='Modular' type='' tag='LABEL' class='btn btn-primary active' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Modular' /&gt;" Guid="cc640ad2-a1a0-49d9-a4de-9e617ee3290c" SearchSteps="FuzzySelector" />
                           </scg:List>
@@ -518,7 +553,7 @@
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="92861549-997d-4376-a6a0-a4f499888842" ContentHash="y57lLS5GbEipHRCRz2zrFg" CvElementArea="1175, 1087, 381, 43" CvType="InputBox" DesignTimeRectangle="1177, 1088, 379, 39" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl class='form-control' tag='INPUT' type='text' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="9b11ad52-8fca-46f1-9a7b-bfd81695078b" InformativeScreenshot="9cbeb97de6e93020271301905bf549be.png" Reference="BkxQ1887pEidR6av2KDcrw/e9VkH84i2ECV6rB2TLKOog" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
                         <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
                             <uix:Target CVScreenId="92861549-997d-4376-a6a0-a4f499888842" CvElementArea="1553, 1086, 90, 43" CvTextArea="1569, 1099, 56, 13" CvTextArgument="mL/Feed" CvType="Button" DesignTimeRectangle="1555, 1088, 86, 39" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='mod_vol_text__array__2' type='' tag='SPAN' class='input-group-text text-dark pt-2' aaname='mL/Feed' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='mL/Feed' /&gt;" Guid="c34f2523-9da4-42ed-b7bb-340302b110f6" SearchSteps="FuzzySelector, CV" />
                             <uix:Target CVScreenId="92861549-997d-4376-a6a0-a4f499888842" CvElementArea="928, 1090, 87, 36" CvTextArea="946, 1101, 52, 11" CvTextArgument="Modular" CvType="Button" DesignTimeRectangle="929, 1089, 87, 36" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aaname='Modular' type='' tag='LABEL' class='btn btn-primary active' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Modular' /&gt;" Guid="9c0d6379-861b-4ddf-a56c-222fce4748b0" SearchSteps="FuzzySelector, CV" />
                           </scg:List>
