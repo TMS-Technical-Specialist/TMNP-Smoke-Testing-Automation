@@ -1,0 +1,588 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Select_2_Fortifiers" this:Select_2_Fortifiers.inBaseCal="20" this:Select_2_Fortifiers.inWithModular="True" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="inBaseCal" Type="InArgument(x:Int32)" />
+    <x:Property Name="inWithModular" Type="InArgument(x:Boolean)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Select_2_Fortifiers" sap:VirtualizedContainerService.HintSize="1156,2618" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="roundingCalDecimal" />
+      <Variable x:TypeArguments="x:String" Name="uiCalOz" />
+      <Variable x:TypeArguments="x:String" Name="modularTracking" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="556,211" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">
+                <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">roundingCalDecimal</CSharpReference>
+              </OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">
+                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">(int)GlobalVariables.appSettings["ui/decimal/rounding/cals"]</CSharpValue>
+              </InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">uiCalOz</CSharpReference>
+              </OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">GlobalVariables.appSettings["cal_per_ui"].ToString()</CSharpValue>
+              </InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">modularTracking</CSharpReference>
+              </OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">GlobalVariables.appSettings["manual_orm/track_modular_volume"].ToString()</CSharpValue>
+              </InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(5)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="556,2384" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="d261946d-3479-4521-b374-cb7d63381c58" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="522,2143" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="scg:List(x:String)" Name="additiveList" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGetAttributeGeneric x:TypeArguments="scg:List(x:String)" Attribute="items" DisplayName="Get additive list" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,241" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" ScopeIdentifier="d261946d-3479-4521-b374-cb7d63381c58" Version="V4">
+              <uix:NGetAttributeGeneric.Result>
+                <OutArgument x:TypeArguments="scg:List(x:String)">
+                  <CSharpReference x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">additiveList</CSharpReference>
+                </OutArgument>
+              </uix:NGetAttributeGeneric.Result>
+              <uix:NGetAttributeGeneric.Target>
+                <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="d0c7a0d2-16b3-463e-80b1-183c809709b1" ContentHash="8DbALk6PiEeOgjUeYa6sxg" CvElementArea="429, 727, 497, 43" CvType="InputBox" DesignTimeRectangle="435, 729, 490, 40" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aria-role='textbox' type='' tag='SPAN' class='select2-selection__rendered' aaname='' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="d5f65ff5-8c9d-46d9-9f5a-c006f2ed46cb" InformativeScreenshot="c48f5266773fa58692468b3f83abd393.png" Reference="BkxQ1887pEidR6av2KDcrw/YYh2_4wb9k6jP1hfZEdt2w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                      <uix:Target CVScreenId="d0c7a0d2-16b3-463e-80b1-183c809709b1" CvElementArea="290, 726, 43, 36" CvTextArea="305, 739, 11, 11" CvTextArgument="X" CvType="Button" DesignTimeRectangle="292, 728, 40, 32" FullSelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='A' /&gt;" Guid="42178798-ba15-4a21-acb7-ed6ec4dac18c" SearchSteps="Selector, CV" />
+                      <uix:Target CVScreenId="d0c7a0d2-16b3-463e-80b1-183c809709b1" CvTextArea="431, 691, 57, 13" CvTextArgument="Additive" CvType="Text" DesignTimeRectangle="419, 679, 522, 39" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl class='align-middle' type='' tag='TH' aaname='Additive' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Additive' /&gt;" Guid="47a19b6e-0251-4b0b-a184-b0cc8388560e" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetAttributeGeneric.Target>
+            </uix:NGetAttributeGeneric>
+            <uix:NSelectItem DisplayName="Select first additive" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,190" sap2010:WorkflowViewState.IdRef="NSelectItem_2" ScopeIdentifier="d261946d-3479-4521-b374-cb7d63381c58" Version="V4">
+              <uix:NSelectItem.Item>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">additiveList.FirstOrDefault(additive =&gt; additive.ToLower().Contains("pwd"))</CSharpValue>
+                </InArgument>
+              </uix:NSelectItem.Item>
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="50">
+                  <x:String>Enfamil Infant RTU</x:String>
+                  <x:String>Enfamil Infant Concentrate</x:String>
+                  <x:String>Enfamil Infant PWD</x:String>
+                  <x:String>Enfamil NeuroPro Infant RTU</x:String>
+                  <x:String>Enfamil NeuroPro Infant PWD</x:String>
+                  <x:String>Enfamil Enspire Optimum PWD</x:String>
+                  <x:String>Enfamil NeuroPro EnfaCare RTU</x:String>
+                  <x:String>Enfamil NeuroPro EnfaCare PWD</x:String>
+                  <x:String>Enfamil EnfaCare RTU</x:String>
+                  <x:String>Enfamil NeuroPro Gentlease PWD</x:String>
+                  <x:String>Enfamil NeuroPro Gentlease RTU</x:String>
+                  <x:String>Enfamil A.R. RTU</x:String>
+                  <x:String>Enfamil A.R. PWD</x:String>
+                  <x:String>Enfamil NeuroPro Sensitive PWD</x:String>
+                  <x:String>Nutramigen RTU</x:String>
+                  <x:String>Nutramigen Concentrate LQ</x:String>
+                  <x:String>Nutramigen with Enflora LGG PWD</x:String>
+                  <x:String>Pregestimil PWD</x:String>
+                  <x:String>Pregestimil 24 kcal RTU</x:String>
+                  <x:String>Pregestimil 20 kcal RTU</x:String>
+                  <x:String>Enfamil Simply Plant based-Prosobee RTU</x:String>
+                  <x:String>Enfamil ProSobee Concentrate LQ</x:String>
+                  <x:String>Enfamil Simply Plant based-Prosobee PWD</x:String>
+                  <x:String>Enfamil Reguline PWD</x:String>
+                  <x:String>Enfagrow NeuroPro Toddler Natural Milk Nutritional Drink</x:String>
+                  <x:String>Enfagrow NeuroPro Toddler Vanilla Flavor Nutrition Drink</x:String>
+                  <x:String>Enfagrow PREMIUM Toddler Transitions PWD</x:String>
+                  <x:String>Enfagrow Gentlease Toddler Transitions PWD</x:String>
+                  <x:String>Enfagrow PREMIUM Toddler Nutritional Drink Natural Milk PWD</x:String>
+                  <x:String>Enfagrow PREMIUM Toddler Nutritional Drink Vanilla PWD</x:String>
+                  <x:String>Enfamil Water, Oral Use RTU</x:String>
+                  <x:String>Enfamil 5% Glucose Water RTU</x:String>
+                  <x:String>Enfamil Enfalyte Oral Electrolyte Solution RTU</x:String>
+                  <x:String>Enfamil Premature with Iron 20 kcal RTU</x:String>
+                  <x:String>Enfamil Premature 24 kcal RTU</x:String>
+                  <x:String>Enfamil Premature 30 kcal RTU</x:String>
+                  <x:String>Enfamil Premature 24 kcal High Protein RTU</x:String>
+                  <x:String>Enfamil Human Milk Fortifier PWD</x:String>
+                  <x:String>Enfamil Human Milk Fortifier Acidified</x:String>
+                  <x:String>Enfamil LQ Human Milk Fortifier High Protein</x:String>
+                  <x:String>Enfamil LQ Human Milk Fortifier Standard Protein</x:String>
+                  <x:String>Enfamil 24 kcal RTU</x:String>
+                  <x:String>Phenyl-Free 1</x:String>
+                  <x:String>BCAD 1</x:String>
+                  <x:String>GA</x:String>
+                  <x:String>HCY 1</x:String>
+                  <x:String>LMD</x:String>
+                  <x:String>PFD Toddler</x:String>
+                  <x:String>TYROS 1</x:String>
+                  <x:String>OA 1</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="8bc637f8-81fb-4599-8ead-e02c599eb708" ContentHash="nMVNotUPlU-3fXpFq3tD4Q" CvElementArea="429, 727, 497, 43" CvType="InputBox" DesignTimeRectangle="435, 729, 490, 40" ElementType="DropDown" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aria-role='combobox' type='' tag='SPAN' class='select2-selection select2-selection--single' aaname='' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="b9186068-e222-4b4f-88f6-087ae8eef762" InformativeScreenshot="24f6ca066c70f250fc14fa3681a764bc.png" Reference="BkxQ1887pEidR6av2KDcrw/-IYzuBWbBEasfCBS3H3gkg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                      <uix:Target CVScreenId="8bc637f8-81fb-4599-8ead-e02c599eb708" CvElementArea="290, 726, 43, 36" CvTextArea="305, 739, 11, 11" CvTextArgument="X" CvType="Button" DesignTimeRectangle="292, 728, 40, 32" FullSelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='A' /&gt;" Guid="3fc866e4-8df9-4bdd-aabe-d884bd0c0135" SearchSteps="Selector, CV" />
+                      <uix:Target CVScreenId="8bc637f8-81fb-4599-8ead-e02c599eb708" CvTextArea="431, 691, 57, 13" CvTextArgument="Additive" CvType="Text" DesignTimeRectangle="419, 679, 522, 39" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl class='align-middle' type='' tag='TH' aaname='Additive' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Additive' /&gt;" Guid="1bdb5a82-3c4d-4b92-94fc-ee4fa2458959" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <uix:NSelectItem DisplayName="Select first Mix to Cal" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,190" sap2010:WorkflowViewState.IdRef="NSelectItem_1" ScopeIdentifier="d261946d-3479-4521-b374-cb7d63381c58" Version="V4">
+              <uix:NSelectItem.Item>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15" xml:space="preserve">roundingCalDecimal== 0 ?  $"{inBaseCal + 2}" : $"{inBaseCal + 2}.{new string('0', roundingCalDecimal)}"</CSharpValue>
+                </InArgument>
+              </uix:NSelectItem.Item>
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="50">
+                  <x:String></x:String>
+                  <x:String>0</x:String>
+                  <x:String>1</x:String>
+                  <x:String>2</x:String>
+                  <x:String>3</x:String>
+                  <x:String>4</x:String>
+                  <x:String>5</x:String>
+                  <x:String>6</x:String>
+                  <x:String>7</x:String>
+                  <x:String>8</x:String>
+                  <x:String>9</x:String>
+                  <x:String>10</x:String>
+                  <x:String>11</x:String>
+                  <x:String>12</x:String>
+                  <x:String>13</x:String>
+                  <x:String>14</x:String>
+                  <x:String>15</x:String>
+                  <x:String>16</x:String>
+                  <x:String>17</x:String>
+                  <x:String>18</x:String>
+                  <x:String>19</x:String>
+                  <x:String>20</x:String>
+                  <x:String>21</x:String>
+                  <x:String>22</x:String>
+                  <x:String>23</x:String>
+                  <x:String>24</x:String>
+                  <x:String>25</x:String>
+                  <x:String>26</x:String>
+                  <x:String>27</x:String>
+                  <x:String>28</x:String>
+                  <x:String>29</x:String>
+                  <x:String>30</x:String>
+                  <x:String>31</x:String>
+                  <x:String>32</x:String>
+                  <x:String>33</x:String>
+                  <x:String>34</x:String>
+                  <x:String>35</x:String>
+                  <x:String>36</x:String>
+                  <x:String>37</x:String>
+                  <x:String>38</x:String>
+                  <x:String>39</x:String>
+                  <x:String>40</x:String>
+                  <x:String>41</x:String>
+                  <x:String>42</x:String>
+                  <x:String>43</x:String>
+                  <x:String>44</x:String>
+                  <x:String>45</x:String>
+                  <x:String>46</x:String>
+                  <x:String>47</x:String>
+                  <x:String>48</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="5b09f527-f7f3-45ea-8679-f5bd0f1deb0b" ContentHash="vvkwOAMQ-E66uYuxIHc6gg" CvElementArea="1622, 839, 96, 44" CvType="InputBox" DesignTimeRectangle="1625, 840, 92, 40" ElementType="DropDown" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='cal_oz_array__1' type='' tag='SELECT' class='custom-select1 form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="35333e04-b1e3-4108-b424-13a5301fcb5d" InformativeScreenshot="369eb17f47ca47eb119f943785eda763.png" Reference="BkxQ1887pEidR6av2KDcrw/eXBnefpXzUubEm9FtceOXg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                      <uix:Target CVScreenId="5b09f527-f7f3-45ea-8679-f5bd0f1deb0b" CvTextArea="1624, 804, 107, 15" CvType="Text" DesignTimeRectangle="1610, 791, 266, 39" ElementType="Text" Guid="70c9897f-f860-4b48-8ede-0b3ee4cb2519" SearchSteps="FuzzySelector, CV">
+                        <uix:Target.CvTextArgument>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">$"Mix To ({uiCalOz})"</CSharpValue>
+                          </InArgument>
+                        </uix:Target.CvTextArgument>
+                        <uix:Target.FuzzySelectorArgument>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">$"&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aaname='Mix to ({uiCalOz})' type='' tag='TH' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Mix To ({uiCalOz})' /&gt;"</CSharpValue>
+                          </InArgument>
+                        </uix:Target.FuzzySelectorArgument>
+                      </uix:Target>
+                      <uix:Target CVScreenId="5b09f527-f7f3-45ea-8679-f5bd0f1deb0b" CvElementArea="1355, 839, 96, 44" CvType="InputBox" DesignTimeRectangle="1358, 840, 92, 40" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' /&gt;&lt;webctrl id='readonly_cal_oz_array__1' tableRow='2' tag='SELECT' /&gt;" Guid="49f57632-d14e-4205-a9c7-bed0007b6fb7" SearchSteps="Selector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click add another additive" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,190" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d261946d-3479-4521-b374-cb7d63381c58" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="a99656c9-0bcb-48ad-8bf0-e49b7948b8f6" ContentHash="M64fR6Mcwk-GzE7P_0f_nw" CvElementArea="290, 785, 45, 36" CvTextArea="305, 796, 13, 13" CvTextArgument="+" CvType="Button" DesignTimeRectangle="292, 787, 42, 32" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl type='' tag='A' class='btn btn-icon btn-primary text-white' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="7957fb48-b34d-435b-b522-4ed41a0936ef" InformativeScreenshot="40aac2dc32757d4cbac5433c9f3aa9a3.png" Reference="BkxQ1887pEidR6av2KDcrw/ipEA3bY6DUW4z8aJ4HR-jQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="a99656c9-0bcb-48ad-8bf0-e49b7948b8f6" CvElementArea="290, 726, 43, 36" CvTextArea="305, 739, 11, 11" CvTextArgument="X" CvType="Button" DesignTimeRectangle="292, 728, 40, 32" FullSelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='A' /&gt;" Guid="bf721704-833e-4637-bd73-edae2a4e668d" SearchSteps="Selector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NSelectItem DisplayName="Select 2nd fortifier" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,190" sap2010:WorkflowViewState.IdRef="NSelectItem_3" ScopeIdentifier="d261946d-3479-4521-b374-cb7d63381c58" Version="V4">
+              <uix:NSelectItem.Item>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">additiveList.FirstOrDefault(additive =&gt; additive.ToLower().Contains("mct oil"))</CSharpValue>
+                </InArgument>
+              </uix:NSelectItem.Item>
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="50">
+                  <x:String>Enfamil Infant RTU</x:String>
+                  <x:String>Enfamil Infant Concentrate</x:String>
+                  <x:String>Enfamil Infant PWD</x:String>
+                  <x:String>Enfamil NeuroPro Infant RTU</x:String>
+                  <x:String>Enfamil NeuroPro Infant PWD</x:String>
+                  <x:String>Enfamil Enspire Optimum PWD</x:String>
+                  <x:String>Enfamil NeuroPro EnfaCare RTU</x:String>
+                  <x:String>Enfamil NeuroPro EnfaCare PWD</x:String>
+                  <x:String>Enfamil EnfaCare RTU</x:String>
+                  <x:String>Enfamil NeuroPro Gentlease PWD</x:String>
+                  <x:String>Enfamil NeuroPro Gentlease RTU</x:String>
+                  <x:String>Enfamil A.R. RTU</x:String>
+                  <x:String>Enfamil A.R. PWD</x:String>
+                  <x:String>Enfamil NeuroPro Sensitive PWD</x:String>
+                  <x:String>Nutramigen RTU</x:String>
+                  <x:String>Nutramigen Concentrate LQ</x:String>
+                  <x:String>Nutramigen with Enflora LGG PWD</x:String>
+                  <x:String>Pregestimil PWD</x:String>
+                  <x:String>Pregestimil 24 kcal RTU</x:String>
+                  <x:String>Pregestimil 20 kcal RTU</x:String>
+                  <x:String>Enfamil Simply Plant based-Prosobee RTU</x:String>
+                  <x:String>Enfamil ProSobee Concentrate LQ</x:String>
+                  <x:String>Enfamil Simply Plant based-Prosobee PWD</x:String>
+                  <x:String>Enfamil Reguline PWD</x:String>
+                  <x:String>Enfagrow NeuroPro Toddler Natural Milk Nutritional Drink</x:String>
+                  <x:String>Enfagrow NeuroPro Toddler Vanilla Flavor Nutrition Drink</x:String>
+                  <x:String>Enfagrow PREMIUM Toddler Transitions PWD</x:String>
+                  <x:String>Enfagrow Gentlease Toddler Transitions PWD</x:String>
+                  <x:String>Enfagrow PREMIUM Toddler Nutritional Drink Natural Milk PWD</x:String>
+                  <x:String>Enfagrow PREMIUM Toddler Nutritional Drink Vanilla PWD</x:String>
+                  <x:String>Enfamil Water, Oral Use RTU</x:String>
+                  <x:String>Enfamil 5% Glucose Water RTU</x:String>
+                  <x:String>Enfamil Enfalyte Oral Electrolyte Solution RTU</x:String>
+                  <x:String>Enfamil Premature with Iron 20 kcal RTU</x:String>
+                  <x:String>Enfamil Premature 24 kcal RTU</x:String>
+                  <x:String>Enfamil Premature 30 kcal RTU</x:String>
+                  <x:String>Enfamil Premature 24 kcal High Protein RTU</x:String>
+                  <x:String>Enfamil Human Milk Fortifier PWD</x:String>
+                  <x:String>Enfamil Human Milk Fortifier Acidified</x:String>
+                  <x:String>Enfamil LQ Human Milk Fortifier High Protein</x:String>
+                  <x:String>Enfamil LQ Human Milk Fortifier Standard Protein</x:String>
+                  <x:String>Enfamil 24 kcal RTU</x:String>
+                  <x:String>Phenyl-Free 1</x:String>
+                  <x:String>BCAD 1</x:String>
+                  <x:String>GA</x:String>
+                  <x:String>HCY 1</x:String>
+                  <x:String>LMD</x:String>
+                  <x:String>PFD Toddler</x:String>
+                  <x:String>TYROS 1</x:String>
+                  <x:String>OA 1</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="338b21cf-a595-4813-b957-ed216ec6ee73" ContentHash="J5QZx5PQx0CTUDL4q_JLmg" CvElementArea="430, 786, 495, 43" CvType="InputBox" DesignTimeRectangle="435, 788, 490, 40" ElementType="DropDown" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aria-role='combobox' type='' tag='SPAN' class='select2-selection select2-selection--single' aaname='' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="8da40e0a-849f-43fe-8e3b-458e72bbe7f1" InformativeScreenshot="830d4bac0b08960c23aab2d9589b5939.png" Reference="BkxQ1887pEidR6av2KDcrw/LgA4PCxaVkGXQfJqben5pA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                      <uix:Target CVScreenId="338b21cf-a595-4813-b957-ed216ec6ee73" CvElementArea="428, 727, 498, 43" CvType="InputBox" DesignTimeRectangle="435, 729, 490, 40" FullSelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' /&gt;&lt;webctrl aria-role='textbox' tableRow='2' tag='SPAN' /&gt;" Guid="62b226b5-fd2e-4f98-b84a-37239d460420" SearchSteps="Selector, CV" />
+                      <uix:Target CVScreenId="338b21cf-a595-4813-b957-ed216ec6ee73" CvElementArea="290, 785, 44, 36" CvTextArea="305, 797, 11, 11" CvTextArgument="X" CvType="Button" DesignTimeRectangle="292, 787, 40, 32" FullSelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='A' /&gt;" Guid="155d0821-f796-45a1-8a8b-03db48cff935" SearchSteps="Selector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <If sap:VirtualizedContainerService.HintSize="488,1080" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Condition>
+                <InArgument x:TypeArguments="x:Boolean">
+                  <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">inWithModular</CSharpValue>
+                </InArgument>
+              </If.Condition>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,707" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Modular'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,190" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d261946d-3479-4521-b374-cb7d63381c58" Version="V4">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="a1583c12-8cce-43a8-8512-cdd954d851a8" ContentHash="aTojoepzz0uZAADPpmnBZA" CvTextArea="1059, 925, 52, 11" CvTextArgument="Modular" CvType="Text" DesignTimeRectangle="1042, 913, 86, 36" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aaname='Modular' type='' tag='LABEL' class='btn btn-primary' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Modular' /&gt;" Guid="677b61a0-9dd3-4086-9e1c-8c0ec07cd0b8" InformativeScreenshot="b2b9f380f25e5ac0d7addfa411921319.png" Reference="BkxQ1887pEidR6av2KDcrw/ApDymFFsTEiCEiALkEJ1Cg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                            <uix:Target CVScreenId="a1583c12-8cce-43a8-8512-cdd954d851a8" CvElementArea="955, 914, 88, 36" CvTextArea="972, 925, 52, 12" CvTextArgument="Fortifier" CvType="Button" DesignTimeRectangle="956, 913, 87, 36" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl type='' tag='LABEL' class='btn btn-primary active' aaname='Fortifier' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Fortifier' /&gt;" Guid="2a20438f-5f78-4ea4-a541-82d303756bbd" SearchSteps="FuzzySelector, CV" />
+                            <uix:Target CVScreenId="a1583c12-8cce-43a8-8512-cdd954d851a8" CvElementArea="430, 911, 495, 43" CvType="InputBox" DesignTimeRectangle="435, 913, 490, 40" FullSelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' /&gt;&lt;webctrl aria-role='textbox' tableRow='3' tag='SPAN' /&gt;" Guid="ebafb755-ca7a-42f7-af76-cd42decf1e8e" SearchSteps="Selector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <If sap:VirtualizedContainerService.HintSize="452,457" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If.Condition>
+                      <InArgument x:TypeArguments="x:Boolean">
+                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">modularTracking != "0"</CSharpValue>
+                      </InArgument>
+                    </If.Condition>
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,302" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type modular value" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,242" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="DebuggerApi" ScopeIdentifier="d261946d-3479-4521-b374-cb7d63381c58" Text="5" Version="V4">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="653d8d80-75ec-4c4e-867b-8be01aa1a028" ContentHash="ZIGSmY-Eh0KffEjumlFbQQ" CvElementArea="1209, 837, 376, 43" CvType="InputBox" DesignTimeRectangle="1177, 730, 375, 35" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl class='form-control' tag='INPUT' type='text' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="690a7f5f-c2e9-4912-aa0c-90fd9a6ff4ad" InformativeScreenshot="f841b9c87182bc108aeead2c3449fe6c.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/mXjRFBSGnUuXWwsJYs89Ag" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CVScreenId="653d8d80-75ec-4c4e-867b-8be01aa1a028" CvElementArea="949, 839, 88, 36" CvTextArea="967, 851, 51, 11" CvTextArgument="Modular" CvType="Button" DesignTimeRectangle="907, 731, 78, 33" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aaname='Modular' type='' tag='LABEL' class='btn btn-primary active' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Modular' /&gt;" Guid="f3b612a6-f172-409e-a907-5f3fe22989b2" SearchSteps="FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NTypeInto.Target>
+                        </uix:NTypeInto>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,241" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NSelectItem DisplayName="Select 2nd mix to cal" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,181" sap2010:WorkflowViewState.IdRef="NSelectItem_4" ScopeIdentifier="d261946d-3479-4521-b374-cb7d63381c58" Version="V4">
+                    <uix:NSelectItem.Item>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16" xml:space="preserve">roundingCalDecimal == 0 ?  $"{inBaseCal + 4}" : $"{inBaseCal + 4}.{new string('0', roundingCalDecimal)}"</CSharpValue>
+                      </InArgument>
+                    </uix:NSelectItem.Item>
+                    <uix:NSelectItem.Items>
+                      <scg:List x:TypeArguments="x:String" Capacity="50">
+                        <x:String>0</x:String>
+                        <x:String>1</x:String>
+                        <x:String>2</x:String>
+                        <x:String>3</x:String>
+                        <x:String>4</x:String>
+                        <x:String>5</x:String>
+                        <x:String>6</x:String>
+                        <x:String>7</x:String>
+                        <x:String>8</x:String>
+                        <x:String>9</x:String>
+                        <x:String>10</x:String>
+                        <x:String>11</x:String>
+                        <x:String>12</x:String>
+                        <x:String>13</x:String>
+                        <x:String>14</x:String>
+                        <x:String>15</x:String>
+                        <x:String>16</x:String>
+                        <x:String>17</x:String>
+                        <x:String>18</x:String>
+                        <x:String>19</x:String>
+                        <x:String>20</x:String>
+                        <x:String>21</x:String>
+                        <x:String>22</x:String>
+                        <x:String>23</x:String>
+                        <x:String>24</x:String>
+                        <x:String>25</x:String>
+                        <x:String>26</x:String>
+                        <x:String>27</x:String>
+                        <x:String>28</x:String>
+                        <x:String>29</x:String>
+                        <x:String>30</x:String>
+                        <x:String>31</x:String>
+                        <x:String>32</x:String>
+                        <x:String>33</x:String>
+                        <x:String>34</x:String>
+                        <x:String>35</x:String>
+                        <x:String>36</x:String>
+                        <x:String>37</x:String>
+                        <x:String>38</x:String>
+                        <x:String>39</x:String>
+                        <x:String>40</x:String>
+                        <x:String>41</x:String>
+                        <x:String>42</x:String>
+                        <x:String>43</x:String>
+                        <x:String>44</x:String>
+                        <x:String>45</x:String>
+                        <x:String>46</x:String>
+                        <x:String>47</x:String>
+                        <x:String>48</x:String>
+                        <x:String>49</x:String>
+                      </scg:List>
+                    </uix:NSelectItem.Items>
+                    <uix:NSelectItem.Target>
+                      <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="7cf08341-2d67-4003-8dfb-e78df8a74e29" ContentHash="at6QaHKT_0ilZ6tahlyFLg" CvElementArea="1623, 785, 96, 44" CvType="InputBox" DesignTimeRectangle="1625, 787, 92, 40" ElementType="DropDown" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='cal_oz_array__2' type='' tag='SELECT' class='custom-select1 form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="55135c01-c0e9-47cc-8947-a830554d27b3" InformativeScreenshot="3aa3b64e48043026183955b0a6a55ed8.png" Reference="BkxQ1887pEidR6av2KDcrw/araeMof8SkSnCOkAQBrqIw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                            <uix:Target CVScreenId="7cf08341-2d67-4003-8dfb-e78df8a74e29" CvElementArea="1623, 727, 96, 44" CvType="InputBox" DesignTimeRectangle="1625, 728, 92, 40" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' /&gt;&lt;webctrl id='cal_oz_array__1' tableRow='2' tag='SELECT' /&gt;" Guid="41d41a72-3d8f-42fc-a74f-0d8bd8958073" SearchSteps="Selector, CV" />
+                            <uix:Target CVScreenId="7cf08341-2d67-4003-8dfb-e78df8a74e29" CvElementArea="1356, 786, 95, 44" CvType="InputBox" DesignTimeRectangle="1358, 787, 92, 40" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' /&gt;&lt;webctrl id='readonly_cal_oz_array__2' tableRow='3' tag='SELECT' /&gt;" Guid="59014dc1-ad63-4c40-b6c5-620bd7342aa9" SearchSteps="Selector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NSelectItem.Target>
+                  </uix:NSelectItem>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" ContentHash="CGS-ljpcxk2bB5vfDm_vHA" Reference="BkxQ1887pEidR6av2KDcrw/YJaJ3se8REq94YN8F3iWNQ" Selector="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" Version="V2" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
