@@ -225,7 +225,7 @@
               </Assign.To>
               <Assign.Value>
                 <InArgument x:TypeArguments="s:String[]">
-                  <CSharpValue x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">containerListStr.Replace("Containers: ", "").Split(new string[]{","}, StringSplitOptions.None).Select(s =&gt; s.Trim()).ToArray()</CSharpValue>
+                  <CSharpValue x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">containerListStr.Replace(inNumberOfLabels &gt; 1 ? "Containers: " : "Container: ", "").Split(new string[]{","}, StringSplitOptions.None).Select(s =&gt; s.Trim()).ToArray()</CSharpValue>
                 </InArgument>
               </Assign.Value>
             </Assign>
