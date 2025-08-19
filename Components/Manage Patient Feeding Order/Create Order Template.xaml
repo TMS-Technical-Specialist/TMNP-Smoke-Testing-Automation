@@ -46,6 +46,10 @@
       <x:String>System.Security</x:String>
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Reflection</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -108,6 +112,8 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Create_Order_Template" sap:VirtualizedContainerService.HintSize="1245,3738" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -165,7 +171,7 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into patient" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,251" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="e84d88d8-f748-410f-8522-8687144243d5" Text="PT000001[k(Enter)]" Version="V4">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into patient" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,251" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="e84d88d8-f748-410f-8522-8687144243d5" Version="V4">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="3adf03c1-8d2e-4978-8dd3-e7b1e4b74bc0" ContentHash="WPx0TeRqX0K1cebIk7e3Gw" CvElementArea="198, 220, 840, 31" CvType="InputBox" DesignTimeRectangle="200, 223, 836, 28" FullSelectorArgument="&lt;webctrl aria-role='textbox' tag='SPAN' /&gt;" Guid="a44aebc2-edbc-46d6-b2b2-abe76a3c687d" InformativeScreenshot="bd9f3e05f117818abb44a8d8332ba463.png" Reference="BkxQ1887pEidR6av2KDcrw/ehFraPRiDUeh9u7wCOJayw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Visible" WaitForReadyArgument="Complete">
                   <uix:TargetAnchorable.Anchors>
@@ -175,6 +181,11 @@
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
               </uix:NTypeInto.Target>
+              <uix:NTypeInto.Text>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">GlobalVariables.appSettings["barcode_baby_prefix"].ToString() + "000001[k(Enter)]"</CSharpValue>
+                </InArgument>
+              </uix:NTypeInto.Text>
             </uix:NTypeInto>
             <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Deactivate All Primary …'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,227" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e84d88d8-f748-410f-8522-8687144243d5" Version="V4">
               <uix:NClick.Target>
