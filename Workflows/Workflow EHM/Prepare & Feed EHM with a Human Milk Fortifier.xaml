@@ -114,7 +114,7 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Prepare___Feed_EHM_with_a_Human_Milk_Fortifier" sap:VirtualizedContainerService.HintSize="1245,3842" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Prepare___Feed_EHM_with_a_Human_Milk_Fortifier" sap:VirtualizedContainerService.HintSize="1245,3899" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="receiveHMF" />
       <Variable x:TypeArguments="s:String[]" Name="preparedContainers">
@@ -143,7 +143,7 @@
         </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <Sequence DisplayName="Print and Receive Fresh Container &amp; Prepare" sap:VirtualizedContainerService.HintSize="670,671" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Print and Receive Fresh Container &amp; Prepare" sap:VirtualizedContainerService.HintSize="670,728" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="s:String[]" Name="newCollectionLabel" />
       </Sequence.Variables>
@@ -172,10 +172,9 @@
           </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Prepare Order - Invoke Workflow File (Components\\Prepare Order.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Components\\Prepare Order.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Prepare Order - Invoke Workflow File (Components\\Prepare Order.xaml)" sap:VirtualizedContainerService.HintSize="416,225" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Components\\Prepare Order.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:Boolean" x:Key="inIsFirstStepScanProductBarcode">True</InArgument>
-          <InArgument x:TypeArguments="x:Boolean" x:Key="inWithAdditive">True</InArgument>
           <InArgument x:TypeArguments="s:String[]" x:Key="inSecondStepContainerBarcodes">
             <CSharpValue x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">newCollectionLabel</CSharpValue>
           </InArgument>

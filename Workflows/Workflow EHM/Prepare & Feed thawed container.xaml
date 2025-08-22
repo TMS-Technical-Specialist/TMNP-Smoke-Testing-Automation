@@ -115,7 +115,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Prepare___Feed_thawed_container" sap:VirtualizedContainerService.HintSize="1245,3162" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Prepare___Feed_thawed_container" sap:VirtualizedContainerService.HintSize="1245,3195" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="preparedContainers">
         <Variable.Default>
@@ -162,12 +162,11 @@
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Prepare Order - Invoke Workflow File (Components\\Prepare Order.xaml)" sap:VirtualizedContainerService.HintSize="670,250" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Components\\Prepare Order.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Prepare Order - Invoke Workflow File (Components\\Prepare Order.xaml)" sap:VirtualizedContainerService.HintSize="670,283" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Components\\Prepare Order.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="inOrderBase">
           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">GlobalVariables.appSettings["EBM_display_name_short"].ToString() + " Only"</CSharpValue>
         </InArgument>
-        <InArgument x:TypeArguments="x:Boolean" x:Key="inWithAdditive">False</InArgument>
         <InArgument x:TypeArguments="s:String[]" x:Key="inFirstStepContainerBarcodes">
           <CSharpValue x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">newCollectionLabel</CSharpValue>
         </InArgument>
