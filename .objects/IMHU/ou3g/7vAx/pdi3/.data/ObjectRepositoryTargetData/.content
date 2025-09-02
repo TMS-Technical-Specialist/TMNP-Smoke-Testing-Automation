@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="g2n7k_R52UeAy2x87sB_4Q" Reference="BkxQ1887pEidR6av2KDcrw/pdi3mLFezkuXjeIXJth-DQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="localhost/babies" CVScreenId="46743ff7-893a-4870-9e43-c7ae9f09875e" CvType="AnyWordGroup" DesignTimeRectangle="830, 224, 119, 41" Guid="73e18056-baf7-4a45-b4fb-7ede0e71b919" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Nutrition Platform ™ - Google Chrome' /&gt;" SearchSteps="FuzzySelector, CV" SelectionStrategy="AA" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="46743ff7-893a-4870-9e43-c7ae9f09875e" CvTextArea="365, 170, 61, 14" CvTextArgument="Patients" CvType="Text" DesignTimeRectangle="366, 167, 59, 20" ElementType="InputBox" FullSelectorArgument="&lt;ctrl name='Nutrition Platform ™' role='document' /&gt;&lt;ctrl role='editable text' /&gt;" Guid="6bbbe325-7a1b-4216-a27d-c2977d2e16d6" SearchSteps="Selector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <TargetAnchorable.FuzzySelectorArgument>
+        <p:InArgument x:TypeArguments="x:String">
+          <p:CSharpValue x:TypeArguments="x:String">string.Format("&lt;ctrl name='Nutrition Platform ™' matching:name='fuzzy' fuzzylevel:name='0.0' role='document' /&gt;&lt;ctrl automationid='' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' role='grouping' text='{0}' check:text='{0}' /&gt;", patientMRNConf)</p:CSharpValue>
+        </p:InArgument>
+      </TargetAnchorable.FuzzySelectorArgument>
+      <imageRef attrName="InformativeScreenshot" originalValue="a5935773e134d4b9126c9f20b2475ace.png" xmlns="">0gtCPIYNIdUmjBRT1pTRekA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData DefaultValue="MRN" Name="patientMRNConf" />
+    </scg:List>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
