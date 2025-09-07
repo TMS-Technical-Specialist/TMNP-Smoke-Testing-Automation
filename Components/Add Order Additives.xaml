@@ -116,9 +116,12 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
       <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Add_Order_Additives" sap:VirtualizedContainerService.HintSize="1245,3113" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Add_Order_Additives" sap:VirtualizedContainerService.HintSize="1253,2940" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Default="0" Name="index" />
       <Variable x:TypeArguments="x:Int32" Default="0" Name="roundingCalDecimal" />
@@ -130,12 +133,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get App Settings Value - Invoke Workflow File (Utilities\\Get App Settings Value.xaml)" sap:VirtualizedContainerService.HintSize="592,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Utilities\\Get App Settings Value.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <scg:Dictionary x:TypeArguments="x:String, Argument" />
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:CommentOut DisplayName="in additive argument template" sap:VirtualizedContainerService.HintSize="592,254" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+    <ui:CommentOut DisplayName="List of additives template" sap:VirtualizedContainerService.HintSize="592,254" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,143" sap2010:WorkflowViewState.IdRef="Sequence_17">
           <sap:WorkflowViewStateService.ViewState>
@@ -195,13 +193,13 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(12)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="592,2448" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="ba4362d6-313c-4546-b306-facdcab7afaf" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(12)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="592,2452" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="ba4362d6-313c-4546-b306-facdcab7afaf" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="558,2207" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="558,2211" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:List(x:String)" Name="additiveList" />
             </Sequence.Variables>
@@ -227,7 +225,7 @@
                 </uix:TargetAnchorable>
               </uix:NGetAttributeGeneric.Target>
             </uix:NGetAttributeGeneric>
-            <ui:ForEachRow ColumnNames="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="524,1906" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow ColumnNames="{x:Null}" DisplayName="For Each additives to be added" sap:VirtualizedContainerService.HintSize="524,1908" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
@@ -276,7 +274,7 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <uix:NSelectItem DisplayName="Select Item 'Button'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,190" sap2010:WorkflowViewState.IdRef="NSelectItem_4" ScopeIdentifier="ba4362d6-313c-4546-b306-facdcab7afaf" Version="V4">
+                    <uix:NSelectItem DisplayName="Select additive name" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,190" sap2010:WorkflowViewState.IdRef="NSelectItem_4" ScopeIdentifier="ba4362d6-313c-4546-b306-facdcab7afaf" Version="V4">
                       <uix:NSelectItem.Item>
                         <InArgument x:TypeArguments="x:String">
                           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">additiveList.FirstOrDefault(additive =&gt; additive.ToLower().Contains(item["additiveName"].ToString().ToLower()))</CSharpValue>
@@ -407,7 +405,7 @@
                           <uix:NSelectItem DisplayName="Select mix to cal" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,181" sap2010:WorkflowViewState.IdRef="NSelectItem_5" ScopeIdentifier="ba4362d6-313c-4546-b306-facdcab7afaf" Version="V4">
                             <uix:NSelectItem.Item>
                               <InArgument x:TypeArguments="x:String">
-                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_71" xml:space="preserve">roundingCalDecimal == 0 ?  item["endCal"].ToString() : item["endCal"].ToString()  + $".{new string('0', roundingCalDecimal)}"</CSharpValue>
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_73" xml:space="preserve">roundingCalDecimal == 0 ?  item["endCal"].ToString() : item["endCal"].ToString()  + $".{new string('0', roundingCalDecimal)}"</CSharpValue>
                               </InArgument>
                             </uix:NSelectItem.Item>
                             <uix:NSelectItem.Items>

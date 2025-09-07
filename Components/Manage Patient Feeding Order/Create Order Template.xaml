@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Create_Order_Template" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Create_Order_Template" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="inOrderType" Type="InArgument(x:String)" />
     <x:Property Name="inMilkBase" Type="InArgument(x:String)" />
@@ -116,35 +116,19 @@
       <AssemblyReference>System.Collections.Specialized</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Create_Order_Template" sap:VirtualizedContainerService.HintSize="1253,4015" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Create_Order_Template" sap:VirtualizedContainerService.HintSize="1253,3156" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="556,339" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,228" sap2010:WorkflowViewState.IdRef="Sequence_13">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Clinical Management - Navigate to Clinical Management - Invoke Workflow File (Components\\Clinical Management - Navigate to Clinical Management.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Components\\Clinical Management - Navigate to Clinical Management.xaml">
-            <ui:InvokeWorkflowFile.Arguments>
-              <scg:Dictionary x:TypeArguments="x:String, Argument" />
-            </ui:InvokeWorkflowFile.Arguments>
-          </ui:InvokeWorkflowFile>
-        </Sequence>
-      </ui:CommentOut.Body>
-    </ui:CommentOut>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(7)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="556,3653" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="e84d88d8-f748-410f-8522-8687144243d5" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(7)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="556,3133" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="e84d88d8-f748-410f-8522-8687144243d5" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="522,3412" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="522,2892" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:List(x:String)" Name="orderBaseList" />
               <Variable x:TypeArguments="scg:List(x:String)" Name="milkbaseDropdownList" />
@@ -168,7 +152,7 @@
                 </InArgument>
               </uix:NGoToUrl.Url>
             </uix:NGoToUrl>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="1" DisplayName="Click 'Add Patient Order'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,227" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e84d88d8-f748-410f-8522-8687144243d5" Version="V4">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="0.5" DisplayName="Click 'Add Patient Order'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,227" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e84d88d8-f748-410f-8522-8687144243d5" Version="V4">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="localhost/orders" CVScreenId="945159b4-7da8-45fc-996d-0dbe18ce63ea" ContentHash="Q38kZ4vNb0y5fs4mf9tvBQ" CvElementArea="1794, 218, 104, 26" CvTextArea="1804, 225, 84, 10" CvTextArgument="Add Patient Order" CvType="Button" DesignTimeRectangle="1795, 220, 102, 23" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Add Patient Order' parentid='app' tag='BUTTON' /&gt;" Guid="249b8f3b-35cc-480c-8f1d-f2c3b94d5043" InformativeScreenshot="c5db6546d623b144778618437ecf7ec5.png" Reference="BkxQ1887pEidR6av2KDcrw/rDaNMzjgnkiqAFqhrgbNrg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Visible" WaitForReadyArgument="None">
                   <uix:TargetAnchorable.Anchors>
@@ -226,7 +210,7 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <If sap:VirtualizedContainerService.HintSize="488,2415" sap2010:WorkflowViewState.IdRef="If_2">
+            <If sap:VirtualizedContainerService.HintSize="488,1895" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">inOrderType != null</CSharpValue>
@@ -266,7 +250,7 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,2042" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,1522" sap2010:WorkflowViewState.IdRef="Sequence_12">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -312,7 +296,7 @@
                       </uix:TargetAnchorable>
                     </uix:NSelectItem.Target>
                   </uix:NSelectItem>
-                  <Switch x:TypeArguments="x:String" DisplayName="Switch" sap:VirtualizedContainerService.HintSize="452,1309" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" sap:VirtualizedContainerService.HintSize="452,789" sap2010:WorkflowViewState.IdRef="Switch`1_1">
                     <Switch.Default>
                       <Sequence DisplayName="Default" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_7">
                         <sap:WorkflowViewStateService.ViewState>
@@ -368,102 +352,6 @@
                             <uix:TargetAnchorable.Anchors>
                               <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                                 <uix:Target CVScreenId="432b9a69-8493-4c72-8923-3e86608f4a7e" CvTextArea="192, 676, 49, 9" CvTextArgument="*Milk Base:" CvType="Text" DesignTimeRectangle="199, 675, 42, 12" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='orderMilkBase_label' tag='LABEL' type='' class='' aaname='Milk Base:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Milk Base:' /&gt;" Guid="aa5a86ec-c71f-47e6-93ad-162f26472a66" SearchSteps="FuzzySelector, CV" />
-                              </scg:List>
-                            </uix:TargetAnchorable.Anchors>
-                          </uix:TargetAnchorable>
-                        </uix:NSelectItem.Target>
-                      </uix:NSelectItem>
-                    </Sequence>
-                    <Sequence x:Key="Product" DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,482" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                      <Sequence.Variables>
-                        <Variable x:TypeArguments="scg:List(x:String)" Name="productBaseList" />
-                      </Sequence.Variables>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <uix:NGetAttributeGeneric x:TypeArguments="scg:List(x:String)" Attribute="items" DisplayName="Get product base list" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,241" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_5" ScopeIdentifier="e84d88d8-f748-410f-8522-8687144243d5" Version="V4">
-                        <uix:NGetAttributeGeneric.Result>
-                          <OutArgument x:TypeArguments="scg:List(x:String)">
-                            <CSharpReference x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">productBaseList</CSharpReference>
-                          </OutArgument>
-                        </uix:NGetAttributeGeneric.Result>
-                        <uix:NGetAttributeGeneric.Target>
-                          <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="172079d6-9bff-4c25-bb34-33ec8bcd85ee" ContentHash="X-vhcniDV02-5ifSzOQdcg" CvElementArea="244, 800, 634, 38" CvType="InputBox" DesignTimeRectangle="248, 803, 630, 35" FullSelectorArgument="&lt;webctrl aria-role='textbox' parentid='orderFormulaType_input_td' tag='SPAN' /&gt;" Guid="3f650c91-6e7c-4027-8090-d1cfe029d14a" InformativeScreenshot="0fc2c497385be3bc389dbead7c2a965b.png" Reference="BkxQ1887pEidR6av2KDcrw/6QG9hfVeHE-fhHOXLivl1w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
-                            <uix:TargetAnchorable.Anchors>
-                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                <uix:Target CVScreenId="172079d6-9bff-4c25-bb34-33ec8bcd85ee" CvTextArea="242, 782, 77, 10" CvTextArgument="'Base Product:" CvType="Text" DesignTimeRectangle="241, 780, 806, 14" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='required' parentid='orderFormulaType_tr' tag='SPAN' type='' aaname=' *' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' fuzzylevel:aaname='0.0' check:innerText='*' /&gt;" Guid="206a243d-e8d7-4d09-aa45-e06b0af4d8f4" SearchSteps="FuzzySelector, CV" />
-                              </scg:List>
-                            </uix:TargetAnchorable.Anchors>
-                          </uix:TargetAnchorable>
-                        </uix:NGetAttributeGeneric.Target>
-                      </uix:NGetAttributeGeneric>
-                      <uix:NSelectItem DisplayName="Select product base" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,181" sap2010:WorkflowViewState.IdRef="NSelectItem_4" ScopeIdentifier="e84d88d8-f748-410f-8522-8687144243d5" Version="V4">
-                        <uix:NSelectItem.Item>
-                          <InArgument x:TypeArguments="x:String">
-                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">productBaseList.FirstOrDefault(item =&gt; item.ToLower().Contains("rtu") || item.ToLower().Contains("rtf"))</CSharpValue>
-                          </InArgument>
-                        </uix:NSelectItem.Item>
-                        <uix:NSelectItem.Items>
-                          <scg:List x:TypeArguments="x:String" Capacity="50">
-                            <x:String>Enfamil Infant RTU</x:String>
-                            <x:String>Enfamil NeuroPro Infant RTU</x:String>
-                            <x:String>Enfamil NeuroPro EnfaCare RTU</x:String>
-                            <x:String>Enfamil EnfaCare RTU</x:String>
-                            <x:String>Enfamil NeuroPro Gentlease RTU</x:String>
-                            <x:String>Enfamil A.R. RTU</x:String>
-                            <x:String>Nutramigen RTU</x:String>
-                            <x:String>Pregestimil 24 kcal RTU</x:String>
-                            <x:String>Pregestimil 20 kcal RTU</x:String>
-                            <x:String>Enfamil ProSobee RTU</x:String>
-                            <x:String>Enfagrow NeuroPro Toddler Natural Milk Nutritional Drink</x:String>
-                            <x:String>Enfagrow NeuroPro Toddler Vanilla Flavor Nutrition Drink</x:String>
-                            <x:String>Enfamil 5% Glucose Water RTU</x:String>
-                            <x:String>Enfamil Enfalyte Oral Electrolyte Solution RTU</x:String>
-                            <x:String>Enfamil Premature with Iron 20 kcal RTU</x:String>
-                            <x:String>Enfamil Premature 24 kcal RTU</x:String>
-                            <x:String>Enfamil Premature 30 kcal RTU</x:String>
-                            <x:String>Enfamil Premature 24 kcal High Protein RTU</x:String>
-                            <x:String>Enfamil 24 kcal RTU</x:String>
-                            <x:String>Enfaport Nursette RTU</x:String>
-                            <x:String>Similac With Iron 24</x:String>
-                            <x:String>Similac Advance RTF</x:String>
-                            <x:String>Pure Bliss Organic RTF</x:String>
-                            <x:String>Similac 360 Total Care RTF</x:String>
-                            <x:String>Similac 360 Total Care Sensitive RTF</x:String>
-                            <x:String>Similac Special Care 20 RTU</x:String>
-                            <x:String>Similac Special Care 24 RTU</x:String>
-                            <x:String>Similac Special Care 24 High Protein RTU</x:String>
-                            <x:String>Similac Special Care 30 RTF</x:String>
-                            <x:String>Similac Neosure RTF</x:String>
-                            <x:String>Neocate Splash</x:String>
-                            <x:String>Similac Alimentum RTF</x:String>
-                            <x:String>Similac Pro-Total Comfort 20 RTF</x:String>
-                            <x:String>Similac Sensitive for Spit-Up RTF</x:String>
-                            <x:String>Similac 10% Glucose Water RTF</x:String>
-                            <x:String>Similac 5% Glucose Water RTF</x:String>
-                            <x:String>Nepro with Carbsteady</x:String>
-                            <x:String>Pedialyte Classic</x:String>
-                            <x:String>Glucerna 1.5 Cal</x:String>
-                            <x:String>Glucerna</x:String>
-                            <x:String>Pediasure Grow &amp; Gain</x:String>
-                            <x:String>Pediasure 1.5</x:String>
-                            <x:String>Pediasure Grow &amp; Gain with Fiber</x:String>
-                            <x:String>Pediasure 1.5 Cal with Fiber</x:String>
-                            <x:String>Pediasure Reduced Calorie</x:String>
-                            <x:String>Jevity 1.0 Cal with Fiber</x:String>
-                            <x:String>Jevity 1.2 Cal with Fiber</x:String>
-                            <x:String>Jevity 1.5 Cal with Fiber</x:String>
-                            <x:String>Osmolite 1.0 Cal</x:String>
-                            <x:String>Osmolite 1.5 Cal</x:String>
-                          </scg:List>
-                        </uix:NSelectItem.Items>
-                        <uix:NSelectItem.Target>
-                          <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="77813b5b-0d63-4bb6-9aa4-91ffd3d4097f" ContentHash="Ww043w_GX0mmJttcZRXBsA" CvElementArea="245, 800, 633, 36" CvType="InputBox" DesignTimeRectangle="247, 802, 632, 35" ElementType="DropDown" FuzzySelectorArgument="&lt;webctrl aria-labelledby='select2-orderFormulaType-container' aria-role='combobox' tag='SPAN' type='' class='select2-selection select2-selection--single' aaname='' matching:aria-labelledby='fuzzy' fuzzylevel:aria-labelledby='0.0' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="a35fbfd3-d13b-44db-90dc-bb6dfc2af902" InformativeScreenshot="5fbae736ad7ff03fe32bbce6a863814f.png" Reference="BkxQ1887pEidR6av2KDcrw/0-rTkvcxfUWY_YR235nprw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
-                            <uix:TargetAnchorable.Anchors>
-                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                <uix:Target CVScreenId="77813b5b-0d63-4bb6-9aa4-91ffd3d4097f" CvTextArea="242, 782, 77, 10" CvTextArgument="'Base Product:" CvType="Text" DesignTimeRectangle="241, 780, 806, 14" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='required' parentid='orderFormulaType_tr' tag='SPAN' type='' aaname=' *' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' fuzzylevel:aaname='0.0' check:innerText='*' /&gt;" Guid="87d42eaf-fc2c-4546-bf94-a88577fa24b7" SearchSteps="FuzzySelector, CV" />
                               </scg:List>
                             </uix:TargetAnchorable.Anchors>
                           </uix:TargetAnchorable>

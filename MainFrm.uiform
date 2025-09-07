@@ -5,8 +5,6 @@
   },
   "DesignProperties": {
     "Title": "Configuration",
-    "Width": 500,
-    "Height": 500,
     "Theme": "Default",
     "ShowInTaskbar": true,
     "ShowMargin": false,
@@ -15,18 +13,27 @@
   "Data": {
     "components": [
       {
+        "tag": "h1",
+        "content": "<Font>Configuration</Font>",
+        "key": "label",
+        "input": false,
+        "tableView": false,
+        "label": "Label",
+        "type": "label"
+      },
+      {
         "label": "URL",
-        "placeholder": "http://localhost/",
         "disabled": true,
         "tableView": true,
+        "defaultValue": "http://localhost",
         "key": "url",
         "type": "textfield",
         "input": true
       },
       {
-        "label": "Select workflow to execute",
+        "label": "Select workflow/screen to execute the test",
         "widget": "choicesjs",
-        "placeholder": "Workflow Selection",
+        "placeholder": "Workflow/Screen Selection",
         "tableView": true,
         "data": {
           "values": [

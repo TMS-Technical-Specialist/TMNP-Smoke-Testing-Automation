@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="TC___Create_Product_order" this:TC___Create_Product_order.inWithModular="False" this:TC___Create_Product_order.inWithAdditive="False" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="TC___Create_Product_order" this:TC___Create_Product_order.inWithModular="False" this:TC___Create_Product_order.inWithAdditive="False" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="inWithModular" Type="InArgument(x:Boolean)" />
     <x:Property Name="inWithAdditive" Type="InArgument(x:Boolean)" />
@@ -54,6 +54,7 @@
       <x:String>System.Collections.Specialized</x:String>
       <x:String>System.Numerics</x:String>
       <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Semantic.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -118,9 +119,13 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
       <AssemblyReference>System.Data.Common</AssemblyReference>
       <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC___Create_Product_order" sap:VirtualizedContainerService.HintSize="1245,3777" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC___Create_Product_order" sap:VirtualizedContainerService.HintSize="1253,4395" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="20" Name="baseCalOz" />
     </Sequence.Variables>
@@ -129,7 +134,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="554,317" sap2010:WorkflowViewState.IdRef="Sequence_21">
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="590,317" sap2010:WorkflowViewState.IdRef="Sequence_21">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -141,98 +146,224 @@
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="554,2050" sap2010:WorkflowViewState.IdRef="Sequence_22">
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="590,2845" sap2010:WorkflowViewState.IdRef="Sequence_22">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(8)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="520,1958" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" ScopeGuid="63f4d607-174b-4dcf-84ce-24c23edcbece" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(8)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="556,2753" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" ScopeGuid="63f4d607-174b-4dcf-84ce-24c23edcbece" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,1677" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="522,2512" sap2010:WorkflowViewState.IdRef="Sequence_11">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="scg:List(x:String)" Name="productBaseList" />
+                <Variable x:TypeArguments="sd:DataRow" Name="orderDetails" />
+                <Variable x:TypeArguments="sd:DataTable" Name="additives" />
+              </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NGetText DisplayName="Get Text 'Calories/Oz'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,190" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="63f4d607-174b-4dcf-84ce-24c23edcbece" Version="V4">
-                <uix:NGetText.Target>
-                  <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="cb0eeb6b-ea97-4f35-93da-092346d50b1e" ContentHash="wO9ltlaShEm8yvvUjunDEw" CvElementArea="901, 387, 85, 38" CvType="InputBox" DesignTimeRectangle="903, 389, 82, 35" ElementType="DropDown" FuzzySelectorArgument="&lt;webctrl id='non_rtu_formula_base_caloric_density' tag='SELECT' type='' class='form-control' aaname='Calories/Oz' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="d314a2d1-52a4-43f7-abec-ea22a8d6a541" InformativeScreenshot="e3e3751e101f40e3192b0222c6f4605a.png" Reference="BkxQ1887pEidR6av2KDcrw/lCGmEVTcIUuZx6cyzhUSwA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+              <uix:NGetAttributeGeneric x:TypeArguments="scg:List(x:String)" Attribute="items" DisplayName="Get product base list" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,241" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" ScopeIdentifier="63f4d607-174b-4dcf-84ce-24c23edcbece" Version="V4">
+                <uix:NGetAttributeGeneric.Result>
+                  <OutArgument x:TypeArguments="scg:List(x:String)">
+                    <CSharpReference x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">productBaseList</CSharpReference>
+                  </OutArgument>
+                </uix:NGetAttributeGeneric.Result>
+                <uix:NGetAttributeGeneric.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="172079d6-9bff-4c25-bb34-33ec8bcd85ee" ContentHash="X-vhcniDV02-5ifSzOQdcg" CvElementArea="244, 800, 634, 38" CvType="InputBox" DesignTimeRectangle="248, 803, 630, 35" FullSelectorArgument="&lt;webctrl aria-role='textbox' parentid='orderFormulaType_input_td' tag='SPAN' /&gt;" Guid="3f650c91-6e7c-4027-8090-d1cfe029d14a" InformativeScreenshot="0fc2c497385be3bc389dbead7c2a965b.png" Reference="BkxQ1887pEidR6av2KDcrw/6QG9hfVeHE-fhHOXLivl1w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
                       <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                        <uix:Target CVScreenId="cb0eeb6b-ea97-4f35-93da-092346d50b1e" CvTextArea="991, 399, 63, 13" CvType="Text" DesignTimeRectangle="985, 398, 70, 18" ElementType="Text" Guid="b6ae4a7d-a259-4740-b108-92034033f23a" SearchSteps="FuzzySelector, CV">
-                          <uix:Target.CvTextArgument>
-                            <InArgument x:TypeArguments="x:String">
-                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">GlobalVariables.appSettings["cal_per_ui"].ToString()</CSharpValue>
-                            </InArgument>
-                          </uix:Target.CvTextArgument>
-                          <uix:Target.FuzzySelectorArgument>
-                            <InArgument x:TypeArguments="x:String">
-                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">$"&lt;webctrl parentid='non_rtu_formula_base_caloric_density_wrapper' tag='LABEL' type='' class='align-center-middle' aaname='{GlobalVariables.appSettings["cal_per_ui"].ToString()}' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='{GlobalVariables.appSettings["cal_per_ui"].ToString()}' /&gt;"</CSharpValue>
-                            </InArgument>
-                          </uix:Target.FuzzySelectorArgument>
-                        </uix:Target>
+                        <uix:Target CVScreenId="172079d6-9bff-4c25-bb34-33ec8bcd85ee" CvTextArea="242, 782, 77, 10" CvTextArgument="'Base Product:" CvType="Text" DesignTimeRectangle="241, 780, 806, 14" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='required' parentid='orderFormulaType_tr' tag='SPAN' type='' aaname=' *' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' fuzzylevel:aaname='0.0' check:innerText='*' /&gt;" Guid="206a243d-e8d7-4d09-aa45-e06b0af4d8f4" SearchSteps="FuzzySelector, CV" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
                   </uix:TargetAnchorable>
-                </uix:NGetText.Target>
-                <uix:NGetText.TextString>
+                </uix:NGetAttributeGeneric.Target>
+              </uix:NGetAttributeGeneric>
+              <If sap:VirtualizedContainerService.HintSize="488,1013" sap2010:WorkflowViewState.IdRef="If_3">
+                <If.Condition>
+                  <InArgument x:TypeArguments="x:Boolean">
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">inWithAdditive</CSharpValue>
+                  </InArgument>
+                </If.Condition>
+                <If.Then>
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,646" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If sap:VirtualizedContainerService.HintSize="452,586" sap2010:WorkflowViewState.IdRef="If_4">
+                      <If.Condition>
+                        <InArgument x:TypeArguments="x:Boolean">
+                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">inWithModular</CSharpValue>
+                        </InArgument>
+                      </If.Condition>
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,228" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Order details - Invoke Workflow File (Utilities\\Get Order details.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Utilities\\Get Order details.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="x:String" x:Key="inOrderName" xml:space="preserve">Product +  Fortifier + Modular</InArgument>
+                              <OutArgument x:TypeArguments="sd:DataRow" x:Key="orderDetails">
+                                <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">orderDetails</CSharpReference>
+                              </OutArgument>
+                              <InArgument x:TypeArguments="x:Boolean" x:Key="inWithOrderAdditives">True</InArgument>
+                              <OutArgument x:TypeArguments="sd:DataTable" x:Key="outOrderAdditiveList">
+                                <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">additives</CSharpReference>
+                              </OutArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                          </ui:InvokeWorkflowFile>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,228" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Order details - Invoke Workflow File (Utilities\\Get Order details.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Utilities\\Get Order details.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="x:String" x:Key="inOrderName" xml:space="preserve">Product +  Fortifiers</InArgument>
+                              <OutArgument x:TypeArguments="sd:DataRow" x:Key="orderDetails">
+                                <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_15">orderDetails</CSharpReference>
+                              </OutArgument>
+                              <InArgument x:TypeArguments="x:Boolean" x:Key="inWithOrderAdditives">True</InArgument>
+                              <OutArgument x:TypeArguments="sd:DataTable" x:Key="outOrderAdditiveList">
+                                <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_16">additives</CSharpReference>
+                              </OutArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                          </ui:InvokeWorkflowFile>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,228" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Order details - Invoke Workflow File (Utilities\\Get Order details.xaml)" sap:VirtualizedContainerService.HintSize="452,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Utilities\\Get Order details.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="inOrderName">Product without Fortifier</InArgument>
+                        <OutArgument x:TypeArguments="sd:DataRow" x:Key="orderDetails">
+                          <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">orderDetails</CSharpReference>
+                        </OutArgument>
+                        <InArgument x:TypeArguments="x:Boolean" x:Key="inWithOrderAdditives">False</InArgument>
+                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="outOrderAdditiveList" />
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <uix:NSelectItem DisplayName="Select product base" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,190" sap2010:WorkflowViewState.IdRef="NSelectItem_1" ScopeIdentifier="63f4d607-174b-4dcf-84ce-24c23edcbece" Version="V4">
+                <uix:NSelectItem.Item>
+                  <InArgument x:TypeArguments="x:String">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">productBaseList.FirstOrDefault(item =&gt; item.ToLower().Contains(orderDetails["Milk Base / Base Product"].ToString().ToLower()))</CSharpValue>
+                  </InArgument>
+                </uix:NSelectItem.Item>
+                <uix:NSelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="50">
+                    <x:String>Enfamil Infant RTU</x:String>
+                    <x:String>Enfamil NeuroPro Infant RTU</x:String>
+                    <x:String>Enfamil NeuroPro EnfaCare RTU</x:String>
+                    <x:String>Enfamil EnfaCare RTU</x:String>
+                    <x:String>Enfamil NeuroPro Gentlease RTU</x:String>
+                    <x:String>Enfamil A.R. RTU</x:String>
+                    <x:String>Nutramigen RTU</x:String>
+                    <x:String>Pregestimil 24 kcal RTU</x:String>
+                    <x:String>Pregestimil 20 kcal RTU</x:String>
+                    <x:String>Enfamil ProSobee RTU</x:String>
+                    <x:String>Enfagrow NeuroPro Toddler Natural Milk Nutritional Drink</x:String>
+                    <x:String>Enfagrow NeuroPro Toddler Vanilla Flavor Nutrition Drink</x:String>
+                    <x:String>Enfamil 5% Glucose Water RTU</x:String>
+                    <x:String>Enfamil Enfalyte Oral Electrolyte Solution RTU</x:String>
+                    <x:String>Enfamil Premature with Iron 20 kcal RTU</x:String>
+                    <x:String>Enfamil Premature 24 kcal RTU</x:String>
+                    <x:String>Enfamil Premature 30 kcal RTU</x:String>
+                    <x:String>Enfamil Premature 24 kcal High Protein RTU</x:String>
+                    <x:String>Enfamil 24 kcal RTU</x:String>
+                    <x:String>Enfaport Nursette RTU</x:String>
+                    <x:String>Similac With Iron 24</x:String>
+                    <x:String>Similac Advance RTF</x:String>
+                    <x:String>Pure Bliss Organic RTF</x:String>
+                    <x:String>Similac 360 Total Care RTF</x:String>
+                    <x:String>Similac 360 Total Care Sensitive RTF</x:String>
+                    <x:String>Similac Special Care 20 RTU</x:String>
+                    <x:String>Similac Special Care 24 RTU</x:String>
+                    <x:String>Similac Special Care 24 High Protein RTU</x:String>
+                    <x:String>Similac Special Care 30 RTF</x:String>
+                    <x:String>Similac Neosure RTF</x:String>
+                    <x:String>Neocate Splash</x:String>
+                    <x:String>Similac Alimentum RTF</x:String>
+                    <x:String>Similac Pro-Total Comfort 20 RTF</x:String>
+                    <x:String>Similac Sensitive for Spit-Up RTF</x:String>
+                    <x:String>Similac 10% Glucose Water RTF</x:String>
+                    <x:String>Similac 5% Glucose Water RTF</x:String>
+                    <x:String>Nepro with Carbsteady</x:String>
+                    <x:String>Pedialyte Classic</x:String>
+                    <x:String>Glucerna 1.5 Cal</x:String>
+                    <x:String>Glucerna</x:String>
+                    <x:String>Pediasure Grow &amp; Gain</x:String>
+                    <x:String>Pediasure 1.5</x:String>
+                    <x:String>Pediasure Grow &amp; Gain with Fiber</x:String>
+                    <x:String>Pediasure 1.5 Cal with Fiber</x:String>
+                    <x:String>Pediasure Reduced Calorie</x:String>
+                    <x:String>Jevity 1.0 Cal with Fiber</x:String>
+                    <x:String>Jevity 1.2 Cal with Fiber</x:String>
+                    <x:String>Jevity 1.5 Cal with Fiber</x:String>
+                    <x:String>Osmolite 1.0 Cal</x:String>
+                    <x:String>Osmolite 1.5 Cal</x:String>
+                  </scg:List>
+                </uix:NSelectItem.Items>
+                <uix:NSelectItem.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="77813b5b-0d63-4bb6-9aa4-91ffd3d4097f" ContentHash="Ww043w_GX0mmJttcZRXBsA" CvElementArea="245, 800, 633, 36" CvType="InputBox" DesignTimeRectangle="247, 802, 632, 35" ElementType="DropDown" FuzzySelectorArgument="&lt;webctrl aria-labelledby='select2-orderFormulaType-container' aria-role='combobox' tag='SPAN' type='' class='select2-selection select2-selection--single' aaname='' matching:aria-labelledby='fuzzy' fuzzylevel:aria-labelledby='0.0' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="a35fbfd3-d13b-44db-90dc-bb6dfc2af902" InformativeScreenshot="5fbae736ad7ff03fe32bbce6a863814f.png" Reference="BkxQ1887pEidR6av2KDcrw/0-rTkvcxfUWY_YR235nprw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="77813b5b-0d63-4bb6-9aa4-91ffd3d4097f" CvTextArea="242, 782, 77, 10" CvTextArgument="'Base Product:" CvType="Text" DesignTimeRectangle="241, 780, 806, 14" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='required' parentid='orderFormulaType_tr' tag='SPAN' type='' aaname=' *' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' fuzzylevel:aaname='0.0' check:innerText='*' /&gt;" Guid="87d42eaf-fc2c-4546-bf94-a88577fa24b7" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NSelectItem.Target>
+              </uix:NSelectItem>
+              <Assign sap:VirtualizedContainerService.HintSize="488,115" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
                   <OutArgument x:TypeArguments="x:String">
-                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">baseCalOz</CSharpReference>
+                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_17">baseCalOz</CSharpReference>
                   </OutArgument>
-                </uix:NGetText.TextString>
-              </uix:NGetText>
-              <If sap:VirtualizedContainerService.HintSize="452,991" sap2010:WorkflowViewState.IdRef="If_2">
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_39">orderDetails["Base Product Cal"].ToString()</CSharpValue>
+                  </InArgument>
+                </Assign.Value>
+              </Assign>
+              <If sap:VirtualizedContainerService.HintSize="488,457" sap2010:WorkflowViewState.IdRef="If_2">
                 <If.Condition>
                   <InArgument x:TypeArguments="x:Boolean">
                     <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">inWithAdditive</CSharpValue>
                   </InArgument>
                 </If.Condition>
                 <If.Then>
-                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,762" sap2010:WorkflowViewState.IdRef="Sequence_12">
-                    <Sequence.Variables>
-                      <Variable x:TypeArguments="sd:DataTable" Name="additives" />
-                    </Sequence.Variables>
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,228" sap2010:WorkflowViewState.IdRef="Sequence_12">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:BuildDataTable DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="416,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;additiveName&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;isModular&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; default=&quot;false&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;endCal&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;">
-                      <ui:BuildDataTable.DataTable>
-                        <OutArgument x:TypeArguments="sd:DataTable">
-                          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">additives</CSharpReference>
-                        </OutArgument>
-                      </ui:BuildDataTable.DataTable>
-                    </ui:BuildDataTable>
-                    <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="416,221" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
-                      <ui:AddDataRow.ArrayRow>
-                        <InArgument x:TypeArguments="s:Object[]">
-                          <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">new object[] { "pwd", false, int.Parse(baseCalOz) + 2 }</CSharpValue>
-                        </InArgument>
-                      </ui:AddDataRow.ArrayRow>
-                      <ui:AddDataRow.DataTable>
-                        <InOutArgument x:TypeArguments="sd:DataTable">
-                          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">additives</CSharpReference>
-                        </InOutArgument>
-                      </ui:AddDataRow.DataTable>
-                    </ui:AddDataRow>
-                    <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="416,221" sap2010:WorkflowViewState.IdRef="AddDataRow_2">
-                      <ui:AddDataRow.ArrayRow>
-                        <InArgument x:TypeArguments="s:Object[]">
-                          <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">new object[] { "mct oil", inWithModular, inWithModular ? 5 : int.Parse(baseCalOz) + 4 }</CSharpValue>
-                        </InArgument>
-                      </ui:AddDataRow.ArrayRow>
-                      <ui:AddDataRow.DataTable>
-                        <InOutArgument x:TypeArguments="sd:DataTable">
-                          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">additives</CSharpReference>
-                        </InOutArgument>
-                      </ui:AddDataRow.DataTable>
-                    </ui:AddDataRow>
                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Add Order Additives - Invoke Workflow File (Components\\Add Order Additives.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Components\\Add Order Additives.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="sd:DataTable" x:Key="inAdditives">
@@ -252,7 +383,7 @@
                   </Sequence>
                 </If.Else>
               </If>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Label Notes'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,251" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="DebuggerApi" ScopeIdentifier="63f4d607-174b-4dcf-84ce-24c23edcbece" Version="V4">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Label Notes'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,251" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="DebuggerApi" ScopeIdentifier="63f4d607-174b-4dcf-84ce-24c23edcbece" Version="V4">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="36e54d57-d2a9-4142-843e-284a6f96f1bf" ContentHash="pfMv3avp8Ua6hjM9a1U8OQ" CvElementArea="270, 849, 1609, 145" CvType="InputBox" DesignTimeRectangle="277, 852, 1599, 141" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='orderLabelNotes' tag='TEXTAREA' type='' class='form-control' aaname='Label Notes:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="82c095e8-8de7-4394-912e-c9b494a8fa89" InformativeScreenshot="fb89ebcacf38f7c822a43dffd6deeb4a.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/hrXp41Cdi0qfhPMvSdxIKA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
@@ -264,11 +395,11 @@
                 </uix:NTypeInto.Target>
                 <uix:NTypeInto.Text>
                   <InArgument x:TypeArguments="x:String">
-                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21" xml:space="preserve">!inWithAdditive ? "Product order label note" : !inWithModular ? "Product + 2 Fortifiers order  label note" : "Product + Fortifier + Modular order label note"</CSharpValue>
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_40">orderDetails["Label Notes"].ToString()</CSharpValue>
                   </InArgument>
                 </uix:NTypeInto.Text>
               </uix:NTypeInto>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Save'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,183" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="63f4d607-174b-4dcf-84ce-24c23edcbece" Version="V4">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Save'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,183" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="63f4d607-174b-4dcf-84ce-24c23edcbece" Version="V4">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="717d950f-b465-49e0-9e8d-940ac3b1230d" ContentHash="ns-EX7RNn0Wq-a98cU4xIA" CvElementArea="275, 1015, 62, 35" CvTextArea="291, 1026, 28, 12" CvTextArgument="Save" CvType="Button" DesignTimeRectangle="277, 1016, 59, 32" ElementType="Button" FullSelectorArgument="&lt;webctrl id='submitorders' tag='INPUT' /&gt;" Guid="d7e5d4fd-c6ee-4de6-95d4-8e217a48a50d" InformativeScreenshot="cb726dbdfb194bc90b9ac0bfa020d0b2.png" Reference="BkxQ1887pEidR6av2KDcrw/w6DqP8YmaEufJ-eUz9hWog" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
@@ -288,19 +419,12 @@
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
     </Sequence>
-    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="554,1387" sap2010:WorkflowViewState.IdRef="Sequence_18">
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="590,1210" sap2010:WorkflowViewState.IdRef="Sequence_18">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get test patient - Invoke Workflow File (Utilities\\Get test patient.xaml)" sap:VirtualizedContainerService.HintSize="502,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Utilities\\Get test patient.xaml">
-        <ui:InvokeWorkflowFile.Arguments>
-          <OutArgument x:TypeArguments="sd:DataRow" x:Key="outTestPatient">
-            <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">GlobalVariables.testPatient</CSharpReference>
-          </OutArgument>
-        </ui:InvokeWorkflowFile.Arguments>
-      </ui:InvokeWorkflowFile>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Search Order Template - Invoke Workflow File (Components\\Manage Patient Feeding Order\\Search Order Template.xaml)" sap:VirtualizedContainerService.HintSize="502,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Components\\Manage Patient Feeding Order\\Search Order Template.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:Boolean" x:Key="inIsActive">True</InArgument>
@@ -313,9 +437,6 @@
           <InArgument x:TypeArguments="x:String" x:Key="inOrderBase">Formula</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="inMilkBase">
             <Literal x:TypeArguments="x:String" Value="" />
-          </InArgument>
-          <InArgument x:TypeArguments="sd:DataRow" x:Key="inPatient">
-            <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">GlobalVariables.testPatient</CSharpValue>
           </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
