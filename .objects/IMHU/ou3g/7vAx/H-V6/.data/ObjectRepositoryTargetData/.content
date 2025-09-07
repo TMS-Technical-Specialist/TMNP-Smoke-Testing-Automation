@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="B6w0Vcjw1UGOksCMRpF6Og" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="localhost/babies/edit.php" CVScreenId="46d14019-8798-4d56-95fc-3f2e66873b94" CvElementArea="310, 500, 647, 49" CvType="InputBox" DesignTimeRectangle="308, 501, 648, 49" Guid="300e6972-f0de-4608-b2c6-ca014ab7e822" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Nutrition Platform ™ - Google Chrome' /&gt;" SearchSteps="FuzzySelector, CV" SelectionStrategy="AA" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="46d14019-8798-4d56-95fc-3f2e66873b94" CvTextArea="299, 410, 39, 12" CvType="Text" DesignTimeRectangle="308, 408, 30, 19" ElementType="InputBox" Guid="cc16db43-43b8-4795-88c8-3f8ba9ca1805" SearchSteps="Selector, CV">
+            <Target.CvTextArgument>
+              <p:InArgument x:TypeArguments="x:String">
+                <p:CSharpValue x:TypeArguments="x:String">string.Format("*{0}:", patientAccNumConf)</p:CSharpValue>
+              </p:InArgument>
+            </Target.CvTextArgument>
+            <Target.FullSelectorArgument>
+              <p:InArgument x:TypeArguments="x:String">
+                <p:CSharpValue x:TypeArguments="x:String">string.Format("&lt;ctrl name='Nutrition Platform ™' role='document' /&gt;&lt;ctrl role='editable text' text='{0}:' /&gt;", patientAccNumConf)</p:CSharpValue>
+              </p:InArgument>
+            </Target.FullSelectorArgument>
+          </Target>
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <TargetAnchorable.FuzzySelectorArgument>
+        <p:InArgument x:TypeArguments="x:String">
+          <p:CSharpValue x:TypeArguments="x:String">string.Format("&lt;ctrl name='Nutrition Platform ™' matching:name='fuzzy' fuzzylevel:name='0.0' role='document' /&gt;&lt;ctrl automationid='' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' role='grouping' text='{0} is required.' check:text='{0} is required.' /&gt;", patientAccNumConf)</p:CSharpValue>
+        </p:InArgument>
+      </TargetAnchorable.FuzzySelectorArgument>
+      <imageRef attrName="InformativeScreenshot" originalValue="78916adcfeba6ff595172b7fc606ad13.png" xmlns="">0T-Y6fvuSTEmv_ypnEP09rA</imageRef>
+    </TargetAnchorable>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData DefaultValue="CSN" Name="patientAccNumConf" />
+    </scg:List>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
