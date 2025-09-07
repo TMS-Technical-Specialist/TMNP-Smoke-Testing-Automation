@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="VMh7ydhPR0iQTEr8T7xNGA" Reference="BkxQ1887pEidR6av2KDcrw/4YXXt5jyPUikHeq1xd5q7g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="48TUr3f1z0irLhgt_nXL_A" Reference="BkxQ1887pEidR6av2KDcrw/4YXXt5jyPUikHeq1xd5q7g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
     <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="localhost/receive" DesignTimeRectangle="1587, 409, 296, 28" ElementType="Text" Guid="1867c98c-8f5f-4c1e-b23b-f7ef1b1b9e53" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
       <TargetAnchorable.FuzzySelectorArgument>
         <p:InArgument x:TypeArguments="x:String">
-          <p:CSharpValue x:TypeArguments="x:String">string.Format("&lt;webctrl id='results' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='select2-store_location{0}-container' /&gt;", firstContainerBarcode)</p:CSharpValue>
+          <p:CSharpValue x:TypeArguments="x:String">string.Format("&lt;webctrl id='results' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='select2-store_location{0}-container' /&gt;", inContainerList[0])</p:CSharpValue>
         </p:InArgument>
       </TargetAnchorable.FuzzySelectorArgument>
-      <imageRef attrName="InformativeScreenshot" originalValue="3b82a1297abb1d72e685224e3c7b36f1.png" xmlns="">0jrhQ2wAKCE2OY0NaCG-Nrw</imageRef>
+      <imageRef attrName="InformativeScreenshot" originalValue="3b82a1297abb1d72e685224e3c7b36f1.png" xmlns="">0B2bvExT-y0-uFbOmhQiUaA</imageRef>
     </TargetAnchorable>
-    <x:String x:Key="ActivityType">TypeInto</x:String>
     <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
-      <ObjectRepositoryVariableData DefaultValue="EHM000001" Name="firstContainerBarcode" />
+      <ObjectRepositoryVariableData DefaultValue="*" Name="inContainerList[0]" />
     </scg:List>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
   </ObjectRepositoryTargetData.Data>
 </ObjectRepositoryTargetData>

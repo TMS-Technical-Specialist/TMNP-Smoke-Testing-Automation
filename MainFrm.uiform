@@ -1,0 +1,108 @@
+﻿{
+  "Metadata": {
+    "Id": "19f6aebc-266e-4f08-a4ec-9253b6aae52f",
+    "Kind": "FormIo"
+  },
+  "DesignProperties": {
+    "Title": "Configuration",
+    "Theme": "Default",
+    "ShowInTaskbar": true,
+    "ShowMargin": false,
+    "CustomStyle": ""
+  },
+  "Data": {
+    "components": [
+      {
+        "tag": "h1",
+        "content": "<Font>Configuration</Font>",
+        "key": "label",
+        "input": false,
+        "tableView": false,
+        "label": "Label",
+        "type": "label"
+      },
+      {
+        "label": "URL",
+        "disabled": true,
+        "tableView": true,
+        "defaultValue": "http://localhost",
+        "key": "url",
+        "type": "textfield",
+        "input": true
+      },
+      {
+        "label": "Select workflow/screen to execute the test",
+        "widget": "choicesjs",
+        "placeholder": "Workflow/Screen Selection",
+        "tableView": true,
+        "data": {
+          "values": [
+            {
+              "label": "Full Smoke Test",
+              "value": "fullSmokeTest"
+            },
+            {
+              "label": "Demo",
+              "value": "demo"
+            },
+            {
+              "label": "Guardian",
+              "value": "guardian"
+            },
+            {
+              "label": "Patient",
+              "value": "patient"
+            },
+            {
+              "label": "Manage Patient Feeding Order",
+              "value": "managePatientFeedingOrder"
+            },
+            {
+              "label": "Print Collection Label",
+              "value": "printCollectionLabel"
+            },
+            {
+              "label": "Receive EHM",
+              "value": "receiveEhm"
+            },
+            {
+              "label": "Receive DHM",
+              "value": "receiveDhm"
+            },
+            {
+              "label": "Receive DHM",
+              "value": "receiveDhm"
+            },
+            {
+              "label": "Receive Product",
+              "value": "receiveProduct"
+            },
+            {
+              "label": "Prepare",
+              "value": "prepare"
+            },
+            {
+              "label": "Feed patient",
+              "value": "feedPatient"
+            },
+            {
+              "label": "Dosing",
+              "value": "dosing"
+            }
+          ]
+        },
+        "key": "selectWorkflowToExecute",
+        "type": "select",
+        "input": true
+      },
+      {
+        "type": "button",
+        "label": "Submit",
+        "key": "submit",
+        "disableOnInvalid": true,
+        "input": true,
+        "tableView": false
+      }
+    ]
+  }
+}
