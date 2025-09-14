@@ -118,11 +118,6 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get App Settings Value - Invoke Workflow File (Utilities\\Get App Settings Value.xaml)" sap:VirtualizedContainerService.HintSize="518,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Utilities\\Get App Settings Value.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <scg:Dictionary x:TypeArguments="x:String, Argument" />
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
     <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="518,418" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -255,19 +250,19 @@
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
     </Sequence>
-    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="518,1352" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="518,1529" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,1269" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" IsDisplayNameAuto="True" ScopeGuid="68ce868b-2c52-4946-b281-4abe451636d6" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,1446" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" IsDisplayNameAuto="True" ScopeGuid="68ce868b-2c52-4946-b281-4abe451636d6" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1028" sap2010:WorkflowViewState.IdRef="Sequence_14">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1205" sap2010:WorkflowViewState.IdRef="Sequence_14">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Boolean" Name="scanPatientBarcode" />
                 <Variable x:TypeArguments="x:Boolean" Name="selectPatientDropdown" />
@@ -289,7 +284,7 @@
                   </OutArgument>
                 </ui:UiElementExists.Exists>
                 <ui:UiElementExists.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a01e6c46-0d10-497e-a324-967a79194732" InformativeScreenshot="a4cbbba6bb2d49e8e31c144b327929a9" Selector="&lt;webctrl id='baby_scan' tag='INPUT' /&gt;" TimeoutMS="5000" WaitForReady="COMPLETE" />
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a01e6c46-0d10-497e-a324-967a79194732" InformativeScreenshot="a4cbbba6bb2d49e8e31c144b327929a9" Selector="&lt;webctrl id='baby_scan' tag='INPUT' /&gt;" TimeoutMS="1000" WaitForReady="COMPLETE" />
                 </ui:UiElementExists.Target>
               </ui:UiElementExists>
               <ui:UiElementExists DisplayName="Select Patient dropdown" sap:VirtualizedContainerService.HintSize="416,139" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
@@ -299,7 +294,7 @@
                   </OutArgument>
                 </ui:UiElementExists.Exists>
                 <ui:UiElementExists.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="aa051fd7-15d1-46b3-9cbc-d57ecec2261c" InformativeScreenshot="f0c17aa60db95708e2e70a55dcf15179" Selector="&lt;webctrl id='baby_select' tag='SELECT' /&gt;" TimeoutMS="5000" WaitForReady="COMPLETE" />
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="aa051fd7-15d1-46b3-9cbc-d57ecec2261c" InformativeScreenshot="f0c17aa60db95708e2e70a55dcf15179" Selector="&lt;webctrl id='baby_select' tag='SELECT' /&gt;" TimeoutMS="1000" WaitForReady="COMPLETE" />
                 </ui:UiElementExists.Target>
               </ui:UiElementExists>
               <ui:UiElementExists DisplayName="Scan Guardian Barcode" sap:VirtualizedContainerService.HintSize="416,139" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
@@ -309,7 +304,7 @@
                   </OutArgument>
                 </ui:UiElementExists.Exists>
                 <ui:UiElementExists.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="51641788-26b8-4541-a285-8cf41ded031a" InformativeScreenshot="4560a4e1793e12d9262c77105a6c2bbd" Selector="&lt;webctrl id='mother' tag='INPUT' /&gt;" TimeoutMS="5000" WaitForReady="COMPLETE" />
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="51641788-26b8-4541-a285-8cf41ded031a" InformativeScreenshot="4560a4e1793e12d9262c77105a6c2bbd" Selector="&lt;webctrl id='mother' tag='INPUT' /&gt;" TimeoutMS="1000" WaitForReady="COMPLETE" />
                 </ui:UiElementExists.Target>
               </ui:UiElementExists>
               <ui:UiElementExists DisplayName="Select guardian dropdown" sap:VirtualizedContainerService.HintSize="416,139" sap2010:WorkflowViewState.IdRef="UiElementExists_7">
@@ -319,14 +314,14 @@
                   </OutArgument>
                 </ui:UiElementExists.Exists>
                 <ui:UiElementExists.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1d4e93d7-ab73-49f2-938a-dae7813c8bbe" InformativeScreenshot="32fb166c5904faef4cc4213523bcf458" Selector="&lt;webctrl aria-role='textbox' idx='2' tag='SPAN' /&gt;" TimeoutMS="5000" WaitForReady="COMPLETE" />
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1d4e93d7-ab73-49f2-938a-dae7813c8bbe" InformativeScreenshot="32fb166c5904faef4cc4213523bcf458" Selector="&lt;webctrl aria-role='textbox' idx='2' tag='SPAN' /&gt;" TimeoutMS="1000" WaitForReady="COMPLETE" />
                 </ui:UiElementExists.Target>
               </ui:UiElementExists>
               <uix:NGetText DisplayName="Get default number of labels" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,139" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="68ce868b-2c52-4946-b281-4abe451636d6" Version="V5">
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/printlabels" CVScreenId="7923d97d-d7d4-49eb-98f8-6f87c50e79ab" CvElementArea="354, 706, 1454, 45" CvType="InputBox" DesignTimeRectangle="356, 707, 1458, 42" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='new_bottles' matching:id='fuzzy' fuzzylevel:id='0.0' tag='SELECT' type='' class='form-control' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="6463c7a9-a891-43dd-baa0-a382389511dc" InformativeScreenshot="251601c5b2457b15b58c4bb96740985b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target CVScreenId="7923d97d-d7d4-49eb-98f8-6f87c50e79ab" CvTextArea="354, 689, 147, 12" CvTextArgument="How Many New Labels?" CvType="Text" DesignTimeRectangle="356, 686, 1458, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='How Many New Labels?' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='How Many New Labels?' /&gt;" Guid="750969bc-ff8e-45c5-9cbd-1e607dcacc58" SearchSteps="FuzzySelector, CV" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
@@ -345,19 +340,53 @@
                   </OutArgument>
                 </ui:UiElementExists.Exists>
                 <ui:UiElementExists.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="983afbc7-72d5-4d79-9a05-95357f69bc24" InformativeScreenshot="c7a3f2e94dc0a05614e6ac5ed3fe6845" Selector="&lt;webctrl id='pump_date_time_language-Spanish' tag='INPUT' /&gt;" TimeoutMS="5000" WaitForReady="COMPLETE" />
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="983afbc7-72d5-4d79-9a05-95357f69bc24" InformativeScreenshot="c7a3f2e94dc0a05614e6ac5ed3fe6845" Selector="&lt;webctrl id='pump_date_time_language-Spanish' tag='INPUT' /&gt;" TimeoutMS="1000" WaitForReady="COMPLETE" />
                 </ui:UiElementExists.Target>
               </ui:UiElementExists>
-              <ui:UiElementExists DisplayName="Arabic date time pump" sap:VirtualizedContainerService.HintSize="416,132" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
+              <ui:UiElementExists DisplayName="Arabic date time pump" sap:VirtualizedContainerService.HintSize="416,139" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
                 <ui:UiElementExists.Exists>
                   <OutArgument x:TypeArguments="x:Boolean">
                     <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">arabicDateTimePumpOption</CSharpReference>
                   </OutArgument>
                 </ui:UiElementExists.Exists>
                 <ui:UiElementExists.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="983afbc7-72d5-4d79-9a05-95357f69bc24" InformativeScreenshot="70ad91843dfd8556a3b454afaeb3cc72" Selector="&lt;webctrl id='pump_date_time_language-Arabic' tag='INPUT' /&gt;" TimeoutMS="5000" WaitForReady="COMPLETE" />
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="983afbc7-72d5-4d79-9a05-95357f69bc24" InformativeScreenshot="70ad91843dfd8556a3b454afaeb3cc72" Selector="&lt;webctrl id='pump_date_time_language-Arabic' tag='INPUT' /&gt;" TimeoutMS="1000" WaitForReady="COMPLETE" />
                 </ui:UiElementExists.Target>
               </ui:UiElementExists>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Test Result - Invoke Workflow File (Utilities\\Update Test Result.xaml)" sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Utilities\\Update Test Result.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:Boolean" x:Key="inSaveResult">True</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="inScenarioName">Print Guardian Container</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="inFailureReason">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37" xml:space="preserve">$"• Print Collection Label UI Verification\n" +
+$"     • Expected output: \n" + 
+$"       allow_users_to_scan_babies_for_print = {isScanBabies}\n" + 
+$"       allow_users_to_select_babies_for_print = {isSelectBabies}\n" +
+$"       allow_users_to_select_mothers_for_print = {isSelectGuardian}\n" +
+$"       Scan guardian barcode = {isScanGuardian}\n" +
+$"       print_bottles/bottle_count_dropdown_default = {defaultBottleDropdown}\n" +
+$"       issue/allow_spanish_text = {isAllowSpanishText}\n" +
+$"       issue/allow_arabic_text = {isAllowArabicText}\n" +
+$"     • Actual Output: \n"  +
+$"       allow_users_to_scan_babies_for_print = {scanPatientBarcode}\n" +
+$"       allow_users_to_select_babies_for_print = {selectPatientDropdown}\n" +
+$"       allow_users_to_select_mothers_for_print = {selectGuardianDropdown}\n" +
+$"       Scan guardian barcode = {scanGuardianBarcode}" +
+$"       print_bottles/bottle_count_dropdown_default = {selectedNumberOfLabels}\n" +
+$"       issue/allow_spanish_text = {spanishDateTimePump}\n" +
+$"       issue/allow_arabic_text = {arabicDateTimePumpOption}\n"</CSharpValue>
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:Boolean" x:Key="inTestResult">
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_39" xml:space="preserve">isScanBabies == scanPatientBarcode &amp;&amp; 
+isSelectBabies == selectPatientDropdown &amp;&amp; 
+isSelectGuardian == selectGuardianDropdown &amp;&amp; 
+isScanGuardian == scanGuardianBarcode &amp;&amp; 
+defaultBottleDropdown == selectedNumberOfLabels &amp;&amp; 
+isAllowSpanishText == spanishDateTimePump &amp;&amp;
+isAllowArabicText == arabicDateTimePumpOption</CSharpValue>
+                  </InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
             </Sequence>
           </ActivityAction>
         </uix:NApplicationCard.Body>
