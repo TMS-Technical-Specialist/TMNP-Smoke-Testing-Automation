@@ -115,7 +115,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Prepare___Feed_thawed_container" sap:VirtualizedContainerService.HintSize="1205,2520" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Prepare___Feed_thawed_container" sap:VirtualizedContainerService.HintSize="891,2471" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="preparedContainers">
         <Variable.Default>
@@ -469,7 +469,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(9)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,410" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsDisplayNameAuto="True" ScopeGuid="0078d67e-606e-445b-af1b-0b4b3bd5f6cd" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,410" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsDisplayNameAuto="True" ScopeGuid="0078d67e-606e-445b-af1b-0b4b3bd5f6cd" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -602,7 +602,7 @@
               </ActivityAction>
             </uix:NApplicationCard.Body>
             <uix:NApplicationCard.TargetApp>
-              <uix:TargetApp Area="0, 0, 0, 0" ContentHash="6vHdMDmW5U2PnqY97GLYrQ" Reference="BkxQ1887pEidR6av2KDcrw/1jSz78ZV9kygMHrFswj9Pg" Selector="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" Version="V2" />
+              <uix:TargetApp Area="0, 0, 0, 0" Selector="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" Version="V2" />
             </uix:NApplicationCard.TargetApp>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -620,20 +620,20 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <Sequence DisplayName="Verify success prepare screen" sap:VirtualizedContainerService.HintSize="520,981" sap2010:WorkflowViewState.IdRef="Sequence_8">
+    <Sequence DisplayName="Verify success prepare screen" sap:VirtualizedContainerService.HintSize="520,932" sap2010:WorkflowViewState.IdRef="Sequence_8">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(10)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,889" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" ScopeGuid="d1ede2a1-ffbc-4fbc-bbed-272ad032efa9" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(10)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,840" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" ScopeGuid="d1ede2a1-ffbc-4fbc-bbed-272ad032efa9" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,648" sap2010:WorkflowViewState.IdRef="Sequence_13">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,599" sap2010:WorkflowViewState.IdRef="Sequence_13">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="prepareSuccessMessage" />
               </Sequence.Variables>
@@ -643,7 +643,7 @@
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="If_3">
+              <If sap:VirtualizedContainerService.HintSize="452,630" sap2010:WorkflowViewState.IdRef="If_3">
                 <If.Condition>
                   <InArgument x:TypeArguments="x:Boolean">
                     <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">(bool)GlobalVariables.appSettings["prepare/force_choose_location"]</CSharpValue>
@@ -656,7 +656,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,482" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,433" sap2010:WorkflowViewState.IdRef="Sequence_17">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="scg:List(x:String)" Name="storageLocationList" />
                     </Sequence.Variables>
@@ -666,7 +666,7 @@
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NGetAttributeGeneric x:TypeArguments="scg:List(x:String)" Attribute="items" DisplayName="Get prep storage list" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,241" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_2" ScopeIdentifier="0078d67e-606e-445b-af1b-0b4b3bd5f6cd" Version="V4">
+                    <uix:NGetAttributeGeneric x:TypeArguments="scg:List(x:String)" Attribute="items" DisplayName="Get prep storage list" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,192" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_2" ScopeIdentifier="d1ede2a1-ffbc-4fbc-bbed-272ad032efa9" Version="V4">
                       <uix:NGetAttributeGeneric.Result>
                         <OutArgument x:TypeArguments="scg:List(x:String)">
                           <CSharpReference x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_22">storageLocationList</CSharpReference>
@@ -682,7 +682,7 @@
                         </uix:TargetAnchorable>
                       </uix:NGetAttributeGeneric.Target>
                     </uix:NGetAttributeGeneric>
-                    <uix:NSelectItem DisplayName="Select prep storage list" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,181" sap2010:WorkflowViewState.IdRef="NSelectItem_2" ScopeIdentifier="0078d67e-606e-445b-af1b-0b4b3bd5f6cd" Version="V4">
+                    <uix:NSelectItem DisplayName="Select prep storage list" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,181" sap2010:WorkflowViewState.IdRef="NSelectItem_2" ScopeIdentifier="d1ede2a1-ffbc-4fbc-bbed-272ad032efa9" Version="V4">
                       <uix:NSelectItem.Item>
                         <InArgument x:TypeArguments="x:String">
                           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">storageLocationList.FirstOrDefault(item =&gt; item.Contains("Ref"))</CSharpValue>
@@ -759,7 +759,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NClick>
-              <uix:NGetText DisplayName="Get success prepare message" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,190" sap2010:WorkflowViewState.IdRef="NGetText_13" ScopeIdentifier="d1ede2a1-ffbc-4fbc-bbed-272ad032efa9" Version="V4">
+              <uix:NGetText DisplayName="Get success prepare message" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,139" sap2010:WorkflowViewState.IdRef="NGetText_13" ScopeIdentifier="d1ede2a1-ffbc-4fbc-bbed-272ad032efa9" Version="V4">
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/prepare" CVScreenId="0015e15e-ec66-48fb-a444-77385372fad8" ContentHash="mHI6azaL5U-LCjeF4_Xt5A" CvType="AnyWordGroup" DesignTimeRectangle="354, 324, 585, 19" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='app' tag='STRONG' /&gt;" Guid="f8652660-f850-4ca3-a32d-534397747dd6" InformativeScreenshot="fd326ea92f713975871eb5743fc095d0.png" Reference="BkxQ1887pEidR6av2KDcrw/i1HZsY-Y1EGWh57-FEpJ2Q" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
                 </uix:NGetText.Target>
