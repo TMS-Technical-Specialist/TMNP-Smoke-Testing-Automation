@@ -1,0 +1,1352 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Receive_DHM" this:Receive_DHM.numberOfLabels="1" this:Receive_DHM.isUIVerification="False" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=System.Private.CoreLib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uuam="clr-namespace:UiPath.UIAutomationNext.Activities.Models;assembly=UiPath.UIAutomationNext.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="outTestResult" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="outFailureReason" Type="OutArgument(x:String)" />
+    <x:Property Name="outDHMContainers" Type="InArgument(s:String[])" />
+    <x:Property Name="numberOfLabels" Type="InArgument(x:Int32)" />
+    <x:Property Name="isUIVerification" Type="InArgument(x:Boolean)" />
+    <x:Property Name="mbmsBarcodes" Type="InArgument(s:String[])" />
+  </x:Members>
+  <this:Receive_DHM.mbmsBarcodes>
+    <InArgument x:TypeArguments="s:String[]">
+      <CSharpValue x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_129">new string[] { }</CSharpValue>
+    </InArgument>
+  </this:Receive_DHM.mbmsBarcodes>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.Web.Activities.Http.Models</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Web.Activities.Http</x:String>
+      <x:String>UiPath.Sdk.Activities</x:String>
+      <x:String>UiPath.Sdk.Activities.DependencyInjection.Contracts</x:String>
+      <x:String>UiPath.Sdk.Activities.DependencyInjection</x:String>
+      <x:String>UiPath.Web</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
+      <AssemblyReference>UiPath.Web</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Receive_DHM" sap:VirtualizedContainerService.HintSize="1212,3097" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="defaultMilkBank" />
+      <Variable x:TypeArguments="x:String" Name="defaultDonorVolume" />
+      <Variable x:TypeArguments="x:String" Name="defaultCalOz" />
+      <Variable x:TypeArguments="x:Boolean" Name="trackCalOz" />
+      <Variable x:TypeArguments="x:Boolean" Name="defaulReceieveDonorMeasurement" />
+      <Variable x:TypeArguments="x:String" Name="volumeFieldValue" />
+      <Variable x:TypeArguments="x:String" Name="defaultUICalOz" />
+      <Variable x:TypeArguments="x:Boolean" Name="isCalOzFieldVisible" />
+      <Variable x:TypeArguments="x:String" Name="volumeMeasurement" />
+      <Variable x:TypeArguments="x:String" Name="displayedUICalOz" />
+      <Variable x:TypeArguments="x:String" Name="milkbankFieldValue" />
+      <Variable x:TypeArguments="x:String" Name="storageLocationValue" />
+      <Variable x:TypeArguments="x:String" Name="defaultStorageLocationID" />
+      <Variable x:TypeArguments="x:String" Name="calOzFieldValue" />
+      <Variable x:TypeArguments="x:String" Name="firstSuccessMessage" />
+      <Variable x:TypeArguments="x:String" Name="secondSucessMessage" />
+      <Variable x:TypeArguments="x:String" Name="finalStorageLocationValue" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="652,335" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">defaultMilkBank</CSharpReference>
+              </OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">GlobalVariables.appSettings["default_donor_milk_bank"].ToString()</CSharpValue>
+              </InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">defaultDonorVolume</CSharpReference>
+              </OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">GlobalVariables.appSettings["default_donor_volume"].ToString()</CSharpValue>
+              </InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">defaultCalOz</CSharpReference>
+              </OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">GlobalVariables.appSettings["donor/default_cal_oz"].ToString()</CSharpValue>
+              </InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Boolean">
+                <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">trackCalOz</CSharpReference>
+              </OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Boolean">
+                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">(bool)GlobalVariables.appSettings["donor/track_cal_oz"]</CSharpValue>
+              </InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Boolean">
+                <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">defaulReceieveDonorMeasurement</CSharpReference>
+              </OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Boolean">
+                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_40">(bool)GlobalVariables.appSettings["donor/receive/use_oz_measurement"]</CSharpValue>
+              </InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_16">defaultUICalOz</CSharpReference>
+              </OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_41">GlobalVariables.appSettings["cal_per_ui"].ToString()</CSharpValue>
+              </InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_21">defaultStorageLocationID</CSharpReference>
+              </OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">GlobalVariables.appSettings["donor/receive/default_storage_location_id"].ToString()</CSharpValue>
+              </InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(9)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="652,2739" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="3e125b5d-95ba-4b81-a41f-d0385bfc47bf" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="618,2498" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="storageLocationElements" />
+              <Variable x:TypeArguments="x:String" Name="firstStorageLocation" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click sidebar Receieve DHM SubMenu - Invoke Workflow File (Components\\Buttons\\Click sidebar Receieve DHM SubMenu.xaml)" sap:VirtualizedContainerService.HintSize="584,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click sidebar Receieve DHM SubMenu.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <scg:Dictionary x:TypeArguments="x:String, Argument" />
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <If DisplayName="If - Receive MBMS Barcode" sap:VirtualizedContainerService.HintSize="584,57" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Condition>
+                <InArgument x:TypeArguments="x:Boolean">
+                  <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">mbmsBarcodes.Length &gt; 0</CSharpValue>
+                </InArgument>
+              </If.Condition>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,25" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type into barcode field" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,251" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="DebuggerApi" ScopeIdentifier="3e125b5d-95ba-4b81-a41f-d0385bfc47bf" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="localhost/receivedonors" CVScreenId="133a1c21-fdee-4bfb-99dc-6b218d0889ba" CvElementArea="351, 427, 1462, 45" CvType="InputBox" DesignTimeRectangle="356, 429, 1458, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='batch_number' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='text' class='scanbottle form-control' matching:class='fuzzy' fuzzylevel:class='0.0' name='batch_number' parentclass='form-group' parentid='nonFullyAutomaticDiv' parentname='theform' /&gt;" Guid="5bedc362-f106-4607-a336-741cb016819f" InformativeScreenshot="1737edc4ab5683740059877720a41142.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="133a1c21-fdee-4bfb-99dc-6b218d0889ba" DesignTimeRectangle="356, 392, 1458, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' parentclass='form-group' parentid='nonFullyAutomaticDiv' parentname='theform' /&gt;" Guid="03578def-b51f-414e-888c-3aa3d3d519f5" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.Text>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">mbmsBarcodes[0]</CSharpValue>
+                      </InArgument>
+                    </uix:NTypeInto.Text>
+                  </uix:NTypeInto>
+                  <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each mbmsBarcode" sap:VirtualizedContainerService.HintSize="478,424" sap2010:WorkflowViewState.IdRef="ForEach`1_1">
+                    <ui:ForEach.Body>
+                      <ActivityAction x:TypeArguments="x:String">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:String" Name="mbmsBarcode" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,302" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Scan Donor Bottles'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,242" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="DebuggerApi" ScopeIdentifier="3e125b5d-95ba-4b81-a41f-d0385bfc47bf" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable BrowserURL="localhost/receivedonors" CVScreenId="322c5a1f-afbd-491e-a911-a8f5ebdf0e4a" CvElementArea="354, 411, 803, 45" CvType="InputBox" DesignTimeRectangle="356, 413, 802, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='auto_donor_bottle' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='text' class='multiscan form-control scanbottle form-control form-control' matching:class='fuzzy' fuzzylevel:class='0.0' name='auto_donor_bottle' parentclass='form-group' parentid='fullyAutomaticDiv' parentname='theform' /&gt;" Guid="f56e0b6e-13f8-4eed-844f-68567eab63e2" InformativeScreenshot="73c41a8db02bfff6593d5951e330bf4b.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="322c5a1f-afbd-491e-a911-a8f5ebdf0e4a" DesignTimeRectangle="356, 392, 802, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='auto_donor_bottle_label' matching:id='fuzzy' fuzzylevel:id='0.0' tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' parentclass='form-group' parentid='fullyAutomaticDiv' parentname='theform' /&gt;" Guid="dab9c419-1ffd-4aea-b116-86becb01de95" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NTypeInto.Target>
+                            <uix:NTypeInto.Text>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">mbmsBarcode</CSharpValue>
+                              </InArgument>
+                            </uix:NTypeInto.Text>
+                          </uix:NTypeInto>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEach.Body>
+                    <ui:ForEach.Values>
+                      <InArgument x:TypeArguments="sc:IEnumerable">
+                        <CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">mbmsBarcodes.Skip(1)</CSharpValue>
+                      </InArgument>
+                    </ui:ForEach.Values>
+                  </ui:ForEach>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,1173" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="milkbankListStr" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NGetText DisplayName="Get MilkBank field value" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,139" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="3e125b5d-95ba-4b81-a41f-d0385bfc47bf" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="localhost/receivedonors" CVScreenId="f7550520-8a83-4841-8aa9-c05380063806" ContentHash="Ot2H1jf5-0WPgcQdhwkUsA" CvElementArea="400, 501, 1366, 44" CvType="InputBox" DesignTimeRectangle="404, 504, 1365, 40" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-role='textbox' tag='SPAN' class='select2-selection__rendered' id='select2-milk_bank-container' parentclass='select2-selection select2-selection--single' parentid='nonFullyAutomaticDiv' parentname='theform' /&gt;" Guid="c4f39eac-7f36-473f-ad10-0fe3c53ebd9a" InformativeScreenshot="19553b769450bd037137fb800cf45698.png" Reference="BkxQ1887pEidR6av2KDcrw/AfalZG6G40ikyAFMVWoIXA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="f7550520-8a83-4841-8aa9-c05380063806" DesignTimeRectangle="403, 484, 1367, 16" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' parentclass='form-group' parentid='nonFullyAutomaticDiv' parentname='theform' /&gt;" Guid="73fb5e07-5963-497b-9ac3-c94b1c52b44b" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                    <uix:NGetText.TextString>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_20">milkbankFieldValue</CSharpReference>
+                      </OutArgument>
+                    </uix:NGetText.TextString>
+                  </uix:NGetText>
+                  <If DisplayName="If - For UI Verification" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="If_5">
+                    <If.Condition>
+                      <InArgument x:TypeArguments="x:Boolean">
+                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_39">isUIVerification</CSharpValue>
+                      </InArgument>
+                    </If.Condition>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,1026" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NGetText DisplayName="Get default volume value" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,139" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="3e125b5d-95ba-4b81-a41f-d0385bfc47bf" Version="V5">
+                          <uix:NGetText.Target>
+                            <uix:TargetAnchorable BrowserURL="localhost/receivedonors" CVScreenId="e260af2e-ee00-4f95-91ec-e492f9f89a69" ContentHash="GwWiKiwXDEmicBkWIRfUBw" CvElementArea="401, 750, 140, 42" CvType="InputBox" DesignTimeRectangle="403, 751, 136, 39" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='volume' tag='INPUT' class='form-control' name='volume' parentclass='form-inline' parentid='nonFullyAutomaticDiv' parentname='theform' /&gt;" Guid="4ddd36f1-0501-41ad-88e2-e49c4e8a6594" InformativeScreenshot="a113d5631cff5aa9c366814e9d02c86d.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/4z9kfNOUXUK1NPafk3XhSg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CVScreenId="e260af2e-ee00-4f95-91ec-e492f9f89a69" DesignTimeRectangle="403, 731, 1367, 17" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' parentclass='form-group' parentid='nonFullyAutomaticDiv' parentname='theform' /&gt;" Guid="3e6deeeb-849c-4071-8bd2-3c34f6a77d5f" SearchSteps="FuzzySelector" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NGetText.Target>
+                          <uix:NGetText.TextString>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">volumeFieldValue</CSharpReference>
+                            </OutArgument>
+                          </uix:NGetText.TextString>
+                        </uix:NGetText>
+                        <uix:NGetText DisplayName="Get volume measurement" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,139" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="3e125b5d-95ba-4b81-a41f-d0385bfc47bf" Version="V5">
+                          <uix:NGetText.Target>
+                            <uix:TargetAnchorable BrowserURL="localhost/receivedonors" CVScreenId="d612e8f4-5b63-495b-b66b-34a5d1c84675" ContentHash="UcOS6uNnR0ePnbxBz56j0g" DesignTimeRectangle="541, 755, 22, 27" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='P' parentclass='form-inline' parentid='nonFullyAutomaticDiv' parentname='theform' /&gt;" Guid="9f91f33f-dddb-4175-a215-4fa7ed08ee73" InformativeScreenshot="6a3a6a1b7733f3e4c2068f0c85ac5457.png" Reference="BkxQ1887pEidR6av2KDcrw/4ukTX8tBikipz5C8QywNtw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CVScreenId="d612e8f4-5b63-495b-b66b-34a5d1c84675" CvElementArea="401, 750, 140, 42" CvType="InputBox" DesignTimeRectangle="403, 751, 136, 39" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='volume' tag='INPUT' class='form-control' parentclass='form-inline' parentid='nonFullyAutomaticDiv' parentname='theform' /&gt;" Guid="887a74d4-f129-4eec-a4f5-07351131e4e5" SearchSteps="Selector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NGetText.Target>
+                          <uix:NGetText.TextString>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_15">volumeMeasurement</CSharpReference>
+                            </OutArgument>
+                          </uix:NGetText.TextString>
+                        </uix:NGetText>
+                        <ui:UiElementExists DisplayName="Check cal oz field visibility" sap:VirtualizedContainerService.HintSize="452,139" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                          <ui:UiElementExists.Exists>
+                            <OutArgument x:TypeArguments="x:Boolean">
+                              <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_17">isCalOzFieldVisible</CSharpReference>
+                            </OutArgument>
+                          </ui:UiElementExists.Exists>
+                          <ui:UiElementExists.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9448dd70-bb48-4472-b964-f908a38d11fb" InformativeScreenshot="60a18e007a24c52d2b41757a1490b9e2" Selector="&lt;webctrl id='cal_oz' tag='SELECT' class='form-control' name='cal_oz' parentclass='form-group' parentid='nonFullyAutomaticDiv' parentname='theform' /&gt;" TimeoutMS="1000">
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:UiElementExists.Target>
+                        </ui:UiElementExists>
+                        <If sap:VirtualizedContainerService.HintSize="452,549" sap2010:WorkflowViewState.IdRef="If_6">
+                          <If.Condition>
+                            <InArgument x:TypeArguments="x:Boolean">
+                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">trackCalOz &amp;&amp; isCalOzFieldVisible</CSharpValue>
+                            </InArgument>
+                          </If.Condition>
+                          <If.Then>
+                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,329" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NGetText DisplayName="Get cal oz UI Display" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,139" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="3e125b5d-95ba-4b81-a41f-d0385bfc47bf" Version="V5">
+                                <uix:NGetText.Target>
+                                  <uix:TargetAnchorable BrowserURL="localhost/receivedonors" CVScreenId="d26ad48c-fb9d-4204-9a4a-ee24d5524ba7" ContentHash="_FOONxJUV0imKkPQD1k-wA" CvType="AnyWordGroup" DesignTimeRectangle="403, 814, 136, 16" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' parentclass='form-group' parentid='nonFullyAutomaticDiv' parentname='theform' /&gt;" Guid="596085f4-1078-4b28-baf0-8a1ab0e60bb2" InformativeScreenshot="25a81c3f6bf2486860108087c8fe6bc2.png" Reference="BkxQ1887pEidR6av2KDcrw/QhRrJpXUPEu0aONQMgEI5g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target CVScreenId="d26ad48c-fb9d-4204-9a4a-ee24d5524ba7" CvElementArea="401, 832, 139, 43" CvType="InputBox" DesignTimeRectangle="403, 833, 136, 40" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='cal_oz' tag='SELECT' class='form-control' name='cal_oz' parentclass='form-group' parentid='nonFullyAutomaticDiv' parentname='theform' /&gt;" Guid="d359fbc7-3552-4258-b343-51f31a0b5ac0" SearchSteps="Selector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NGetText.Target>
+                                <uix:NGetText.TextString>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_18">displayedUICalOz</CSharpReference>
+                                  </OutArgument>
+                                </uix:NGetText.TextString>
+                              </uix:NGetText>
+                              <uix:NGetText DisplayName="Get Cal Oz Current Value" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,130" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="3e125b5d-95ba-4b81-a41f-d0385bfc47bf" Version="V5">
+                                <uix:NGetText.Target>
+                                  <uix:TargetAnchorable BrowserURL="localhost/receivedonors" CVScreenId="d26ad48c-fb9d-4204-9a4a-ee24d5524ba7" ContentHash="dQglxiAwB0mQdQCM6Af4Ag" CvElementArea="401, 832, 139, 43" CvType="InputBox" DesignTimeRectangle="403, 833, 136, 40" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='cal_oz' matching:id='fuzzy' fuzzylevel:id='0.0' tag='SELECT' type='' class='form-control' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' name='cal_oz' parentclass='form-group' parentid='nonFullyAutomaticDiv' parentname='theform' /&gt;" Guid="83364d5e-6641-49e8-832b-256921ee5eae" InformativeScreenshot="622455d2df99b95a687d1fcaf1b4498e.png" Reference="BkxQ1887pEidR6av2KDcrw/tj1XFQHKVUmQxxQhrujllg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target CVScreenId="d26ad48c-fb9d-4204-9a4a-ee24d5524ba7" DesignTimeRectangle="403, 814, 136, 16" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' parentclass='form-group' parentid='nonFullyAutomaticDiv' parentname='theform' /&gt;" Guid="85f342d3-3aea-4f55-9ee4-bcb267d315d8" SearchSteps="FuzzySelector" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NGetText.Target>
+                                <uix:NGetText.TextString>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_19">calOzFieldValue</CSharpReference>
+                                  </OutArgument>
+                                </uix:NGetText.TextString>
+                              </uix:NGetText>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,25" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type into barcode field" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="DebuggerApi" ScopeIdentifier="3e125b5d-95ba-4b81-a41f-d0385bfc47bf" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="localhost/receivedonors" CVScreenId="133a1c21-fdee-4bfb-99dc-6b218d0889ba" CvElementArea="351, 427, 1462, 45" CvType="InputBox" DesignTimeRectangle="356, 429, 1458, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='batch_number' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='text' class='scanbottle form-control' matching:class='fuzzy' fuzzylevel:class='0.0' name='batch_number' parentclass='form-group' parentid='nonFullyAutomaticDiv' parentname='theform' /&gt;" Guid="5bedc362-f106-4607-a336-741cb016819f" InformativeScreenshot="1737edc4ab5683740059877720a41142.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="133a1c21-fdee-4bfb-99dc-6b218d0889ba" DesignTimeRectangle="356, 392, 1458, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' parentclass='form-group' parentid='nonFullyAutomaticDiv' parentname='theform' /&gt;" Guid="03578def-b51f-414e-888c-3aa3d3d519f5" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.Text>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">"batch#" + DateTime.Now.ToString("ddHHmmss")</CSharpValue>
+                      </InArgument>
+                    </uix:NTypeInto.Text>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NTypeInto>
+                  <If DisplayName="If - Select Milkbank if field is empty" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="If_7">
+                    <If.Condition>
+                      <InArgument x:TypeArguments="x:Boolean">
+                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_58">milkbankFieldValue == ""</CSharpValue>
+                      </InArgument>
+                    </If.Condition>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,684" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Enter the Milk Bank Field'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,190" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3e125b5d-95ba-4b81-a41f-d0385bfc47bf" Version="V5">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="localhost/receivedonors" CVScreenId="b6a8bf60-cd4b-45d4-b837-a4d476bdbaf5" ContentHash="BOeF6Dcf8kWJ8WlbHQnUug" CvElementArea="354, 515, 1456, 46" CvType="InputBox" DesignTimeRectangle="357, 518, 1456, 42" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-role='textbox' tag='SPAN' class='select2-selection__rendered' id='select2-milk_bank-container' parentclass='select2-selection select2-selection--single' parentid='nonFullyAutomaticDiv' parentname='theform' /&gt;" Guid="09baa69e-1c32-4727-99c2-546a58e0cccf" InformativeScreenshot="534b92168a753809ec374df244700ed4.png" Reference="BkxQ1887pEidR6av2KDcrw/yLFpT7Oa3kKWEyCvHsjx6Q" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CVScreenId="b6a8bf60-cd4b-45d4-b837-a4d476bdbaf5" DesignTimeRectangle="356, 496, 1458, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' parentclass='form-group' parentid='nonFullyAutomaticDiv' parentname='theform' /&gt;" Guid="562f6b39-2539-4c82-882d-57a4a7a5f7fb" SearchSteps="FuzzySelector" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Milk Bank List String" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,192" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" ScopeIdentifier="3e125b5d-95ba-4b81-a41f-d0385bfc47bf" Version="V5">
+                          <uix:NGetAttributeGeneric.Result>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">milkbankListStr</CSharpReference>
+                            </OutArgument>
+                          </uix:NGetAttributeGeneric.Result>
+                          <uix:NGetAttributeGeneric.Target>
+                            <uix:TargetAnchorable BrowserURL="localhost/receivedonors" CVScreenId="7df00aae-f905-4252-a365-b3c24d929c6f" ContentHash="hmafJ_EW80yRN4bh7a-uiQ" CvElementArea="352, 399, 1456, 34" CvType="InputBox" DesignTimeRectangle="357, 561, 1456, 200" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='UL' class='select2-results__options' id='select2-milk_bank-results' aria-role='listbox' /&gt;" Guid="5aec4369-55cb-4828-a0f4-d7d0425e75e8" InformativeScreenshot="dddc75eaa2b691af0c1d153f1b9f9f4b.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/JGA5iSErXUO0PrSYQRQXYg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CVScreenId="0d78e9d1-ddf3-4477-8a8d-4dc9754c5a6b" DesignTimeRectangle="356, 459, 1458, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' parentclass='form-group' parentid='nonFullyAutomaticDiv' parentname='theform' /&gt;" Guid="6b3525ab-d7c0-4f07-834d-9f6a82988b0b" SearchSteps="FuzzySelector" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NGetAttributeGeneric.Target>
+                        </uix:NGetAttributeGeneric>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Search first Milkbank and press enter" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,242" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="DebuggerApi" ScopeIdentifier="3e125b5d-95ba-4b81-a41f-d0385bfc47bf" Version="V5">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="localhost/receivedonors" CVScreenId="b63d9c99-8899-4d39-986f-417d18584313" ContentHash="JBv4gLl_NkKyr4XZpEz5aQ" CvElementArea="354, 562, 1454, 33" CvType="InputBox" DesignTimeRectangle="361, 563, 1448, 31" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aria-role='searchbox' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' tag='INPUT' type='search' class='select2-search__field' matching:class='fuzzy' fuzzylevel:class='0.0' aria-controls='select2-milk_bank-results' /&gt;" Guid="55729405-0c99-4b49-b2e4-34404744d9e2" InformativeScreenshot="1f56778514f44a86ae308eaed32623d9.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/UJufimFi1UC65Zah7EehQg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CVScreenId="b63d9c99-8899-4d39-986f-417d18584313" DesignTimeRectangle="356, 496, 1458, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' parentclass='form-group' parentid='nonFullyAutomaticDiv' parentname='theform' /&gt;" Guid="78798a83-657c-435c-b99c-0d3faa3ae6ce" SearchSteps="FuzzySelector" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NTypeInto.Target>
+                          <uix:NTypeInto.Text>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">milkbankListStr.Split(new string[] {")"}, StringSplitOptions.None)[0] + "[k(Enter)]"</CSharpValue>
+                            </InArgument>
+                          </uix:NTypeInto.Text>
+                        </uix:NTypeInto>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <uix:NSelectItem DisplayName="Select expiry month" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="NSelectItem_1" ScopeIdentifier="3e125b5d-95ba-4b81-a41f-d0385bfc47bf" Version="V5">
+                    <uix:NSelectItem.Item>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">DateTime.Now.ToString("MMM")</CSharpValue>
+                      </InArgument>
+                    </uix:NSelectItem.Item>
+                    <uix:NSelectItem.Target>
+                      <uix:TargetAnchorable BrowserURL="localhost/receivedonors" CVScreenId="4babf7f1-3878-4679-ace2-6ab80dd7d4df" ContentHash="VjKcRtywsUWbGAhDd_Akyg" CvElementArea="355, 674, 480, 45" CvType="InputBox" DesignTimeRectangle="356, 676, 479, 42" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='expire_month' matching:id='fuzzy' fuzzylevel:id='0.0' tag='SELECT' type='' class='form-control' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' name='expire_month' /&gt;" Guid="d459c4d1-b6ff-4f29-b31a-8d70f14960a2" InformativeScreenshot="2ac4f6831e453ff166759cb21b34df10.png" Reference="BkxQ1887pEidR6av2KDcrw/trLx9hiFjEGNuiizx2K_Xw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="4babf7f1-3878-4679-ace2-6ab80dd7d4df" DesignTimeRectangle="356, 655, 1458, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' parentclass='card-body' parentid='nonFullyAutomaticDiv' parentname='theform' /&gt;" Guid="55c39531-e4bb-4287-9a41-fad47f7054f7" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NSelectItem.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NSelectItem>
+                  <uix:NSelectItem DisplayName="Select expiry day" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="NSelectItem_2" ScopeIdentifier="3e125b5d-95ba-4b81-a41f-d0385bfc47bf" Version="V5">
+                    <uix:NSelectItem.Item>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">DateTime.Today.Day.ToString()</CSharpValue>
+                      </InArgument>
+                    </uix:NSelectItem.Item>
+                    <uix:NSelectItem.Target>
+                      <uix:TargetAnchorable BrowserURL="localhost/receivedonors" CVScreenId="fbcf04a9-b222-460e-b40c-14ec49318346" ContentHash="s8aqeK30RkuJtq8vgDbzzg" CvElementArea="842, 674, 483, 46" CvType="InputBox" DesignTimeRectangle="845, 676, 479, 42" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='expire_day' matching:id='fuzzy' fuzzylevel:id='0.0' tag='SELECT' type='' class='form-control' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' name='expire_day' parentid='nonFullyAutomaticDiv' parentname='theform' /&gt;" Guid="6a306e8c-79a8-45cc-9d98-ca3dd2a068e7" InformativeScreenshot="547dcda9409e2dd559cd762ac89c2b39.png" Reference="BkxQ1887pEidR6av2KDcrw/ynoyf3LsvUq3NnSMQ3cagQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="fbcf04a9-b222-460e-b40c-14ec49318346" DesignTimeRectangle="356, 655, 1458, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' parentclass='card-body' parentid='nonFullyAutomaticDiv' parentname='theform' /&gt;" Guid="e44204c6-4121-477c-9da8-b99eb307429f" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NSelectItem.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NSelectItem>
+                  <uix:NSelectItem DisplayName="Select expiry year" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="NSelectItem_3" ScopeIdentifier="3e125b5d-95ba-4b81-a41f-d0385bfc47bf" Version="V5">
+                    <uix:NSelectItem.Item>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">DateTime.Today.AddYears(1).Year.ToString()</CSharpValue>
+                      </InArgument>
+                    </uix:NSelectItem.Item>
+                    <uix:NSelectItem.Target>
+                      <uix:TargetAnchorable BrowserURL="localhost/receivedonors" CVScreenId="092fc6d4-5753-46f4-a24f-17d19dd104c4" ContentHash="Jx5HjBGzt0Wi5xkhFDy3kw" CvElementArea="1331, 674, 481, 45" CvType="InputBox" DesignTimeRectangle="1334, 676, 479, 42" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='expire_year' matching:id='fuzzy' fuzzylevel:id='0.0' tag='SELECT' type='' class='form-control' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' name='expire_year' /&gt;" Guid="08715d5f-6f12-4455-a82e-795c347210b7" InformativeScreenshot="a198d8bc78a817ddd33f0a892667af51.png" Reference="BkxQ1887pEidR6av2KDcrw/FVj_K4xqR06apyb5HNnhPA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="092fc6d4-5753-46f4-a24f-17d19dd104c4" DesignTimeRectangle="356, 655, 1458, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' parentclass='card-body' parentid='nonFullyAutomaticDiv' parentname='theform' /&gt;" Guid="1ed8929c-7ad0-44a5-9477-707f7f2a24cf" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NSelectItem.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NSelectItem>
+                  <uix:NSelectItem DisplayName="Select expiry hour" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="NSelectItem_4" Item="00" ScopeIdentifier="3e125b5d-95ba-4b81-a41f-d0385bfc47bf" Version="V5">
+                    <uix:NSelectItem.Target>
+                      <uix:TargetAnchorable BrowserURL="localhost/receivedonors" CVScreenId="83a0a5fe-8546-4d71-b07a-fa6ced9eec01" ContentHash="atCjjr6HL02pB4dFQJQL6Q" CvElementArea="353, 763, 299, 45" CvType="InputBox" DesignTimeRectangle="356, 764, 295, 42" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='expire_hour' matching:id='fuzzy' fuzzylevel:id='0.0' tag='SELECT' type='' class='form-control' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' name='expire_hour' /&gt;" Guid="95b16339-1bd8-4e9d-895c-efe9e2f3cee7" InformativeScreenshot="d6db49723b67020e6aa88b476eef75db.png" Reference="BkxQ1887pEidR6av2KDcrw/LThYM4Oc6UeZAFxuQVapYg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="83a0a5fe-8546-4d71-b07a-fa6ced9eec01" DesignTimeRectangle="356, 743, 724, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' parentclass='form-group col-md-6' parentid='nonFullyAutomaticDiv' parentname='theform' /&gt;" Guid="9eac53f0-3979-4366-b653-f58b73e0c7d2" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NSelectItem.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NSelectItem>
+                  <uix:NSelectItem DisplayName="Select expiry minute" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="NSelectItem_5" Item="00" ScopeIdentifier="3e125b5d-95ba-4b81-a41f-d0385bfc47bf" Version="V5">
+                    <uix:NSelectItem.Target>
+                      <uix:TargetAnchorable BrowserURL="localhost/receivedonors" CVScreenId="83a0a5fe-8546-4d71-b07a-fa6ced9eec01" ContentHash="Zik6g28akEGjohPl0g75Sw" CvElementArea="720, 763, 300, 46" CvType="InputBox" DesignTimeRectangle="722, 764, 296, 42" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='expire_minute' matching:id='fuzzy' fuzzylevel:id='0.0' tag='SELECT' type='' class='form-control' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' name='expire_minute' /&gt;" Guid="40f8dde2-3be9-487c-8185-356da6c91ea1" InformativeScreenshot="fb9bbd531fe22bc5e799f05b51192ed7.png" Reference="BkxQ1887pEidR6av2KDcrw/iZLaS6XAB0-UWanHvGauvg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="83a0a5fe-8546-4d71-b07a-fa6ced9eec01" DesignTimeRectangle="656, 764, 61, 42" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='nonFullyAutomaticDiv' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='SPAN' type='' class='col-md-1 text-center' matching:class='fuzzy' fuzzylevel:class='0.0' parentclass='form-row' parentname='theform' /&gt;" Guid="63f5dac6-8563-4a2e-8d9e-703e9efe00dc" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NSelectItem.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NSelectItem>
+                  <If DisplayName="If - Volume Field is Empty" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If.Condition>
+                      <InArgument x:TypeArguments="x:Boolean">
+                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">defaultDonorVolume == "null" || defaultDonorVolume == ""</CSharpValue>
+                      </InArgument>
+                    </If.Condition>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,302" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Volume in Each Container'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,242" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="DebuggerApi" ScopeIdentifier="3e125b5d-95ba-4b81-a41f-d0385bfc47bf" Text="100" Version="V5">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="localhost/receivedonors" CVScreenId="175fe77c-7898-422a-baaf-81422061f856" ContentHash="ewFGNONMuUq6wKCR7ok4fQ" CvElementArea="354, 851, 148, 45" CvType="InputBox" DesignTimeRectangle="356, 852, 144, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='volume' tag='INPUT' class='form-control' name='volume' type='text' /&gt;" Guid="780fcaf9-5bfa-41cb-9883-c195e7bf55d5" InformativeScreenshot="7b7166127c45dfb59e45963063dc0f12.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/zyL1DZrDi0Ku97G0xW9SPA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CVScreenId="175fe77c-7898-422a-baaf-81422061f856" DesignTimeRectangle="356, 831, 1458, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' parentclass='form-group' parentid='nonFullyAutomaticDiv' parentname='theform' /&gt;" Guid="cb47a1b8-7d5b-438c-87c7-ee12cf0c4324" SearchSteps="FuzzySelector" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NTypeInto.Target>
+                        </uix:NTypeInto>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <If sap:VirtualizedContainerService.HintSize="452,461" sap2010:WorkflowViewState.IdRef="If_10">
+                    <If.Condition>
+                      <InArgument x:TypeArguments="x:Boolean">
+                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_52">numberOfLabels &gt; 1</CSharpValue>
+                      </InArgument>
+                    </If.Condition>
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,241" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NSelectItem DisplayName="Select Number of labels" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,181" sap2010:WorkflowViewState.IdRef="NSelectItem_6" ScopeIdentifier="3e125b5d-95ba-4b81-a41f-d0385bfc47bf" Version="V5">
+                          <uix:NSelectItem.Item>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_53">numberOfLabels.ToString()</CSharpValue>
+                            </InArgument>
+                          </uix:NSelectItem.Item>
+                          <uix:NSelectItem.Target>
+                            <uix:TargetAnchorable BrowserURL="localhost/receivedonors" CVScreenId="60979787-f987-498e-8613-b5063dc3d28c" ContentHash="2SGaWoSr8E6b5NHPpmZctw" CvElementArea="399, 914, 1365, 43" CvType="InputBox" DesignTimeRectangle="403, 916, 1367, 39" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='bottle_count' matching:id='fuzzy' fuzzylevel:id='0.0' tag='SELECT' type='' class='form-control' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' name='bottle_count' parentclass='form-group' parentid='nonFullyAutomaticDiv' parentname='theform' /&gt;" Guid="58228acb-14ff-4431-a292-d3a748942e72" InformativeScreenshot="f7667f5830db791b69c6e3334b78ef19.png" Reference="BkxQ1887pEidR6av2KDcrw/6O5avXtyjEuJveJDvks9hQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CVScreenId="60979787-f987-498e-8613-b5063dc3d28c" DesignTimeRectangle="403, 896, 1367, 17" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' parentclass='form-group' parentid='nonFullyAutomaticDiv' parentname='theform' /&gt;" Guid="027177d3-0d03-48b5-88b7-f1bd54b38049" SearchSteps="FuzzySelector" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NSelectItem.Target>
+                        </uix:NSelectItem>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Else>
+            </If>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click Next - Invoke Workflow File (Components\\Buttons\\ClickNext.xaml)" sap:VirtualizedContainerService.HintSize="584,57" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click Next Button.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <scg:Dictionary x:TypeArguments="x:String, Argument" />
+              </ui:InvokeWorkflowFile.Arguments>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InvokeWorkflowFile>
+            <Sequence DisplayName="Select Storage Location Step" sap:VirtualizedContainerService.HintSize="584,57" sap2010:WorkflowViewState.IdRef="Sequence_15">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NGetText DisplayName="Get storage location value" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,139" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="3e125b5d-95ba-4b81-a41f-d0385bfc47bf" Version="V5">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/receivedonors" CVScreenId="c491d6a8-10ae-4e83-b03b-a930d8e6e075" ContentHash="MtMzPoZ0HkqENyUyjjFBww" CvElementArea="393, 404, 1364, 41" CvType="InputBox" DesignTimeRectangle="394, 406, 1365, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aria-role='textbox' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' tag='SPAN' type='' class='select2-selection__rendered' matching:class='fuzzy' fuzzylevel:class='0.0' id='select2-store_location-container' parentclass='select2-selection select2-selection--single' parentid='wizardpage_div' parentname='theform' /&gt;" Guid="4da824a5-0b7e-4497-9044-56053c8fc7e8" InformativeScreenshot="fa4b2de4e29543f0171adf66cff50456.png" Reference="BkxQ1887pEidR6av2KDcrw/iYzNoXv1e0a1NDMqfwYbcQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="c491d6a8-10ae-4e83-b03b-a930d8e6e075" DesignTimeRectangle="393, 386, 1367, 16" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' parentclass='card-body' parentid='wizardpage_div' parentname='theform' /&gt;" Guid="dcfbe5a9-60d0-422e-b734-ec44fd47e061" SearchSteps="FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NGetText.Target>
+                <uix:NGetText.TextString>
+                  <OutArgument x:TypeArguments="x:String">
+                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_22">storageLocationValue</CSharpReference>
+                  </OutArgument>
+                </uix:NGetText.TextString>
+              </uix:NGetText>
+              <If DisplayName="If - Storage Location field is not empty" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="If_9">
+                <If.Condition>
+                  <InArgument x:TypeArguments="x:Boolean">
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_49">(defaultStorageLocationID == "" || defaultStorageLocationID == "null") &amp;&amp; storageLocationValue == ""</CSharpValue>
+                  </InArgument>
+                </If.Condition>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,437" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click storage location dropdown" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,190" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3e125b5d-95ba-4b81-a41f-d0385bfc47bf" Version="V5">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="localhost/receivedonors" CVScreenId="ab39c4b6-9f78-44b1-b6ee-13d69f6ecad1" ContentHash="bGIUUALcS0SIjUxrHOiNxQ" CvElementArea="361, 411, 1461, 45" CvType="InputBox" DesignTimeRectangle="366, 414, 1456, 42" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-role='textbox' tag='SPAN' class='select2-selection__rendered' id='select2-store_location-container' parentclass='select2-selection select2-selection--single' parentid='wizardpage_div' parentname='theform' /&gt;" Guid="0c5d401a-bdb1-4a05-9923-a6441f51d334" InformativeScreenshot="fcb78eee63579c8ca7e4b0a0a86a9f9f.png" Reference="BkxQ1887pEidR6av2KDcrw/rlYkyP6ElE2dY3qduOGLRw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="ab39c4b6-9f78-44b1-b6ee-13d69f6ecad1" DesignTimeRectangle="365, 392, 1458, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' parentclass='card-body' parentid='wizardpage_div' parentname='theform' /&gt;" Guid="c1394d25-a525-49a1-a334-d9de29c0fa96" SearchSteps="FuzzySelector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <ui:FindChildren DisplayName="Get storage locations" Filter="&lt;webctrl tag='li' /&gt;" sap:VirtualizedContainerService.HintSize="416,139" sap2010:WorkflowViewState.IdRef="FindChildren_2" Scope="FIND_CHILDREN">
+                      <ui:FindChildren.Children>
+                        <OutArgument x:TypeArguments="scg:IEnumerable(ui:UiElement)">
+                          <CSharpReference x:TypeArguments="scg:IEnumerable(ui:UiElement)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">storageLocationElements</CSharpReference>
+                        </OutArgument>
+                      </ui:FindChildren.Children>
+                      <ui:FindChildren.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2a0a5187-04ec-46a4-979f-caaea5e6c3f5" InformativeScreenshot="252d60e5c93baeb4626ddc684069655f" Selector="&lt;webctrl tag='UL' class='select2-results__options' id='select2-store_location-results' aria-role='listbox' parentclass='select2-results' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:FindChildren.Target>
+                    </ui:FindChildren>
+                    <If DisplayName="If - Storage Location dropdown is not empty" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="If_4">
+                      <If.Condition>
+                        <InArgument x:TypeArguments="x:Boolean">
+                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">storageLocationElements.Count() &gt; 0</CSharpValue>
+                        </InArgument>
+                      </If.Condition>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,441" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NGetText DisplayName="Get First Storage Location" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,139" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="3e125b5d-95ba-4b81-a41f-d0385bfc47bf" Version="V5">
+                            <uix:NGetText.InUiElement>
+                              <InArgument x:TypeArguments="ui:UiElement">
+                                <CSharpValue x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">storageLocationElements.ElementAt(1)</CSharpValue>
+                              </InArgument>
+                            </uix:NGetText.InUiElement>
+                            <uix:NGetText.TextString>
+                              <OutArgument x:TypeArguments="x:String">
+                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">firstStorageLocation</CSharpReference>
+                              </OutArgument>
+                            </uix:NGetText.TextString>
+                          </uix:NGetText>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Select storage location'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,242" sap2010:WorkflowViewState.IdRef="NTypeInto_6" InteractionMode="DebuggerApi" ScopeIdentifier="3e125b5d-95ba-4b81-a41f-d0385bfc47bf" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable BrowserURL="localhost/receivedonors" CVScreenId="6817ceab-5d5f-4602-b132-df27da64b38d" ContentHash="9u4EnYsskU-VKiofrZIIrA" CvElementArea="352, 457, 1459, 34" CvType="InputBox" DesignTimeRectangle="361, 459, 1448, 31" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aria-role='searchbox' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' tag='INPUT' type='search' class='select2-search__field' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' parentclass='select2-search select2-search--dropdown' /&gt;" Guid="42217036-363d-4209-8b0e-aec3f60d6e03" InformativeScreenshot="84c50510247122d5f147e3288de4723f.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/_QSGWvg-3kqW-5N-xJN6Tw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="6817ceab-5d5f-4602-b132-df27da64b38d" DesignTimeRectangle="356, 392, 1458, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' parentclass='card-body' parentid='wizardpage_div' parentname='theform' /&gt;" Guid="fcf69fc2-ff3e-4f93-9e99-c354564d6e96" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NTypeInto.Target>
+                            <uix:NTypeInto.Text>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_36">firstStorageLocation + "[k(Enter)]"</CSharpValue>
+                              </InArgument>
+                            </uix:NTypeInto.Text>
+                          </uix:NTypeInto>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <uix:NGetText DisplayName="Get storage location value" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,132" sap2010:WorkflowViewState.IdRef="NGetText_9" ScopeIdentifier="3e125b5d-95ba-4b81-a41f-d0385bfc47bf" Version="V5">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/receivedonors" CVScreenId="c491d6a8-10ae-4e83-b03b-a930d8e6e075" ContentHash="MtMzPoZ0HkqENyUyjjFBww" CvElementArea="393, 404, 1364, 41" CvType="InputBox" DesignTimeRectangle="394, 406, 1365, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aria-role='textbox' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' tag='SPAN' type='' class='select2-selection__rendered' matching:class='fuzzy' fuzzylevel:class='0.0' id='select2-store_location-container' parentclass='select2-selection select2-selection--single' parentid='wizardpage_div' parentname='theform' /&gt;" Guid="4da824a5-0b7e-4497-9044-56053c8fc7e8" InformativeScreenshot="fa4b2de4e29543f0171adf66cff50456.png" Reference="BkxQ1887pEidR6av2KDcrw/iYzNoXv1e0a1NDMqfwYbcQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="c491d6a8-10ae-4e83-b03b-a930d8e6e075" DesignTimeRectangle="393, 386, 1367, 16" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' parentclass='card-body' parentid='wizardpage_div' parentname='theform' /&gt;" Guid="dcfbe5a9-60d0-422e-b734-ec44fd47e061" SearchSteps="FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NGetText.Target>
+                <uix:NGetText.TextString>
+                  <OutArgument x:TypeArguments="x:String">
+                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_23">finalStorageLocationValue</CSharpReference>
+                  </OutArgument>
+                </uix:NGetText.TextString>
+              </uix:NGetText>
+            </Sequence>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click Next - Invoke Workflow File (Components\\Buttons\\ClickNext.xaml)" sap:VirtualizedContainerService.HintSize="584,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click Next Button.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <scg:Dictionary x:TypeArguments="x:String, Argument" />
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <Sequence DisplayName="Final Screen" sap:VirtualizedContainerService.HintSize="584,1911" sap2010:WorkflowViewState.IdRef="Sequence_28">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign sap:VirtualizedContainerService.HintSize="550,115" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="s:String[]">
+                    <CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_27">outDHMContainers</CSharpReference>
+                  </OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="s:String[]">
+                    <CSharpValue x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_59">new string[] {}</CSharpValue>
+                  </InArgument>
+                </Assign.Value>
+              </Assign>
+              <uix:NForEachUiElement DisplayName="Loop received DHM Containers" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='container'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='volume'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='location'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='tr' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='fulltext'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='2' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='3' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="550,57" sap2010:WorkflowViewState.IdRef="NForEachUiElement_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="3e125b5d-95ba-4b81-a41f-d0385bfc47bf" Version="V5">
+                <uix:NForEachUiElement.Body>
+                  <ActivityAction x:TypeArguments="x:Int32">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468,170" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_1">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="s:String[]">
+                            <CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_26">outDHMContainers</CSharpReference>
+                          </OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="s:String[]">
+                            <CSharpValue x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_55">outDHMContainers.Concat(new string[] { container_Label }).ToArray()</CSharpValue>
+                          </InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </ActivityAction>
+                </uix:NForEachUiElement.Body>
+                <uix:NForEachUiElement.Target>
+                  <uix:TargetAnchorable BrowserURL="http://localhost/receivedonors?_complete=y&amp;_success=y&amp;_page_number=4&amp;store_location=4&amp;bottle_count=2&amp;printer=1&amp;modal_process=0" ContentHash="dVWt0mP2k0GKRUWw-sQ5Zw" DesignTimeRectangle="394, 512, 1366, 168" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tag='TBODY' /&gt;" Guid="a212fd62-488f-40bf-822b-af0099975709" InformativeScreenshot="d0ec56c7128acd1d86bbf57fb38939a2.png" Reference="BkxQ1887pEidR6av2KDcrw/KnK364CEPkCiC8vTRvqzQQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                </uix:NForEachUiElement.Target>
+                <uix:NForEachUiElement.Variables>
+                  <Variable x:TypeArguments="ui:UiElement" Name="container" />
+                  <Variable x:TypeArguments="x:String" Name="container_Label" />
+                  <Variable x:TypeArguments="x:String" Name="volume" />
+                  <Variable x:TypeArguments="x:String" Name="location" />
+                </uix:NForEachUiElement.Variables>
+                <uix:NForEachUiElement.VariablesMetadata>
+                  <scg:List x:TypeArguments="uuam:VariableMetadata" x:Key="Column0" Capacity="4">
+                    <uuam:VariableMetadata Name="container" Type="ui:UiElement" />
+                    <uuam:VariableMetadata Name="container_Label" Type="x:String" />
+                  </scg:List>
+                  <scg:List x:TypeArguments="uuam:VariableMetadata" x:Key="Column1" Capacity="4">
+                    <uuam:VariableMetadata Name="volume" Type="x:String" />
+                  </scg:List>
+                  <scg:List x:TypeArguments="uuam:VariableMetadata" x:Key="Column2" Capacity="4">
+                    <uuam:VariableMetadata Name="location" Type="x:String" />
+                  </scg:List>
+                </uix:NForEachUiElement.VariablesMetadata>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NForEachUiElement>
+              <If DisplayName="If - UI Verification" sap:VirtualizedContainerService.HintSize="550,1652" sap2010:WorkflowViewState.IdRef="If_11">
+                <If.Condition>
+                  <InArgument x:TypeArguments="x:Boolean">
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_54">isUIVerification</CSharpValue>
+                  </InArgument>
+                </If.Condition>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="548,1495" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="njl:JObject" Name="locationResponseData" />
+                      <Variable x:TypeArguments="njl:JObject" Name="milkbankResponseData" />
+                      <Variable x:TypeArguments="x:Boolean" Name="isReceieveMoreButtonExist" />
+                      <Variable x:TypeArguments="x:Boolean" Name="isReprintButtonExist" />
+                      <Variable x:TypeArguments="x:Boolean" Name="isMainMenuButtonExist" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="API Call - Invoke Workflow File (Utilities\\API Call.xaml)" sap:VirtualizedContainerService.HintSize="514,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Utilities\\API Call.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="endpoint">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_65">"get-location/" + defaultStorageLocationID</CSharpValue>
+                        </InArgument>
+                        <OutArgument x:TypeArguments="njl:JObject" x:Key="responseData">
+                          <CSharpReference x:TypeArguments="njl:JObject" sap2010:WorkflowViewState.IdRef="CSharpReference`1_28">locationResponseData</CSharpReference>
+                        </OutArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="API Call - Invoke Workflow File (Utilities\\API Call.xaml)" sap:VirtualizedContainerService.HintSize="514,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Utilities\\API Call.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="endpoint">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_66">"get-milkbank/" + defaultMilkBank</CSharpValue>
+                        </InArgument>
+                        <OutArgument x:TypeArguments="njl:JObject" x:Key="responseData">
+                          <CSharpReference x:TypeArguments="njl:JObject" sap2010:WorkflowViewState.IdRef="CSharpReference`1_29">milkbankResponseData</CSharpReference>
+                        </OutArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                    <uix:NGetText DisplayName="Get first success message" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="514,139" sap2010:WorkflowViewState.IdRef="NGetText_8" ScopeIdentifier="3e125b5d-95ba-4b81-a41f-d0385bfc47bf" Version="V5">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="localhost/receivedonors" CVScreenId="2581c3cb-ff2d-4d00-a1b1-56fa1b2ba246" ContentHash="_XNLpP3bKESFrqQQPpvnng" CvType="AnyWordGroup" DesignTimeRectangle="415, 409, 1326, 26" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='P' parentclass='alert alert-success' parentid='wizardpage_div' parentname='theform' /&gt;" Guid="702b3c23-914d-4d2c-9d23-0474c16ef219" InformativeScreenshot="8f6f329ebc75aad4b99d39be09b0099a.png" Reference="BkxQ1887pEidR6av2KDcrw/LOgeuQvyn0ierW5_sJkwlQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="2581c3cb-ff2d-4d00-a1b1-56fa1b2ba246" DesignTimeRectangle="415, 435, 1326, 27" ElementType="Text" FuzzySelectorArgument="&lt;webctrl type='' tag='P' class='' matching:class='fuzzy' fuzzylevel:class='0.0' parentclass='alert alert-success' parentid='wizardpage_div' parentname='theform' /&gt;" Guid="8aa12477-0eb8-4a22-b1e1-01153f88934d" SearchSteps="FuzzySelector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NGetText.Target>
+                      <uix:NGetText.TextString>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_24">firstSuccessMessage</CSharpReference>
+                        </OutArgument>
+                      </uix:NGetText.TextString>
+                    </uix:NGetText>
+                    <uix:NGetText DisplayName="Get 2nd success message" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="514,139" sap2010:WorkflowViewState.IdRef="NGetText_10" ScopeIdentifier="3e125b5d-95ba-4b81-a41f-d0385bfc47bf" Version="V5">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="localhost/receivedonors" CVScreenId="7c346ff4-d82f-43c1-b57f-6c76a3ee58d0" ContentHash="ROBPEcWdrEeSN-UE2zxTSQ" CvType="AnyWordGroup" DesignTimeRectangle="415, 435, 1326, 27" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl idx='2' tag='P' parentclass='alert alert-success' parentid='wizardpage_div' parentname='theform' /&gt;" Guid="27105c79-1320-4274-aade-60e7c0a1bb48" InformativeScreenshot="123bfcbd1df2d06805f8d22f06aee5ad.png" Reference="BkxQ1887pEidR6av2KDcrw/wxNPVdzVJkyGM6U3xXqs5Q" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="7c346ff4-d82f-43c1-b57f-6c76a3ee58d0" DesignTimeRectangle="415, 409, 1326, 26" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='P' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' parentclass='alert alert-success' parentid='wizardpage_div' parentname='theform' /&gt;" Guid="11cb2162-78d0-49a7-93f7-4d6a4564fc13" SearchSteps="FuzzySelector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NGetText.Target>
+                      <uix:NGetText.TextString>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_25">secondSucessMessage</CSharpReference>
+                        </OutArgument>
+                      </uix:NGetText.TextString>
+                    </uix:NGetText>
+                    <ui:UiElementExists DisplayName="Check receive more button" sap:VirtualizedContainerService.HintSize="514,139" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                      <ui:UiElementExists.Exists>
+                        <OutArgument x:TypeArguments="x:Boolean">
+                          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_30">isReceieveMoreButtonExist</CSharpReference>
+                        </OutArgument>
+                      </ui:UiElementExists.Exists>
+                      <ui:UiElementExists.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9cada7fe-0aa7-43da-aed6-d9fb93fdd1fd" InformativeScreenshot="1865a4c8fb6e9d3e573a1ed5aa5efa73" TimeoutMS="1000">
+                          <ui:Target.Selector>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_72">$"&lt;webctrl parentid='wizardpage_div' tag='A' class='btn btn-primary' href='{GlobalVariables.websiteUrl}/receivedonors' parentclass='action-list' parentname='theform' /&gt;"</CSharpValue>
+                            </InArgument>
+                          </ui:Target.Selector>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:UiElementExists.Target>
+                    </ui:UiElementExists>
+                    <ui:UiElementExists DisplayName="Check reprint button" sap:VirtualizedContainerService.HintSize="514,139" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+                      <ui:UiElementExists.Exists>
+                        <OutArgument x:TypeArguments="x:Boolean">
+                          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_31">isReprintButtonExist</CSharpReference>
+                        </OutArgument>
+                      </ui:UiElementExists.Exists>
+                      <ui:UiElementExists.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9cada7fe-0aa7-43da-aed6-d9fb93fdd1fd" InformativeScreenshot="1865a4c8fb6e9d3e573a1ed5aa5efa73" TimeoutMS="1000">
+                          <ui:Target.Selector>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_103">$"&lt;webctrl parentid='wizardpage_div' tag='A' class='btn btn-primary mr-2' href='{GlobalVariables.websiteUrl}/reprint?item_type=bottle_master&amp;amp;barcode_list={(mbmsBarcodes.Count() &gt; 0 ? string.Join(",", mbmsBarcodes) : string.Join(",", outDHMContainers))}' parentclass='action-list' parentname='theform' /&gt;"</CSharpValue>
+                            </InArgument>
+                          </ui:Target.Selector>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:UiElementExists.Target>
+                    </ui:UiElementExists>
+                    <ui:UiElementExists DisplayName="Check go to Main Menu" sap:VirtualizedContainerService.HintSize="514,139" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                      <ui:UiElementExists.Exists>
+                        <OutArgument x:TypeArguments="x:Boolean">
+                          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_32">isMainMenuButtonExist</CSharpReference>
+                        </OutArgument>
+                      </ui:UiElementExists.Exists>
+                      <ui:UiElementExists.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="55ab73ae-2eba-49ac-9584-b51544c40879" InformativeScreenshot="d66c2001050c5f18c57260cb6fdc7276" TimeoutMS="1000">
+                          <ui:Target.Selector>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_79">$"&lt;webctrl parentid='wizardpage_div' tag='A' class='btn btn-outline-primary' href='{GlobalVariables.websiteUrl}/' parentclass='action-list' parentname='theform' /&gt;"</CSharpValue>
+                            </InArgument>
+                          </ui:Target.Selector>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:UiElementExists.Target>
+                    </ui:UiElementExists>
+                    <If DisplayName="If - UI Verification is for MBMS" sap:VirtualizedContainerService.HintSize="514,386" sap2010:WorkflowViewState.IdRef="If_12">
+                      <If.Condition>
+                        <InArgument x:TypeArguments="x:Boolean">
+                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_110">mbmsBarcodes.Count() &gt; 0</CSharpValue>
+                        </InArgument>
+                      </If.Condition>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,25" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,171" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                            <ui:MultipleAssign.AssignOperations>
+                              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:String">
+                                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_33">outFailureReason</CSharpReference>
+                                    </OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_132" xml:space="preserve">$"• Receive MBMS Container\n" +
+$"     • Expected output: \n" +
+$"       Default Storage Location = {(defaultStorageLocationID == "" ? storageLocationValue : locationResponseData["name"])}\n" +
+$"       First Success Message = {(mbmsBarcodes.Count() &gt; 1 ?  mbmsBarcodes.Count() : "A")} new donor {(mbmsBarcodes.Count() &gt; 1 ?  "containers have" : "container has")} been stored in location {finalStorageLocationValue}. Please see below for further details.\n" +
+$"       Second Success Message = {(mbmsBarcodes.Count() &gt; 1 ?  $"The barcodes for these containers are : {string.Join(", ", outDHMContainers)}." : $"A label for this container  ({string.Join(", ", outDHMContainers)}) was sent to printer \"\".")}\n" +
+$"       Buttons = Receive  More Donor Milk: True, Reprint Container: True, Go to Main Menu: True\n" +
+$"     • Actual Output: \n" +
+$"       Default Storage Location = {storageLocationValue}\n" +
+$"       First Success Message = {firstSuccessMessage}\n" +
+$"       Second Success Message = {secondSucessMessage}\n" +
+$"       Buttons = Receive  More Donor Milk: {isReceieveMoreButtonExist}, Reprint Container: {isReprintButtonExist}, Go to Main Menu: {isMainMenuButtonExist}"</CSharpValue>
+                                    </InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:Boolean">
+                                      <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_34">outTestResult</CSharpReference>
+                                    </OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:Boolean">
+                                      <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_133" xml:space="preserve">(defaultStorageLocationID == "" ? "" : locationResponseData["name"].ToString()) == storageLocationValue &amp;&amp;
+$"{(mbmsBarcodes.Count() &gt; 1 ?  mbmsBarcodes.Count() : "A")} new donor {(mbmsBarcodes.Count() &gt; 1 ?  "containers have" : "container has")} been stored in location {finalStorageLocationValue}. Please see below for further details." == firstSuccessMessage &amp;&amp;
+(mbmsBarcodes.Count() &gt; 1 ?  $"The barcodes for these containers are : {string.Join(", ", outDHMContainers)}." : $"A label for this container  ({string.Join(", ", outDHMContainers)}) was sent to printer \"\".") == secondSucessMessage &amp;&amp;
+isReceieveMoreButtonExist &amp;&amp;
+isReprintButtonExist &amp;&amp;
+isMainMenuButtonExist</CSharpValue>
+                                    </InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                              </scg:List>
+                            </ui:MultipleAssign.AssignOperations>
+                          </ui:MultipleAssign>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="512,231" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,171" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+                            <ui:MultipleAssign.AssignOperations>
+                              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:String">
+                                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_35">outFailureReason</CSharpReference>
+                                    </OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_134" xml:space="preserve">$"• Receive Non - MBMS Container\n" +
+$"     • Expected output: \n" +
+$"       Default Selected Milk Bank = {(defaultMilkBank == "" ? "" : milkbankResponseData["name"])}\n" +
+$"       Default Volume = {defaultDonorVolume}\n" +
+$"       Default Volume Measurement = {(defaulReceieveDonorMeasurement ? "oz" : "mL")}\n" +
+$"       Track Cal/oz = {trackCalOz}\n" +
+$"       {(trackCalOz ? "UI Cal/Oz = " + defaultUICalOz + " Default Cal/Oz = " + defaultCalOz : "")}\n" +
+$"       Default Storage Location = {(defaultStorageLocationID == "" ? "" : locationResponseData["name"])}\n" +
+$"       First Success Message = {(numberOfLabels &gt; 1 ?  numberOfLabels : "A")} new donor containers has been stored in location {finalStorageLocationValue}. Please see below for further details.\n" +
+$"       Second Success Message = {(numberOfLabels &gt; 1 ? $"The barcodes for these containers are : {string.Join(", ", outDHMContainers)}.": $"A label for this container  ({string.Join(", ", outDHMContainers)}) was sent to printer \"Blank \".")}\n" +
+$"       Buttons = Receive  More Donor Milk: True, Reprint Container: True, Go to Main Menu: True\n" +
+$"     • Actual Output: \n" +
+$"       Default Selected Milk Bank = {milkbankFieldValue}\n" +
+$"       Default Volume = {volumeFieldValue}\n" +
+$"       Default Volume Measurement = {volumeMeasurement}\n" +
+$"       Track Cal/oz = {isCalOzFieldVisible}\n" +
+$"       {(trackCalOz ? "UI Cal/Oz = " + displayedUICalOz + " Default Cal/Oz = " + calOzFieldValue : "")}\n" +
+$"       Default Storage Location = {storageLocationValue}\n" +
+$"       First Success Message = {firstSuccessMessage}\n" +
+$"       Second Success Message = {secondSucessMessage}\n" +
+$"       Buttons = Receive  More Donor Milk: {isReceieveMoreButtonExist}, Reprint Container: {isReprintButtonExist}, Go to Main Menu: {isMainMenuButtonExist}\n"</CSharpValue>
+                                    </InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:Boolean">
+                                      <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_36">outTestResult</CSharpReference>
+                                    </OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:Boolean">
+                                      <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_131" xml:space="preserve">(defaultDonorVolume == "" || defaultDonorVolume == "null"  ? volumeFieldValue == $"0.{new string('0', (int)GlobalVariables.appSettings["ui/decimal/rounding/default"])}" :  volumeFieldValue == $"{defaultDonorVolume}.{new string('0', (int)GlobalVariables.appSettings["ui/decimal/rounding/default"])}") &amp;&amp;
+(defaultMilkBank == "" ? milkbankFieldValue == "" : milkbankFieldValue.Contains(milkbankResponseData["name"].ToString())) &amp;&amp;
+((defaulReceieveDonorMeasurement ? "oz" : "mL") == volumeMeasurement) &amp;&amp;
+(trackCalOz == isCalOzFieldVisible) &amp;&amp;
+(trackCalOz ? defaultUICalOz == displayedUICalOz &amp;&amp; defaultCalOz == calOzFieldValue: true) &amp;&amp;
+(defaultStorageLocationID == "" ? storageLocationValue == "" : locationResponseData["name"].ToString() == storageLocationValue) &amp;&amp;
+($"{(numberOfLabels &gt; 1 ?  numberOfLabels + " new donor containers have" : "A new donor container has")} been stored in location {finalStorageLocationValue}. Please see below for further details." == firstSuccessMessage) &amp;&amp;
+((numberOfLabels &gt; 1 ? $"The barcodes for these containers are : {string.Join(", ", outDHMContainers)}." : $"A label for this container  ({string.Join(", ", outDHMContainers)}) was sent to printer \"Blank \".") == secondSucessMessage) &amp;&amp;
+isReceieveMoreButtonExist &amp;&amp;
+isReprintButtonExist &amp;&amp;
+isMainMenuButtonExist</CSharpValue>
+                                    </InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                              </scg:List>
+                            </ui:MultipleAssign.AssignOperations>
+                          </ui:MultipleAssign>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="548,25" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" ContentHash="6vHdMDmW5U2PnqY97GLYrQ" Reference="BkxQ1887pEidR6av2KDcrw/1jSz78ZV9kygMHrFswj9Pg" Selector="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" Version="V2" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
