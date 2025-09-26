@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="C4DfoojLjk2NQhUYmwycxg" Reference="BkxQ1887pEidR6av2KDcrw/tBKZHmSNbUKFVZvhdk1l9w" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="CZ3Pyh32u0m3F641LvTJ3w" Reference="BkxQ1887pEidR6av2KDcrw/tBKZHmSNbUKFVZvhdk1l9w" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="localhost/printbottlelabels" CVScreenId="1836c243-9e5e-44d1-9daf-eceeb5a83db0" CvTextArea="50, 265, 56, 10" CvType="Text" DesignTimeRectangle="8, 258, 167, 26" ElementType="Text" Guid="dba68eff-37e7-4b2b-a0b7-5b61115e0a5b" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="localhost/receive" CVScreenId="13a91502-49f4-4188-a2e3-3e6f523ce85b" CvTextArea="72, 387, 84, 13" CvType="Text" DesignTimeRectangle="8, 375, 250, 38" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='A' href='/receive' /&gt;" Guid="5d613f34-6936-4e3b-b791-4a2745a01e6e" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="13a91502-49f4-4188-a2e3-3e6f523ce85b" CvTextArea="72, 387, 84, 13" CvType="Text" DesignTimeRectangle="72, 387, 84, 13" ElementType="Text" Guid="d9b32c70-64c0-41b2-8970-8ad814aef4db" SearchSteps="CV" TargetType="ComputerVisionBased">
+            <Target.CvTextArgument>
+              <p:InArgument x:TypeArguments="x:String">
+                <p:CSharpValue x:TypeArguments="x:String">$"Receive " + ehmDisplayNameShort</p:CSharpValue>
+              </p:InArgument>
+            </Target.CvTextArgument>
+          </Target>
+        </scg:List>
+      </TargetAnchorable.Anchors>
       <TargetAnchorable.CvTextArgument>
         <p:InArgument x:TypeArguments="x:String">
-          <p:CSharpValue x:TypeArguments="x:String">$"Receive {ehmDisplayNameShort}"</p:CSharpValue>
+          <p:CSharpValue x:TypeArguments="x:String">$"Receive " + ehmDisplayNameShort</p:CSharpValue>
         </p:InArgument>
       </TargetAnchorable.CvTextArgument>
-      <TargetAnchorable.FullSelectorArgument>
-        <p:InArgument x:TypeArguments="x:String">
-          <p:CSharpValue x:TypeArguments="x:String">$"&lt;webctrl aaname='Receive {ehmDisplayNameShort}' tag='A' /&gt;"</p:CSharpValue>
-        </p:InArgument>
-      </TargetAnchorable.FullSelectorArgument>
-      <imageRef attrName="InformativeScreenshot" originalValue="50f9e48c3361989d17e4f09958e82312.png" xmlns="">0bmdH_Dn7F0S20WESrfzhmA</imageRef>
+      <imageRef attrName="InformativeScreenshot" originalValue="03ccae7bb4b60f32312d42ac51eca2df.png" xmlns="">0jsJACHf5q0yNdwcRwnDOPA</imageRef>
     </TargetAnchorable>
     <x:String x:Key="ActivityType">Click</x:String>
   </ObjectRepositoryTargetData.Data>
