@@ -93,7 +93,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC___Prepare_DBM_Only_Order" sap:VirtualizedContainerService.HintSize="1088,2056" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC___Prepare_DBM_Only_Order" sap:VirtualizedContainerService.HintSize="1088,1938" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="dhmContainers" />
     </Sequence.Variables>
@@ -128,7 +128,7 @@
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
-    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="486,644" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="486,526" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -141,20 +141,13 @@
           </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Receive DHM - Invoke Workflow File (Components\\Receive DHM.xaml)" sap:VirtualizedContainerService.HintSize="416,266" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Components\\Receive DHM.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Receive DHM - Invoke Workflow File (Components\\Receive DHM.xaml)" sap:VirtualizedContainerService.HintSize="416,257" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Components\\Receive DHM.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <OutArgument x:TypeArguments="s:String[]" x:Key="outDHMContainers">
             <CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">dhmContainers</CSharpReference>
           </OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,109" sap2010:WorkflowViewState.IdRef="MessageBox_1">
-        <ui:MessageBox.Text>
-          <InArgument x:TypeArguments="x:Object">
-            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">dhmContainers.Count()</CSharpValue>
-          </InArgument>
-        </ui:MessageBox.Text>
-      </ui:MessageBox>
     </Sequence>
     <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="486,583" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
