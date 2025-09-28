@@ -1,0 +1,607 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="TestCase" this:TestCase.inStatus="Active" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="inStatus" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap2010:WorkflowViewState.IdRef>TestCase_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Triggers</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="TestCase" sap:VirtualizedContainerService.HintSize="1233,5366" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="guardianIdentifier" />
+      <Variable x:TypeArguments="x:String" Name="mrnUI" />
+      <Variable x:TypeArguments="x:String" Name="accountNumberUI" />
+      <Variable x:TypeArguments="x:String" Name="guardianIdentifierHeader" />
+      <Variable x:TypeArguments="sd:DataTable" Name="guardianNameList" />
+      <Variable x:TypeArguments="sd:DataRow" Name="guardian" />
+      <Variable x:TypeArguments="x:Boolean" Name="isExclusionDateExist" />
+      <Variable x:TypeArguments="x:String" Name="exclusionDetails" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="554,560" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,242" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">guardianIdentifier</CSharpReference>
+                </OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">GlobalVariables.appSettings["mother/index/identifiers"].ToString()</CSharpValue>
+                </InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">mrnUI</CSharpReference>
+                </OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">GlobalVariables.appSettings["ui/text/mrn_number"].ToString()</CSharpValue>
+                </InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">accountNumberUI</CSharpReference>
+                </OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">GlobalVariables.appSettings["ui/text/account_number"].ToString()</CSharpValue>
+                </InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">guardianIdentifierHeader</CSharpReference>
+                </OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">int.Parse(guardianIdentifier) == 0 ? "Guardian ID" : int.Parse(guardianIdentifier) == 1 ? "MRN" : int.Parse(guardianIdentifier) == 2 ? "Account Number" : "Phone Number"</CSharpValue>
+                </InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+          </scg:List>
+        </ui:MultipleAssign.AssignOperations>
+      </ui:MultipleAssign>
+      <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="478,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Guardian">
+        <ui:ReadRange.DataTable>
+          <OutArgument x:TypeArguments="sd:DataTable">
+            <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">guardianNameList</CSharpReference>
+          </OutArgument>
+        </ui:ReadRange.DataTable>
+        <ui:ReadRange.WorkbookPath>
+          <InArgument x:TypeArguments="x:String">
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">GlobalVariables.testDataFilePath</CSharpValue>
+          </InArgument>
+        </ui:ReadRange.WorkbookPath>
+      </ui:ReadRange>
+      <Assign sap:VirtualizedContainerService.HintSize="478,106" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="sd:DataRow">
+            <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">guardian</CSharpReference>
+          </OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="sd:DataRow">
+            <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">guardianNameList.Rows[0]</CSharpValue>
+          </InArgument>
+        </Assign.Value>
+      </Assign>
+    </Sequence>
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="554,4475" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(9)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="520,4383" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="c93dc411-4769-42d2-a065-283473b8a69d" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,4142" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NGoToUrl DisplayName="Go To URL - " sap:VirtualizedContainerService.HintSize="452,123" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" ScopeIdentifier="c93dc411-4769-42d2-a065-283473b8a69d" Version="V4">
+                <uix:NGoToUrl.Url>
+                  <InArgument x:TypeArguments="x:String">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">$"{GlobalVariables.websiteUrl}/guardians"</CSharpValue>
+                  </InArgument>
+                </uix:NGoToUrl.Url>
+              </uix:NGoToUrl>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'BUTTON'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,227" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c93dc411-4769-42d2-a065-283473b8a69d" Version="V5">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/guardians" CVScreenId="fa8daf37-00bf-4b7b-9dcd-b72c2023121a" ContentHash="i3Ed9-sEh0ifCZ80Rfdvqw" CvElementArea="289, 260, 53, 38" CvType="Button" DesignTimeRectangle="290, 261, 50, 35" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='app' tag='BUTTON' /&gt;" Guid="959275d4-e321-487b-a62f-c7c4156ec6e4" InformativeScreenshot="53a7dd0a2466d59b9022ed87ac038b53.png" Reference="BkxQ1887pEidR6av2KDcrw/HPAK0e8XyU-3L1w1PtBozA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Account Number'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,251" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="c93dc411-4769-42d2-a065-283473b8a69d" Version="V4">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/guardians" CVScreenId="630192a0-c0f5-4426-951c-72e509a26d55" ContentHash="3TwBrtTYS0WBX1YGfkij5A" CvElementArea="836, 342, 140, 42" CvType="InputBox" DesignTimeRectangle="839, 344, 137, 39" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl class='outline-0 rounded-lg w-full p-2 border border-[#AAAAAA] disabled:bg-[#EEEEEE]' tag='INPUT' type='text' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="2d09bd82-d3c5-47b5-bf4e-e2b428a9d62a" InformativeScreenshot="5a89c3796e997f78c24e990491d23d17.png" Reference="BkxQ1887pEidR6av2KDcrw/P3LSrBb3qU2ofSZ42n8A1w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="630192a0-c0f5-4426-951c-72e509a26d55" CvTextArea="835, 306, 117, 13" CvType="Text" DesignTimeRectangle="829, 293, 157, 41" Guid="84604c8a-e58d-496b-9619-d0aed1bdaa77" SearchSteps="FuzzySelector, CV">
+                          <uix:Target.CvTextArgument>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">guardianIdentifierHeader</CSharpValue>
+                            </InArgument>
+                          </uix:Target.CvTextArgument>
+                          <uix:Target.FuzzySelectorArgument>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">$"&lt;webctrl aaname='{guardianIdentifierHeader} ' parentid='app' tag='DIV' type='' class='font-[14px] font-semibold p-[10px] flex gap-2 cursor-pointer' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='{guardianIdentifierHeader}' /&gt;"</CSharpValue>
+                            </InArgument>
+                          </uix:Target.FuzzySelectorArgument>
+                        </uix:Target>
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+                <uix:NTypeInto.Text>
+                  <InArgument x:TypeArguments="x:String">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8" xml:space="preserve">int.Parse(guardianIdentifier) == 0 ? "" : int.Parse(guardianIdentifier)  == 1 ? guardian["MRN"].ToString() : int.Parse(guardianIdentifier)  ==2 ? guardian["AccountNumber"].ToString() : ""</CSharpValue>
+                  </InArgument>
+                </uix:NTypeInto.Text>
+              </uix:NTypeInto>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Click for Actions'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,190" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c93dc411-4769-42d2-a065-283473b8a69d" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/guardians" CVScreenId="39504aa3-2fe2-4e35-a799-f662e7d74512" ContentHash="kmZbC27zV0-tqA61j7xqLw" CvElementArea="300, 364, 30, 29" CvType="Icon" DesignTimeRectangle="303, 367, 24, 24" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='dropdownMenuButton' tag='SPAN' /&gt;" Guid="712921b0-5f51-4244-bce7-8ec43c085110" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEzSURBVEhLvZa/DgFBEMa9jvAISq+BJ+ABdCgV4gEQlU7UWj06IlxI/Gn8bTUj3yV7WbN77MmaS37h1s733YzZvU2drw+SJMUH/o2T4Sy4UGt8oGI3oFxzRdnGMgTfC51N+Ns0uBhxNj4awqg82FK6tnCiMtjSdHM2dJwMe5MTZeqm6DeQOWK53kdDlIgLJQUaXNdqiKfjwb9iy/TNEP/ZL2WMI1tfhpqxhkkaxBVoWg3xJHyyL/QsI0MfjRKH3kCRIRY1n+gLaBuG2DX4REW+vTbuS/2dMcbjFNA2DLFg+URQHR0J1/72jMbUpUyH83t4j08eD6DtbAhR3RCZeDFMWlJ9zFZiHWtJxZtGfFmIL3wgurWpLEU3byD6elL4aCDnF7BC9IihED1EcWORY+I/EDd8AcpxaO313FMdAAAAAElFTkSuQmCC" InformativeScreenshot="892b5002830daa14a8ed5f1eda57c769.png" Reference="BkxQ1887pEidR6av2KDcrw/apwcT8IHsUGh_yUQoRl3Kg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Edit'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,190" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c93dc411-4769-42d2-a065-283473b8a69d" Version="V4">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/guardians" CVScreenId="8b63f1d7-6eef-43e0-b505-f59f78e6bacf" ContentHash="zPPty0Hrfk-R6F_PnQpAdw" CvTextArea="370, 441, 26, 12" CvTextArgument="Edit" CvType="Text" DesignTimeRectangle="312, 436, 144, 26" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='action-button' parentid='app' tag='BUTTON' /&gt;" Guid="40778f9f-2fd7-4b7d-80af-4c4025d54143" InformativeScreenshot="6dbfbaba7440da6c85e6f1ff69c590be.png" Reference="BkxQ1887pEidR6av2KDcrw/6tuwx3ZVw0iUPVbFUJfayQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="8b63f1d7-6eef-43e0-b505-f59f78e6bacf" CvElementArea="310, 463, 147, 28" CvTextArea="366, 470, 32, 12" CvTextArgument="View" CvType="Button" DesignTimeRectangle="312, 465, 144, 25" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aaname='View' class='action-button' parentid='app' tag='BUTTON' type='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' check:innerText='View' /&gt;" Guid="fd2a3fab-5221-4763-817c-9e8d5bdcfdc0" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+              <ui:UiElementExists DisplayName="Check Existing Exclusion Date" sap:VirtualizedContainerService.HintSize="452,139" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                <ui:UiElementExists.Exists>
+                  <OutArgument x:TypeArguments="x:Boolean">
+                    <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">isExclusionDateExist</CSharpReference>
+                  </OutArgument>
+                </ui:UiElementExists.Exists>
+                <ui:UiElementExists.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9cada7fe-0aa7-43da-aed6-d9fb93fdd1fd" InformativeScreenshot="0c9ab6f8d2c27b60e22fb4c5222e7f96" Selector="&lt;webctrl parentid='exclusionDateSelectBox_ul' tag='A' /&gt;" TimeoutMS="1000">
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:UiElementExists.Target>
+              </ui:UiElementExists>
+              <If sap:VirtualizedContainerService.HintSize="452,695" sap2010:WorkflowViewState.IdRef="If_2">
+                <If.Condition>
+                  <InArgument x:TypeArguments="x:Boolean">
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">isExclusionDateExist</CSharpValue>
+                  </InArgument>
+                </If.Condition>
+                <If.Then>
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,278" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Existing Exclusion Date'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="NClick_10" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c93dc411-4769-42d2-a065-283473b8a69d" Version="V5">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="2bfd0d36-acb6-44fe-8bd8-a23272f99b27" ContentHash="ACYGCDWZ20SeScxkYgaZQA" CvElementArea="1094, 542, 275, 38" CvType="InputBox" DesignTimeRectangle="1096, 544, 272, 36" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='exclusionDateSelectBox_ul' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='A' type='' class='exclusion-dates iframe active-exclusion btn btn-warning mr-2 mb-2' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="ab70f5e3-19de-43c5-9330-f35fc9a41dd7" InformativeScreenshot="4cfe250234ca08b979c27135396f5189.png" Reference="BkxQ1887pEidR6av2KDcrw/4ewqLG0lH0mtKofX3Arb3A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="2bfd0d36-acb6-44fe-8bd8-a23272f99b27" CvTextArea="1095, 520, 103, 12" CvTextArgument="Exclusion Dates:" CvType="Text" DesignTimeRectangle="1096, 518, 102, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='exclusionDateSelectBox_label' matching:id='fuzzy' fuzzylevel:id='0.0' tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Exclusion Dates:' /&gt;" Guid="30885b49-089f-408f-a50d-b10dc13d5343" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,278" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Add Exclusion Date'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c93dc411-4769-42d2-a065-283473b8a69d" Version="V5">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="827c737a-e6c3-4909-943b-8e460f246e57" ContentHash="7VV1kQF_e0W9uW4AgBNdxg" DesignTimeRectangle="1096, 565, 131, 36" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='exclusionDateSelectBox_ul' tag='A' /&gt;" Guid="083a007d-e56a-466b-a90d-828a4c2c21e5" InformativeScreenshot="879609a022135f58a45044e84d0fc929.png" Reference="BkxQ1887pEidR6av2KDcrw/qgt1PWo5hk-Of4PIn6AEnw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <If sap:VirtualizedContainerService.HintSize="452,1144" sap2010:WorkflowViewState.IdRef="If_1">
+                <If.Condition>
+                  <InArgument x:TypeArguments="x:Boolean">
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">inStatus == "Active"</CSharpValue>
+                  </InArgument>
+                </If.Condition>
+                <If.Then>
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,915" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into DateFrom" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,288" sap2010:WorkflowViewState.IdRef="NTypeInto_7" InteractionMode="SameAsCard" ScopeIdentifier="c93dc411-4769-42d2-a065-283473b8a69d" Version="V5">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="9fc066f6-8e1a-4e4f-85cc-c03e849dab65" ContentHash="VZMsf_C-IUKVRz6w5L75ZA" CvElementArea="528, 512, 411, 33" CvType="InputBox" DesignTimeRectangle="529, 514, 409, 30" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='fancybox-frame*' matching:id='fuzzy' fuzzylevel:id='0.0' tag='IFRAME' /&gt;&lt;webctrl id='exclusionDateFrom' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='text' class='form-control hasDatepicker' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="2bf57980-8993-41d7-b0f5-6ff9279e92d1" InformativeScreenshot="6527536570e3db73d4f5a9799843b1fd.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/VC-QaOq_OEiudRlG2ZIN5w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="9fc066f6-8e1a-4e4f-85cc-c03e849dab65" CvTextArea="523, 494, 74, 12" CvTextArgument="*Date From:" CvType="Text" DesignTimeRectangle="529, 492, 69, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fancybox-frame1759067989763' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='exclusionDateFrom_label' tag='LABEL' type='' class='' aaname='Date From:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Date From:' /&gt;" Guid="64cf8c66-edb6-4db5-8587-ae24ada47957" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                      <uix:NTypeInto.Text>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">DateTime.Today.AddDays(-1).ToString() + "[k(Tab)]"</CSharpValue>
+                        </InArgument>
+                      </uix:NTypeInto.Text>
+                      <uix:NTypeInto.VerifyOptions>
+                        <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionTypeIntoOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                        </uix:VerifyExecutionTypeIntoOptions>
+                      </uix:NTypeInto.VerifyOptions>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into Date To" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,288" sap2010:WorkflowViewState.IdRef="NTypeInto_8" InteractionMode="SameAsCard" ScopeIdentifier="c93dc411-4769-42d2-a065-283473b8a69d" Version="V5">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="9fc066f6-8e1a-4e4f-85cc-c03e849dab65" ContentHash="DLQ2kZxx10eoDwWvvhv8tg" CvElementArea="957, 512, 410, 33" CvType="InputBox" DesignTimeRectangle="958, 514, 409, 30" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='fancybox-frame*' matching:id='fuzzy' fuzzylevel:id='0.0' tag='IFRAME' /&gt;&lt;webctrl id='exclusionDateTo' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='text' class='form-control hasDatepicker' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="77b5587e-24c4-45fe-915f-b9157e96b337" InformativeScreenshot="844dc7c1ee5e515f70b0dcc6f68ce28d.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/vazTypDGBUK1db5wEByLrw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="9fc066f6-8e1a-4e4f-85cc-c03e849dab65" CvTextArea="952, 494, 58, 12" CvTextArgument="*Date To:" CvType="Text" DesignTimeRectangle="958, 492, 52, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fancybox-frame1759067989763' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='exclusionDateTo_label' tag='LABEL' type='' class='' aaname='Date To:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Date To:' /&gt;" Guid="02617473-e8d2-4784-964c-f8e11ade3d92" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                      <uix:NTypeInto.Text>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">DateTime.Today.AddDays(2).AddSeconds(-1).ToString("MM/dd/yyyy HH:mm:ss") + "[k(Tab)]"</CSharpValue>
+                        </InArgument>
+                      </uix:NTypeInto.Text>
+                      <uix:NTypeInto.VerifyOptions>
+                        <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionTypeIntoOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                        </uix:VerifyExecutionTypeIntoOptions>
+                      </uix:NTypeInto.VerifyOptions>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into Reason" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,279" sap2010:WorkflowViewState.IdRef="NTypeInto_9" InteractionMode="SameAsCard" ScopeIdentifier="c93dc411-4769-42d2-a065-283473b8a69d" Text="Test[k(Tab)]" Version="V5">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="9fc066f6-8e1a-4e4f-85cc-c03e849dab65" ContentHash="J21ZMa8P70ek8U05xavT5w" CvElementArea="527, 632, 840, 151" CvType="InputBox" DesignTimeRectangle="529, 635, 838, 150" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='fancybox-frame*' matching:id='fuzzy' fuzzylevel:id='0.0' tag='IFRAME' /&gt;&lt;webctrl id='exclusionReason' matching:id='fuzzy' fuzzylevel:id='0.0' tag='TEXTAREA' type='' class='form-control' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="c65d9891-662c-4b54-a6f2-7ca46db49ecd" InformativeScreenshot="155f7ef71d75279d9985d85652314b2a.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/jFXu8_p32EKe8yqhkGqFxw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="9fc066f6-8e1a-4e4f-85cc-c03e849dab65" CvTextArea="528, 615, 49, 12" CvTextArgument="Reason:" CvType="Text" DesignTimeRectangle="529, 613, 49, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fancybox-frame1759067989763' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='exclusionReason_label' tag='LABEL' type='' class='' aaname='Reason:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Reason:' /&gt;" Guid="becf7f7e-7c19-422c-b05d-8485afeb1801" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                      <uix:NTypeInto.VerifyOptions>
+                        <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionTypeIntoOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                        </uix:VerifyExecutionTypeIntoOptions>
+                      </uix:NTypeInto.VerifyOptions>
+                    </uix:NTypeInto>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into Status" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,288" sap2010:WorkflowViewState.IdRef="NTypeInto_11" InteractionMode="SameAsCard" ScopeIdentifier="c93dc411-4769-42d2-a065-283473b8a69d" Version="V5">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="9fa2ab9a-3eb1-493d-bd42-f44d774a6fa1" ContentHash="CDIn8_igiUSrF5p0JHNLag" CvElementArea="526, 777, 840, 32" CvType="InputBox" DesignTimeRectangle="529, 779, 838, 30" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='fancybox-frame1759067989763' matching:id='fuzzy' fuzzylevel:id='0.0' tag='IFRAME' /&gt;&lt;webctrl id='exclusionActive' matching:id='fuzzy' fuzzylevel:id='0.0' tag='SELECT' type='' class='form-control' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="e03acc8a-cff9-4e0e-b1fc-d281ec84cdab" InformativeScreenshot="ddd5937cb54b02bd7ea421fe863312c6.png" Reference="BkxQ1887pEidR6av2KDcrw/unq71INLpUGNM6oqWnXhCQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target CVScreenId="9fa2ab9a-3eb1-493d-bd42-f44d774a6fa1" CvTextArea="527, 759, 49, 12" CvTextArgument="Active?:" CvType="Text" DesignTimeRectangle="529, 757, 48, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fancybox-frame1759067989763' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='exclusionActive_label' tag='LABEL' type='' class='' aaname='Active?:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Active?:' /&gt;" Guid="c78fa63a-1e0c-4f5d-8cdb-3b7ced68495b" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+                <uix:NTypeInto.Text>
+                  <InArgument x:TypeArguments="x:String">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">inStatus + "[k(Tab)]"</CSharpValue>
+                  </InArgument>
+                </uix:NTypeInto.Text>
+                <uix:NTypeInto.VerifyOptions>
+                  <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionTypeIntoOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                  </uix:VerifyExecutionTypeIntoOptions>
+                </uix:NTypeInto.VerifyOptions>
+              </uix:NTypeInto>
+              <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,247" sap2010:WorkflowViewState.IdRef="NMouseScroll_4" InteractionMode="HardwareEvents" MovementUnits="10" ScopeIdentifier="c93dc411-4769-42d2-a065-283473b8a69d" Version="V5">
+                <uix:NMouseScroll.SearchedElement>
+                  <uix:SearchedElement>
+                    <uix:SearchedElement.OutUiElement>
+                      <OutArgument x:TypeArguments="ui:UiElement" />
+                    </uix:SearchedElement.OutUiElement>
+                    <uix:SearchedElement.Target>
+                      <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="9d3d93e4-57b7-41b2-affa-0584fa05bc9b" CvElementArea="528, 724, 46, 30" CvTextArea="534, 732, 31, 12" CvTextArgument="Save" CvType="Button" DesignTimeRectangle="529, 726, 43, 27" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='fancybox-frame1759068846230' tag='IFRAME' /&gt;&lt;webctrl id='submitExclusions' tag='INPUT' /&gt;" Guid="028a12a3-b662-4f02-a814-d9fecb7b950d" InformativeScreenshot="c8efd3fdff564412d1e80839e6be0c49.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CVScreenId="9d3d93e4-57b7-41b2-affa-0584fa05bc9b" CvElementArea="575, 725, 59, 29" CvTextArea="583, 732, 41, 12" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="576, 726, 56, 27" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fancybox-frame1759068846230' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='cancelExclusions' tag='A' type='' class='btn btn-outline-primary' aaname='Cancel' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Cancel' /&gt;" Guid="71c159eb-884c-4c21-ac8b-cabcc72a8ba6" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:SearchedElement.Target>
+                    <uix:SearchedElement.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:SearchedElement.Timeout>
+                  </uix:SearchedElement>
+                </uix:NMouseScroll.SearchedElement>
+              </uix:NMouseScroll>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Save'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,227" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c93dc411-4769-42d2-a065-283473b8a69d" Version="V5">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="1c1c9d32-85c1-4a13-9b91-ea333b15a1d5" ContentHash="9dC-XCVua0qoOHsdPcE90w" CvElementArea="528, 724, 46, 30" CvTextArea="534, 732, 31, 12" CvTextArgument="Save" CvType="Button" DesignTimeRectangle="529, 726, 43, 27" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='fancybox-frame*' tag='IFRAME' /&gt;&lt;webctrl id='submitExclusions' tag='INPUT' /&gt;" Guid="bdc8ce71-016b-4d73-bf33-73634a65c91a" InformativeScreenshot="912ca7fdd9123fb1e1efb2c1e1dc6e1b.png" Reference="BkxQ1887pEidR6av2KDcrw/YBy-0lQFh0m7yuVXmpgHPA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Close'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,227" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c93dc411-4769-42d2-a065-283473b8a69d" Version="V5">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="1c1c9d32-85c1-4a13-9b91-ea333b15a1d5" ContentHash="CLMimtChH0mUYvY2jMVz2A" CvElementArea="1445, 367, 35, 34" CvType="Icon" DesignTimeRectangle="1444, 366, 36, 36" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='A' class='fancybox-item fancybox-close' href='javascript:;' /&gt;" Guid="9bcfa261-04fd-40a7-9745-b8cd4cdaf1cc" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAU3SURBVFhHzZfLSyRXFMbrb3FhnBmHDIYeX1Gm2277XW1Xt7YJaTshA2qG2ehCFAYiqGMWEjAuBXVjFhoJghPUZOHChSHp4NJEcauCuHFaROGE7+Ipbt+ulzoMHviwqap778/zqlOanumihyxNvfDQ9PABk0YnqVIf8qr7rreSJaCV1IV8PdGREYqljDLxdbv1XuUZ0ARKZymeMiiqp6k9rpM/FKGxiUla+mWF/vq7SP/+ty+E3xu//0E/Tv9EX33zrQmrArhJ+6Kri7you7OTujIZyhoGJWMx+q6/n/7c2SGv9k+xSN+/eUO5bFbs92Uu50meABmuQ9eFfnv3zjy4VCrRxsYGjYyMUD6fJ13XhfAb13Dv6OioDLT35UvPkBoOh1QoGU72Gh+Gv1NTU1RbW0tVVVWOwjN4ltceHx8Lb3qBNAGthHBk02lKRKP0daEgvAWDV3w+XwWIm7AGa9nzXiBtAQHXaRgCDmHl/355ebni4NsKezDk61evHCE1gKhwEOBSyST5W1tp56YYtra2Kg67q9iTyEkwqGAmYFc2Kx6QhYJI6zqF2tqo0NNj5txdwmon5OXBwYHY2ynUGmDKlM1SJp2mWCRC9T6f6T0kuXrIfYU9YQf7+7Ze1DozGYIYEKHtSCYpGAhQIZ8XGxSLxYrNWZxPVrnpdI+FvZ28qAFIlpFKUTIep6bGRpqbmxOLZ2dnKzZmySaDYI1s6jr1uV9XViy9qKGNoM+x0qkUhUMhqnv2zAwvmq66MYvDxIYDVTin9MDesH2bMGvINwF5I4S3ze+n2idPzNbiVhwqpGxOcBD2hqHlwEFqmLVMRwexRHhjMQrcAHJj9vK2sIJ0g2OxgQEtrgwQUCy0FjTmz5ua6PGjR3R9fS0WegFUwwpzyl1ZfA4Dyl7UcBO6urqiy8tLOjk5ofX1dfGiPz09FQvdQmwFx+YGiX8ehmjJgAxpCzg2NkaHh4diMaYTdWM7OKsicYLE3jAUiSfAs7Mz2t7eFoCbm5tisVMu2YGokOo6FiIFwwiHIpEBIROQIc/Pz2l3d5dmZmZoenpaLHZq1Axi5SWneyy832E/TE6aVewKuLe3R/Pz82V52NfXV7H5fcU9EPmH7oE3mSugmocLCwtikw85ybDYez8vLoouoobXElANs+xFp3fqbcXvabwMouGweEm4Atp5cXh4mC4uLsSGAFYPu624MHBef2+v8B7PpZ4A5VxcWloiwzBoYGBAbHpfT7LnYCiMeCQihhR5WHYElL2IlrO4uEjd3d0UDAZpfHzc9CTy5zaFg2c553AG4CKhkOh9KA51oncFZMiJiQkaHBw0IXO5nAg/Gw5Fn/T7/RVQuIZ7DAZDzvXk82JiwmCCWdTqs8MRUIZcXV2l0dFRAVkoFCgajVZ4U7bS+/fmkFF2vVSiybdvqamhQcClEgkRWp7iVUhXQNWTCDdyEoWD6kbxINnRzHGdK102eGttbY2GhobEANLS3EyR9nbxlYiqNSf5uwKqkCgchBctCKBo5jIs9El1NdVUV9Pjmhr69OlT+qyujpobGykUCIhmDDjknZjgHQAZ0hVQhpS9CVB4DrB4dwMYanj+nBrq66m1pYUCL14IMFSqHo+LcQ5wPMWbIbaB9AxoBwqPApaBoXAwKKozFg4LMHzf4PsacOh3JiBC7OLFWwNagTIsC5+r8WiUErEY6YmEKAZUqwzInxn8ocZe5O9yGfJOgE6w8BqmcuQbwsqAyD2e3NUwO3nx3oCqZA8ivMKLAHTy4kcFvMk9Ky/eBfB/vgvy0Ki18DwAAAAASUVORK5CYII=" InformativeScreenshot="100eb77b70ad2432934374679174c48b.png" Reference="BkxQ1887pEidR6av2KDcrw/al9ww5BQ8k-v6oTn9uFe3Q" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+              <uix:NGetText DisplayName="Get Text 'Exclusion Dates'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,132" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="c93dc411-4769-42d2-a065-283473b8a69d" Version="V5">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="05b5ca29-cb60-4ad3-96e7-bf08290454ef" CvElementArea="1094, 542, 275, 38" CvType="InputBox" DesignTimeRectangle="1096, 544, 272, 36" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='exclusionDateSelectBox_ul' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='A' type='' class='exclusion-dates iframe active-exclusion btn btn-warning mr-2 mb-2' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="5d1f1d1d-3920-44a9-a1f2-9b7a7c02e515" InformativeScreenshot="526d3adc47f64fec2044f13f2b89f6aa.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target CVScreenId="05b5ca29-cb60-4ad3-96e7-bf08290454ef" CvTextArea="1095, 520, 103, 12" CvTextArgument="Exclusion Dates:" CvType="Text" DesignTimeRectangle="1096, 518, 102, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='exclusionDateSelectBox_label' tag='LABEL' type='' class='' aaname='Exclusion Dates: ' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Exclusion Dates:' /&gt;" Guid="fea6a072-a8f5-41cc-a412-cd2e7d875c60" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NGetText.Target>
+                <uix:NGetText.TextString>
+                  <OutArgument x:TypeArguments="x:String">
+                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">exclusionDetails</CSharpReference>
+                  </OutArgument>
+                </uix:NGetText.TextString>
+              </uix:NGetText>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Chrome" ContentHash="uK2NQT_KJUW58lXmIuXStg" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABg2lDQ1BJQ0MgcHJvZmlsZQAAKM+VkT1Iw0AcxV9TtaIVh3YQccjQdrKLijhqFYpQIdQKrTqYXPoFTRqSFBdHwbXg4Mdi1cHFWVcHV0EQ/ABxdnBSdJES/5cUWoQKHhz34929x907QGhUmGb1zAKabpvpZELM5lbFwCv6MIgQoojJzDLmJCmFruPrHj6+3sV5Fv43htS8xQCfSDzLDNMm3iCe3rQNzvvEYVaSVeJz4nGTLkj8yHXF4zfORZcFnhk2M+l54jCxWOxgpYNZydSIp4gjqqZTvpD1WOW8xVmr1FjrnvyFwby+ssx1mmNIYhFLkCBCQQ1lVGAjTqtOioU07Se6+Eddv0QuhVxlMHIsoAoNsusH/4Pf3VqFyQkvKZgAel8c5yMKBHaBZt1xvo8dp3kC+J+BK73trzaAmU/S620tcgQMbwMX121N2QMud4CRJ0M2ZVfy0xQKBeD9jL4pB4RugYE1r7fWPk4fgAx1lboBDg6BWJGy17u8u7+ztz/PtPr7AbLmcsD2vzboAAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJTUUH6AYLEyknka52RwAAAuxJREFUWEfNV1uIjlEUnSFN8irJG0/TNMbkLmmacsmDlDIvRPLirkimRF7cclkPKIoHr/yrpMaDZOVBEopMuV+KN7dI7rd29qcz+z/m+pFVq/n/M/vsvc7Z5+x9/pqaXoDQCEJthJYTmkyoNtr8NRBaS+gdoR/O74TOm6hoWzoILfCARfCUFwgNinNKBaHLmcApJ8U5pYHQYELPM0FTLonzDITqKmXsDqGbmaApW4P9TELXCL0l9ITQxgGlidDqTNCCnRVoSGI7gdDHjF17V699QOVXGg5nDuIDQvWpLaFjmeDGZ5bO1LbPIDSF0HZCewktJTQsY1PJBDdaOn7vVK9AaDihTYQaPY/7A9cTGk9oF6EWn/OndHVE/93C1CaHr4nQ+4zTI4R2++evhObaeSB0KtjdIzQ6xugWhBoSB/Y5zf8rT0MzofvJOHxuLaHpXj2tiA316zzfb0jPN8JXXTi2iXatiu+L3Mac3iH0mdAaQnMIbSG0NXCxs5h/osc+EgR0+KEr0rDSbWxlds/bbfWJfeRZF5aOTYsxuyAIsG0eRWgsoZOEPvjfW4S+EJpI6FsmcME3foNst+y72TbFmF0QBBwltI/Qa3fUmfzPzkNLJmjkbUKz7aCa4BivCkGAFZc9yecN/RBQ0BbRGONVIQh45LXgCqFLhK4PQICxOcarQhBgtMeH5T46+2cCcvxEaBuhkX5VL2ZscixNwApCh3xnnhKaRehqxi6yFAG2eqt26Zidj3UZ28hSBFj1mxru/zlvXtE2shQB1qjGENpM6C4heW/YmbGN7JWA+szEglaSrSA9JPTSu58dQHu2L3QxcU7KcTFeFfwVZD0gTjba6q03xHHjab8ZcbzgDeshMV4W1jYJzcs4sUK0LDNuPJNpPAXtfNTFON3CXzzRUX8FtEX/PeJ/FfDYi058JRsPEjqQGS9VgHEVoR1hzHbG3gYvMvb9FmA/ya39RtotmEHoeEJ7JbdmnmQFG6L/Aj8BDEOt5eLl2GYAAAAASUVORK5CYII=" InformativeScreenshot="efc0b36258c996eea99d5089c82d44d4.jpg" Reference="BkxQ1887pEidR6av2KDcrw/1jSz78ZV9kygMHrFswj9Pg" Selector="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" Url="http://localhost/" Version="V2" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="554,308" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Test Result - Invoke Workflow File (Utilities\\Update Test Result.xaml)" sap:VirtualizedContainerService.HintSize="416,225" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Utilities\\Update Test Result.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="inScenarioName">Manage Exclusion Date</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="inFailureReason">
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31" xml:space="preserve">$"•Manage Guardian - Exclusion Date \n" +
+$"     • Expected output: \n" +
+$"        " + (inStatus == "Active"? "Add/Activate Exclusion Date" : "Deactivate Exclusion Date") +
+$"       Display = {DateTime.Today.AddDays(-1).ToString()} - {DateTime.Today.AddDays(2).AddSeconds(-1).ToString("MM/dd/yyyy HH:mm:ss")} {(inStatus == "Active" ? "" : "(INACTIVE)")}\n" +
+$"     • Actual Output: \n" +
+$"        " + (inStatus == "Active"? "Add/Activate Exclusion Date" : "Deactivate Exclusion Date") +
+$"       Display = {exclusionDetails}"</CSharpValue>
+          </InArgument>
+          <InArgument x:TypeArguments="x:Boolean" x:Key="inTestResult">
+            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">DateTime.Today.AddDays(-1).ToString() + " - " + DateTime.Today.AddDays(2).AddSeconds(-1).ToString("MM/dd/yyyy HH:mm:ss") + (inStatus == "Active" ? "" : " (INACTIVE)") == exclusionDetails</CSharpValue>
+          </InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+    </Sequence>
+  </Sequence>
+</Activity>
