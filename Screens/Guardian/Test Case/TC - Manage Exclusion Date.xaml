@@ -1,5 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="TestCase" this:TestCase.inStatus="Active" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="outExclusionDate" Type="OutArgument(x:String)" />
     <x:Property Name="inStatus" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
@@ -121,7 +122,7 @@
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TestCase" sap:VirtualizedContainerService.HintSize="1233,5366" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TestCase" sap:VirtualizedContainerService.HintSize="1234,5481" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="guardianIdentifier" />
       <Variable x:TypeArguments="x:String" Name="mrnUI" />
@@ -222,19 +223,19 @@
         </Assign.Value>
       </Assign>
     </Sequence>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="554,4475" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="554,4590" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(9)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="520,4383" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="c93dc411-4769-42d2-a065-283473b8a69d" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(9)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="520,4498" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="c93dc411-4769-42d2-a065-283473b8a69d" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,4142" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,4257" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -482,7 +483,7 @@
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="9fa2ab9a-3eb1-493d-bd42-f44d774a6fa1" ContentHash="CDIn8_igiUSrF5p0JHNLag" CvElementArea="526, 777, 840, 32" CvType="InputBox" DesignTimeRectangle="529, 779, 838, 30" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='fancybox-frame1759067989763' matching:id='fuzzy' fuzzylevel:id='0.0' tag='IFRAME' /&gt;&lt;webctrl id='exclusionActive' matching:id='fuzzy' fuzzylevel:id='0.0' tag='SELECT' type='' class='form-control' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="e03acc8a-cff9-4e0e-b1fc-d281ec84cdab" InformativeScreenshot="ddd5937cb54b02bd7ea421fe863312c6.png" Reference="BkxQ1887pEidR6av2KDcrw/unq71INLpUGNM6oqWnXhCQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target CVScreenId="9fa2ab9a-3eb1-493d-bd42-f44d774a6fa1" CvTextArea="527, 759, 49, 12" CvTextArgument="Active?:" CvType="Text" DesignTimeRectangle="529, 757, 48, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fancybox-frame1759067989763' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='exclusionActive_label' tag='LABEL' type='' class='' aaname='Active?:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Active?:' /&gt;" Guid="c78fa63a-1e0c-4f5d-8cdb-3b7ced68495b" SearchSteps="FuzzySelector, CV" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
@@ -513,7 +514,7 @@
                     <uix:SearchedElement.Target>
                       <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="9d3d93e4-57b7-41b2-affa-0584fa05bc9b" CvElementArea="528, 724, 46, 30" CvTextArea="534, 732, 31, 12" CvTextArgument="Save" CvType="Button" DesignTimeRectangle="529, 726, 43, 27" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='fancybox-frame1759068846230' tag='IFRAME' /&gt;&lt;webctrl id='submitExclusions' tag='INPUT' /&gt;" Guid="028a12a3-b662-4f02-a814-d9fecb7b950d" InformativeScreenshot="c8efd3fdff564412d1e80839e6be0c49.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
                         <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                             <uix:Target CVScreenId="9d3d93e4-57b7-41b2-affa-0584fa05bc9b" CvElementArea="575, 725, 59, 29" CvTextArea="583, 732, 41, 12" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="576, 726, 56, 27" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fancybox-frame1759068846230' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='cancelExclusions' tag='A' type='' class='btn btn-outline-primary' aaname='Cancel' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Cancel' /&gt;" Guid="71c159eb-884c-4c21-ac8b-cabcc72a8ba6" SearchSteps="FuzzySelector, CV" />
                           </scg:List>
                         </uix:TargetAnchorable.Anchors>
@@ -555,11 +556,11 @@
                   </uix:VerifyExecutionOptions>
                 </uix:NClick.VerifyOptions>
               </uix:NClick>
-              <uix:NGetText DisplayName="Get Text 'Exclusion Dates'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,132" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="c93dc411-4769-42d2-a065-283473b8a69d" Version="V5">
+              <uix:NGetText DisplayName="Get Text 'Exclusion Dates'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,139" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="c93dc411-4769-42d2-a065-283473b8a69d" Version="V5">
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="05b5ca29-cb60-4ad3-96e7-bf08290454ef" CvElementArea="1094, 542, 275, 38" CvType="InputBox" DesignTimeRectangle="1096, 544, 272, 36" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='exclusionDateSelectBox_ul' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='A' type='' class='exclusion-dates iframe active-exclusion btn btn-warning mr-2 mb-2' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="5d1f1d1d-3920-44a9-a1f2-9b7a7c02e515" InformativeScreenshot="526d3adc47f64fec2044f13f2b89f6aa.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target CVScreenId="05b5ca29-cb60-4ad3-96e7-bf08290454ef" CvTextArea="1095, 520, 103, 12" CvTextArgument="Exclusion Dates:" CvType="Text" DesignTimeRectangle="1096, 518, 102, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='exclusionDateSelectBox_label' tag='LABEL' type='' class='' aaname='Exclusion Dates: ' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Exclusion Dates:' /&gt;" Guid="fea6a072-a8f5-41cc-a412-cd2e7d875c60" SearchSteps="FuzzySelector, CV" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
@@ -571,6 +572,18 @@
                   </OutArgument>
                 </uix:NGetText.TextString>
               </uix:NGetText>
+              <Assign sap:VirtualizedContainerService.HintSize="452,108" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">
+                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">outExclusionDate</CSharpReference>
+                  </OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">$"{DateTime.Today.AddDays(-12).ToString("MM/dd/yyyy HH:mm")} - {DateTime.Today.AddDays(2).AddSeconds(-1).ToString("MM/dd/yyyy HH:mm")}"</CSharpValue>
+                  </InArgument>
+                </Assign.Value>
+              </Assign>
             </Sequence>
           </ActivityAction>
         </uix:NApplicationCard.Body>
