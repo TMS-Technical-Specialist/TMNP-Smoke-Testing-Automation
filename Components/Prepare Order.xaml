@@ -1,5 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Prepare_Order" this:Prepare_Order.inIsFirstStepScanProductBarcode="False" this:Prepare_Order.isExpandOrderDetails="True" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=System.Private.CoreLib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uuam="clr-namespace:UiPath.UIAutomationNext.Activities.Models;assembly=UiPath.UIAutomationNext.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Prepare_Order" this:Prepare_Order.inOrderType="Standard" this:Prepare_Order.inIsFirstStepScanProductBarcode="False" this:Prepare_Order.isExpandOrderDetails="True" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=System.Private.CoreLib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uuam="clr-namespace:UiPath.UIAutomationNext.Activities.Models;assembly=UiPath.UIAutomationNext.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="inOrderType" Type="InArgument(x:String)" />
     <x:Property Name="inAdditives" Type="InArgument(sd:DataTable)" />
     <x:Property Name="inIsFirstStepScanProductBarcode" Type="InArgument(x:Boolean)" />
     <x:Property Name="inSecondStepContainerBarcodes" Type="InArgument(s:String[])" />
@@ -142,7 +143,7 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Prepare_Order" sap:VirtualizedContainerService.HintSize="1088,4966" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Prepare_Order" sap:VirtualizedContainerService.HintSize="1204,4966" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="roundingCalDecimal" />
       <Variable x:TypeArguments="x:String" Name="modularTracking" />
@@ -740,11 +741,18 @@
                     <uix:NForEachUiElement.Filter>
                       <uuam:FilterArgument LogicalOperator="And">
                         <uuam:FilterArgument.Filters>
-                          <scg:List x:TypeArguments="uuam:FilterEntryArgument" Capacity="1">
+                          <scg:List x:TypeArguments="uuam:FilterEntryArgument" Capacity="2">
                             <uuam:FilterEntryArgument Criterion="Column2" Operator="Contains">
                               <uuam:FilterEntryArgument.Value>
                                 <InArgument x:TypeArguments="x:String">
                                   <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_320">inOrderBase</CSharpValue>
+                                </InArgument>
+                              </uuam:FilterEntryArgument.Value>
+                            </uuam:FilterEntryArgument>
+                            <uuam:FilterEntryArgument Criterion="Column0" Operator="Contains">
+                              <uuam:FilterEntryArgument.Value>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_388">inOrderType</CSharpValue>
                                 </InArgument>
                               </uuam:FilterEntryArgument.Value>
                             </uuam:FilterEntryArgument>
