@@ -127,7 +127,7 @@
           </OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TC - Create Sterile Water Order - Invoke Workflow File (Screens\\Patient Feeding Order\\TC - Create Sterile Water Order.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Screens\\Patient Feeding Order\\TC - Create Sterile Water Order.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TC - Create Sterile Water Order - Invoke Workflow File (Screens\\Patient Feeding Order\\TC - Create Sterile Water Order.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="Screens\\Patient Feeding Order\\TC - Create Sterile Water Order.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:Boolean" x:Key="inWithModular">True</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
@@ -156,13 +156,13 @@
           </InArgument>
           <InArgument x:TypeArguments="x:Boolean" x:Key="inIsFirstStepScanProductBarcode">True</InArgument>
           <InArgument x:TypeArguments="s:String[]" x:Key="inSecondStepContainerBarcodes">
-            <CSharpValue x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">receiveProductBase.AsEnumerable().Select(row =&gt; row.Field&lt;string&gt;("productBarcode")).ToArray().Skip(1).ToArray()</CSharpValue>
+            <CSharpValue x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">receiveProductBase.AsEnumerable().Select(row =&gt; row.Field&lt;string&gt;("productBarcode")).ToArray().Skip((bool)GlobalVariables.appSettings["prepare/require_water_base_product_scanning"] ? 2 : 1).ToArray()</CSharpValue>
           </InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="inOrderBase">
             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">orderDetails["Order Base"].ToString()</CSharpValue>
           </InArgument>
           <InArgument x:TypeArguments="s:String[]" x:Key="inFirstStepContainerBarcodes">
-            <CSharpValue x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">new string[] { receiveProductBase.AsEnumerable().Select(row =&gt; row.Field&lt;string&gt;("productBarcode")).ToArray()[0] }</CSharpValue>
+            <CSharpValue x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">new string[] { receiveProductBase.AsEnumerable().Select(row =&gt; row.Field&lt;string&gt;("productBarcode")).ToArray()[(bool)GlobalVariables.appSettings["prepare/require_water_base_product_scanning"] ? 1 : 0] }</CSharpValue>
           </InArgument>
           <InArgument x:TypeArguments="x:Boolean" x:Key="isExpandOrderDetails">True</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
@@ -180,6 +180,9 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Fill required details and validation - Invoke Workflow File (Components\\Prepare\\Fill required details and validation.xaml)" sap:VirtualizedContainerService.HintSize="416,250" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Components\\Prepare\\Fill required details and validation.xaml">
         <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="inSterileWaterBarcode">
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">(bool)GlobalVariables.appSettings["prepare/require_water_base_product_scanning"] ? receiveProductBase.AsEnumerable().Select(row =&gt; row.Field&lt;string&gt;("productBarcode")).ToArray()[0] : ""</CSharpValue>
+          </InArgument>
           <OutArgument x:TypeArguments="x:Boolean" x:Key="outTestResult">
             <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">testResult</CSharpReference>
           </OutArgument>
@@ -193,13 +196,11 @@
       </ui:InvokeWorkflowFile>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Test Result - Invoke Workflow File (Utilities\\Update Test Result.xaml)" sap:VirtualizedContainerService.HintSize="416,225" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Utilities\\Update Test Result.xaml">
         <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:Boolean" x:Key="inSaveResult">True</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="inScenarioName">Sterile Water + Fortifier + Modular</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="inFailureReason">
             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13" xml:space="preserve">$"•  Prepare Sterile Water + Fortifier + Modular Order \n" +
 failureReason</CSharpValue>
-          </InArgument>
-          <InArgument x:TypeArguments="x:Boolean" x:Key="inTestResult">
-            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">testResult</CSharpValue>
           </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
