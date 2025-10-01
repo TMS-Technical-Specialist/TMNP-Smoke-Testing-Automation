@@ -135,7 +135,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Select_Restore_Location_Logic" sap:VirtualizedContainerService.HintSize="1204,1749" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Select_Restore_Location_Logic" sap:VirtualizedContainerService.HintSize="1204,2570" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="hasModular" />
       <Variable x:TypeArguments="x:String" Name="modularTracking" />
@@ -182,13 +182,13 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="616,1546" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="c7fb0a06-8cf3-44ce-812d-54ffe9d95629" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="616,2367" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="c7fb0a06-8cf3-44ce-812d-54ffe9d95629" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="582,1305" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="582,2126" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="orderBase" />
               <Variable x:TypeArguments="x:Boolean" Name="isBaseBreastMilk" />
@@ -1012,7 +1012,7 @@ isHardStopDisplayed &amp;&amp; hardStopMessageForWater.Contains("Cannot process 
                 </Sequence>
               </If.Else>
             </If>
-            <Sequence DisplayName="Prepped Containers validation" sap:VirtualizedContainerService.HintSize="548,57" sap2010:WorkflowViewState.IdRef="Sequence_45">
+            <Sequence DisplayName="Prepped Containers validation" sap:VirtualizedContainerService.HintSize="548,878" sap2010:WorkflowViewState.IdRef="Sequence_45">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="newContainerStoreLocations" />
                 <Variable x:TypeArguments="x:String" Name="selectedNewContainerStoreLocation" />
@@ -1021,7 +1021,7 @@ isHardStopDisplayed &amp;&amp; hardStopMessageForWater.Contains("Cannot process 
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -1203,10 +1203,10 @@ $"       Select Prep Container Hard Stop should be displayed = {(bool)GlobalVari
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_213" xml:space="preserve">actualOutput + "\n" +
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_242" xml:space="preserve">actualOutput + "\n" +
 $"       Prep Storage Location Dropdown = {newContainerStoreLocations}\n" +
 $"       Selected Container Location = {selectedNewContainerStoreLocation}\n" +
-$"       Hard Stop = {selectLocationHardStop}\n" +
+$"       Hard Stop = {selectLocationHardStop}" +
 (isFullRTF ? 
 "\n" + $"       Prepped Container Volume Field should be disabled = {isPrepVolumeEnabled}" : "")</CSharpValue>
                         </InArgument>
@@ -1313,7 +1313,7 @@ $"       Hard Stop = {selectLocationHardStop}\n" +
                   </OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
-              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="478,50" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="478,57" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
@@ -1365,6 +1365,51 @@ $"       Hard Stop = {selectLocationHardStop}\n" +
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ForEachRow>
+              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,204" sap2010:WorkflowViewState.IdRef="MultipleAssign_10">
+                <ui:MultipleAssign.AssignOperations>
+                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_20">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_68">expectedOutput</CSharpReference>
+                        </OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_239" xml:space="preserve">expectedOutput + "\n" +
+$"       Prepare Success Message = You have successfully prepared containers for Patient {GlobalVariables.testPatient["LastName"]}, {GlobalVariables.testPatient["FirstName"]} ({GlobalVariables.appSettings["barcode_baby_prefix"].ToString() + "000001"})."</CSharpValue>
+                        </InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_21">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_69">actualOutput</CSharpReference>
+                        </OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_240" xml:space="preserve">actualOutput + "\n" +
+$"       Prepare Success Message = {successPrepareMessage}"</CSharpValue>
+                        </InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_22">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:Boolean">
+                          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_70">outTestResult</CSharpReference>
+                        </OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:Boolean">
+                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_241" xml:space="preserve">outTestResult &amp;&amp;
+successPrepareMessage.Contains($"You have successfully prepared containers for Patient {GlobalVariables.testPatient["LastName"]}, {GlobalVariables.testPatient["FirstName"]}")</CSharpValue>
+                        </InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                  </scg:List>
+                </ui:MultipleAssign.AssignOperations>
+              </ui:MultipleAssign>
             </Sequence>
             <Assign sap:VirtualizedContainerService.HintSize="548,109" sap2010:WorkflowViewState.IdRef="Assign_4">
               <Assign.To>
