@@ -6,7 +6,7 @@
   </x:Members>
   <this:Receive.inContainerList>
     <InArgument x:TypeArguments="s:String[]">
-      <CSharpValue x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_40">new string[] { "EHM000001" }</CSharpValue>
+      <CSharpValue x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_132">new string[] { "EHM00002C", "EHM00002D" }</CSharpValue>
     </InArgument>
   </this:Receive.inContainerList>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
@@ -120,9 +120,11 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
       <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Receive" sap:VirtualizedContainerService.HintSize="1031,3891" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Receive" sap:VirtualizedContainerService.HintSize="1031,3714" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ehmDisplayNameShort" />
     </Sequence.Variables>
@@ -131,11 +133,6 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get App Settings Value - Invoke Workflow File (Utilities\\Get App Settings Value.xaml)" sap:VirtualizedContainerService.HintSize="520,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Utilities\\Get App Settings Value.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <scg:Dictionary x:TypeArguments="x:String, Argument" />
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
     <Assign sap:VirtualizedContainerService.HintSize="520,175" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">
@@ -343,15 +340,15 @@
                 </scg:List>
               </uix:NSelectItem.Items>
               <uix:NSelectItem.Target>
-                <uix:TargetAnchorable BrowserURL="localhost/receive" CVScreenId="a0e7f742-30d8-4f0f-ae44-a7f358056f48" ContentHash="NuQjgAG-1kyac2dWpN6r4g" CvElementArea="799, 595, 94, 46" CvType="InputBox" DesignTimeRectangle="801, 597, 90, 42" ElementType="DropDown" ElementVisibilityArgument="Interactive" Guid="4b0308a8-44d9-4c66-9e9e-8948b2f32652" InformativeScreenshot="501407d4d155c1b6cc77c25348a235e4.png" Reference="BkxQ1887pEidR6av2KDcrw/YDGimy1lFU6jK27MiwX2IQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                <uix:TargetAnchorable BrowserURL="localhost/receive" CVScreenId="17e9cefb-ee50-4e8c-9939-5c76b2fe8ae2" ContentHash="9Sv8hwCGlUWxdb7OUTECnw" CvElementArea="799, 638, 95, 47" CvType="InputBox" DesignTimeRectangle="802, 641, 90, 42" ElementType="DropDown" ElementVisibilityArgument="Interactive" Guid="f4d8fa0e-d939-45d8-8014-a1cc1355a4e8" InformativeScreenshot="97d37caf9938bd8e8766bfbccb729e4c.png" Reference="BkxQ1887pEidR6av2KDcrw/YDGimy1lFU6jK27MiwX2IQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
                   <uix:TargetAnchorable.Anchors>
                     <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target CVScreenId="a0e7f742-30d8-4f0f-ae44-a7f358056f48" CvTextArea="712, 558, 95, 17" CvTextArgument="Pumped Date" CvType="Text" DesignTimeRectangle="603, 544, 313, 42" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='results' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aaname='Pumped Date' type='' tag='TH' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Pumped Date' /&gt;" Guid="e64023b6-a891-4a48-9cf1-244e9f450894" SearchSteps="FuzzySelector, CV" />
+                      <uix:Target CVScreenId="17e9cefb-ee50-4e8c-9939-5c76b2fe8ae2" CvTextArea="712, 601, 97, 17" CvTextArgument="Pumped Date" CvType="Text" DesignTimeRectangle="605, 588, 312, 42" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='results' matching:id='fuzzy' fuzzylevel:id='0.0' tag='TABLE' /&gt;&lt;webctrl aaname='Pumped Date' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' type='' tag='TH' class='' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Pumped Date' /&gt;" Guid="620950b9-7d08-4ee4-9864-3268287e9752" SearchSteps="FuzzySelector, CV" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
                   <uix:TargetAnchorable.FullSelectorArgument>
                     <InArgument x:TypeArguments="x:String">
-                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_126">$"&lt;webctrl id='results' tag='TABLE' /&gt;&lt;webctrl id='pumped_year[[{inContainerList[0]}]]' tableRow='2' tag='SELECT' /&gt;"</CSharpValue>
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_134">$"&lt;webctrl id='results' tag='TABLE' /&gt;&lt;webctrl name='pumped_year[{inContainerList[0]}]' tableRow='2' tag='SELECT' id='pumped_year[{inContainerList[0]}]' rowName='{inContainerList[0]}' /&gt;"</CSharpValue>
                     </InArgument>
                   </uix:TargetAnchorable.FullSelectorArgument>
                 </uix:TargetAnchorable>
