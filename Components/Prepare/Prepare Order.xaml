@@ -144,7 +144,7 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Prepare_Order" sap:VirtualizedContainerService.HintSize="1171,1004" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Prepare_Order" sap:VirtualizedContainerService.HintSize="1031,1555" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Default="0" Name="roundingCalDecimal" />
       <Variable x:TypeArguments="x:String" Name="modularTracking" />
@@ -155,7 +155,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="484,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="582,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
@@ -185,7 +185,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:CommentOut DisplayName="In Additive Template" sap:VirtualizedContainerService.HintSize="484,57" sap2010:WorkflowViewState.IdRef="CommentOut_13">
+    <ui:CommentOut DisplayName="In Additive Template" sap:VirtualizedContainerService.HintSize="582,57" sap2010:WorkflowViewState.IdRef="CommentOut_13">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,143" sap2010:WorkflowViewState.IdRef="Sequence_63">
           <sap:WorkflowViewStateService.ViewState>
@@ -209,13 +209,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Prepare Screen" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,744" sap2010:WorkflowViewState.IdRef="NApplicationCard_12" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="49ad95b1-32fc-431e-b70a-14e2b75a95fd" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Prepare Screen" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="582,1295" sap2010:WorkflowViewState.IdRef="NApplicationCard_12" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="49ad95b1-32fc-431e-b70a-14e2b75a95fd" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,463" sap2010:WorkflowViewState.IdRef="Sequence_124">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="548,1054" sap2010:WorkflowViewState.IdRef="Sequence_124">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="patientListSelector" />
               <Variable x:TypeArguments="x:Int32" Default="0" Name="CurrentIndex" />
@@ -226,14 +226,14 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NGoToUrl DisplayName="Go To URL - " sap:VirtualizedContainerService.HintSize="416,123" sap2010:WorkflowViewState.IdRef="NGoToUrl_4" ScopeIdentifier="49ad95b1-32fc-431e-b70a-14e2b75a95fd" Version="V5">
+            <uix:NGoToUrl DisplayName="Go To URL - " sap:VirtualizedContainerService.HintSize="514,123" sap2010:WorkflowViewState.IdRef="NGoToUrl_4" ScopeIdentifier="49ad95b1-32fc-431e-b70a-14e2b75a95fd" Version="V5">
               <uix:NGoToUrl.Url>
                 <InArgument x:TypeArguments="x:String">
                   <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_299">GlobalVariables.websiteUrl + "/prepare"</CSharpValue>
                 </InArgument>
               </uix:NGoToUrl.Url>
             </uix:NGoToUrl>
-            <ui:ForEach x:TypeArguments="x:String" DisplayName="For Each Barcodes that will be scanned in prepare step 1" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="ForEach`1_13">
+            <ui:ForEach x:TypeArguments="x:String" DisplayName="For Each Barcodes that will be scanned in prepare step 1" sap:VirtualizedContainerService.HintSize="514,57" sap2010:WorkflowViewState.IdRef="ForEach`1_13">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:String">
                   <ActivityAction.Argument>
@@ -281,7 +281,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ForEach>
-            <If DisplayName="If the barcode that will be scanned in prepare step 1 is a product" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="If_58">
+            <If DisplayName="If the barcode that will be scanned in prepare step 1 is a product" sap:VirtualizedContainerService.HintSize="514,57" sap2010:WorkflowViewState.IdRef="If_58">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_302">inIsFirstStepScanProductBarcode</CSharpValue>
@@ -989,7 +989,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <ui:ForEach x:TypeArguments="x:String" DisplayName="For Each Barcodes that will be scanned in prepare step 2" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="ForEach`1_14">
+            <ui:ForEach x:TypeArguments="x:String" DisplayName="For Each Barcodes that will be scanned in prepare step 2" sap:VirtualizedContainerService.HintSize="514,57" sap2010:WorkflowViewState.IdRef="ForEach`1_14">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:String">
                   <ActivityAction.Argument>
@@ -1037,7 +1037,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ForEach>
-            <If DisplayName="If - Expand Order Details" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="If_57">
+            <If DisplayName="If - Expand Order Details" sap:VirtualizedContainerService.HintSize="514,57" sap2010:WorkflowViewState.IdRef="If_57">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_347">isExpandOrderDetails</CSharpValue>
@@ -1277,7 +1277,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <If DisplayName="If - Complete prepare process" sap:VirtualizedContainerService.HintSize="416,50" sap2010:WorkflowViewState.IdRef="If_59">
+            <If DisplayName="If - Complete prepare process" sap:VirtualizedContainerService.HintSize="514,641" sap2010:WorkflowViewState.IdRef="If_59">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_389">inIsCompletePrep</CSharpValue>
@@ -1285,12 +1285,12 @@
               </If.Condition>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,257" sap2010:WorkflowViewState.IdRef="Sequence_170">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,484" sap2010:WorkflowViewState.IdRef="Sequence_170">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="restoreDropdownExist" />
                     <Variable x:TypeArguments="x:String" Name="restoreText" />
@@ -1320,13 +1320,13 @@
                       </scg:List>
                     </ui:MultipleAssign.AssignOperations>
                   </ui:MultipleAssign>
-                  <uix:NForEachUiElement DisplayName="Select restore location and input modular value" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='CurrentElement'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='mixToCal'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='tr' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='4' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="478,48" sap2010:WorkflowViewState.IdRef="NForEachUiElement_32" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="49ad95b1-32fc-431e-b70a-14e2b75a95fd" Version="V5">
+                  <uix:NForEachUiElement DisplayName="Select restore location and input modular value" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='CurrentElement'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='mixToCal'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='tr' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='4' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="478,57" sap2010:WorkflowViewState.IdRef="NForEachUiElement_32" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="49ad95b1-32fc-431e-b70a-14e2b75a95fd" Version="V5">
                     <uix:NForEachUiElement.Body>
                       <ActivityAction x:TypeArguments="x:Int32">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,363" sap2010:WorkflowViewState.IdRef="Sequence_181">
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,365" sap2010:WorkflowViewState.IdRef="Sequence_181">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:Boolean" Name="isMilkTypeDropdownDisplayed" />
                             <Variable x:TypeArguments="x:Boolean" Name="isVolumeFieldEnabled" />
@@ -1590,6 +1590,27 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NForEachUiElement>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="1" DisplayName="Click 'Complete Prep &amp; Print'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,218" sap2010:WorkflowViewState.IdRef="NClick_20" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="49ad95b1-32fc-431e-b70a-14e2b75a95fd" Version="V4">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="localhost/prepare" CVScreenId="d305e04f-3b1c-41c4-99cc-c0a67382014d" ContentHash="oklmoKyYN0661sPg92tFhw" CvElementArea="206, 640, 415, 27" CvTextArea="366, 649, 95, 11" CvTextArgument="Complete Prep &amp; Print" CvType="Button" DesignTimeRectangle="208, 642, 412, 24" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Complete Prep &amp;amp; Print' parentid='info-block' tag='BUTTON' /&gt;" Guid="6697d7d9-c9e0-4888-bb81-f31efbf21f03" InformativeScreenshot="f3c0250a309364eeaad798e01498ed35.png" Reference="BkxQ1887pEidR6av2KDcrw/v8XfLhNizUy8JSZxyC33VA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
                 </Sequence>
               </If.Then>
               <If.Else>

@@ -1,4 +1,10 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Get_Soft_Stop_Messages" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Get_Soft_Stop_Messages" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="outSoftStopMessage" Type="OutArgument(x:String)" />
+    <x:Property Name="outPatientDetails" Type="OutArgument(x:String)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -38,6 +44,7 @@
       <x:String>System.Reflection</x:String>
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -97,74 +104,84 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Get_Soft_Stop_Messages" sap:VirtualizedContainerService.HintSize="1123,610.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Get_Soft_Stop_Messages" sap:VirtualizedContainerService.HintSize="1031,1428" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,530" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsDisplayNameAuto="True" ScopeGuid="1edf6414-9e16-4f94-9ba8-3e84b508c36c" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="520,1239" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsDisplayNameAuto="True" ScopeGuid="1edf6414-9e16-4f94-9ba8-3e84b508c36c" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,289" sap2010:WorkflowViewState.IdRef="Sequence_2">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="x:String" Name="softStopMessage" />
-            </Sequence.Variables>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,989" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState DisplayName="Check App State 'Selected Patient:Name: …'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="1edf6414-9e16-4f94-9ba8-3e84b508c36c" Version="V5">
+            <uix:NCheckState DisplayName="Check App State 'Selected Patient:Name: …'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,927" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="1edf6414-9e16-4f94-9ba8-3e84b508c36c" Version="V5">
               <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,443" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Attribute 'Selected Patient:Name: …'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,187" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" ScopeIdentifier="1edf6414-9e16-4f94-9ba8-3e84b508c36c" Version="V5">
+                  <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Patient Details" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,196" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" ScopeIdentifier="1edf6414-9e16-4f94-9ba8-3e84b508c36c" Version="V5">
                     <uix:NGetAttributeGeneric.Result>
                       <OutArgument x:TypeArguments="x:String">
-                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">softStopMessage</CSharpReference>
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">outPatientDetails</CSharpReference>
                       </OutArgument>
                     </uix:NGetAttributeGeneric.Result>
                     <uix:NGetAttributeGeneric.Target>
-                      <uix:TargetAnchorable BrowserURL="localhost/feedbottles" DesignTimeRectangle="331, 220, 1508, 935" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='wizardpage_div' tag='DIV' class='card-body' parentclass='wizardpage card' parentname='theform' /&gt;" Guid="8071653a-24ab-4979-b384-0a5a6c37698a" InformativeScreenshot="2683772adfca2cf8701037c5b8900078.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+                      <uix:TargetAnchorable BrowserURL="localhost/feedbottles" DesignTimeRectangle="356, 336, 1458, 135" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='wizardpage_div' tag='DIV' class='alert alert-info d-block' parentclass='card-body' parentname='theform' /&gt;" Guid="a0d25955-f4d1-42cb-a0b8-3289320965da" InformativeScreenshot="ee2b56fd1526e9e724cd9672d2fc5e79.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+                    </uix:NGetAttributeGeneric.Target>
+                  </uix:NGetAttributeGeneric>
+                  <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Soft Stop Message" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,187" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_2" ScopeIdentifier="1edf6414-9e16-4f94-9ba8-3e84b508c36c" Version="V5">
+                    <uix:NGetAttributeGeneric.Result>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">outSoftStopMessage</CSharpReference>
+                      </OutArgument>
+                    </uix:NGetAttributeGeneric.Result>
+                    <uix:NGetAttributeGeneric.Target>
+                      <uix:TargetAnchorable BrowserURL="localhost/feedbottles" DesignTimeRectangle="356, 481, 1458, 72" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='wizardpage_div' tag='DIV' class='alert alert-warning' parentclass='card-body' parentname='theform' /&gt;" Guid="54b3b901-2fd0-4d7c-bb6f-5d97962014f7" InformativeScreenshot="92790d38d0d0c557a2f276d281740d33.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
                     </uix:NGetAttributeGeneric.Target>
                   </uix:NGetAttributeGeneric>
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">outSoftStopMessage</CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">Doesn't appear</InArgument>
+                    </Assign.Value>
+                  </Assign>
                 </Sequence>
               </uix:NCheckState.IfNotExists>
               <uix:NCheckState.Target>
-                <uix:TargetAnchorable BrowserURL="localhost/feedbottles" DesignTimeRectangle="331, 220, 1508, 935" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='wizardpage_div' tag='DIV' class='card-body' parentclass='wizardpage card' parentname='theform' /&gt;" Guid="0aa4fa7d-c321-4645-904b-bf1ffb63ad0f" InformativeScreenshot="2683772adfca2cf8701037c5b8900078.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+                <uix:TargetAnchorable BrowserURL="localhost/feedbottles" DesignTimeRectangle="356, 481, 1458, 72" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='wizardpage_div' tag='DIV' class='alert alert-warning' parentclass='card-body' parentname='theform' /&gt;" Guid="41fa9813-1b3c-4150-8c3f-a9fcd7eb1de7" InformativeScreenshot="92790d38d0d0c557a2f276d281740d33.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
               </uix:NCheckState.Target>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NCheckState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn">
-              <ui:LogMessage.Message>
-                <InArgument x:TypeArguments="x:Object">
-                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">softStopMessage</CSharpValue>
-                </InArgument>
-              </ui:LogMessage.Message>
-            </ui:LogMessage>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
@@ -172,5 +189,12 @@
         <uix:TargetApp Area="0, 0, 0, 0" Selector="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" Version="V2" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="520,166" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+      <ui:LogMessage.Message>
+        <InArgument x:TypeArguments="x:Object">
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">outSoftStopMessage + " - " + outPatientDetails</CSharpValue>
+        </InArgument>
+      </ui:LogMessage.Message>
+    </ui:LogMessage>
   </Sequence>
 </Activity>

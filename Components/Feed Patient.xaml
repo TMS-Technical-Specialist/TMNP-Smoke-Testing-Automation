@@ -1,7 +1,7 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Feed_Patient" this:Feed_Patient.inIsNoBreastmilkOrder="False" this:Feed_Patient.inPatientBarcode="PT000001" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=System.Private.CoreLib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Feed_Patient" this:Feed_Patient.inIsNoBreastmilkOrder="False" this:Feed_Patient.inPatientBarcode="PT000001" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="inIsNoBreastmilkOrder" Type="InArgument(x:Boolean)" />
-    <x:Property Name="outTestResult" Type="OutArgument(x:String)" />
+    <x:Property Name="outTestResult" Type="OutArgument(x:Boolean)" />
     <x:Property Name="outFailureReason" Type="OutArgument(x:String)" />
     <x:Property Name="inIsQuickFeed" Type="InArgument(x:Boolean)" />
     <x:Property Name="inContainerBarcodes" Type="InArgument(s:String[])" />
@@ -131,9 +131,10 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Feed_Patient" sap:VirtualizedContainerService.HintSize="1031,2454" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Feed_Patient" sap:VirtualizedContainerService.HintSize="1031,3079" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="allowMultipleFeed" />
     </Sequence.Variables>
@@ -142,12 +143,12 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get App Settings Value - Invoke Workflow File (Utilities\\Get App Settings Value.xaml)" sap:VirtualizedContainerService.HintSize="520,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Utilities\\Get App Settings Value.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get App Settings Value - Invoke Workflow File (Utilities\\Get App Settings Value.xaml)" sap:VirtualizedContainerService.HintSize="618,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Utilities\\Get App Settings Value.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="520,149" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="618,149" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -165,15 +166,15 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="520,57" sap2010:WorkflowViewState.IdRef="CommentOut_12">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="618,57" sap2010:WorkflowViewState.IdRef="CommentOut_12">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,108" sap2010:WorkflowViewState.IdRef="Sequence_38">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,143" sap2010:WorkflowViewState.IdRef="Sequence_38">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:BuildDataTable DisplayName="Container Details Datable Template" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="BuildDataTable_4" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;barcode&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;volume&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;location&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;state&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;expiration&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;barcode&gt;FRM00001B&lt;/barcode&gt;&#xD;&#xA;    &lt;volume /&gt;&#xD;&#xA;    &lt;location /&gt;&#xD;&#xA;    &lt;state /&gt;&#xD;&#xA;    &lt;expiration /&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;&lt;/NewDataSet&gt;">
+          <ui:BuildDataTable DisplayName="Container Details Datable Template" sap:VirtualizedContainerService.HintSize="416,83" sap2010:WorkflowViewState.IdRef="BuildDataTable_4" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;barcode&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;expiry&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;barcode&gt;FRM00001B&lt;/barcode&gt;&#xA;    &lt;expiry /&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;">
             <ui:BuildDataTable.DataTable>
               <OutArgument x:TypeArguments="sd:DataTable">
                 <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">inContainerDetails</CSharpReference>
@@ -181,7 +182,7 @@
             </ui:BuildDataTable.DataTable>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -195,261 +196,24 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="520,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,108" sap2010:WorkflowViewState.IdRef="Sequence_8">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(2)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="ce06b885-fae6-41a6-9c4d-99f97878cfa4" Version="V2">
-            <uix:NApplicationCard.Body>
-              <ActivityAction x:TypeArguments="x:Object">
-                <ActivityAction.Argument>
-                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-                </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="522,2006" sap2010:WorkflowViewState.IdRef="Sequence_2">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <uix:NGoToUrl DisplayName="Go To URL - " sap:VirtualizedContainerService.HintSize="488,115" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="http://localhost/feedbottles" Version="V4" />
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type patient barcode" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,251" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="ce06b885-fae6-41a6-9c4d-99f97878cfa4" Version="V4">
-                    <uix:NTypeInto.Target>
-                      <uix:TargetAnchorable BrowserURL="localhost/feedbottles" CVScreenId="52a35241-268d-4c43-9595-c68b76da9cc1" ContentHash="1BDfQyzNIE-abyWrUJgGyw" CvElementArea="563, 261, 971, 31" CvType="InputBox" DesignTimeRectangle="566, 263, 971, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='baby' tag='INPUT' type='text' class='scanbaby form-control form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="cf13fc33-176b-4ca9-8e4d-042975abfe3d" InformativeScreenshot="eb8b764630103b5c996d17d528aa179c.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/Y0rHSozJSkCEaY8eAhcbPw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
-                        <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                            <uix:Target CVScreenId="52a35241-268d-4c43-9595-c68b76da9cc1" CvTextArea="564, 250, 113, 9" CvTextArgument="Scan the Patient's barcode" CvType="Text" DesignTimeRectangle="566, 249, 971, 12" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Scan the Patient&amp;apos;s barcode' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Scan the Patient&amp;apos;s barcode' /&gt;" Guid="fcb1dfb6-19f8-4c1d-b990-f43446bcb3c1" SearchSteps="FuzzySelector, CV" />
-                          </scg:List>
-                        </uix:TargetAnchorable.Anchors>
-                      </uix:TargetAnchorable>
-                    </uix:NTypeInto.Target>
-                    <uix:NTypeInto.Text>
-                      <InArgument x:TypeArguments="x:String">
-                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">inPatientBarcode + "[k(Enter)]"</CSharpValue>
-                      </InArgument>
-                    </uix:NTypeInto.Text>
-                  </uix:NTypeInto>
-                  <If DisplayName="If - Multiple Feed Settings is turned on" sap:VirtualizedContainerService.HintSize="488,1115" sap2010:WorkflowViewState.IdRef="If_1">
-                    <If.Condition>
-                      <InArgument x:TypeArguments="x:Boolean">
-                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">allowMultipleFeed</CSharpValue>
-                      </InArgument>
-                    </If.Condition>
-                    <If.Then>
-                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,674" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                        <Sequence.Variables>
-                          <Variable x:TypeArguments="x:Int32" Name="index" />
-                        </Sequence.Variables>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:ForEach x:TypeArguments="x:String" DisplayName="For Each containers that will be feed" sap:VirtualizedContainerService.HintSize="452,433" sap2010:WorkflowViewState.IdRef="ForEach`1_1">
-                          <ui:ForEach.Body>
-                            <ActivityAction x:TypeArguments="x:String">
-                              <ActivityAction.Argument>
-                                <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
-                              </ActivityAction.Argument>
-                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,302" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type container barcode" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,242" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="ce06b885-fae6-41a6-9c4d-99f97878cfa4" Version="V4">
-                                  <uix:NTypeInto.Target>
-                                    <uix:TargetAnchorable BrowserURL="localhost/feedbottles" CVScreenId="0456e598-fa6f-4c42-870b-5da2af4cc437" ContentHash="w5EJ8IWBc06_zjVKFng_Kw" CvElementArea="554, 365, 974, 30" CvType="InputBox" DesignTimeRectangle="558, 366, 972, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" Guid="655e3c39-6c15-4a40-81ee-38d1e7b9493e" InformativeScreenshot="edec514d1c7d0d397ec1197277dd72e9.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/tiRxA_WFlUSVGxGxrOkQWg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
-                                      <uix:TargetAnchorable.Anchors>
-                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                          <uix:Target CVScreenId="0456e598-fa6f-4c42-870b-5da2af4cc437" CvTextArea="557, 353, 120, 9" CvType="Text" DesignTimeRectangle="558, 352, 972, 12" ElementType="Text" Guid="18f99c22-5c0a-4164-b906-da4632874131" SearchSteps="FuzzySelector, CV">
-                                            <uix:Target.CvTextArgument>
-                                              <InArgument x:TypeArguments="x:String">
-                                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">allowMultipleFeed == true ? "Scan Container(s)" : "Scan the containers barcode"</CSharpValue>
-                                              </InArgument>
-                                            </uix:Target.CvTextArgument>
-                                            <uix:Target.FuzzySelectorArgument>
-                                              <InArgument x:TypeArguments="x:String">
-                                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">allowMultipleFeed == true ? "&lt;webctrl id='bottle_for_list_label' tag='LABEL' type='' class='' aaname='Scan Container(s)' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Scan Container(s)' /&gt;" : "&lt;webctrl tag='LABEL' type='' class='' aaname='Scan the containers barcode' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Scan the containers barcode' /&gt;"</CSharpValue>
-                                              </InArgument>
-                                            </uix:Target.FuzzySelectorArgument>
-                                          </uix:Target>
-                                        </scg:List>
-                                      </uix:TargetAnchorable.Anchors>
-                                      <uix:TargetAnchorable.FuzzySelectorArgument>
-                                        <InArgument x:TypeArguments="x:String">
-                                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">allowMultipleFeed == true ? "&lt;webctrl id='bottle_for_list' tag='INPUT' type='text' class='multiscan form-control scanbottle form-control form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;":"&lt;webctrl id='bottle' tag='INPUT' type='text' class='scanbottle form-control form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;"</CSharpValue>
-                                        </InArgument>
-                                      </uix:TargetAnchorable.FuzzySelectorArgument>
-                                    </uix:TargetAnchorable>
-                                  </uix:NTypeInto.Target>
-                                  <uix:NTypeInto.Text>
-                                    <InArgument x:TypeArguments="x:String">
-                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">inContainerBarcodes[index] + "[k(Enter)]"</CSharpValue>
-                                    </InArgument>
-                                  </uix:NTypeInto.Text>
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                </uix:NTypeInto>
-                              </Sequence>
-                            </ActivityAction>
-                          </ui:ForEach.Body>
-                          <ui:ForEach.CurrentIndex>
-                            <OutArgument x:TypeArguments="x:Int32">
-                              <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">index</CSharpReference>
-                            </OutArgument>
-                          </ui:ForEach.CurrentIndex>
-                          <ui:ForEach.Values>
-                            <InArgument x:TypeArguments="sc:IEnumerable">
-                              <CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_36">inContainerBarcodes</CSharpValue>
-                            </InArgument>
-                          </ui:ForEach.Values>
-                        </ui:ForEach>
-                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,181" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ce06b885-fae6-41a6-9c4d-99f97878cfa4" Version="V4">
-                          <uix:NClick.Target>
-                            <uix:TargetAnchorable BrowserURL="localhost/feedbottles" CVScreenId="c0c6ca3c-0e9e-4203-9093-315bec31751d" ContentHash="SgJOzBodO0eGTV1TycPFQA" CvElementArea="1486, 553, 48, 27" CvTextArea="1498, 560, 23, 10" CvTextArgument="Next" CvType="Button" DesignTimeRectangle="1487, 554, 45, 24" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='_submit__next' tag='INPUT' /&gt;" Guid="af58f5bb-fb89-4806-beee-f014d48bc4bc" InformativeScreenshot="0cfa3e1fcde0b21a002bedd10c7e0cc0.png" Reference="BkxQ1887pEidR6av2KDcrw/7TchqLqTQUa3BhIAOh6_ag" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
-                              <uix:TargetAnchorable.Anchors>
-                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                  <uix:Target CVScreenId="c0c6ca3c-0e9e-4203-9093-315bec31751d" CvElementArea="1428, 553, 56, 26" CvTextArea="1440, 560, 30, 10" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="1429, 554, 53, 24" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='_submit__cancel' tag='INPUT' type='submit' class='btn btn- btn btn-outline-primary mr-2' aaname='Cancel' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Cancel' /&gt;" Guid="c5fbeabe-851a-4575-9551-1da299c6d7b4" SearchSteps="FuzzySelector, CV" />
-                                </scg:List>
-                              </uix:TargetAnchorable.Anchors>
-                            </uix:TargetAnchorable>
-                          </uix:NClick.Target>
-                        </uix:NClick>
-                      </Sequence>
-                    </If.Then>
-                    <If.Else>
-                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,302" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type container barcode" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,242" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="ce06b885-fae6-41a6-9c4d-99f97878cfa4" Version="V4">
-                          <uix:NTypeInto.Target>
-                            <uix:TargetAnchorable BrowserURL="localhost/feedbottles" CVScreenId="0456e598-fa6f-4c42-870b-5da2af4cc437" ContentHash="w5EJ8IWBc06_zjVKFng_Kw" CvElementArea="554, 365, 974, 30" CvType="InputBox" DesignTimeRectangle="558, 366, 972, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" Guid="655e3c39-6c15-4a40-81ee-38d1e7b9493e" InformativeScreenshot="edec514d1c7d0d397ec1197277dd72e9.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/tiRxA_WFlUSVGxGxrOkQWg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
-                              <uix:TargetAnchorable.Anchors>
-                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                  <uix:Target CVScreenId="0456e598-fa6f-4c42-870b-5da2af4cc437" CvTextArea="557, 353, 120, 9" CvType="Text" DesignTimeRectangle="558, 352, 972, 12" ElementType="Text" Guid="18f99c22-5c0a-4164-b906-da4632874131" SearchSteps="FuzzySelector, CV">
-                                    <uix:Target.CvTextArgument>
-                                      <InArgument x:TypeArguments="x:String">
-                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_40">allowMultipleFeed == true ? "Scan Container(s)" : "Scan the containers barcode"</CSharpValue>
-                                      </InArgument>
-                                    </uix:Target.CvTextArgument>
-                                    <uix:Target.FuzzySelectorArgument>
-                                      <InArgument x:TypeArguments="x:String">
-                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_39">allowMultipleFeed == true ? "&lt;webctrl id='bottle_for_list_label' tag='LABEL' type='' class='' aaname='Scan Container(s)' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Scan Container(s)' /&gt;" : "&lt;webctrl tag='LABEL' type='' class='' aaname='Scan the containers barcode' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Scan the containers barcode' /&gt;"</CSharpValue>
-                                      </InArgument>
-                                    </uix:Target.FuzzySelectorArgument>
-                                  </uix:Target>
-                                </scg:List>
-                              </uix:TargetAnchorable.Anchors>
-                              <uix:TargetAnchorable.FuzzySelectorArgument>
-                                <InArgument x:TypeArguments="x:String">
-                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_41">allowMultipleFeed == true ? "&lt;webctrl id='bottle_for_list' tag='INPUT' type='text' class='multiscan form-control scanbottle form-control form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;":"&lt;webctrl id='bottle' tag='INPUT' type='text' class='scanbottle form-control form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;"</CSharpValue>
-                                </InArgument>
-                              </uix:TargetAnchorable.FuzzySelectorArgument>
-                            </uix:TargetAnchorable>
-                          </uix:NTypeInto.Target>
-                          <uix:NTypeInto.Text>
-                            <InArgument x:TypeArguments="x:String">
-                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_38">inContainerBarcodes[0] + "[k(Enter)]"</CSharpValue>
-                            </InArgument>
-                          </uix:NTypeInto.Text>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </uix:NTypeInto>
-                      </Sequence>
-                    </If.Else>
-                  </If>
-                  <If sap:VirtualizedContainerService.HintSize="488,463" sap2010:WorkflowViewState.IdRef="If_2">
-                    <If.Condition>
-                      <InArgument x:TypeArguments="x:Boolean">
-                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">(bool)GlobalVariables.appSettings["feed/soft_stop_ebm_option_on_formula_feed"] &amp;&amp; inContainerBarcodes.Any(container =&gt; container.StartsWith("FRM"))</CSharpValue>
-                      </InArgument>
-                    </If.Condition>
-                    <If.Then>
-                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,241" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Finish'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,181" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ce06b885-fae6-41a6-9c4d-99f97878cfa4" Version="V5">
-                          <uix:NClick.Target>
-                            <uix:TargetAnchorable BrowserURL="localhost/feedbottles" CVScreenId="aca1d7bb-f436-4205-a8b9-ab3516f92051" ContentHash="8LL2kuR_A06MNLdTjplD7g" CvElementArea="1728, 581, 80, 38" CvTextArea="1746, 592, 42, 13" CvTextArgument="Finish" CvType="Button" DesignTimeRectangle="1731, 583, 75, 34" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='_submit__finish' tag='INPUT' /&gt;" Guid="b7a75b4f-fba5-45b2-a7d3-18f9e2345751" InformativeScreenshot="a411a1f9a7ec4addcb14fe381df9922e.png" Reference="Dox1h-9hikKuwyQriw9jJw/Uk7tBe2BnUG3SLvLfpTOqA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
-                              <uix:TargetAnchorable.Anchors>
-                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                  <uix:Target CVScreenId="aca1d7bb-f436-4205-a8b9-ab3516f92051" CvElementArea="1643, 581, 82, 37" CvTextArea="1660, 592, 46, 13" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="1645, 583, 78, 34" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='_submit__cancel' tag='INPUT' type='submit' class='btn btn- btn btn-outline-primary mr-2' aaname='Cancel' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Cancel' /&gt;" Guid="feb8a68e-acc4-490d-b444-69b1b6076c6c" SearchSteps="FuzzySelector, CV" />
-                                </scg:List>
-                              </uix:TargetAnchorable.Anchors>
-                            </uix:TargetAnchorable>
-                          </uix:NClick.Target>
-                        </uix:NClick>
-                      </Sequence>
-                    </If.Then>
-                    <If.Else>
-                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </Sequence>
-                    </If.Else>
-                  </If>
-                </Sequence>
-              </ActivityAction>
-            </uix:NApplicationCard.Body>
-            <uix:NApplicationCard.TargetApp>
-              <uix:TargetApp Area="0, 0, 0, 0" ContentHash="xafJKBFHiU-85qP2nw1L-g" Reference="Dox1h-9hikKuwyQriw9jJw/VHKTYF-Dw0auUGuIWqCT5w" Selector="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" Version="V2" />
-            </uix:NApplicationCard.TargetApp>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </uix:NApplicationCard>
-        </Sequence>
-      </ui:CommentOut.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(2)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="520,1991" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="ce06b885-fae6-41a6-9c4d-99f97878cfa4" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(2)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="618,2673" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="ce06b885-fae6-41a6-9c4d-99f97878cfa4" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,1750" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="584,2432" sap2010:WorkflowViewState.IdRef="Sequence_14">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click Feed Patient - Invoke Workflow File (Components\\Buttons\\Click Feed Patient.xaml)" sap:VirtualizedContainerService.HintSize="452,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click Feed Patient.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click Feed Patient - Invoke Workflow File (Components\\Buttons\\Click Feed Patient.xaml)" sap:VirtualizedContainerService.HintSize="550,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click Feed Patient.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <scg:Dictionary x:TypeArguments="x:String, Argument" />
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type patient barcode" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,251" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="ce06b885-fae6-41a6-9c4d-99f97878cfa4" Version="V4">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type patient barcode" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="550,251" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="ce06b885-fae6-41a6-9c4d-99f97878cfa4" Version="V4">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="localhost/feedbottles" CVScreenId="52a35241-268d-4c43-9595-c68b76da9cc1" ContentHash="1BDfQyzNIE-abyWrUJgGyw" CvElementArea="563, 261, 971, 31" CvType="InputBox" DesignTimeRectangle="566, 263, 971, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='baby' tag='INPUT' type='text' class='scanbaby form-control form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="cf13fc33-176b-4ca9-8e4d-042975abfe3d" InformativeScreenshot="eb8b764630103b5c996d17d528aa179c.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/Y0rHSozJSkCEaY8eAhcbPw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                   <uix:TargetAnchorable.Anchors>
@@ -465,7 +229,7 @@
                 </InArgument>
               </uix:NTypeInto.Text>
             </uix:NTypeInto>
-            <If DisplayName="If - Multiple Feed Settings is turned on" sap:VirtualizedContainerService.HintSize="452,462" sap2010:WorkflowViewState.IdRef="If_3">
+            <If DisplayName="If - Multiple Feed Settings is turned on" sap:VirtualizedContainerService.HintSize="550,189" sap2010:WorkflowViewState.IdRef="If_3">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_46">allowMultipleFeed</CSharpValue>
@@ -478,13 +242,13 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,298" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_10">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Int32" Default="0" Name="index" />
                   </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -577,7 +341,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <If DisplayName="If - Quick Feed action and quick feed enabled" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="If_9">
+            <If DisplayName="If - Quick Feed action and quick feed enabled" sap:VirtualizedContainerService.HintSize="550,1589" sap2010:WorkflowViewState.IdRef="If_9">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_67">inIsQuickFeed &amp;&amp; (bool)GlobalVariables.appSettings["feed/use_quick_feed"] &amp;&amp; !inIsNoBreastmilkOrder</CSharpValue>
@@ -585,12 +349,12 @@
               </If.Condition>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="548,915" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="548,1360" sap2010:WorkflowViewState.IdRef="Sequence_32">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="ui:UiElement" Name="quickFeedConfirmationCheckbox" />
                   </Sequence.Variables>
@@ -599,52 +363,111 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NCheckState DisplayName="Check quick feed confirmation checkbox" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="514,855" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="ce06b885-fae6-41a6-9c4d-99f97878cfa4" Version="V5">
+                  <uix:NCheckState DisplayName="Check quick feed confirmation checkbox" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="514,1300" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="ce06b885-fae6-41a6-9c4d-99f97878cfa4" Version="V5">
                     <uix:NCheckState.IfExists>
-                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="512,399" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="512,813" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Name="softStopMessage" />
+                        </Sequence.Variables>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click checkbox confirmation" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,171" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" Version="V5">
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Soft Stop Messages - Invoke Workflow File (Components\\Feed\\Get Soft Stop Messages.xaml)" sap:VirtualizedContainerService.HintSize="478,234" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Components\\Feed\\Get Soft Stop Messages.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <OutArgument x:TypeArguments="x:String" x:Key="outSoftStopMessage">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_15">softStopMessage</CSharpReference>
+                            </OutArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                        </ui:InvokeWorkflowFile>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click checkbox confirmation" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,171" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" Version="V5">
                           <uix:NClick.InUiElement>
                             <InArgument x:TypeArguments="ui:UiElement">
                               <CSharpValue x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpValue`1_65">quickFeedConfirmationCheckbox</CSharpValue>
                             </InArgument>
                           </uix:NClick.InUiElement>
                         </uix:NClick>
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click Finish - Invoke Workflow File (Components\\Buttons\\Click Finish.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click Finish.xaml">
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click Finish - Invoke Workflow File (Components\\Buttons\\Click Finish.xaml)" sap:VirtualizedContainerService.HintSize="478,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click Finish.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <scg:Dictionary x:TypeArguments="x:String, Argument" />
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
+                        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,171" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
+                          <ui:MultipleAssign.AssignOperations>
+                            <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                                <ui:AssignOperation.To>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_16">outFailureReason</CSharpReference>
+                                  </OutArgument>
+                                </ui:AssignOperation.To>
+                                <ui:AssignOperation.Value>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_71" xml:space="preserve">outFailureReason + "\n" +
+$"•  Quick Feed Confirmation\n" +
+$"     • Expected output\n" +
+$"        Soft Stop message: Container contents are fresh and pumped less than 48 hours ago, or container contents were thawed less than 24 hours ago."+
+$"     • Actual output\n" +
+$"       {softStopMessage}"</CSharpValue>
+                                  </InArgument>
+                                </ui:AssignOperation.Value>
+                              </ui:AssignOperation>
+                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+                                <ui:AssignOperation.To>
+                                  <OutArgument x:TypeArguments="x:Boolean">
+                                    <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_17">outTestResult</CSharpReference>
+                                  </OutArgument>
+                                </ui:AssignOperation.To>
+                                <ui:AssignOperation.Value>
+                                  <InArgument x:TypeArguments="x:Boolean">
+                                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_72" xml:space="preserve">outTestResult &amp;&amp;
+softStopMessage.Contains("Container contents are fresh and pumped less than 48 hours ago, or container contents were thawed less than 24 hours ago.")</CSharpValue>
+                                  </InArgument>
+                                </ui:AssignOperation.Value>
+                              </ui:AssignOperation>
+                            </scg:List>
+                          </ui:MultipleAssign.AssignOperations>
+                        </ui:MultipleAssign>
                       </Sequence>
                     </uix:NCheckState.IfExists>
                     <uix:NCheckState.IfNotExists>
-                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="512,200" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="512,231" sap2010:WorkflowViewState.IdRef="Sequence_34">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,140" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
+                        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,171" sap2010:WorkflowViewState.IdRef="MultipleAssign_8">
                           <ui:MultipleAssign.AssignOperations>
                             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
                                 <ui:AssignOperation.To>
                                   <OutArgument x:TypeArguments="x:String">
-                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">outFailureReason</CSharpReference>
+                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_18">outFailureReason</CSharpReference>
                                   </OutArgument>
                                 </ui:AssignOperation.To>
                                 <ui:AssignOperation.Value>
                                   <InArgument x:TypeArguments="x:String">
-                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_66" xml:space="preserve">outFailureReason + "\n" +
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_73" xml:space="preserve">outFailureReason + "\n" +
 $"•  Quick Feed Confirmation\n" +
 $"     • Expected output\n" +
-$"        Should appear.\n"+
+$"        Soft Stop message: Container contents are fresh and pumped less than 48 hours ago, or container contents were thawed less than 24 hours ago."+
 $"     • Actual output\n" +
-$"       Doesn't appear"</CSharpValue>
+$"       Doesn't appear."</CSharpValue>
+                                  </InArgument>
+                                </ui:AssignOperation.Value>
+                              </ui:AssignOperation>
+                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
+                                <ui:AssignOperation.To>
+                                  <OutArgument x:TypeArguments="x:Boolean">
+                                    <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_19">outTestResult</CSharpReference>
+                                  </OutArgument>
+                                </ui:AssignOperation.To>
+                                <ui:AssignOperation.Value>
+                                  <InArgument x:TypeArguments="x:Boolean">
+                                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_74" xml:space="preserve">outTestResult &amp;&amp;
+false</CSharpValue>
                                   </InArgument>
                                 </ui:AssignOperation.Value>
                               </ui:AssignOperation>
@@ -686,7 +509,7 @@ $"       Doesn't appear"</CSharpValue>
                 </Sequence>
               </If.Else>
             </If>
-            <If DisplayName="If action is quick feed and quick feed is not enabled" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="If_7">
+            <If DisplayName="If action is quick feed and quick feed is not enabled" sap:VirtualizedContainerService.HintSize="550,57" sap2010:WorkflowViewState.IdRef="If_7">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_61">inIsQuickFeed &amp;&amp; !(bool)GlobalVariables.appSettings["feed/use_quick_feed"]</CSharpValue>
@@ -699,61 +522,73 @@ $"       Doesn't appear"</CSharpValue>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,408" sap2010:WorkflowViewState.IdRef="Sequence_26">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="hardStopMessage" />
                   </Sequence.Variables>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Hard Stop Message - Invoke Workflow File (Components\\Feed\\Get Hard Stop Message.xaml)" sap:VirtualizedContainerService.HintSize="548,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Components\\Feed\\Get Hard Stop Message.xaml">
-                    <ui:InvokeWorkflowFile.Arguments>
-                      <OutArgument x:TypeArguments="x:String" x:Key="outHardStopMessage">
-                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">hardStopMessage</CSharpReference>
-                      </OutArgument>
-                    </ui:InvokeWorkflowFile.Arguments>
-                  </ui:InvokeWorkflowFile>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="548,302" sap2010:WorkflowViewState.IdRef="CommentOut_7">
-                    <ui:CommentOut.Body>
-                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="512,200" sap2010:WorkflowViewState.IdRef="Sequence_25">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,140" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
-                          <ui:MultipleAssign.AssignOperations>
-                            <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                              <ui:AssignOperation Value="{x:Null}" sap2010:WorkflowViewState.IdRef="AssignOperation_5">
-                                <ui:AssignOperation.To>
-                                  <OutArgument x:TypeArguments="x:String">
-                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">outFailureReason</CSharpReference>
-                                  </OutArgument>
-                                </ui:AssignOperation.To>
-                              </ui:AssignOperation>
-                            </scg:List>
-                          </ui:MultipleAssign.AssignOperations>
-                        </ui:MultipleAssign>
-                      </Sequence>
-                    </ui:CommentOut.Body>
-                  </ui:CommentOut>
-                </Sequence>
-              </If.Then>
-              <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_27">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Hard Stop Message - Invoke Workflow File (Components\\Feed\\Get Hard Stop Message.xaml)" sap:VirtualizedContainerService.HintSize="478,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Components\\Feed\\Get Hard Stop Message.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <OutArgument x:TypeArguments="x:String" x:Key="outHardStopMessage">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">hardStopMessage</CSharpReference>
+                      </OutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,171" sap2010:WorkflowViewState.IdRef="MultipleAssign_9">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_20">outFailureReason</CSharpReference>
+                            </OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_75" xml:space="preserve">outFailureReason + "\n" +
+$"•  Quick Feed Hard Stop\n" +
+$"     • Expected output\n" +
+$"        The following containers have not been received yet: {inContainerDetails.Rows[0]["barcode"]}"+
+$"     • Actual output\n" +
+$"       {hardStopMessage}"</CSharpValue>
+                            </InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Boolean">
+                              <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_21">outTestResult</CSharpReference>
+                            </OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Boolean">
+                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_76" xml:space="preserve">outTestResult &amp;&amp;
+hardStopMessage.Contains($"The following containers have not been received yet: {inContainerDetails.Rows[0]["barcode"]}")</CSharpValue>
+                            </InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                  </ui:MultipleAssign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="512,25" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
                 </Sequence>
               </If.Else>
             </If>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="550,57" sap2010:WorkflowViewState.IdRef="CommentOut_6">
               <ui:CommentOut.Body>
                 <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="618,931" sap2010:WorkflowViewState.IdRef="Sequence_24">
                   <sap:WorkflowViewStateService.ViewState>
@@ -843,42 +678,100 @@ $"       Doesn't appear"</CSharpValue>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:CommentOut>
-            <If sap:VirtualizedContainerService.HintSize="452,627" sap2010:WorkflowViewState.IdRef="If_4">
+            <If sap:VirtualizedContainerService.HintSize="550,50" sap2010:WorkflowViewState.IdRef="If_4">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
-                  <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_70">(bool)GlobalVariables.appSettings["feed/soft_stop_ebm_option_on_formula_feed"] &amp;&amp; inContainerDetails.AsEnumerable().Any(row =&gt; row.Field&lt;string&gt;("barcode").StartsWith("FRM")) &amp;&amp; !inIsNoBreastmilkOrder</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_79">inContainerDetails.AsEnumerable().Any(row =&gt; row.Field&lt;string&gt;("barcode").StartsWith("FRM")) &amp;&amp; !inIsNoBreastmilkOrder</CSharpValue>
                 </InArgument>
               </If.Condition>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,405" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,762" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="njl:JObject" Name="responseData" />
+                    <Variable x:TypeArguments="x:String" Name="softStopMessage" />
+                    <Variable x:TypeArguments="x:String" Name="patientDetails" />
+                  </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Soft Stop Messages - Invoke Workflow File (Components\\Feed\\Get Soft Stop Messages.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Components\\Feed\\Get Soft Stop Messages.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Soft Stop Messages - Invoke Workflow File (Components\\Feed\\Get Soft Stop Messages.xaml)" sap:VirtualizedContainerService.HintSize="478,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Components\\Feed\\Get Soft Stop Messages.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <OutArgument x:TypeArguments="x:String" x:Key="outSoftStopMessage">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_25">softStopMessage</CSharpReference>
+                      </OutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="outPatientDetails">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_26">patientDetails</CSharpReference>
+                      </OutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click Finish - Invoke Workflow File (Components\\Buttons\\Click Finish.xaml)" sap:VirtualizedContainerService.HintSize="478,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click Finish.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <scg:Dictionary x:TypeArguments="x:String, Argument" />
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click Finish - Invoke Workflow File (Components\\Buttons\\Click Finish.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click Finish.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="API Call - Invoke Workflow File (Utilities\\API Call.xaml)" sap:VirtualizedContainerService.HintSize="478,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Utilities\\API Call.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                      <InArgument x:TypeArguments="x:String" x:Key="endpoint">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_80">$"bottles/{inContainerDetails.Rows[0]["barcode"]}"</CSharpValue>
+                      </InArgument>
+                      <OutArgument x:TypeArguments="njl:JObject" x:Key="responseData">
+                        <CSharpReference x:TypeArguments="njl:JObject" sap2010:WorkflowViewState.IdRef="CSharpReference`1_24">responseData</CSharpReference>
+                      </OutArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
+                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,171" sap2010:WorkflowViewState.IdRef="MultipleAssign_10">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_22">outFailureReason</CSharpReference>
+                            </OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_83" xml:space="preserve">outFailureReason + "\n" +
+$"•  feed/soft_stop_ebm_option_on_formula_feed app settings\n" +
+$"     • Expected output\n" +
+$"        Patient name and soft stop message should be displayed for {inContainerDetails.Rows[0]["barcode"]} =  {(bool)GlobalVariables.appSettings["feed/soft_stop_ebm_option_on_formula_feed"]}"+
+$"     • Actual output\n" +
+$"       {patientDetails}\n" +
+$"       {softStopMessage}\n"</CSharpValue>
+                            </InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Boolean">
+                              <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_23">outTestResult</CSharpReference>
+                            </OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Boolean">
+                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_85" xml:space="preserve">outTestResult &amp;&amp;
+softStopMessage.Contains($"{inContainerDetails.Rows[0]["barcode"]} ( - {responseData["product"] ["formtypeName"]} ({responseData["bottleLotNumber"]})):") &amp;&amp; softStopMessage.Contains("It appears there is breast milk available for this Patient. Are you sure you want to feed the formula that you scanned?")</CSharpValue>
+                            </InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                  </ui:MultipleAssign>
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="512,25" sap2010:WorkflowViewState.IdRef="Sequence_13">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </Sequence>
