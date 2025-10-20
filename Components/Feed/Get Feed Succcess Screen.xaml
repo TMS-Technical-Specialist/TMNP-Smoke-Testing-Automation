@@ -1,6 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Get_Feed_Succcess_Screen" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="outSuccessMessage" Type="InArgument(x:String)" />
+    <x:Property Name="outSuccessMessage" Type="OutArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
@@ -104,48 +104,48 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Get_Feed_Succcess_Screen" sap:VirtualizedContainerService.HintSize="1031,1179" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Get_Feed_Succcess_Screen" sap:VirtualizedContainerService.HintSize="1031,1234" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="520,1156" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsDisplayNameAuto="True" ScopeGuid="1edf6414-9e16-4f94-9ba8-3e84b508c36c" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="520,1211" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsDisplayNameAuto="True" ScopeGuid="1edf6414-9e16-4f94-9ba8-3e84b508c36c" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,915" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,970" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState DisplayName="Check success message state" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,685" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="1edf6414-9e16-4f94-9ba8-3e84b508c36c" Version="V5">
+            <uix:NCheckState DisplayName="Check success message state" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,738" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="1edf6414-9e16-4f94-9ba8-3e84b508c36c" Version="V5">
               <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,194" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,247" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NGetText DisplayName="Get success message" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,134" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="1edf6414-9e16-4f94-9ba8-3e84b508c36c" Version="V5">
-                    <uix:NGetText.Target>
-                      <uix:TargetAnchorable BrowserURL="localhost/feedbottles" CVScreenId="cf0736ec-3cb9-4ca0-8ea3-99c660d4d939" CvType="AnyWordGroup" DesignTimeRectangle="356, 336, 1458, 58" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='wizardpage_div' tag='DIV' class='alert alert-success' parentclass='card-body' parentname='theform' /&gt;" Guid="b2acd634-dede-45be-a1d8-bc48311ad4de" InformativeScreenshot="570ba614b458b1abd5f2bc4fcc716a86.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
+                  <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="innertext" DisplayName="Get Attribute 'Container EHM000004 can…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,187" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" ScopeIdentifier="1edf6414-9e16-4f94-9ba8-3e84b508c36c" Version="V5">
+                    <uix:NGetAttributeGeneric.Result>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">outSuccessMessage</CSharpReference>
+                      </OutArgument>
+                    </uix:NGetAttributeGeneric.Result>
+                    <uix:NGetAttributeGeneric.Target>
+                      <uix:TargetAnchorable BrowserURL="localhost/feedbottles" CVScreenId="12881522-d033-4f1f-9f04-9ccc9d545a21" DesignTimeRectangle="389, 351, 1414, 28" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='P' parentclass='alert alert-success' parentid='wizardpage_div' parentname='theform' /&gt;" Guid="44cf0438-0ea7-4253-ab54-ab46ee947d28" InformativeScreenshot="68136b29f52f6b51887a0c3b0b1dc89e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None">
                         <uix:TargetAnchorable.Anchors>
                           <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                            <uix:Target CVScreenId="cf0736ec-3cb9-4ca0-8ea3-99c660d4d939" DesignTimeRectangle="356, 404, 166, 34" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='wizardpage_div' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='A' type='' class='btn btn-primary' matching:class='fuzzy' fuzzylevel:class='0.0' parentclass='action-list' parentname='theform' /&gt;" Guid="38f990bd-863a-48dc-8f00-73b0f553cdc5" SearchSteps="FuzzySelector" />
+                            <uix:Target CVScreenId="12881522-d033-4f1f-9f04-9ccc9d545a21" DesignTimeRectangle="365, 336, 1458, 58" FuzzySelectorArgument="&lt;webctrl type='' parentid='wizardpage_div' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='DIV' class='alert alert-success' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' parentclass='card-body' parentname='theform' /&gt;" Guid="e64126c6-8994-4bf4-bfe8-d46ca1b04f8f" SearchSteps="FuzzySelector" />
                           </scg:List>
                         </uix:TargetAnchorable.Anchors>
                       </uix:TargetAnchorable>
-                    </uix:NGetText.Target>
-                    <uix:NGetText.TextString>
-                      <OutArgument x:TypeArguments="x:String">
-                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">outSuccessMessage</CSharpReference>
-                      </OutArgument>
-                    </uix:NGetText.TextString>
-                  </uix:NGetText>
+                    </uix:NGetAttributeGeneric.Target>
+                  </uix:NGetAttributeGeneric>
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
@@ -172,7 +172,7 @@
               <uix:NCheckState.Target>
                 <uix:TargetAnchorable BrowserURL="localhost/feedbottles" CVScreenId="cf0736ec-3cb9-4ca0-8ea3-99c660d4d939" DesignTimeRectangle="380, 351, 1414, 28" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='P' parentclass='alert alert-success' parentid='wizardpage_div' parentname='theform' /&gt;" Guid="2a78d7fe-44d2-4ac0-8924-9ec68abe280c" InformativeScreenshot="262824d0011a1c7d6d34fb43c0ab613d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target CVScreenId="cf0736ec-3cb9-4ca0-8ea3-99c660d4d939" DesignTimeRectangle="356, 336, 1458, 58" FuzzySelectorArgument="&lt;webctrl type='' parentid='wizardpage_div' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='DIV' class='alert alert-success' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' parentclass='card-body' parentname='theform' /&gt;" Guid="9f8c53d2-a64a-4734-9e55-67093bade493" SearchSteps="FuzzySelector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
