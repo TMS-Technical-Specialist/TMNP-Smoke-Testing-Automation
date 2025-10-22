@@ -1,9 +1,15 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Create_Order_Template" this:Create_Order_Template.inOrderType="Standard" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="inPatientBarcode" Type="InArgument(x:String)" />
     <x:Property Name="inOrderType" Type="InArgument(x:String)" />
     <x:Property Name="inMilkBase" Type="InArgument(x:String)" />
     <x:Property Name="inOrderBase" Type="InArgument(x:String)" />
   </x:Members>
+  <this:Create_Order_Template.inPatientBarcode>
+    <InArgument x:TypeArguments="x:String">
+      <Literal x:TypeArguments="x:String" Value="" />
+    </InArgument>
+  </this:Create_Order_Template.inPatientBarcode>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
@@ -119,7 +125,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Create_Order_Template" sap:VirtualizedContainerService.HintSize="1031,3407" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Create_Order_Template" sap:VirtualizedContainerService.HintSize="983,3407" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -178,7 +184,7 @@
               </uix:NTypeInto.Target>
               <uix:NTypeInto.Text>
                 <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">GlobalVariables.appSettings["barcode_baby_prefix"].ToString() + "000001[k(Enter)]"</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">inPatientBarcode == "" ? GlobalVariables.appSettings["barcode_baby_prefix"].ToString() + "000001" : inPatientBarcode + "[k(Enter)]"</CSharpValue>
                 </InArgument>
               </uix:NTypeInto.Text>
             </uix:NTypeInto>

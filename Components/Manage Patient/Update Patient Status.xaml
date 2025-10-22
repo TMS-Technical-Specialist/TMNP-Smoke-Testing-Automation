@@ -1,7 +1,13 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Update_Patient_Status" this:Update_Patient_Status.inIsInactive="True" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Update_Patient_Status" this:Update_Patient_Status.inIsInactive="True" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="inIsInactive" Type="InArgument(x:Boolean)" />
+    <x:Property Name="inPatientToUpdate" Type="InArgument(njl:JObject)" />
   </x:Members>
+  <this:Update_Patient_Status.inPatientToUpdate>
+    <InArgument x:TypeArguments="njl:JObject">
+      <CSharpValue x:TypeArguments="njl:JObject" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">null</CSharpValue>
+    </InArgument>
+  </this:Update_Patient_Status.inPatientToUpdate>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
@@ -44,6 +50,11 @@
       <x:String>System.Security</x:String>
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Reflection</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -105,41 +116,100 @@
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Update_Patient_Status" sap:VirtualizedContainerService.HintSize="820.4000000000001,1211.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Update_Patient_Status" sap:VirtualizedContainerService.HintSize="983,1744" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="patient" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Manage Patient - Search Patient - Invoke Workflow File (Components\\Manage Patient\\Manage Patient - Search Patient.xaml)" sap:VirtualizedContainerService.HintSize="483.2,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Components\\Manage Patient\\Manage Patient - Search Patient.xaml">
+    <If sap:VirtualizedContainerService.HintSize="484,528" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Condition>
+        <InArgument x:TypeArguments="x:Boolean">
+          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">inPatientToUpdate != null</CSharpValue>
+        </InArgument>
+      </If.Condition>
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,364" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:BuildDataTable DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="416,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;LastName&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;FirstName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;MiddleName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;DateOfBirth&quot; msdata:Caption=&quot;&quot; type=&quot;xs:dateTime&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;MRNNumber&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Room&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Bed&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;">
+            <ui:BuildDataTable.DataTable>
+              <OutArgument x:TypeArguments="sd:DataTable">
+                <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">patient</CSharpReference>
+              </OutArgument>
+            </ui:BuildDataTable.DataTable>
+          </ui:BuildDataTable>
+          <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="416,212" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
+            <ui:AddDataRow.ArrayRow>
+              <InArgument x:TypeArguments="s:Object[]">
+                <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11" xml:space="preserve">new Object[] { 
+	inPatientToUpdate["babyLastName"], 
+	inPatientToUpdate["babyFirstName"],
+	inPatientToUpdate["babyMiddleName"],
+	((DateTime)inPatientToUpdate["babyBirthDate"]).ToString("MM/dd/yyyy"),
+	inPatientToUpdate["babyMRN"],
+	inPatientToUpdate["babyRoom"],
+	inPatientToUpdate["babyBedNumber"]
+}</CSharpValue>
+              </InArgument>
+            </ui:AddDataRow.ArrayRow>
+            <ui:AddDataRow.DataTable>
+              <InOutArgument x:TypeArguments="sd:DataTable">
+                <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">patient</CSharpReference>
+              </InOutArgument>
+            </ui:AddDataRow.DataTable>
+          </ui:AddDataRow>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Manage Patient - Search Patient - Invoke Workflow File (Components\\Manage Patient\\Manage Patient - Search Patient.xaml)" sap:VirtualizedContainerService.HintSize="484,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Components\\Manage Patient\\Manage Patient - Search Patient.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="sd:DataRow" x:Key="inPatient">
-          <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">GlobalVariables.testPatient</CSharpValue>
+          <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">patient == null ? GlobalVariables.testPatient : patient.Rows[0]</CSharpValue>
         </InArgument>
         <InArgument x:TypeArguments="x:Boolean" x:Key="inIsActive">
           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">inIsInactive ? true : false</CSharpValue>
         </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click Patient List Action Button - Invoke Workflow File (Components\\Buttons\\Click Patient List Action Button.xaml)" sap:VirtualizedContainerService.HintSize="483.2,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click Patient List Action Button.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click Patient List Action Button - Invoke Workflow File (Components\\Buttons\\Click Patient List Action Button.xaml)" sap:VirtualizedContainerService.HintSize="484,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click Patient List Action Button.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click Edit Action Button - Invoke Workflow File (Components\\Buttons\\Click Edit Action Button.xaml)" sap:VirtualizedContainerService.HintSize="483.2,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click Edit Action Button.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click Edit Action Button - Invoke Workflow File (Components\\Buttons\\Click Edit Action Button.xaml)" sap:VirtualizedContainerService.HintSize="484,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click Edit Action Button.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="483.2,660" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsDisplayNameAuto="True" ScopeGuid="1edf6414-9e16-4f94-9ba8-3e84b508c36c" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,662" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsDisplayNameAuto="True" ScopeGuid="1edf6414-9e16-4f94-9ba8-3e84b508c36c" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,420" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,421" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -154,7 +224,7 @@
               <uix:NSelectItem.Target>
                 <uix:TargetAnchorable BrowserURL="localhost/babies/edit.php" CVScreenId="eaf74432-3936-4515-b3f2-4fe497f7c18f" CvElementArea="1094, 763, 716, 44" CvType="InputBox" DesignTimeRectangle="1095, 765, 719, 42" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='babyActive' matching:id='fuzzy' fuzzylevel:id='0.0' tag='SELECT' type='' class='form-control' matching:class='fuzzy' fuzzylevel:class='0.0' name='babyActive' parentclass='form-group position-relative' parentid='babyActive_tr' parentname='babies' /&gt;" Guid="2eb27787-a07f-4962-a40f-944337615209" InformativeScreenshot="20bb8de72598fb8ada216c786afaea22.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target CVScreenId="eaf74432-3936-4515-b3f2-4fe497f7c18f" DesignTimeRectangle="1095, 739, 43, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='babyActive_label' matching:id='fuzzy' fuzzylevel:id='0.0' tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' for='babyActive' parentclass='form-group position-relative' parentid='babyActive_tr' parentname='babies' /&gt;" Guid="31fbeb22-468b-44a6-a5dc-df0a6eb1cf60" SearchSteps="FuzzySelector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
