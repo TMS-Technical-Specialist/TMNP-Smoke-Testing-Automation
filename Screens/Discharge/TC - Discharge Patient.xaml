@@ -115,7 +115,7 @@
       <AssemblyReference>System.Collections.Specialized</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC___Discharge_Patient" sap:VirtualizedContainerService.HintSize="984,1330" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC___Discharge_Patient" sap:VirtualizedContainerService.HintSize="984,3327" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="failureReason" />
       <Variable x:TypeArguments="x:Boolean" Name="testCaseResult" />
@@ -125,19 +125,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="552,260" sap2010:WorkflowViewState.IdRef="Sequence_2">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click sidebar discharge patient submenu - Invoke Workflow File (Components\\Buttons\\Discharge Menu\\Click sidebar discharge patient submenu.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Components\\Buttons\\Discharge Menu\\Click sidebar discharge patient submenu.xaml">
-        <ui:InvokeWorkflowFile.Arguments>
-          <scg:Dictionary x:TypeArguments="x:String, Argument" />
-        </ui:InvokeWorkflowFile.Arguments>
-      </ui:InvokeWorkflowFile>
-    </Sequence>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="552,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="614,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -165,20 +153,32 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="552,559" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="614,260" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click sidebar discharge patient submenu - Invoke Workflow File (Components\\Buttons\\Discharge Menu\\Click sidebar discharge patient submenu.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Components\\Buttons\\Discharge Menu\\Click sidebar discharge patient submenu.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <scg:Dictionary x:TypeArguments="x:String, Argument" />
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+    </Sequence>
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="614,2556" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="518,467" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsDisplayNameAuto="True" ScopeGuid="deaec656-f319-4e87-a416-14a4ef616cb0" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="580,2464" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsDisplayNameAuto="True" ScopeGuid="deaec656-f319-4e87-a416-14a4ef616cb0" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484,226" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="546,2223" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <Sequence.Variables>
                 <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="patientElements" />
               </Sequence.Variables>
@@ -187,7 +187,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="No Patients Selected" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence DisplayName="No Patients Selected" sap:VirtualizedContainerService.HintSize="512,57" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="patient" />
                   <Variable x:TypeArguments="x:String" Name="hardStopMessage" />
@@ -279,7 +279,7 @@ hardStopMessage.Contains("Please select a Patient to discharge.")</CSharpValue>
                   </ui:MultipleAssign.AssignOperations>
                 </ui:MultipleAssign>
               </Sequence>
-              <Sequence DisplayName="Discharge Patient that has sibling" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <Sequence DisplayName="Discharge Patient that has sibling" sap:VirtualizedContainerService.HintSize="512,57" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="dischargeConfirmationText" />
                   <Variable x:TypeArguments="njl:JObject" Name="deactivatedPatient" />
@@ -498,7 +498,7 @@ deactivatedPatient["active_orders"].Count() &gt; 0</CSharpValue>
                   </ui:MultipleAssign.AssignOperations>
                 </ui:MultipleAssign>
               </Sequence>
-              <Sequence DisplayName="Discharge Patient that has no sibling" sap:VirtualizedContainerService.HintSize="450,50" sap2010:WorkflowViewState.IdRef="Sequence_13">
+              <Sequence DisplayName="Discharge Patient that has no sibling" sap:VirtualizedContainerService.HintSize="512,2047" sap2010:WorkflowViewState.IdRef="Sequence_13">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="dischargeConfirmationText" />
                   <Variable x:TypeArguments="njl:JObject" Name="deactivatedPatient" />
@@ -510,7 +510,7 @@ deactivatedPatient["active_orders"].Count() &gt; 0</CSharpValue>
                 </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -720,7 +720,7 @@ deactivatedPatient["active_orders"].Count() &gt; 0</CSharpValue>
                         </ui:AssignOperation.To>
                         <ui:AssignOperation.Value>
                           <InArgument x:TypeArguments="x:String">
-                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_50" xml:space="preserve">failureReason + "\n" +
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_53" xml:space="preserve">failureReason + "\n" +
 $"       • Discharge Patient that has no sibling\n" +
 $"        • Expected output\n" +
 $"         Confirmation Message = Are you sure you would like to discharge {patientToDischarge["babyLastName"]}, {patientToDischarge["babyFirstName"]} ({patientToDischarge["babyBarcode"]})?\n"+
@@ -735,7 +735,7 @@ $"         Patient Status = {(deactivatedPatient["babyActive"].ToString() == "1"
 $"         Success Message = {successMessage}\n"+
 $"         Buttons Should appear: Discharge another Patient = {dischargeAnotherPatientButton}, Dispose Patient's Inventory = {disposePatientInventoryButton}\n" +
 $"         Mother Status = {(deactivatedPatient["mother"]["motherActive"].ToString() == "1" ? "Active" : "Inactive")}\n" +
-$"         Has active order = {deactivatedPatient["active_orders"].Count() &gt; 0}"</CSharpValue>
+$"         Has active order = {GlobalVariables.appSettings["order/wait_hours_after_discharge_to_deactivate_orders"].ToString() == "0" &amp;&amp; deactivatedPatient["active_orders"].Count() &gt; 0}"</CSharpValue>
                           </InArgument>
                         </ui:AssignOperation.Value>
                       </ui:AssignOperation>
@@ -770,7 +770,7 @@ GlobalVariables.appSettings["order/wait_hours_after_discharge_to_deactivate_orde
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
     </Sequence>
-    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="552,308" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="614,308" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
