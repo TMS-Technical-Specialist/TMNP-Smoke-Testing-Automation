@@ -119,21 +119,18 @@
       <AssemblyReference>TMNP Smoke Testing Automation.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Receieve_Product" sap:VirtualizedContainerService.HintSize="1031,3266" sap2010:WorkflowViewState.IdRef="Sequence_1">
   <Sequence DisplayName="Receieve_Product" sap:VirtualizedContainerService.HintSize="1031,5165" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Receieve Product Process" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="644,3243" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="f6eed12e-11b6-456b-9821-6156a693af9c" Version="V2">
     <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Receieve Product Process" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="678,5142" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="f6eed12e-11b6-456b-9821-6156a693af9c" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="610,3002" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="644,4901" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Default="0" Name="index" />
@@ -144,12 +141,6 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="5" DisplayName="Click 'Receive'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="576,190" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f6eed12e-11b6-456b-9821-6156a693af9c" Version="V4">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="localhost/printlabels" CVScreenId="444a45d5-745d-451f-b89c-e7bf057f5918" ContentHash="wIMUQ0udVkCxWcEDs9tg3w" CvTextArea="70, 345, 52, 13" CvTextArgument="Receive" CvType="Text" DesignTimeRectangle="70, 338, 159, 28" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Receive' tag='SPAN' /&gt;" Guid="66dd86fa-339c-44da-bca1-ec5d75501864" InformativeScreenshot="bed348265c78c78429df3664c717dc64.png" Reference="BkxQ1887pEidR6av2KDcrw/LrzIlfAu50aJtO18a69AXQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
-              </uix:NClick.Target>
-            </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Receive Product'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="576,190" sap2010:WorkflowViewState.IdRef="NClick_10" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f6eed12e-11b6-456b-9821-6156a693af9c" Version="V4">
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click sidebar Receive Menu - Invoke Workflow File (Components\\Buttons\\Click sidebar Receive Menu.xaml)" sap:VirtualizedContainerService.HintSize="610,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click sidebar Receive Menu.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <scg:Dictionary x:TypeArguments="x:String, Argument" />
@@ -160,7 +151,6 @@
                 <uix:TargetAnchorable BrowserURL="localhost" CVScreenId="cc832dcc-09f1-4c4c-be44-200b0cb52c13" ContentHash="N9BF0TpRSk6y4FQez61AMA" CvTextArea="72, 506, 103, 13" CvTextArgument="Receive Product" CvType="Text" DesignTimeRectangle="9, 495, 250, 39" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Receive Product' tag='A' /&gt;" Guid="6efc9132-045e-4680-871c-9079ea389b9d" InformativeScreenshot="ff7bba8a591a32dfde173ad1e22b87e3.png" Reference="BkxQ1887pEidR6av2KDcrw/XksOzm-f1kePvvSNlzOzRg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NGetAttributeGeneric x:TypeArguments="scg:List(x:String)" Attribute="items" DisplayName="Get product dropdown list" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="576,196" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_8" ScopeIdentifier="f6eed12e-11b6-456b-9821-6156a693af9c" Version="V5">
             <uix:NGetAttributeGeneric x:TypeArguments="scg:List(x:String)" Attribute="items" DisplayName="Get product dropdown list" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="610,196" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_8" ScopeIdentifier="f6eed12e-11b6-456b-9821-6156a693af9c" Version="V5">
               <uix:NGetAttributeGeneric.Result>
                 <OutArgument x:TypeArguments="scg:List(x:String)">
@@ -177,7 +167,7 @@
                 </uix:TargetAnchorable>
               </uix:NGetAttributeGeneric.Target>
             </uix:NGetAttributeGeneric>
-            <ui:ForEach x:TypeArguments="x:String" DisplayName="For each products to receive" sap:VirtualizedContainerService.HintSize="576,610" sap2010:WorkflowViewState.IdRef="ForEach`1_2">
+            <ui:ForEach x:TypeArguments="x:String" DisplayName="For each products to receive" sap:VirtualizedContainerService.HintSize="610,610" sap2010:WorkflowViewState.IdRef="ForEach`1_2">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:String">
                   <ActivityAction.Argument>
@@ -220,9 +210,8 @@
                 </InArgument>
               </ui:ForEach.Values>
             </ui:ForEach>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="576,190" sap2010:WorkflowViewState.IdRef="NClick_11" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f6eed12e-11b6-456b-9821-6156a693af9c" Version="V4">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="610,190" sap2010:WorkflowViewState.IdRef="NClick_11" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f6eed12e-11b6-456b-9821-6156a693af9c" Version="V4">
               <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="localhost/formula-receive" CVScreenId="437dcc56-785a-4660-a40b-a654d6d8a92f" CvElementArea="1738, 713, 69, 37" CvTextArea="1755, 725, 33, 12" CvTextArgument="Next" CvType="Button" DesignTimeRectangle="1740, 715, 66, 34" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='_submit__next' tag='INPUT' /&gt;" Guid="90c70afb-1a66-4396-b4dc-4280a797641d" InformativeScreenshot="a543681d2599eaa51941b1eb7e20800c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
                 <uix:TargetAnchorable BrowserURL="localhost/formula-receive" CVScreenId="437dcc56-785a-4660-a40b-a654d6d8a92f" ContentHash="pDPiYBmwlkusGR8M4S3i5w" CvElementArea="1738, 713, 69, 37" CvTextArea="1755, 725, 33, 12" CvTextArgument="Next" CvType="Button" DesignTimeRectangle="1740, 715, 66, 34" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='_submit__next' tag='INPUT' /&gt;" Guid="90c70afb-1a66-4396-b4dc-4280a797641d" InformativeScreenshot="a543681d2599eaa51941b1eb7e20800c.png" Reference="BkxQ1887pEidR6av2KDcrw/_WcUM1UThU28rXhNUn9RLg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
                   <uix:TargetAnchorable.Anchors>
                     <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
@@ -232,7 +221,7 @@
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
             </uix:NClick>
-            <Sequence DisplayName="Fill in required details" sap:VirtualizedContainerService.HintSize="576,57" sap2010:WorkflowViewState.IdRef="Sequence_32">
+            <Sequence DisplayName="Fill in required details" sap:VirtualizedContainerService.HintSize="610,1969" sap2010:WorkflowViewState.IdRef="Sequence_32">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>

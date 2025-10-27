@@ -98,7 +98,7 @@
       <AssemblyReference>System.Collections.Specialized</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Prepare_Order_and_Feed" sap:VirtualizedContainerService.HintSize="991,852" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Prepare_Order_and_Feed" sap:VirtualizedContainerService.HintSize="830.8000000000001,848" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="preparedContainers" />
       <Variable x:TypeArguments="x:String" Name="filePath" />
@@ -111,7 +111,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Switch x:TypeArguments="x:String" DisplayName="Switch" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+    <Switch x:TypeArguments="x:String" DisplayName="Switch" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="Switch`1_2">
       <Switch.Default>
         <Sequence DisplayName="Default" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
@@ -306,7 +306,7 @@
         </ui:InvokeWorkflowFile>
       </Sequence>
     </Switch>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Prepared Containers - Invoke Workflow File (Components\\Prepare\\Get Prepared Containers.xaml)" sap:VirtualizedContainerService.HintSize="450,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Components\\Prepare\\Get Prepared Containers.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Prepared Containers - Invoke Workflow File (Components\\Prepare\\Get Prepared Containers.xaml)" sap:VirtualizedContainerService.HintSize="449.6,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Components\\Prepare\\Get Prepared Containers.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:Boolean" x:Key="inExcludeRestoredContainer">True</InArgument>
         <OutArgument x:TypeArguments="sd:DataTable" x:Key="outContainers">
@@ -314,7 +314,7 @@
         </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Feed Patient - Invoke Workflow File (Components\\Feed Patient.xaml)" sap:VirtualizedContainerService.HintSize="450,250" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Components\\Feed Patient.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Feed Patient - Invoke Workflow File (Components\\Feed Patient.xaml)" sap:VirtualizedContainerService.HintSize="449.6,248.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Components\\Feed Patient.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:Boolean" x:Key="outTestResult">
           <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">testResult</CSharpReference>
@@ -330,14 +330,14 @@
         </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Feed Succcess Screen - Invoke Workflow File (Components\\Feed\\Get Feed Succcess Screen.xaml)" sap:VirtualizedContainerService.HintSize="450,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Components\\Feed\\Get Feed Succcess Screen.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Feed Succcess Screen - Invoke Workflow File (Components\\Feed\\Get Feed Succcess Screen.xaml)" sap:VirtualizedContainerService.HintSize="449.6,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Components\\Feed\\Get Feed Succcess Screen.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="outSuccessMessage">
           <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">successMessage</CSharpReference>
         </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Test Result - Invoke Workflow File (Utilities\\Update Test Result.xaml)" sap:VirtualizedContainerService.HintSize="450,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="Utilities\\Update Test Result.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Test Result - Invoke Workflow File (Utilities\\Update Test Result.xaml)" sap:VirtualizedContainerService.HintSize="449.6,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="Utilities\\Update Test Result.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:Boolean" x:Key="inSaveResult">
           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">inSaveResult</CSharpValue>
@@ -346,9 +346,9 @@
           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">"Feed " + inScenarioName</CSharpValue>
         </InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="inFailureReason">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33" xml:space="preserve">$"•  Prepared {inScenarioName}\n" +
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35" xml:space="preserve">$"•  Prepared {inScenarioName}\n" +
 failureReason + (failureReason != "" ? "\n" : "") +
-$"•      Success Feed Patient Message\n" +
+$"      •Success Feed Patient Message\n" +
 $"       • Expected output\n" +
 $"         Container  {string.Join(", ", preparedContainers.AsEnumerable().Select(row =&gt; row.Field&lt;string&gt;("barcode")))}  can now be fed to  Patient {GlobalVariables.testPatientFromDB["babyFirstName"].ToString()}  {GlobalVariables.testPatientFromDB["babyLastName"].ToString()} and will be disposed of by the system.\n"+
 $"       • Actual output\n" +

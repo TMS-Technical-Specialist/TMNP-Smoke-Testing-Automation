@@ -39,6 +39,11 @@
       <x:String>UiPath.Forms.Activities</x:String>
       <x:String>UiPath.Platform.GlobalVariables</x:String>
       <x:String>UiPath.Forms.Activities.Base</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Collections.Specialized</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -95,9 +100,17 @@
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>UiPath.Forms.Activities</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="1239,1466" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="630.8000000000001,1696.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="urlValue" />
       <Variable x:TypeArguments="x:String" Name="workflow" />
@@ -107,15 +120,20 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="524,1443" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1" MaxIterations="5">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get App Settings Value - Invoke Workflow File (Utilities\\Get App Settings Value.xaml)" sap:VirtualizedContainerService.HintSize="521.6,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="Utilities\\Get App Settings Value.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="521.6,1497.6" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1" MaxIterations="5">
       <ui:InterruptibleDoWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="522,1321" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="520,1376" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="488,115" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <Assign sap:VirtualizedContainerService.HintSize="486.4,174.4" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">
                 <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">workflow</CSharpReference>
@@ -127,7 +145,7 @@
               </InArgument>
             </Assign.Value>
           </Assign>
-          <ufa:ShowFormActivity InstanceName="{x:Null}" Left="{x:Null}" Title="{x:Null}" Top="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form" FormId="19f6aebc-266e-4f08-a4ec-9253b6aae52f" sap:VirtualizedContainerService.HintSize="488,221" sap2010:WorkflowViewState.IdRef="ShowFormActivity_1" IsAsync="False">
+          <ufa:ShowFormActivity InstanceName="{x:Null}" Left="{x:Null}" Title="{x:Null}" Top="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form" FormId="19f6aebc-266e-4f08-a4ec-9253b6aae52f" sap:VirtualizedContainerService.HintSize="486.4,219.2" sap2010:WorkflowViewState.IdRef="ShowFormActivity_1" IsAsync="False">
             <ufa:ShowFormActivity.Arguments>
               <OutArgument x:TypeArguments="x:String" x:Key="url">
                 <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">urlValue</CSharpReference>
@@ -135,6 +153,9 @@
               <OutArgument x:TypeArguments="x:String" x:Key="selectWorkflowToExecute">
                 <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">workflow</CSharpReference>
               </OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="timezone">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">"Timezone app setting: " +GlobalVariables.appSettings["timezone"]</CSharpValue>
+              </InArgument>
             </ufa:ShowFormActivity.Arguments>
             <ufa:ShowFormActivity.Height>
               <InArgument x:TypeArguments="s:Nullable(x:Int32)">
@@ -162,27 +183,27 @@
               </InArgument>
             </ufa:ShowFormActivity.Width>
           </ufa:ShowFormActivity>
-          <If sap:VirtualizedContainerService.HintSize="488,925" sap2010:WorkflowViewState.IdRef="If_2">
+          <If sap:VirtualizedContainerService.HintSize="486.4,922.4" sap2010:WorkflowViewState.IdRef="If_2">
             <If.Condition>
               <InArgument x:TypeArguments="x:Boolean">
                 <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">workflow == "demo"</CSharpValue>
               </InArgument>
             </If.Condition>
             <If.Then>
-              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,346" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="484.8,344.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="" sap:VirtualizedContainerService.HintSize="452,118" sap2010:WorkflowViewState.IdRef="MessageBox_1">
+                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="" sap:VirtualizedContainerService.HintSize="451.2,117.6" sap2010:WorkflowViewState.IdRef="MessageBox_1">
                   <ui:MessageBox.Text>
                     <InArgument x:TypeArguments="x:Object">
                       <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">"Click OK to continue"</CSharpValue>
                     </InArgument>
                   </ui:MessageBox.Text>
                 </ui:MessageBox>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Demo - Invoke Workflow File (Demo.xaml)" sap:VirtualizedContainerService.HintSize="452,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="Demo.xaml">
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Demo - Invoke Workflow File (Demo.xaml)" sap:VirtualizedContainerService.HintSize="451.2,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="Demo.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
                     <scg:Dictionary x:TypeArguments="x:String, Argument" />
                   </ui:InvokeWorkflowFile.Arguments>
@@ -190,13 +211,13 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,449" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="484.8,448" sap2010:WorkflowViewState.IdRef="Sequence_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <If sap:VirtualizedContainerService.HintSize="452,389" sap2010:WorkflowViewState.IdRef="If_3">
+                <If sap:VirtualizedContainerService.HintSize="451.2,388" sap2010:WorkflowViewState.IdRef="If_3">
                   <If.Condition>
                     <InArgument x:TypeArguments="x:Boolean">
                       <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">!string.IsNullOrEmpty(workflow)</CSharpValue>
