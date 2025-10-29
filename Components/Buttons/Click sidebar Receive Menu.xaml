@@ -103,19 +103,19 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Click_sidebar_Receive_Button" sap:VirtualizedContainerService.HintSize="1031,928" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Click_sidebar_Receive_Button" sap:VirtualizedContainerService.HintSize="784.4000000000001,925.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="520,905" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsDisplayNameAuto="True" ScopeGuid="a05de16f-8256-430c-84d6-6dfb22eabc07" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="518.4,902.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsDisplayNameAuto="True" ScopeGuid="a05de16f-8256-430c-84d6-6dfb22eabc07" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,664" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484.8,662.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="chevronIcons" />
             </Sequence.Variables>
@@ -124,34 +124,30 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:FindChildren DisplayName="Find Receive chevron icon" Filter="&lt;webctrl tag='svg' class='svg-inline--fa fa-chevron-right chevron  chevron-closed' data-prefix='fas' parentclass='nav-link has-dropdown' parentid='sidebar-wrapper' idx='1' /&gt;" sap:VirtualizedContainerService.HintSize="452,139" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
+            <ui:FindChildren DisplayName="Find Receive chevron icon" Filter="&lt;webctrl tag='svg' class='svg-inline--fa fa-chevron-right chevron  chevron-closed' data-prefix='fas' parentclass='nav-link has-dropdown' parentid='sidebar-wrapper' idx='1' /&gt;" sap:VirtualizedContainerService.HintSize="451.2,139.2" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
               <ui:FindChildren.Children>
                 <OutArgument x:TypeArguments="scg:IEnumerable(ui:UiElement)">
                   <CSharpReference x:TypeArguments="scg:IEnumerable(ui:UiElement)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">chevronIcons</CSharpReference>
                 </OutArgument>
               </ui:FindChildren.Children>
               <ui:FindChildren.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5d8c3856-b9a7-4df2-95ca-bab0f40dc934" InformativeScreenshot="e0dde92d22e231cf97713958c8c89709" Selector="&lt;webctrl aaname='Receive   ' tag='A' class='nav-link has-dropdown' href='#' innertext='Receive   ' parentid='sidebar-wrapper' visibleinnertext='Receive' /&gt;" TimeoutMS="20">
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5d8c3856-b9a7-4df2-95ca-bab0f40dc934" InformativeScreenshot="e0dde92d22e231cf97713958c8c89709" Selector="&lt;webctrl aaname='Receive   ' tag='A' class='nav-link has-dropdown' href='#' innertext='Receive   ' parentid='sidebar-wrapper' visibleinnertext='Receive' /&gt;" TimeoutMS="20" WaitForReady="COMPLETE" />
               </ui:FindChildren.Target>
             </ui:FindChildren>
-            <If sap:VirtualizedContainerService.HintSize="452,463" sap2010:WorkflowViewState.IdRef="If_1">
+            <If sap:VirtualizedContainerService.HintSize="451.2,461.6" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">chevronIcons.Count() &gt; 0</CSharpValue>
                 </InArgument>
               </If.Condition>
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,241" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,240.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Receive'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,181" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a05de16f-8256-430c-84d6-6dfb22eabc07" Version="V5">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Receive'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,180.8" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a05de16f-8256-430c-84d6-6dfb22eabc07" Version="V5">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="localhost/prepare" CVScreenId="5eac0d1d-6bc8-48ea-a08f-bfb25e59028e" CvTextArea="70, 387, 52, 13" CvTextArgument="Receive" CvType="Text" DesignTimeRectangle="71, 382, 159, 28" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Receive' tag='SPAN' innertext='Receive' parentclass='nav-link has-dropdown' parentid='sidebar-wrapper' visibleinnertext='Receive' /&gt;" Guid="ad478ebd-7b3a-4403-8405-c46e88c81bf9" InformativeScreenshot="16e46390a86290a0814bdfeae3833233.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
                         <uix:TargetAnchorable.Anchors>
