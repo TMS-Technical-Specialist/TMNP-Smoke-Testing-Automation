@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <Activity mc:Ignorable="sap sap2010" x:Class="Feed_Patient" this:Feed_Patient.inIsNoBreastmilkOrder="False" this:Feed_Patient.inPatientBarcode="PT000001" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="inIsNoBreastmilkOrder" Type="InArgument(x:Boolean)" />
@@ -136,7 +135,7 @@
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Feed_Patient" sap:VirtualizedContainerService.HintSize="830.8000000000001,2566.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Feed_Patient" sap:VirtualizedContainerService.HintSize="1104,3237" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="allowMultipleFeed" />
     </Sequence.Variables>
@@ -145,7 +144,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="580.8,212" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="618,211" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -185,7 +184,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="580.8,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_12">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="618,57" sap2010:WorkflowViewState.IdRef="CommentOut_12">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,143" sap2010:WorkflowViewState.IdRef="Sequence_38">
           <sap:WorkflowViewStateService.ViewState>
@@ -215,24 +214,24 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(2)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="580.8,2274.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="ce06b885-fae6-41a6-9c4d-99f97878cfa4" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(2)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="618,2946" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="ce06b885-fae6-41a6-9c4d-99f97878cfa4" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="547.2,2034.4" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="584,2705" sap2010:WorkflowViewState.IdRef="Sequence_14">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click Feed Patient - Invoke Workflow File (Components\\Buttons\\Click Feed Patient.xaml)" sap:VirtualizedContainerService.HintSize="513.6,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click Feed Patient.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click Feed Patient - Invoke Workflow File (Components\\Buttons\\Click Feed Patient.xaml)" sap:VirtualizedContainerService.HintSize="550,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click Feed Patient.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <scg:Dictionary x:TypeArguments="x:String, Argument" />
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type patient barcode" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="513.6,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="ce06b885-fae6-41a6-9c4d-99f97878cfa4" Version="V4">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type patient barcode" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="550,251" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="ce06b885-fae6-41a6-9c4d-99f97878cfa4" Version="V4">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="localhost/feedbottles" CVScreenId="52a35241-268d-4c43-9595-c68b76da9cc1" ContentHash="1BDfQyzNIE-abyWrUJgGyw" CvElementArea="563, 261, 971, 31" CvType="InputBox" DesignTimeRectangle="566, 263, 971, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='baby' tag='INPUT' type='text' class='scanbaby form-control form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="cf13fc33-176b-4ca9-8e4d-042975abfe3d" InformativeScreenshot="eb8b764630103b5c996d17d528aa179c.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/Y0rHSozJSkCEaY8eAhcbPw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                   <uix:TargetAnchorable.Anchors>
@@ -248,7 +247,7 @@
                 </InArgument>
               </uix:NTypeInto.Text>
             </uix:NTypeInto>
-            <If DisplayName="If - Multiple Feed Settings is turned on" sap:VirtualizedContainerService.HintSize="513.6,460.8" sap2010:WorkflowViewState.IdRef="If_3">
+            <If DisplayName="If - Multiple Feed Settings is turned on" sap:VirtualizedContainerService.HintSize="550,462" sap2010:WorkflowViewState.IdRef="If_3">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_46">allowMultipleFeed</CSharpValue>
@@ -360,7 +359,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <If DisplayName="If - Quick Feed action and quick feed enabled" sap:VirtualizedContainerService.HintSize="513.6,56.8" sap2010:WorkflowViewState.IdRef="If_9">
+            <If DisplayName="If - Quick Feed action and quick feed enabled" sap:VirtualizedContainerService.HintSize="550,1589" sap2010:WorkflowViewState.IdRef="If_9">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_67">inIsQuickFeed &amp;&amp; (bool)GlobalVariables.appSettings["feed/use_quick_feed"] &amp;&amp; !inIsNoBreastmilkOrder</CSharpValue>
@@ -368,7 +367,7 @@
               </If.Condition>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -423,12 +422,12 @@
                                 </ui:AssignOperation.To>
                                 <ui:AssignOperation.Value>
                                   <InArgument x:TypeArguments="x:String">
-                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_87" xml:space="preserve">(outFailureReason == "" ? "" : "\n") +
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_130" xml:space="preserve">(outFailureReason == "" ? "" : "\n") +
 $"       •  Quick Feed Confirmation\n" +
 $"        • Expected output\n" +
-$"         Soft Stop message: Container contents are fresh and pumped less than 48 hours ago, or container contents were thawed less than 24 hours ago."+
+$"         Soft Stop message: Container contents are fresh and pumped less than 48 hours ago, or container contents were thawed less than 24 hours ago.\n"+
 $"        • Actual output\n" +
-$"         {softStopMessage}"</CSharpValue>
+$"         Soft Stop message: {softStopMessage}"</CSharpValue>
                                   </InArgument>
                                 </ui:AssignOperation.Value>
                               </ui:AssignOperation>
@@ -440,7 +439,7 @@ $"         {softStopMessage}"</CSharpValue>
                                 </ui:AssignOperation.To>
                                 <ui:AssignOperation.Value>
                                   <InArgument x:TypeArguments="x:Boolean">
-                                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_72" xml:space="preserve">outTestResult &amp;&amp;
+                                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_131" xml:space="preserve">outTestResult &amp;&amp;
 softStopMessage.Contains("Container contents are fresh and pumped less than 48 hours ago, or container contents were thawed less than 24 hours ago.")</CSharpValue>
                                   </InArgument>
                                 </ui:AssignOperation.Value>
@@ -528,7 +527,7 @@ false</CSharpValue>
                 </Sequence>
               </If.Else>
             </If>
-            <If DisplayName="If action is quick feed and quick feed is not enabled" sap:VirtualizedContainerService.HintSize="513.6,56.8" sap2010:WorkflowViewState.IdRef="If_7">
+            <If DisplayName="If action is quick feed and quick feed is not enabled" sap:VirtualizedContainerService.HintSize="550,57" sap2010:WorkflowViewState.IdRef="If_7">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_61">inIsQuickFeed &amp;&amp; !(bool)GlobalVariables.appSettings["feed/use_quick_feed"]</CSharpValue>
@@ -607,7 +606,7 @@ hardStopMessage.Contains($"The following containers have not been received yet: 
                 </Sequence>
               </If.Else>
             </If>
-            <If DisplayName="If - Containers to be feed has FRM prefix" sap:VirtualizedContainerService.HintSize="513.6,922.4" sap2010:WorkflowViewState.IdRef="If_4">
+            <If DisplayName="If - Containers to be feed has FRM prefix" sap:VirtualizedContainerService.HintSize="550,57" sap2010:WorkflowViewState.IdRef="If_4">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_79">inContainerDetails.AsEnumerable().Any(row =&gt; row.Field&lt;string&gt;("barcode").StartsWith("FRM")) &amp;&amp; !inIsNoBreastmilkOrder</CSharpValue>
@@ -615,12 +614,12 @@ hardStopMessage.Contains($"The following containers have not been received yet: 
               </If.Condition>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,759.2" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,760" sap2010:WorkflowViewState.IdRef="Sequence_12">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="njl:JObject" Name="responseData" />
                     <Variable x:TypeArguments="x:String" Name="softStopMessage" />
@@ -631,7 +630,7 @@ hardStopMessage.Contains($"The following containers have not been received yet: 
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Soft Stop Messages - Invoke Workflow File (Components\\Feed\\Get Soft Stop Messages.xaml)" sap:VirtualizedContainerService.HintSize="478.4,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Components\\Feed\\Get Soft Stop Messages.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Soft Stop Messages - Invoke Workflow File (Components\\Feed\\Get Soft Stop Messages.xaml)" sap:VirtualizedContainerService.HintSize="478,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Components\\Feed\\Get Soft Stop Messages.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <OutArgument x:TypeArguments="x:String" x:Key="outSoftStopMessage">
                         <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_25">softStopMessage</CSharpReference>
@@ -712,7 +711,7 @@ patientDetails.Contains($"Bed: {GlobalVariables.testPatientFromDB["babyBedNumber
                 </Sequence>
               </If.Else>
             </If>
-            <Sequence DisplayName="Check for frozen containers" sap:VirtualizedContainerService.HintSize="513.6,49.6" sap2010:WorkflowViewState.IdRef="Sequence_39">
+            <Sequence DisplayName="Check for frozen containers" sap:VirtualizedContainerService.HintSize="550,50" sap2010:WorkflowViewState.IdRef="Sequence_39">
               <Sequence.Variables>
                 <Variable x:TypeArguments="s:String[]" Name="frozenContainers" />
               </Sequence.Variables>
