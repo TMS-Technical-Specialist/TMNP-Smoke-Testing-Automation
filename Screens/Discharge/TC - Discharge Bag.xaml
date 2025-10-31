@@ -108,7 +108,7 @@
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC___Discharge_Bag" sap:VirtualizedContainerService.HintSize="598,2330.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC___Discharge_Bag" sap:VirtualizedContainerService.HintSize="718,3320" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="failureReason" />
       <Variable x:TypeArguments="x:Boolean" Name="testCaseResult" />
@@ -118,7 +118,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="550.4,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="612.8,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -146,7 +146,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="550.4,259.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="612.8,259.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -158,19 +158,19 @@
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="550.4,1560.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="612.8,2550.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="516.8,1468.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" IsDisplayNameAuto="True" ScopeGuid="48662e42-faef-43e6-9861-17bd9fb1a9ae" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="579.2,2458.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" IsDisplayNameAuto="True" ScopeGuid="48662e42-faef-43e6-9861-17bd9fb1a9ae" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="483.2,1228.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="545.6,2218.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
               <Sequence.Variables>
                 <Variable x:TypeArguments="s:String[]" Name="bagList" />
                 <Variable x:TypeArguments="x:String" Name="bagLocationStorage" />
@@ -181,7 +181,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="No Scanned Bag" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence DisplayName="No Scanned Bag" sap:VirtualizedContainerService.HintSize="512,56.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="hardStopMessage" />
                 </Sequence.Variables>
@@ -196,7 +196,7 @@
                     <scg:Dictionary x:TypeArguments="x:String, Argument" />
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Hard Stop Message - Invoke Workflow File (Components\\Feed\\Get Hard Stop Message.xaml)" sap:VirtualizedContainerService.HintSize="478.4,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Components\\Feed\\Get Hard Stop Message.xaml">
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Hard Stop Message - Invoke Workflow File (Components\Get Hard Stop Message.xaml)" sap:VirtualizedContainerService.HintSize="478.4,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Components\Get Hard Stop Message.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
                     <OutArgument x:TypeArguments="x:String" x:Key="outHardStopMessage">
                       <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">hardStopMessage</CSharpReference>
@@ -239,7 +239,7 @@ hardStopMessage.Contains($"Please scan at least one {GlobalVariables.appSettings
                   </ui:MultipleAssign.AssignOperations>
                 </ui:MultipleAssign>
               </Sequence>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Print Bag - Invoke Workflow File (Components\\Print Bag.xaml)" sap:VirtualizedContainerService.HintSize="449.6,232.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Components\\Print Bag.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Print Bag - Invoke Workflow File (Components\\Print Bag.xaml)" sap:VirtualizedContainerService.HintSize="512,232.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Components\\Print Bag.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <OutArgument x:TypeArguments="s:String[]" x:Key="outBagList">
                     <CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">bagList</CSharpReference>
@@ -253,12 +253,12 @@ hardStopMessage.Contains($"Please scan at least one {GlobalVariables.appSettings
                   </OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click sidebar discharge bag submenu - Invoke Workflow File (Components\\Buttons\\Discharge Menu\\Click sidebar discharge bag submenu.xaml)" sap:VirtualizedContainerService.HintSize="449.6,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Components\\Buttons\\Discharge Menu\\Click sidebar discharge bag submenu.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click sidebar discharge bag submenu - Invoke Workflow File (Components\\Buttons\\Discharge Menu\\Click sidebar discharge bag submenu.xaml)" sap:VirtualizedContainerService.HintSize="512,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Components\\Buttons\\Discharge Menu\\Click sidebar discharge bag submenu.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <scg:Dictionary x:TypeArguments="x:String, Argument" />
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Scan Bag(s)'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="449.6,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="DebuggerApi" ScopeIdentifier="48662e42-faef-43e6-9861-17bd9fb1a9ae" Version="V5">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Scan Bag(s)'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="512,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="DebuggerApi" ScopeIdentifier="48662e42-faef-43e6-9861-17bd9fb1a9ae" Version="V5">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/releasebags" CVScreenId="bd38b260-a829-4720-adce-2790ff4ae283" CvElementArea="353, 345, 1460, 45" CvType="InputBox" DesignTimeRectangle="356, 347, 1458, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='bin' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='text' class='multiscan form-control scanbottle form-control form-control' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' name='bin' parentclass='form-group' parentid='wizardpage_div' parentname='theform' /&gt;" Guid="9d6ecced-7c8d-476b-ae33-a4a5384f4230" InformativeScreenshot="fdfa935bdf4ccf1bcb69e901d59b3db2.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
@@ -274,12 +274,12 @@ hardStopMessage.Contains($"Please scan at least one {GlobalVariables.appSettings
                   </InArgument>
                 </uix:NTypeInto.Text>
               </uix:NTypeInto>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click Next Button - Invoke Workflow File (Components\\Buttons\\Click Next Button.xaml)" sap:VirtualizedContainerService.HintSize="449.6,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click Next Button.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click Next Button - Invoke Workflow File (Components\\Buttons\\Click Next Button.xaml)" sap:VirtualizedContainerService.HintSize="512,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click Next Button.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <scg:Dictionary x:TypeArguments="x:String, Argument" />
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
-              <Sequence DisplayName="No Selected Discharge Reason" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <Sequence DisplayName="No Selected Discharge Reason" sap:VirtualizedContainerService.HintSize="512,56.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="hardStopMessage" />
                 </Sequence.Variables>
@@ -294,7 +294,7 @@ hardStopMessage.Contains($"Please scan at least one {GlobalVariables.appSettings
                     <scg:Dictionary x:TypeArguments="x:String, Argument" />
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Hard Stop Message - Invoke Workflow File (Components\\Feed\\Get Hard Stop Message.xaml)" sap:VirtualizedContainerService.HintSize="478.4,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Components\\Feed\\Get Hard Stop Message.xaml">
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Hard Stop Message - Invoke Workflow File (Components\Get Hard Stop Message.xaml)" sap:VirtualizedContainerService.HintSize="478.4,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Components\Get Hard Stop Message.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
                     <OutArgument x:TypeArguments="x:String" x:Key="outHardStopMessage">
                       <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">hardStopMessage</CSharpReference>
@@ -338,7 +338,7 @@ hardStopMessage.Contains("The selected disposal reason is not valid.")</CSharpVa
                   </ui:MultipleAssign.AssignOperations>
                 </ui:MultipleAssign>
               </Sequence>
-              <Sequence DisplayName="No Scanned Patient Barcode" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <Sequence DisplayName="No Scanned Patient Barcode" sap:VirtualizedContainerService.HintSize="512,56.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="dischargeReasonList" />
                   <Variable x:TypeArguments="x:String" Name="hardStopMessage" />
@@ -386,7 +386,7 @@ hardStopMessage.Contains("The selected disposal reason is not valid.")</CSharpVa
                     <scg:Dictionary x:TypeArguments="x:String, Argument" />
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Hard Stop Message - Invoke Workflow File (Components\\Feed\\Get Hard Stop Message.xaml)" sap:VirtualizedContainerService.HintSize="478.4,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Components\\Feed\\Get Hard Stop Message.xaml">
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Hard Stop Message - Invoke Workflow File (Components\Get Hard Stop Message.xaml)" sap:VirtualizedContainerService.HintSize="478.4,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Components\Get Hard Stop Message.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
                     <OutArgument x:TypeArguments="x:String" x:Key="outHardStopMessage">
                       <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_19">hardStopMessage</CSharpReference>
@@ -430,7 +430,7 @@ hardStopMessage.Contains("The Patient that you scanned  is not valid.")</CSharpV
                   </ui:MultipleAssign.AssignOperations>
                 </ui:MultipleAssign>
               </Sequence>
-              <Sequence DisplayName="Wrong Patient Error" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
+              <Sequence DisplayName="Wrong Patient Error" sap:VirtualizedContainerService.HintSize="512,56.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="njl:JObject" Name="patient" />
                   <Variable x:TypeArguments="x:String" Name="hardStopMessage" />
@@ -470,7 +470,7 @@ hardStopMessage.Contains("The Patient that you scanned  is not valid.")</CSharpV
                     <scg:Dictionary x:TypeArguments="x:String, Argument" />
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Hard Stop Message - Invoke Workflow File (Components\\Feed\\Get Hard Stop Message.xaml)" sap:VirtualizedContainerService.HintSize="478.4,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="Components\\Feed\\Get Hard Stop Message.xaml">
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Hard Stop Message - Invoke Workflow File (Components\Get Hard Stop Message.xaml)" sap:VirtualizedContainerService.HintSize="478.4,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="Components\Get Hard Stop Message.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
                     <OutArgument x:TypeArguments="x:String" x:Key="outHardStopMessage">
                       <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_24">hardStopMessage</CSharpReference>
@@ -514,7 +514,7 @@ hardStopMessage.Contains($"The selected {GlobalVariables.appSettings["bins/displ
                   </ui:MultipleAssign.AssignOperations>
                 </ui:MultipleAssign>
               </Sequence>
-              <Sequence DisplayName="Success Discharge Bag" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <Sequence DisplayName="Success Discharge Bag" sap:VirtualizedContainerService.HintSize="512,56.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="dischargeReasonList" />
                   <Variable x:TypeArguments="x:String" Name="successDischargeMessage" />
@@ -676,13 +676,13 @@ successDischargeMessage.Contains($"You have discharged {GlobalVariables.appSetti
                   </ui:MultipleAssign.AssignOperations>
                 </ui:MultipleAssign>
               </Sequence>
-              <Sequence DisplayName="Scan Disposed Bag" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="Sequence_11">
+              <Sequence DisplayName="Scan Disposed Bag" sap:VirtualizedContainerService.HintSize="512,1037.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="hardStopMessage" />
                 </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -712,7 +712,7 @@ successDischargeMessage.Contains($"You have discharged {GlobalVariables.appSetti
                     <scg:Dictionary x:TypeArguments="x:String, Argument" />
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Hard Stop Message - Invoke Workflow File (Components\\Feed\\Get Hard Stop Message.xaml)" sap:VirtualizedContainerService.HintSize="478.4,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_25" UnSafe="False" WorkflowFileName="Components\\Feed\\Get Hard Stop Message.xaml">
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Hard Stop Message - Invoke Workflow File (Components\Get Hard Stop Message.xaml)" sap:VirtualizedContainerService.HintSize="478.4,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_25" UnSafe="False" WorkflowFileName="Components\Get Hard Stop Message.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
                     <OutArgument x:TypeArguments="x:String" x:Key="outHardStopMessage">
                       <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_32">hardStopMessage</CSharpReference>
@@ -764,7 +764,7 @@ hardStopMessage.Contains($"The {GlobalVariables.appSettings["bins/display_name"]
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
     </Sequence>
-    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="550.4,307.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="612.8,307.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
