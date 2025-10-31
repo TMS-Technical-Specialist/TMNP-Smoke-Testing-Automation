@@ -223,7 +223,6 @@
       </ui:InvokeWorkflowFile>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Test Result - Invoke Workflow File (Utilities\\Update Test Result.xaml)" sap:VirtualizedContainerService.HintSize="416,224" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Utilities\\Update Test Result.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:Boolean" x:Key="inSaveResult">True</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="inScenarioName">Quick Feed</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="inFailureReason">
             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12" xml:space="preserve">$"•  Quick Feed RTU\n" +
@@ -233,6 +232,9 @@ $"        • Expected output\n" +
 $"         Container  {string.Join(", ", containerDetails.AsEnumerable().Select(row =&gt; row.Field&lt;string&gt;("barcode")))}  can now be fed to  Patient {GlobalVariables.testPatientFromDB["babyFirstName"].ToString()}  {GlobalVariables.testPatientFromDB["babyLastName"].ToString()} and will be disposed of by the system.\n"+
 $"        • Actual output\n" +
 $"         {successMessage}"</CSharpValue>
+          </InArgument>
+          <InArgument x:TypeArguments="x:Boolean" x:Key="inTestResult">
+            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">testResult</CSharpValue>
           </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
