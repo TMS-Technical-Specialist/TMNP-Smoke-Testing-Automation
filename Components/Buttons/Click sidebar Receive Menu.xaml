@@ -103,7 +103,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Click_sidebar_Receive_Button" sap:VirtualizedContainerService.HintSize="784.4000000000001,925.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Click_sidebar_Receive_Button" sap:VirtualizedContainerService.HintSize="612.4000000000001,925.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -131,7 +131,11 @@
                 </OutArgument>
               </ui:FindChildren.Children>
               <ui:FindChildren.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5d8c3856-b9a7-4df2-95ca-bab0f40dc934" InformativeScreenshot="e0dde92d22e231cf97713958c8c89709" Selector="&lt;webctrl aaname='Receive   ' tag='A' class='nav-link has-dropdown' href='#' innertext='Receive   ' parentid='sidebar-wrapper' visibleinnertext='Receive' /&gt;" TimeoutMS="20" WaitForReady="COMPLETE" />
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5d8c3856-b9a7-4df2-95ca-bab0f40dc934" InformativeScreenshot="e0dde92d22e231cf97713958c8c89709" Selector="&lt;webctrl aaname='Receive   ' tag='A' class='nav-link has-dropdown' href='#' innertext='Receive   ' parentid='sidebar-wrapper' visibleinnertext='Receive' /&gt;" WaitForReady="COMPLETE">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                </ui:Target>
               </ui:FindChildren.Target>
             </ui:FindChildren>
             <If sap:VirtualizedContainerService.HintSize="451.2,461.6" sap2010:WorkflowViewState.IdRef="If_1">

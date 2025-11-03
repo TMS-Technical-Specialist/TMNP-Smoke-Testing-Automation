@@ -103,30 +103,55 @@
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC___Edit_Patient" sap:VirtualizedContainerService.HintSize="718,4339.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC___Edit_Patient" sap:VirtualizedContainerService.HintSize="612.4000000000001,4432" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="mrnUI" />
+      <Variable x:TypeArguments="x:String" Name="accountNumberUI" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get App Settings Value - Invoke Workflow File (Utilities\\Get App Settings Value.xaml)" sap:VirtualizedContainerService.HintSize="579.2,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Utilities\\Get App Settings Value.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <scg:Dictionary x:TypeArguments="x:String, Argument" />
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get test patient - Invoke Workflow File (Utilities\\Get test patient.xaml)" sap:VirtualizedContainerService.HintSize="579.2,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Utilities\\Get test patient.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <scg:Dictionary x:TypeArguments="x:String, Argument" />
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="579.2,121.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="579.2,263.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,171.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">mrnUI</CSharpReference>
+                </OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">GlobalVariables.appSettings["ui/text/mrn_number"].ToString()</CSharpValue>
+                </InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">accountNumberUI</CSharpReference>
+                </OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">GlobalVariables.appSettings["ui/text/account_number"].ToString()</CSharpValue>
+                </InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+          </scg:List>
+        </ui:MultipleAssign.AssignOperations>
+      </ui:MultipleAssign>
     </Sequence>
     <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="579.2,668" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
@@ -152,19 +177,19 @@
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="579.2,3174.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="579.2,3477.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="545.6,3091.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsDisplayNameAuto="True" ScopeGuid="d2868637-97b6-405f-b646-c1baf8bd9800" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="545.6,3394.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsDisplayNameAuto="True" ScopeGuid="d2868637-97b6-405f-b646-c1baf8bd9800" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,2851.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,3154.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="firstNameValue" />
                 <Variable x:TypeArguments="x:String" Name="middleNameValue" />
@@ -185,7 +210,7 @@
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/babies/edit.php" CVScreenId="910e25bf-87ce-4c22-abc8-049fd9117a9a" CvElementArea="355, 515, 721, 45" CvType="InputBox" DesignTimeRectangle="356, 518, 719, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='babyFirstName' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='text' class='form-control ' matching:class='fuzzy' fuzzylevel:class='0.0' name='babyFirstName' parentid='babyFirstName_tr' parentname='babies' /&gt;" Guid="38766323-a2b8-44c8-9e2c-5253e3a755aa" InformativeScreenshot="b42e2f198472995c81a3fae707417021.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target CVScreenId="910e25bf-87ce-4c22-abc8-049fd9117a9a" DesignTimeRectangle="356, 492, 72, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='babyFirstName_label' matching:id='fuzzy' fuzzylevel:id='0.0' tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' for='babyFirstName' parentid='babyFirstName_tr' parentname='babies' /&gt;" Guid="4aee696c-20c8-4ffc-aa77-18b16aafa283" SearchSteps="FuzzySelector" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
@@ -201,7 +226,7 @@
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/babies/edit.php" CVScreenId="910e25bf-87ce-4c22-abc8-049fd9117a9a" CvElementArea="354, 611, 721, 46" CvType="InputBox" DesignTimeRectangle="356, 614, 719, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='babyMiddleName' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='text' class='form-control ' matching:class='fuzzy' fuzzylevel:class='0.0' name='babyMiddleName' parentid='babyMiddleName_tr' parentname='babies' /&gt;" Guid="d7e43cb0-16d7-4a4a-ab16-dc292a42332f" InformativeScreenshot="5478d585d35f72e8da6bd50170568167.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target CVScreenId="910e25bf-87ce-4c22-abc8-049fd9117a9a" DesignTimeRectangle="356, 588, 86, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='babyMiddleName_label' matching:id='fuzzy' fuzzylevel:id='0.0' tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' for='babyMiddleName' parentid='babyMiddleName_tr' /&gt;" Guid="111dd083-990d-4eee-b0ef-b82688b1cb20" SearchSteps="FuzzySelector" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
@@ -217,7 +242,7 @@
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/babies/edit.php" CVScreenId="910e25bf-87ce-4c22-abc8-049fd9117a9a" CvElementArea="355, 708, 721, 45" CvType="InputBox" DesignTimeRectangle="356, 710, 719, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='babyLastName' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='text' class='form-control ' matching:class='fuzzy' fuzzylevel:class='0.0' name='babyLastName' parentid='babyLastName_tr' parentname='babies' /&gt;" Guid="53946a43-4365-4dfe-a8b4-b35e632155e1" InformativeScreenshot="9a31cead0a652d8b2987378d098e1290.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target CVScreenId="910e25bf-87ce-4c22-abc8-049fd9117a9a" DesignTimeRectangle="356, 684, 70, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='babyLastName_label' matching:id='fuzzy' fuzzylevel:id='0.0' tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' for='babyLastName' parentid='babyLastName_tr' parentname='babies' /&gt;" Guid="fcba2d6c-f1c8-434d-a47f-b65b172db849" SearchSteps="FuzzySelector" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
@@ -233,7 +258,7 @@
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/babies/edit.php" CVScreenId="910e25bf-87ce-4c22-abc8-049fd9117a9a" CvType="AnyWordGroup" DesignTimeRectangle="356, 809, 719, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='app' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='INPUT' type='' class='dp__input dp__input_icon_pad' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' parentclass='dp__input_wrap' /&gt;" Guid="1c0d8aad-1abd-4f4c-a127-c02997ff637f" InformativeScreenshot="f768e30c9df698f575a10eb7c0626cf9.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target CVScreenId="910e25bf-87ce-4c22-abc8-049fd9117a9a" DesignTimeRectangle="348, 779, 717, 21" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='babyBirthDate_tr' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='SPAN' type='' parentname='babies' /&gt;" Guid="5fe4180b-ed91-44eb-ba07-ce333dffeb88" SearchSteps="FuzzySelector" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
@@ -249,7 +274,7 @@
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/babies/edit.php" CVScreenId="910e25bf-87ce-4c22-abc8-049fd9117a9a" CvElementArea="355, 923, 721, 45" CvType="InputBox" DesignTimeRectangle="356, 926, 719, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='babyMRN' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='text' name='babyMRN' parentid='babyMRN_tr' parentname='babies' /&gt;" Guid="ff42ed2c-bbe9-4706-a6fa-8ce85e7b8ef0" InformativeScreenshot="a10eec3cb8848f8b7a992858be15a6a1.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target CVScreenId="910e25bf-87ce-4c22-abc8-049fd9117a9a" DesignTimeRectangle="356, 900, 33, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='babyMRN_label' matching:id='fuzzy' fuzzylevel:id='0.0' tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' for='babyMRN' parentid='babyMRN_tr' parentname='babies' /&gt;" Guid="03ed96ca-ed19-4829-9813-4b8f77d7ceb4" SearchSteps="FuzzySelector" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
@@ -261,7 +286,7 @@
                   </OutArgument>
                 </uix:NGetText.TextString>
               </uix:NGetText>
-              <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll 'Account Number'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478.4,249.6" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="10" ScopeIdentifier="d2868637-97b6-405f-b646-c1baf8bd9800" Version="V5">
+              <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll 'Account Number'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478.4,321.6" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="10" ScopeIdentifier="d2868637-97b6-405f-b646-c1baf8bd9800" Version="V5">
                 <uix:NMouseScroll.SearchedElement>
                   <uix:SearchedElement>
                     <uix:SearchedElement.OutUiElement>
@@ -270,7 +295,7 @@
                     <uix:SearchedElement.Target>
                       <uix:TargetAnchorable BrowserURL="localhost/babies/edit.php" DesignTimeRectangle="1128, 1124, 719, 52" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='babyRoom' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='text' class='form-control' matching:class='fuzzy' fuzzylevel:class='0.0' name='babyRoom' parentid='babyRoom_tr' parentname='babies' /&gt;" Guid="b7f675a3-3ea4-4149-bbe6-0e3e194603af" InformativeScreenshot="80e1a4ed92a29393cc0f670740fe5370.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="None">
                         <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                             <uix:Target CVScreenId="758335bf-94f8-4869-a310-bdd653b9c37f" DesignTimeRectangle="1128, 1091, 50, 23" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='babyRoom_label' matching:id='fuzzy' fuzzylevel:id='0.0' tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' for='babyRoom' parentid='babyRoom_tr' parentname='babies' /&gt;" Guid="e2973430-2db1-4f62-9ad5-ad118a6fc091" SearchSteps="FuzzySelector" />
                           </scg:List>
                         </uix:TargetAnchorable.Anchors>
@@ -284,7 +309,7 @@
                 <uix:NMouseScroll.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/babies/edit.php" CVScreenId="2cb375cc-92fb-4a60-8196-dc82e72f14f0" CvElementArea="383, 1089, 722, 54" CvType="InputBox" DesignTimeRectangle="385, 1091, 718, 52" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='babyAccountNumber' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='text' class='form-control ' matching:class='fuzzy' fuzzylevel:class='0.0' name='babyAccountNumber' parentid='babyAccountNumber_tr' parentname='babies' /&gt;" Guid="4f2b72bd-d01a-4558-a741-b055bb40ed26" InformativeScreenshot="80b22fbaaf6c092af7f81f7547fa8741.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target CVScreenId="2cb375cc-92fb-4a60-8196-dc82e72f14f0" DesignTimeRectangle="385, 1058, 136, 23" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='babyAccountNumber_label' matching:id='fuzzy' fuzzylevel:id='0.0' tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' for='babyAccountNumber' parentid='babyAccountNumber_tr' parentname='babies' /&gt;" Guid="2de87a03-9b97-4a87-b331-40685907ac1a" SearchSteps="FuzzySelector" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
@@ -295,7 +320,7 @@
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/babies/edit.php" CVScreenId="910e25bf-87ce-4c22-abc8-049fd9117a9a" CvElementArea="354, 1020, 723, 45" CvType="InputBox" DesignTimeRectangle="356, 1022, 719, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='babyAccountNumber' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='text' class='form-control ' matching:class='fuzzy' fuzzylevel:class='0.0' name='babyAccountNumber' parentid='babyAccountNumber_tr' parentname='babies' /&gt;" Guid="0697d1bd-cf1d-431c-a62f-a33c964ed2a0" InformativeScreenshot="0622a42b9b206f908b8529ce16b5f9f6.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target CVScreenId="910e25bf-87ce-4c22-abc8-049fd9117a9a" DesignTimeRectangle="356, 996, 109, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='babyAccountNumber_label' matching:id='fuzzy' fuzzylevel:id='0.0' tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' for='babyAccountNumber' parentid='babyAccountNumber_tr' parentname='babies' /&gt;" Guid="ad306772-c86b-4319-92f2-606fe454aac7" SearchSteps="FuzzySelector" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
@@ -311,7 +336,7 @@
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/babies/edit.php" CVScreenId="910e25bf-87ce-4c22-abc8-049fd9117a9a" CvElementArea="1094, 945, 720, 45" CvType="InputBox" DesignTimeRectangle="1095, 948, 719, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='babyRoom' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='text' class='form-control' matching:class='fuzzy' fuzzylevel:class='0.0' name='babyRoom' parentid='babyRoom_tr' /&gt;" Guid="16f1084a-59e8-4fca-86f4-175939d7f403" InformativeScreenshot="6d016d75c1843483db00e8d4a3bf8914.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target CVScreenId="910e25bf-87ce-4c22-abc8-049fd9117a9a" DesignTimeRectangle="1095, 922, 39, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='babyRoom_label' matching:id='fuzzy' fuzzylevel:id='0.0' tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' for='babyRoom' parentid='babyRoom_tr' /&gt;" Guid="47e890f7-b5ae-4666-b3e2-943c86d0449f" SearchSteps="FuzzySelector" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
@@ -327,7 +352,7 @@
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/babies/edit.php" CVScreenId="910e25bf-87ce-4c22-abc8-049fd9117a9a" CvElementArea="1094, 1042, 719, 45" CvType="InputBox" DesignTimeRectangle="1095, 1044, 719, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='babyBedNumber' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='text' class='form-control' matching:class='fuzzy' fuzzylevel:class='0.0' name='babyBedNumber' parentid='babyBedNumber_tr' parentname='babies' /&gt;" Guid="5aab2f65-0018-4973-8a32-1e8e21a62c67" InformativeScreenshot="db4da64e54092f104878835738e578a2.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target CVScreenId="910e25bf-87ce-4c22-abc8-049fd9117a9a" DesignTimeRectangle="1095, 1018, 82, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='babyBedNumber_label' matching:id='fuzzy' fuzzylevel:id='0.0' tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' for='babyBedNumber' parentid='babyBedNumber_tr' parentname='babies' /&gt;" Guid="5a63d1d2-1979-4f72-8189-eae1e286463d" SearchSteps="FuzzySelector" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
@@ -343,7 +368,7 @@
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/babies/edit.php" CVScreenId="118d70e1-df83-48ef-a596-9b9fde16b2ec" CvElementArea="383, 588, 721, 56" CvType="InputBox" DesignTimeRectangle="385, 590, 718, 52" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='babyFirstName' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='text' class='form-control ' matching:class='fuzzy' fuzzylevel:class='0.0' name='babyFirstName' parentid='babyFirstName_tr' parentname='babies' /&gt;" Guid="0d70d147-e6db-4a94-b49b-c921d5a3d786" InformativeScreenshot="842e2fa8469c8a19772190f74eacf9f7.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target CVScreenId="118d70e1-df83-48ef-a596-9b9fde16b2ec" DesignTimeRectangle="385, 557, 90, 23" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='babyFirstName_label' matching:id='fuzzy' fuzzylevel:id='0.0' tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' for='babyFirstName' parentid='babyFirstName_tr' parentname='babies' /&gt;" Guid="3d5627e6-80bc-446f-a3e6-010a415e9afc" SearchSteps="FuzzySelector" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
@@ -359,7 +384,7 @@
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/babies/edit.php" CVScreenId="5f8a4060-0b9f-47a0-8ca9-e86931a08f4f" CvElementArea="383, 825, 720, 57" CvType="InputBox" DesignTimeRectangle="385, 828, 718, 53" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='babyLastName' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='text' class='form-control ' matching:class='fuzzy' fuzzylevel:class='0.0' name='babyLastName' parentid='babyLastName_tr' parentname='babies' /&gt;" Guid="43eb04cd-3d8f-413c-97f5-b59a36ea2b2a" InformativeScreenshot="51712fa347ec13a70f27a9a6244d768a.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target CVScreenId="5f8a4060-0b9f-47a0-8ca9-e86931a08f4f" DesignTimeRectangle="385, 796, 87, 22" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='babyLastName_label' matching:id='fuzzy' fuzzylevel:id='0.0' tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' for='babyLastName' parentid='babyLastName_tr' parentname='babies' /&gt;" Guid="71cc0ba8-d20a-4498-adde-d25eaff225f6" SearchSteps="FuzzySelector" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
@@ -417,7 +442,7 @@
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/babies" CVScreenId="1f64975f-9caf-454a-84d5-3d92a8747932" CvType="AnyWordGroup" DesignTimeRectangle="378, 645, 1339, 44" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='footer-count' parentid='app' tag='DIV' parentclass='footer-top' /&gt;" Guid="51d3f703-9376-4689-8763-1ecd8f156d7a" InformativeScreenshot="43332f47d25f287a66d274e7e4c128f2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target CVScreenId="1f64975f-9caf-454a-84d5-3d92a8747932" DesignTimeRectangle="1717, 645, 137, 44" ElementType="Button" FuzzySelectorArgument="&lt;webctrl parentid='app' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='BUTTON' type='' parentclass='flex gap-2' /&gt;" Guid="3f7b9808-8e9f-4682-9683-ad36829b78ac" SearchSteps="FuzzySelector" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
@@ -429,13 +454,50 @@
                   </OutArgument>
                 </uix:NGetText.TextString>
               </uix:NGetText>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478.4,168.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn">
-                <ui:LogMessage.Message>
-                  <InArgument x:TypeArguments="x:Object">
-                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">firstNameValue + " -" + middleNameValue +" - " + lastNameValue + " - " + dateOfBirthValue +" - " + mrnValue + " - " + accountNumberValue + " - " + roomValue + " - " + bedNumberValue + " - " + GlobalVariables.testPatient["FirstName"].ToString() + " - " + GlobalVariables.testPatient["LastName"].ToString() + " - " + searchResultValue</CSharpValue>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get test patient - Invoke Workflow File (Utilities\\Get test patient.xaml)" sap:VirtualizedContainerService.HintSize="478.4,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="Utilities\\Get test patient.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Test Result - Invoke Workflow File (Utilities\\Update Test Result.xaml)" sap:VirtualizedContainerService.HintSize="478.4,224" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Utilities\\Update Test Result.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="inScenarioName">Edit Patient</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="inFailureReason">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19" xml:space="preserve">$"• Edit Patient. Update First and Last Name. \n" +
+"      • Expected output: \n" +
+$"      First Name = {GlobalVariables.testPatient["FirstName"].ToString()}\n " +
+$"      Middle Name = {GlobalVariables.testPatient["MiddleName"].ToString()}\n " +
+$"      Last Name = {GlobalVariables.testPatient["LastName"].ToString()}\n" +
+$"      Date of Birth = {((DateTime)GlobalVariables.testPatient["DateOfBirth"]).ToString("MM/dd/yyyy")}\n" + 
+$"      {mrnUI} = {mrnUI.Replace(" ", "") +GlobalVariables.testPatient["MRNNumber"].ToString()}\n" +
+$"      {accountNumberUI} = {accountNumberUI.Replace(" ", "") +GlobalVariables.testPatient["AccountNumber"].ToString()}\n" +
+$"      Room = {GlobalVariables.testPatient["Room"].ToString()}\n" +
+$"      Bed = {GlobalVariables.testPatient["Bed"].ToString()}\n" +
+$"      Search Result = Total Found: 1\n" +
+$"     • Actual Output: \n" + 
+$"      First Name = {firstNameValue}\n" + 
+$"      Middle Name = {middleNameValue}\n" + 
+$"      Last Name = {lastNameValue}\n" +
+$"      Date of Birth = {dateOfBirthValue}\n" +
+$"      {mrnUI} = {mrnValue}\n" +
+$"      {accountNumberUI} = {accountNumberValue}\n" +
+$"      Room = {roomValue}\n" +
+$"      Bed = {bedNumberValue}\n" +
+$"      Search Result = {searchResultValue}"</CSharpValue>
                   </InArgument>
-                </ui:LogMessage.Message>
-              </ui:LogMessage>
+                  <InArgument x:TypeArguments="x:Boolean" x:Key="inTestResult">
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20" xml:space="preserve">GlobalVariables.testPatient["FirstName"].ToString() == firstNameValue &amp;&amp;
+GlobalVariables.testPatient["MiddleName"].ToString() == middleNameValue &amp;&amp;
+GlobalVariables.testPatient["LastName"].ToString() == lastNameValue &amp;&amp;
+((DateTime)GlobalVariables.testPatient["DateOfBirth"]).ToString("MM/dd/yyyy") == dateOfBirthValue &amp;&amp;
+mrnUI.Replace(" ", "") +GlobalVariables.testPatient["MRNNumber"].ToString() == mrnValue &amp;&amp;
+accountNumberUI.Replace(" ", "") +GlobalVariables.testPatient["AccountNumber"].ToString() == accountNumberValue &amp;&amp;
+GlobalVariables.testPatient["Room"].ToString() == roomValue &amp;&amp;
+GlobalVariables.testPatient["Bed"].ToString() == bedNumberValue &amp;&amp;
+"Total Found: 1" == searchResultValue</CSharpValue>
+                  </InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
             </Sequence>
           </ActivityAction>
         </uix:NApplicationCard.Body>
