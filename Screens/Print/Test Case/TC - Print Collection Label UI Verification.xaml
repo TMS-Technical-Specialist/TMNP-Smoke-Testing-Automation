@@ -236,7 +236,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NGoToUrl DelayAfter="2" DisplayName="Go To URL - " sap:VirtualizedContainerService.HintSize="416,115.2" sap2010:WorkflowViewState.IdRef="NGoToUrl_3" ScopeIdentifier="68ce868b-2c52-4946-b281-4abe451636d6" Version="V5">
+              <uix:NGoToUrl DisplayName="Go To URL - " sap:VirtualizedContainerService.HintSize="416,115.2" sap2010:WorkflowViewState.IdRef="NGoToUrl_3" ScopeIdentifier="68ce868b-2c52-4946-b281-4abe451636d6" Version="V5">
                 <uix:NGoToUrl.Url>
                   <InArgument x:TypeArguments="x:String">
                     <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_36">GlobalVariables.websiteUrl + "/printlabels"</CSharpValue>
@@ -278,16 +278,6 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:UiElementExists DisplayName="Scan Patient Barcode" sap:VirtualizedContainerService.HintSize="416,139.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
-                <ui:UiElementExists.Exists>
-                  <OutArgument x:TypeArguments="x:Boolean">
-                    <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">scanPatientBarcode</CSharpReference>
-                  </OutArgument>
-                </ui:UiElementExists.Exists>
-                <ui:UiElementExists.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a01e6c46-0d10-497e-a324-967a79194732" InformativeScreenshot="44f304185f45585bb5222ed4753662df" Selector="&lt;webctrl id='baby_scan' tag='INPUT' name='baby_scan' parentid='wizardpage_div' parentname='theform' /&gt;" TimeoutMS="2500" WaitForReady="COMPLETE" />
-                </ui:UiElementExists.Target>
-              </ui:UiElementExists>
               <ui:UiElementExists DisplayName="Select Patient dropdown" sap:VirtualizedContainerService.HintSize="416,139.2" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
                 <ui:UiElementExists.Exists>
                   <OutArgument x:TypeArguments="x:Boolean">
@@ -352,6 +342,16 @@
                 </ui:UiElementExists.Exists>
                 <ui:UiElementExists.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="983afbc7-72d5-4d79-9a05-95357f69bc24" InformativeScreenshot="70ad91843dfd8556a3b454afaeb3cc72" Selector="&lt;webctrl id='pump_date_time_language-Arabic' tag='INPUT' /&gt;" TimeoutMS="1000" WaitForReady="COMPLETE" />
+                </ui:UiElementExists.Target>
+              </ui:UiElementExists>
+              <ui:UiElementExists DisplayName="Scan Patient Barcode" sap:VirtualizedContainerService.HintSize="416,139.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                <ui:UiElementExists.Exists>
+                  <OutArgument x:TypeArguments="x:Boolean">
+                    <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">scanPatientBarcode</CSharpReference>
+                  </OutArgument>
+                </ui:UiElementExists.Exists>
+                <ui:UiElementExists.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a01e6c46-0d10-497e-a324-967a79194732" InformativeScreenshot="44f304185f45585bb5222ed4753662df" Selector="&lt;webctrl id='baby_scan' tag='INPUT' name='baby_scan' parentid='wizardpage_div' parentname='theform' /&gt;" TimeoutMS="2500" WaitForReady="COMPLETE" />
                 </ui:UiElementExists.Target>
               </ui:UiElementExists>
               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Test Result - Invoke Workflow File (Utilities\\Update Test Result.xaml)" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Utilities\\Update Test Result.xaml">
