@@ -114,7 +114,7 @@
       <AssemblyReference>System.Collections.Specialized</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC___Prepare_Product___Fortifier" sap:VirtualizedContainerService.HintSize="628.4000000000001,2216" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC___Prepare_Product___Fortifier" sap:VirtualizedContainerService.HintSize="632.4000000000001,2213.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataRow" Name="orderDetails" />
       <Variable x:TypeArguments="sd:DataTable" Name="additives" />
@@ -128,7 +128,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="449.6,1286.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="449.6,1285.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -161,16 +161,18 @@
           </OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Receive EHM - Invoke Workflow File (Components\\Receive EHM.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Components\\Receive EHM.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Receive EHM - Invoke Workflow File (Components\\Receive EHM.xaml)" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Components\\Receive EHM.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="inVolume">5</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="inVolume">
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">GlobalVariables.appSettings["prepare/ebm_and_dbm_in_same_prep_action"].ToString() == "2" ? "50" : "5"</CSharpValue>
+          </InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="inState">Fresh</InArgument>
           <InArgument x:TypeArguments="s:String[]" x:Key="inContainerList">
             <CSharpValue x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">collectionLabels</CSharpValue>
           </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Receive DHM - Invoke Workflow File (Components\\Receive DHM.xaml)" sap:VirtualizedContainerService.HintSize="416,266" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_27" UnSafe="False" WorkflowFileName="Components\\Receive DHM.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Receive DHM - Invoke Workflow File (Components\\Receive DHM.xaml)" sap:VirtualizedContainerService.HintSize="416,265.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_27" UnSafe="False" WorkflowFileName="Components\\Receive DHM.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <OutArgument x:TypeArguments="s:String[]" x:Key="outDHMContainers">
             <CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">donorContainers</CSharpReference>
@@ -213,7 +215,7 @@
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="449.6,557.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="449.6,556" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="testResult" />
         <Variable x:TypeArguments="x:String" Name="failureReason" />
@@ -223,7 +225,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Prepare Screen Validation - Invoke Workflow File (Components\\Prepare\\Prepare Screen Validation.xaml)" sap:VirtualizedContainerService.HintSize="416,250" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Components\\Prepare\\Fill required details and validation.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Prepare Screen Validation - Invoke Workflow File (Components\\Prepare\\Prepare Screen Validation.xaml)" sap:VirtualizedContainerService.HintSize="416,248.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Components\\Prepare\\Fill required details and validation.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="inDHMContainer">
             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">GlobalVariables.appSettings["prepare/ebm_and_dbm_in_same_prep_action"].ToString() == "2" ? donorContainers[0] : ""</CSharpValue>
@@ -242,7 +244,7 @@
           </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Test Result - Invoke Workflow File (Utilities\\Update Test Result.xaml)" sap:VirtualizedContainerService.HintSize="416,225" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Utilities\\Update Test Result.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Test Result - Invoke Workflow File (Utilities\\Update Test Result.xaml)" sap:VirtualizedContainerService.HintSize="416,224" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Utilities\\Update Test Result.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="inScenarioName" xml:space="preserve">EHM + DHM +  Fortifiers</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="inFailureReason">

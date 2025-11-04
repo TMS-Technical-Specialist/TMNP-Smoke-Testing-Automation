@@ -9,6 +9,11 @@
     <x:Property Name="outFailureReason" Type="OutArgument(x:String)" />
     <x:Property Name="inAdditives" Type="InArgument(sd:DataTable)" />
   </x:Members>
+  <this:Select_Restore_Location_Logic.inDHMContainer>
+    <InArgument x:TypeArguments="x:String">
+      <Literal x:TypeArguments="x:String" Value="" />
+    </InArgument>
+  </this:Select_Restore_Location_Logic.inDHMContainer>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
@@ -136,7 +141,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Select_Restore_Location_Logic" sap:VirtualizedContainerService.HintSize="946,2784" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Select_Restore_Location_Logic" sap:VirtualizedContainerService.HintSize="649.6,3763.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="hasModular" />
       <Variable x:TypeArguments="x:String" Name="modularTracking" />
@@ -153,7 +158,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="652,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="649.6,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -183,13 +188,13 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="652,2581" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="c7fb0a06-8cf3-44ce-812d-54ffe9d95629" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="649.6,3560" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="c7fb0a06-8cf3-44ce-812d-54ffe9d95629" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="618,2340" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="616,3320" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="orderBase" />
               <Variable x:TypeArguments="x:Boolean" Name="isBaseBreastMilk" />
@@ -200,13 +205,13 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NForEachUiElement DisplayName="Select restore location and input modular value" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='CurrentElement'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column3' Name='availableVolume'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column4' Name='usingQuantity'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='mixToCal'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='tr' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column3' attr='fulltext'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column4' attr='fulltext'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='3' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='4' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="584,736" sap2010:WorkflowViewState.IdRef="NForEachUiElement_2" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="c7fb0a06-8cf3-44ce-812d-54ffe9d95629" Version="V5">
+            <uix:NForEachUiElement DisplayName="Select restore location and input modular value" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='CurrentElement'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column3' Name='availableVolume'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column4' Name='usingQuantity'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='mixToCal'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='tr' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column3' attr='fulltext'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column4' attr='fulltext'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='3' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='4' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="582.4,694.4" sap2010:WorkflowViewState.IdRef="NForEachUiElement_2" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="c7fb0a06-8cf3-44ce-812d-54ffe9d95629" Version="V5">
               <uix:NForEachUiElement.Body>
                 <ActivityAction x:TypeArguments="x:Int32">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484,397" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="483.2,395.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Boolean" Name="isMilkTypeDropdownDisplayed" />
                       <Variable x:TypeArguments="x:Boolean" Name="isVolumeFieldEnabled" />
@@ -226,7 +231,7 @@
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Verify values that depends on app setting" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                    <Sequence DisplayName="Verify values that depends on app setting" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="Sequence_40">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -304,7 +309,7 @@
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:UiElementExists>
                     </Sequence>
-                    <If DisplayName="If - Get selected restore location &amp; dropdown values" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="If_10">
+                    <If DisplayName="If - Get selected restore location &amp; dropdown values" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="If_10">
                       <If.Condition>
                         <InArgument x:TypeArguments="x:Boolean">
                           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_61">restoreDropdownExist</CSharpValue>
@@ -374,7 +379,7 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <If DisplayName="If - restore location dropdown is empty" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="If_11">
+                    <If DisplayName="If - restore location dropdown is empty" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="If_11">
                       <If.Condition>
                         <InArgument x:TypeArguments="x:Boolean">
                           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_62">restoreDropdownExist &amp;&amp; restoreText == ""</CSharpValue>
@@ -488,7 +493,7 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <If DisplayName="If - No modular tracking then type Modular amount" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="If_8">
+                    <If DisplayName="If - No modular tracking then type Modular amount" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="If_8">
                       <If.Condition>
                         <InArgument x:TypeArguments="x:Boolean">
                           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_75">modularTracking == "0" &amp;&amp; hasModular &amp;&amp; mixToCal == "Modular"</CSharpValue>
@@ -553,7 +558,7 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <If DisplayName="If - For Order Base" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="If_6">
+                    <If DisplayName="If - For Order Base" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="If_6">
                       <If.Condition>
                         <InArgument x:TypeArguments="x:Boolean">
                           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_89">CurrentIndex == 1</CSharpValue>
@@ -672,7 +677,7 @@ $"       Should display freezer and deep freezer restore location for {CurrentEl
                         </Sequence>
                       </If.Else>
                     </If>
-                    <If DisplayName="If - Scanned Container" sap:VirtualizedContainerService.HintSize="450,50" sap2010:WorkflowViewState.IdRef="If_16">
+                    <If DisplayName="If - Scanned Container" sap:VirtualizedContainerService.HintSize="449.6,49.6" sap2010:WorkflowViewState.IdRef="If_16">
                       <If.Condition>
                         <InArgument x:TypeArguments="x:Boolean">
                           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_98">CurrentElement_Label.Contains("/")</CSharpValue>
@@ -847,7 +852,7 @@ $"       Milk Type Dropdown should be displayed for {scannedBarcode} = {isMilkTy
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NForEachUiElement>
-            <If DisplayName="If - Force Sterile Water Scanning" sap:VirtualizedContainerService.HintSize="584,57" sap2010:WorkflowViewState.IdRef="If_19">
+            <If DisplayName="If - Force Sterile Water Scanning" sap:VirtualizedContainerService.HintSize="582.4,56.8" sap2010:WorkflowViewState.IdRef="If_19">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_229">(bool)GlobalVariables.appSettings["prepare/require_water_base_product_scanning"]</CSharpValue>
@@ -1014,18 +1019,60 @@ isHardStopDisplayed &amp;&amp; hardStopMessageForWater.Contains("Cannot process 
                 </Sequence>
               </If.Else>
             </If>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="584,1035" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-              <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="548,924" sap2010:WorkflowViewState.IdRef="Sequence_67">
+            <If DisplayName="If - EBM and DBM cannot prepare together" sap:VirtualizedContainerService.HintSize="582.4,1172.8" sap2010:WorkflowViewState.IdRef="If_24">
+              <If.Condition>
+                <InArgument x:TypeArguments="x:Boolean">
+                  <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_260">GlobalVariables.appSettings["prepare/ebm_and_dbm_in_same_prep_action"].ToString() == "2" &amp;&amp; inDHMContainer != ""</CSharpValue>
+                </InArgument>
+              </If.Condition>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,1009.6" sap2010:WorkflowViewState.IdRef="Sequence_63">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Boolean" Name="isDHMContainerDisplayed" />
+                    <Variable x:TypeArguments="x:String" Name="hardStopMessageForDHM" />
+                  </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <If DisplayName="If - EBM and DBM cannot prepare together" sap:VirtualizedContainerService.HintSize="514,864" sap2010:WorkflowViewState.IdRef="If_21">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DelayAfter="1" DisplayName="Type barcode" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478.4,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="c7fb0a06-8cf3-44ce-812d-54ffe9d95629" Version="V4">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="localhost/prepare" CVScreenId="d8dfc010-b9d8-4ffe-b25e-507710cdd19b" ContentHash="VFhyQaLBbECsld-L6eWj2A" CvElementArea="1297, 245, 589, 32" CvType="InputBox" DesignTimeRectangle="1320, 247, 564, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl type='' parentid='prep-block' tag='INPUT' class='form-control scanner-component' placeholder='Barcode ID...' aaname='' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="e88a93df-dd89-4c35-8ea4-f92de2e54f92" InformativeScreenshot="e916b23c93a70611893e8906c93ce862.png" Reference="BkxQ1887pEidR6av2KDcrw/KiGy9XY5MkGMfqPJF4NqAQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="d8dfc010-b9d8-4ffe-b25e-507710cdd19b" CvTextArea="1287, 228, 88, 10" CvTextArgument="Scan a Recipe Item" CvType="Text" DesignTimeRectangle="1288, 227, 87, 13" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='prep-block' tag='STRONG' type='' class='' aaname='Scan a Recipe Item' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Scan a Recipe Item' /&gt;" Guid="86e4dcfd-5efc-4ba6-bdf2-e6d2a7a6ab91" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.Text>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_255">inDHMContainer + "[k(Enter)]"</CSharpValue>
+                      </InArgument>
+                    </uix:NTypeInto.Text>
+                  </uix:NTypeInto>
+                  <ui:UiElementExists DisplayName="Check hardstop message" sap:VirtualizedContainerService.HintSize="478,139" sap2010:WorkflowViewState.IdRef="UiElementExists_12">
+                    <ui:UiElementExists.Exists>
+                      <OutArgument x:TypeArguments="x:Boolean">
+                        <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_76">isDHMContainerDisplayed</CSharpReference>
+                      </OutArgument>
+                    </ui:UiElementExists.Exists>
+                    <ui:UiElementExists.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3b2d937e-bf30-48e2-8428-ec198f82dd39" InformativeScreenshot="466c89183d9cc42485dbe9da30947e1a" Selector="&lt;webctrl parentid='prep-block' tag='DIV' class='alert alert-danger py-2 mb-1' parentclass='error-block mt-1' /&gt;" TimeoutMS="10" WaitForReady="COMPLETE" />
+                    </ui:UiElementExists.Target>
+                  </ui:UiElementExists>
+                  <If sap:VirtualizedContainerService.HintSize="478.4,356.8" sap2010:WorkflowViewState.IdRef="If_22">
                     <If.Condition>
                       <InArgument x:TypeArguments="x:Boolean">
-                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_260">GlobalVariables.appSettings["prepare/ebm_and_dbm_in_same_prep_action"].ToString() == "2" &amp;&amp; inDHMContainer != ""</CSharpValue>
+                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_256">isDHMContainerDisplayed</CSharpValue>
                       </InArgument>
                     </If.Condition>
                     <sap:WorkflowViewStateService.ViewState>
@@ -1035,140 +1082,32 @@ isHardStopDisplayed &amp;&amp; hardStopMessageForWater.Contains("Cannot process 
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,709" sap2010:WorkflowViewState.IdRef="Sequence_63">
-                        <Sequence.Variables>
-                          <Variable x:TypeArguments="x:Boolean" Name="isDHMContainerDisplayed" />
-                          <Variable x:TypeArguments="x:String" Name="hardStopMessageForDHM" />
-                        </Sequence.Variables>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,193.6" sap2010:WorkflowViewState.IdRef="Sequence_65">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DelayAfter="1" DisplayName="Type barcode" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,251" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="c7fb0a06-8cf3-44ce-812d-54ffe9d95629" Version="V4">
-                          <uix:NTypeInto.Target>
-                            <uix:TargetAnchorable BrowserURL="localhost/prepare" CVScreenId="d8dfc010-b9d8-4ffe-b25e-507710cdd19b" ContentHash="VFhyQaLBbECsld-L6eWj2A" CvElementArea="1297, 245, 589, 32" CvType="InputBox" DesignTimeRectangle="1320, 247, 564, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl type='' parentid='prep-block' tag='INPUT' class='form-control scanner-component' placeholder='Barcode ID...' aaname='' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="e88a93df-dd89-4c35-8ea4-f92de2e54f92" InformativeScreenshot="e916b23c93a70611893e8906c93ce862.png" Reference="BkxQ1887pEidR6av2KDcrw/KiGy9XY5MkGMfqPJF4NqAQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                        <uix:NGetText DisplayName="Get Hard stop message" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,133.6" sap2010:WorkflowViewState.IdRef="NGetText_8" ScopeIdentifier="c7fb0a06-8cf3-44ce-812d-54ffe9d95629" Version="V5">
+                          <uix:NGetText.Target>
+                            <uix:TargetAnchorable BrowserURL="localhost/prepare" CVScreenId="5fc6a5a7-e207-4cfb-ab83-638d1e5e90f1" ContentHash="JIppbMCZJU-abHpZwWr5pw" CvType="AnyWordGroup" DesignTimeRectangle="700, 309, 1170, 44" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='prep-block' tag='DIV' class='alert alert-danger py-2 mb-1' parentclass='error-block mt-1' /&gt;" Guid="e270227a-fc88-4e13-9962-b889391da6d6" InformativeScreenshot="ff1d1c9176cbda689b1000a5769e8722.png" Reference="BkxQ1887pEidR6av2KDcrw/9jn7c0ndbkSU0bzblXWpJg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
                               <uix:TargetAnchorable.Anchors>
                                 <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                  <uix:Target CVScreenId="d8dfc010-b9d8-4ffe-b25e-507710cdd19b" CvTextArea="1287, 228, 88, 10" CvTextArgument="Scan a Recipe Item" CvType="Text" DesignTimeRectangle="1288, 227, 87, 13" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='prep-block' tag='STRONG' type='' class='' aaname='Scan a Recipe Item' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Scan a Recipe Item' /&gt;" Guid="86e4dcfd-5efc-4ba6-bdf2-e6d2a7a6ab91" SearchSteps="FuzzySelector, CV" />
+                                  <uix:Target CVScreenId="5fc6a5a7-e207-4cfb-ab83-638d1e5e90f1" DesignTimeRectangle="701, 358, 1168, 45" FuzzySelectorArgument="&lt;webctrl type='' class='card-header py-1 px-2' matching:class='fuzzy' fuzzylevel:class='0.0' parentid='prep-block' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='DIV' aaname='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' parentclass='card mb-3' /&gt;" Guid="88fb7713-c58f-4219-a3ed-144c7e77f974" SearchSteps="FuzzySelector" />
                                 </scg:List>
                               </uix:TargetAnchorable.Anchors>
                             </uix:TargetAnchorable>
-                          </uix:NTypeInto.Target>
-                          <uix:NTypeInto.Text>
-                            <InArgument x:TypeArguments="x:String">
-                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_255">inDHMContainer + "[k(Enter)]"</CSharpValue>
-                            </InArgument>
-                          </uix:NTypeInto.Text>
-                        </uix:NTypeInto>
-                        <ui:UiElementExists DisplayName="Check hardstop message" sap:VirtualizedContainerService.HintSize="478,139" sap2010:WorkflowViewState.IdRef="UiElementExists_12">
-                          <ui:UiElementExists.Exists>
-                            <OutArgument x:TypeArguments="x:Boolean">
-                              <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_76">isDHMContainerDisplayed</CSharpReference>
+                          </uix:NGetText.Target>
+                          <uix:NGetText.TextString>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_77">hardStopMessageForDHM</CSharpReference>
                             </OutArgument>
-                          </ui:UiElementExists.Exists>
-                          <ui:UiElementExists.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3b2d937e-bf30-48e2-8428-ec198f82dd39" InformativeScreenshot="466c89183d9cc42485dbe9da30947e1a" Selector="&lt;webctrl parentid='prep-block' tag='DIV' class='alert alert-danger py-2 mb-1' parentclass='error-block mt-1' /&gt;" TimeoutMS="10" WaitForReady="COMPLETE" />
-                          </ui:UiElementExists.Target>
-                        </ui:UiElementExists>
-                        <If sap:VirtualizedContainerService.HintSize="478,57" sap2010:WorkflowViewState.IdRef="If_22">
-                          <If.Condition>
-                            <InArgument x:TypeArguments="x:Boolean">
-                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_256">isDHMContainerDisplayed</CSharpValue>
-                            </InArgument>
-                          </If.Condition>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <If.Then>
-                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,190" sap2010:WorkflowViewState.IdRef="Sequence_65">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <uix:NGetText DisplayName="Get Hard stop message" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,130" sap2010:WorkflowViewState.IdRef="NGetText_8" ScopeIdentifier="c7fb0a06-8cf3-44ce-812d-54ffe9d95629" Version="V5">
-                                <uix:NGetText.Target>
-                                  <uix:TargetAnchorable BrowserURL="localhost/prepare" CVScreenId="5fc6a5a7-e207-4cfb-ab83-638d1e5e90f1" ContentHash="JIppbMCZJU-abHpZwWr5pw" CvType="AnyWordGroup" DesignTimeRectangle="700, 309, 1170, 44" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='prep-block' tag='DIV' class='alert alert-danger py-2 mb-1' parentclass='error-block mt-1' /&gt;" Guid="e270227a-fc88-4e13-9962-b889391da6d6" InformativeScreenshot="ff1d1c9176cbda689b1000a5769e8722.png" Reference="BkxQ1887pEidR6av2KDcrw/9jn7c0ndbkSU0bzblXWpJg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
-                                    <uix:TargetAnchorable.Anchors>
-                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                        <uix:Target CVScreenId="5fc6a5a7-e207-4cfb-ab83-638d1e5e90f1" DesignTimeRectangle="701, 358, 1168, 45" FuzzySelectorArgument="&lt;webctrl type='' class='card-header py-1 px-2' matching:class='fuzzy' fuzzylevel:class='0.0' parentid='prep-block' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='DIV' aaname='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' parentclass='card mb-3' /&gt;" Guid="88fb7713-c58f-4219-a3ed-144c7e77f974" SearchSteps="FuzzySelector" />
-                                      </scg:List>
-                                    </uix:TargetAnchorable.Anchors>
-                                  </uix:TargetAnchorable>
-                                </uix:NGetText.Target>
-                                <uix:NGetText.TextString>
-                                  <OutArgument x:TypeArguments="x:String">
-                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_77">hardStopMessageForDHM</CSharpReference>
-                                  </OutArgument>
-                                </uix:NGetText.TextString>
-                              </uix:NGetText>
-                            </Sequence>
-                          </If.Then>
-                          <If.Else>
-                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_66">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </Sequence>
-                          </If.Else>
-                        </If>
-                        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,202" sap2010:WorkflowViewState.IdRef="MultipleAssign_11">
-                          <ui:MultipleAssign.AssignOperations>
-                            <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_23">
-                                <ui:AssignOperation.To>
-                                  <OutArgument x:TypeArguments="x:String">
-                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_73">expectedOutput</CSharpReference>
-                                  </OutArgument>
-                                </ui:AssignOperation.To>
-                                <ui:AssignOperation.Value>
-                                  <InArgument x:TypeArguments="x:String">
-                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_257" xml:space="preserve">expectedOutput + "\n" +
-$"       EHM and DHM cannot be prepared together hard stop = {GlobalVariables.appSettings["EBM_display_name_short"]} and {GlobalVariables.appSettings["DBM_display_name_short"]} milk cannot be prepared together."</CSharpValue>
-                                  </InArgument>
-                                </ui:AssignOperation.Value>
-                              </ui:AssignOperation>
-                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_24">
-                                <ui:AssignOperation.To>
-                                  <OutArgument x:TypeArguments="x:String">
-                                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_74">actualOutput</CSharpReference>
-                                  </OutArgument>
-                                </ui:AssignOperation.To>
-                                <ui:AssignOperation.Value>
-                                  <InArgument x:TypeArguments="x:String">
-                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_258" xml:space="preserve">actualOutput + "\n" +
-$"       EHM and DHM cannot be prepared together hard stop = {hardStopMessageForDHM}"</CSharpValue>
-                                  </InArgument>
-                                </ui:AssignOperation.Value>
-                              </ui:AssignOperation>
-                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_25">
-                                <ui:AssignOperation.To>
-                                  <OutArgument x:TypeArguments="x:Boolean">
-                                    <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_75">outTestResult</CSharpReference>
-                                  </OutArgument>
-                                </ui:AssignOperation.To>
-                                <ui:AssignOperation.Value>
-                                  <InArgument x:TypeArguments="x:Boolean">
-                                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_259" xml:space="preserve">outTestResult &amp;&amp;
-isDHMContainerDisplayed &amp;&amp;  hardStopMessageForDHM.Contains($"{GlobalVariables.appSettings["EBM_display_name_short"]} and {GlobalVariables.appSettings["DBM_display_name_short"]} milk cannot be prepared together.")</CSharpValue>
-                                  </InArgument>
-                                </ui:AssignOperation.Value>
-                              </ui:AssignOperation>
-                            </scg:List>
-                          </ui:MultipleAssign.AssignOperations>
-                        </ui:MultipleAssign>
+                          </uix:NGetText.TextString>
+                        </uix:NGetText>
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="512,25" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_66">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1178,10 +1117,65 @@ isDHMContainerDisplayed &amp;&amp;  hardStopMessageForDHM.Contains($"{GlobalVari
                       </Sequence>
                     </If.Else>
                   </If>
+                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,203.2" sap2010:WorkflowViewState.IdRef="MultipleAssign_11">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_23">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_73">expectedOutput</CSharpReference>
+                            </OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_257" xml:space="preserve">expectedOutput + "\n" +
+$"       EHM and DHM cannot be prepared together hard stop = {GlobalVariables.appSettings["EBM_display_name_short"]} and {GlobalVariables.appSettings["DBM_display_name_short"]} milk cannot be prepared together."</CSharpValue>
+                            </InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_24">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_74">actualOutput</CSharpReference>
+                            </OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_258" xml:space="preserve">actualOutput + "\n" +
+$"       EHM and DHM cannot be prepared together hard stop = {hardStopMessageForDHM}"</CSharpValue>
+                            </InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_25">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Boolean">
+                              <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_75">outTestResult</CSharpReference>
+                            </OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Boolean">
+                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_259" xml:space="preserve">outTestResult &amp;&amp;
+isDHMContainerDisplayed &amp;&amp;  hardStopMessageForDHM.Contains($"{GlobalVariables.appSettings["EBM_display_name_short"]} and {GlobalVariables.appSettings["DBM_display_name_short"]} milk cannot be prepared together.")</CSharpValue>
+                            </InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                  </ui:MultipleAssign>
                 </Sequence>
-              </ui:CommentOut.Body>
-            </ui:CommentOut>
-            <Sequence DisplayName="Prepped Containers validation" sap:VirtualizedContainerService.HintSize="584,57" sap2010:WorkflowViewState.IdRef="Sequence_45">
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="512,24.8" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <Sequence DisplayName="Prepped Containers validation" sap:VirtualizedContainerService.HintSize="582.4,884.8" sap2010:WorkflowViewState.IdRef="Sequence_45">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="newContainerStoreLocations" />
                 <Variable x:TypeArguments="x:String" Name="selectedNewContainerStoreLocation" />
@@ -1190,11 +1184,11 @@ isDHMContainerDisplayed &amp;&amp;  hardStopMessageForDHM.Contains($"{GlobalVari
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get selected new containers store location" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,192" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_12" ScopeIdentifier="c7fb0a06-8cf3-44ce-812d-54ffe9d95629" Version="V5">
+              <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get selected new containers store location" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478.4,195.2" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_12" ScopeIdentifier="c7fb0a06-8cf3-44ce-812d-54ffe9d95629" Version="V5">
                 <uix:NGetAttributeGeneric.Result>
                   <OutArgument x:TypeArguments="x:String">
                     <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_18">selectedNewContainerStoreLocation</CSharpReference>
@@ -1210,7 +1204,7 @@ isDHMContainerDisplayed &amp;&amp;  hardStopMessageForDHM.Contains($"{GlobalVari
                   </uix:TargetAnchorable>
                 </uix:NGetAttributeGeneric.Target>
               </uix:NGetAttributeGeneric>
-              <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="items" DisplayName="Get new storageLocation dropdown list" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,192" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_13" ScopeIdentifier="c7fb0a06-8cf3-44ce-812d-54ffe9d95629" Version="V5">
+              <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="items" DisplayName="Get new storageLocation dropdown list" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478.4,195.2" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_13" ScopeIdentifier="c7fb0a06-8cf3-44ce-812d-54ffe9d95629" Version="V5">
                 <uix:NGetAttributeGeneric.Result>
                   <OutArgument x:TypeArguments="x:String">
                     <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_19">newContainerStoreLocations</CSharpReference>
@@ -1226,7 +1220,7 @@ isDHMContainerDisplayed &amp;&amp;  hardStopMessageForDHM.Contains($"{GlobalVari
                   </uix:TargetAnchorable>
                 </uix:NGetAttributeGeneric.Target>
               </uix:NGetAttributeGeneric>
-              <If DisplayName="If - prep location dropdown is empty" sap:VirtualizedContainerService.HintSize="478,57" sap2010:WorkflowViewState.IdRef="If_12">
+              <If DisplayName="If - prep location dropdown is empty" sap:VirtualizedContainerService.HintSize="478.4,56.8" sap2010:WorkflowViewState.IdRef="If_12">
                 <If.Condition>
                   <InArgument x:TypeArguments="x:Boolean">
                     <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_84">(bool)GlobalVariables.appSettings["prepare/force_choose_location"] &amp;&amp; selectedNewContainerStoreLocation == ""</CSharpValue>
@@ -1334,7 +1328,7 @@ isDHMContainerDisplayed &amp;&amp;  hardStopMessageForDHM.Contains($"{GlobalVari
                   </Sequence>
                 </If.Else>
               </If>
-              <ui:UiElementExists DisplayName="Check prep volume container is enabled" sap:VirtualizedContainerService.HintSize="478,139" sap2010:WorkflowViewState.IdRef="UiElementExists_9">
+              <ui:UiElementExists DisplayName="Check prep volume container is enabled" sap:VirtualizedContainerService.HintSize="478.4,139.2" sap2010:WorkflowViewState.IdRef="UiElementExists_9">
                 <ui:UiElementExists.Exists>
                   <OutArgument x:TypeArguments="x:Boolean">
                     <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_47">isPrepVolumeEnabled</CSharpReference>
@@ -1344,7 +1338,7 @@ isDHMContainerDisplayed &amp;&amp;  hardStopMessageForDHM.Contains($"{GlobalVari
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dda34b3e-90b6-46ae-8436-1d3503fc6b00" InformativeScreenshot="bc05e51728ec0442f6384359d0f78671" Selector="&lt;webctrl parentid='prep-block' tag='INPUT' class='form-control px-2 text-right' parentclass='input-group input-group-sm mx-1 container-input volume-input' /&gt;" TimeoutMS="10" WaitForReady="COMPLETE" />
                 </ui:UiElementExists.Target>
               </ui:UiElementExists>
-              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,204" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
+              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,204.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
                 <ui:MultipleAssign.AssignOperations>
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
@@ -1401,7 +1395,7 @@ $"       Hard Stop = {selectLocationHardStop}" +
                 </ui:MultipleAssign.AssignOperations>
               </ui:MultipleAssign>
             </Sequence>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="1" DisplayName="Click 'Complete Prep &amp; Print'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="584,227" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c7fb0a06-8cf3-44ce-812d-54ffe9d95629" Version="V4">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="1" DisplayName="Click 'Complete Prep &amp; Print'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="582.4,225.6" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c7fb0a06-8cf3-44ce-812d-54ffe9d95629" Version="V4">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="localhost/prepare" CVScreenId="d305e04f-3b1c-41c4-99cc-c0a67382014d" ContentHash="oklmoKyYN0661sPg92tFhw" CvElementArea="206, 640, 415, 27" CvTextArea="366, 649, 95, 11" CvTextArgument="Complete Prep &amp; Print" CvType="Button" DesignTimeRectangle="208, 642, 412, 24" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Complete Prep &amp;amp; Print' parentid='info-block' tag='BUTTON' /&gt;" Guid="6697d7d9-c9e0-4888-bb81-f31efbf21f03" InformativeScreenshot="f3c0250a309364eeaad798e01498ed35.png" Reference="BkxQ1887pEidR6av2KDcrw/v8XfLhNizUy8JSZxyC33VA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
               </uix:NClick.Target>
@@ -1422,7 +1416,7 @@ $"       Hard Stop = {selectLocationHardStop}" +
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <Sequence DisplayName="Validate final screen" sap:VirtualizedContainerService.HintSize="584,57" sap2010:WorkflowViewState.IdRef="Sequence_50">
+            <Sequence DisplayName="Validate final screen" sap:VirtualizedContainerService.HintSize="582.4,56.8" sap2010:WorkflowViewState.IdRef="Sequence_50">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="successPrepareMessage" />
                 <Variable x:TypeArguments="sd:DataTable" Name="containers" />
@@ -1580,7 +1574,7 @@ successPrepareMessage.Contains($"You have successfully prepared containers for P
                 </ui:MultipleAssign.AssignOperations>
               </ui:MultipleAssign>
             </Sequence>
-            <Assign sap:VirtualizedContainerService.HintSize="584,109" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign sap:VirtualizedContainerService.HintSize="582.4,167.2" sap2010:WorkflowViewState.IdRef="Assign_4">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">
                   <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_62">outFailureReason</CSharpReference>
