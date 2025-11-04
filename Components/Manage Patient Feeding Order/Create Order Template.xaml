@@ -125,19 +125,19 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Create_Order_Template" sap:VirtualizedContainerService.HintSize="1104,3407" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Create_Order_Template" sap:VirtualizedContainerService.HintSize="1281,3444" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(7)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="556,3384" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="e84d88d8-f748-410f-8522-8687144243d5" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(7)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="556,3421" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="e84d88d8-f748-410f-8522-8687144243d5" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="522,3143" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="522,3180" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:List(x:String)" Name="orderBaseList" />
               <Variable x:TypeArguments="scg:List(x:String)" Name="milkbaseDropdownList" />
@@ -154,23 +154,33 @@
                 </InArgument>
               </uix:NGoToUrl.Url>
             </uix:NGoToUrl>
-            <uix:NGoToUrl DisplayName="Go To URL - " sap:VirtualizedContainerService.HintSize="488,123" sap2010:WorkflowViewState.IdRef="NGoToUrl_3" ScopeIdentifier="e84d88d8-f748-410f-8522-8687144243d5" Version="V4">
+            <uix:NGoToUrl DelayAfter="2" DisplayName="Go To URL - " sap:VirtualizedContainerService.HintSize="488,123" sap2010:WorkflowViewState.IdRef="NGoToUrl_3" ScopeIdentifier="e84d88d8-f748-410f-8522-8687144243d5" Version="V4">
               <uix:NGoToUrl.Url>
                 <InArgument x:TypeArguments="x:String">
                   <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">$"{GlobalVariables.websiteUrl}/orders"</CSharpValue>
                 </InArgument>
               </uix:NGoToUrl.Url>
             </uix:NGoToUrl>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="0.5" DisplayName="Click 'Add Patient Order'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,190" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e84d88d8-f748-410f-8522-8687144243d5" Version="V4">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Add Patient Order'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,227" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e84d88d8-f748-410f-8522-8687144243d5" Version="V5">
               <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="localhost/orders" CVScreenId="945159b4-7da8-45fc-996d-0dbe18ce63ea" ContentHash="Fy8BOo20LEe_55MlU9C8yQ" CvElementArea="1794, 218, 104, 26" CvTextArea="1804, 225, 84, 10" CvTextArgument="Add Patient Order" CvType="Button" DesignTimeRectangle="1795, 220, 102, 23" ElementType="Button" ElementVisibilityArgument="Visible" FullSelectorArgument="&lt;webctrl aaname='Add Patient Order' parentid='app' tag='BUTTON' /&gt;" Guid="249b8f3b-35cc-480c-8f1d-f2c3b94d5043" InformativeScreenshot="c5db6546d623b144778618437ecf7ec5.png" Reference="BkxQ1887pEidR6av2KDcrw/rDaNMzjgnkiqAFqhrgbNrg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Complete">
+                <uix:TargetAnchorable BrowserURL="localhost/orders" CVScreenId="2dc83506-d44a-44d9-a801-1fb92c9afdf8" ContentHash="09jllwb5bU6p2j_skrVl6w" CvElementArea="1753, 415, 125, 31" CvTextArea="1764, 425, 101, 11" CvTextArgument="Add Patient Order" CvType="Button" DesignTimeRectangle="1754, 417, 122, 28" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Add Patient Order' parentid='app' tag='BUTTON' innertext='Add Patient Order' parentclass='flex gap-2' visibleinnertext='Add Patient Order' /&gt;" Guid="58f64266-72ef-4cf8-a204-89d028d5851b" InformativeScreenshot="1a76b98b0a366efaede8dd2bb32d53f1.png" Reference="BkxQ1887pEidR6av2KDcrw/Fjq_YPSBCEuxB3CYy63Wrg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target CVScreenId="945159b4-7da8-45fc-996d-0dbe18ce63ea" CvElementArea="1880, 246, 18, 17" CvTextArea="1793, 249, 83, 10" CvTextArgument="Items per page: 10" CvType="ArrowButton" DesignTimeRectangle="1793, 248, 104, 14" FuzzySelectorArgument="&lt;webctrl aaname='Items per page: ' parentid='app' tag='DIV' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Items per page: &amp;#xA;10&amp;#xA;25&amp;#xA;100&amp;#xA;All' /&gt;" Guid="d6c74854-ff38-4178-bec9-60657bfe5f21" SearchSteps="FuzzySelector, CV" />
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="2dc83506-d44a-44d9-a801-1fb92c9afdf8" DesignTimeRectangle="245, 417, 1509, 28" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='footer-count' matching:class='fuzzy' fuzzylevel:class='0.0' parentid='app' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='DIV' type='' parentclass='footer-top' /&gt;" Guid="49eb132d-ab6c-401a-9f11-4c3503607bc0" SearchSteps="FuzzySelector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
             </uix:NClick>
             <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into patient" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,251" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="e84d88d8-f748-410f-8522-8687144243d5" Version="V4">
               <uix:NTypeInto.Target>
