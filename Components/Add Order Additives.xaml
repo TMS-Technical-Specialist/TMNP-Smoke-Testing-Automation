@@ -121,10 +121,18 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Add_Order_Additives" sap:VirtualizedContainerService.HintSize="1253,2940" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Add_Order_Additives" sap:VirtualizedContainerService.HintSize="1281,3146" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:Int32" Default="0" Name="index" />
-      <Variable x:TypeArguments="x:Int32" Default="0" Name="roundingCalDecimal" />
+      <Variable x:TypeArguments="x:Int32" Name="index">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Int32" Name="roundingCalDecimal">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" />
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:String" Name="uiCalOz" />
       <Variable x:TypeArguments="x:String" Name="modularTracking" />
     </Sequence.Variables>
@@ -193,13 +201,13 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(12)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="592,2452" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="ba4362d6-313c-4546-b306-facdcab7afaf" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(12)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="592,2658" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="ba4362d6-313c-4546-b306-facdcab7afaf" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="558,2211" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="558,2417" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:List(x:String)" Name="additiveList" />
             </Sequence.Variables>
@@ -208,14 +216,46 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NGetAttributeGeneric x:TypeArguments="scg:List(x:String)" Attribute="items" DisplayName="Get additive list" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="524,241" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_2" ScopeIdentifier="ba4362d6-313c-4546-b306-facdcab7afaf" Version="V4">
+            <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll 'Additive'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="524,251" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="10" ScopeIdentifier="ba4362d6-313c-4546-b306-facdcab7afaf" Version="V5">
+              <uix:NMouseScroll.SearchedElement>
+                <uix:SearchedElement>
+                  <uix:SearchedElement.OutUiElement>
+                    <OutArgument x:TypeArguments="ui:UiElement" />
+                  </uix:SearchedElement.OutUiElement>
+                  <uix:SearchedElement.Target>
+                    <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="9ac1daab-2a1c-4b6c-82e6-31ca8167e163" CvElementArea="381, 783, 486, 37" CvType="InputBox" DesignTimeRectangle="388, 785, 477, 34" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' /&gt;&lt;webctrl aria-role='textbox' tableRow='2' tag='SPAN' /&gt;" Guid="78842a8e-63a0-427c-8660-a84673f1ab5a" InformativeScreenshot="55fa69832ab79ade53ab6d3755cea8cc.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <uix:Target CVScreenId="9ac1daab-2a1c-4b6c-82e6-31ca8167e163" CvTextArea="386, 753, 49, 11" CvTextArgument="Additive" CvType="Text" DesignTimeRectangle="375, 742, 504, 34" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl class='align-middle' type='' tag='TH' aaname='Additive' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Additive' /&gt;" Guid="397eb166-b78b-4ec2-9d84-ba19f7c2898b" SearchSteps="FuzzySelector, CV" />
+                          <uix:Target CVScreenId="9ac1daab-2a1c-4b6c-82e6-31ca8167e163" CvElementArea="892, 786, 74, 32" CvTextArea="907, 796, 45, 10" CvTextArgument="Fortifier" CvType="Button" DesignTimeRectangle="892, 785, 75, 32" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl type='' tag='LABEL' class='btn btn-primary active' aaname='Fortifier' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Fortifier' /&gt;" Guid="81cfee97-c67f-4c36-aa5d-fdd7bfdf0a56" SearchSteps="FuzzySelector, CV" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:SearchedElement.Target>
+                  <uix:SearchedElement.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:SearchedElement.Timeout>
+                </uix:SearchedElement>
+              </uix:NMouseScroll.SearchedElement>
+              <uix:NMouseScroll.Target>
+                <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="b874c0b5-67ba-49a2-bafb-761d93418424" CvElementArea="381, 783, 486, 37" CvType="InputBox" DesignTimeRectangle="388, 785, 477, 34" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' /&gt;&lt;webctrl aria-role='textbox' tableRow='2' tag='SPAN' colName='Additive' id='select2-fortifier_array__1-container' parentid='fortifier_table' parentname='orders' /&gt;" Guid="a45fb199-6fff-46cc-ae82-9fa3838bf2ac" InformativeScreenshot="8f5a69d6d874e31fc48b378d1df79e13.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="b874c0b5-67ba-49a2-bafb-761d93418424" CvTextArea="386, 753, 49, 11" CvTextArgument="Additive" CvType="Text" DesignTimeRectangle="375, 742, 504, 34" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' matching:id='fuzzy' fuzzylevel:id='0.0' tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' aaname='Additive' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' colName='Additive' parentid='fortifier_table' parentname='orders' check:innerText='Additive' /&gt;" Guid="d3671466-c7de-4db8-8209-a96b96cd71d4" SearchSteps="FuzzySelector, CV" />
+                      <uix:Target CVScreenId="b874c0b5-67ba-49a2-bafb-761d93418424" CvElementArea="892, 786, 74, 32" CvTextArea="907, 796, 45, 10" CvTextArgument="Fortifier" CvType="Button" DesignTimeRectangle="892, 785, 75, 32" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' matching:id='fuzzy' fuzzylevel:id='0.0' tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' aaname='Fortifier' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' parentclass='btn-group btn-group-toggle' parentid='fortifier_table' parentname='orders' check:innerText='Fortifier' /&gt;" Guid="80f1d451-4e84-4c98-86a4-ec6071525c9a" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NMouseScroll.Target>
+            </uix:NMouseScroll>
+            <uix:NGetAttributeGeneric x:TypeArguments="scg:List(x:String)" Attribute="items" DisplayName="Get additive list" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="524,196" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_2" ScopeIdentifier="ba4362d6-313c-4546-b306-facdcab7afaf" Version="V4">
               <uix:NGetAttributeGeneric.Result>
                 <OutArgument x:TypeArguments="scg:List(x:String)">
                   <CSharpReference x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">additiveList</CSharpReference>
                 </OutArgument>
               </uix:NGetAttributeGeneric.Result>
               <uix:NGetAttributeGeneric.Target>
-                <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="efb17546-5645-4334-b3d5-67989db95d79" ContentHash="h1mHPKvmmUCBLseaIJzf6w" CvElementArea="437, 1070, 456, 45" CvType="InputBox" DesignTimeRectangle="443, 1073, 450, 42" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aria-role='textbox' type='' tag='SPAN' class='select2-selection__rendered' aaname='' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="0286ec56-b2f1-4789-8467-4962400bc44f" InformativeScreenshot="9e34e3f3152450d78277ab5d09a1e66e.png" Reference="BkxQ1887pEidR6av2KDcrw/UJDrkTdDg0CCnBLrwSYLvA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="efb17546-5645-4334-b3d5-67989db95d79" ContentHash="h1mHPKvmmUCBLseaIJzf6w" CvElementArea="437, 1070, 456, 45" CvType="InputBox" DesignTimeRectangle="443, 1073, 450, 42" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aria-role='textbox' type='' tag='SPAN' class='select2-selection__rendered' aaname='' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="0286ec56-b2f1-4789-8467-4962400bc44f" InformativeScreenshot="9e34e3f3152450d78277ab5d09a1e66e.png" Reference="BkxQ1887pEidR6av2KDcrw/UJDrkTdDg0CCnBLrwSYLvA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                   <uix:TargetAnchorable.Anchors>
                     <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
                       <uix:Target CVScreenId="efb17546-5645-4334-b3d5-67989db95d79" CvElementArea="309, 1069, 46, 38" CvTextArea="325, 1081, 12, 12" CvTextArgument="X" CvType="Button" DesignTimeRectangle="295, 1061, 131, 63" FullSelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='TD' /&gt;" Guid="941b4970-609c-416a-9579-6644814a124b" SearchSteps="Selector, CV" />
@@ -252,7 +292,7 @@
                           </sap:WorkflowViewStateService.ViewState>
                           <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Add another Additive'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,181" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ba4362d6-313c-4546-b306-facdcab7afaf" Version="V4">
                             <uix:NClick.Target>
-                              <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="9ddfa0e4-6ee7-4111-94a0-ad097226cd9b" ContentHash="FtMrkVSbjkqF9JZ8Lx1IFg" CvTextArea="440, 521, 140, 15" CvTextArgument="Add another Additive" CvType="Text" DesignTimeRectangle="442, 520, 138, 19" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aaname='Add another Additive' type='' tag='A' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Add another Additive' /&gt;" Guid="f064ef45-5f86-471d-aac9-e3a19e6cedd8" InformativeScreenshot="8445b4db3be2dc73c63cf1bb9d4f8ca9.png" Reference="BkxQ1887pEidR6av2KDcrw/d9X9FalDYUKDGRWcckJ9cQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                              <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="9ddfa0e4-6ee7-4111-94a0-ad097226cd9b" ContentHash="FtMrkVSbjkqF9JZ8Lx1IFg" CvTextArea="440, 521, 140, 15" CvTextArgument="Add another Additive" CvType="Text" DesignTimeRectangle="442, 520, 138, 19" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aaname='Add another Additive' type='' tag='A' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Add another Additive' /&gt;" Guid="f064ef45-5f86-471d-aac9-e3a19e6cedd8" InformativeScreenshot="8445b4db3be2dc73c63cf1bb9d4f8ca9.png" Reference="BkxQ1887pEidR6av2KDcrw/d9X9FalDYUKDGRWcckJ9cQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                                 <uix:TargetAnchorable.Anchors>
                                   <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                                     <uix:Target CVScreenId="9ddfa0e4-6ee7-4111-94a0-ad097226cd9b" CvElementArea="309, 510, 48, 38" CvTextArea="325, 521, 15, 15" CvTextArgument="+" CvType="Button" DesignTimeRectangle="295, 502, 131, 55" FullSelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='TD' /&gt;" Guid="c64e05a4-5bcb-4a09-84d6-8770f966b83e" SearchSteps="Selector, CV" />
@@ -281,7 +321,7 @@
                         </InArgument>
                       </uix:NSelectItem.Item>
                       <uix:NSelectItem.Target>
-                        <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="6da6df2f-be7b-4ca1-b9ab-e5de54e19d75" ContentHash="m2_KAD2_UUC9yU248-W5nA" CvElementArea="438, 883, 455, 45" CvType="InputBox" DesignTimeRectangle="442, 885, 452, 42" ElementType="DropDown" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aria-role='combobox' type='' tag='SPAN' class='select2-selection select2-selection--single' aaname='' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="cbcca542-6ab4-4048-9722-b613e642263b" InformativeScreenshot="dda9efb2fd2729d63be19a1affc7e2a2.png" Reference="BkxQ1887pEidR6av2KDcrw/T4FKQfXxd0GHwueWy3u3Jg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                        <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="6da6df2f-be7b-4ca1-b9ab-e5de54e19d75" ContentHash="m2_KAD2_UUC9yU248-W5nA" CvElementArea="438, 883, 455, 45" CvType="InputBox" DesignTimeRectangle="442, 885, 452, 42" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aria-role='combobox' type='' tag='SPAN' class='select2-selection select2-selection--single' aaname='' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="cbcca542-6ab4-4048-9722-b613e642263b" InformativeScreenshot="dda9efb2fd2729d63be19a1affc7e2a2.png" Reference="BkxQ1887pEidR6av2KDcrw/T4FKQfXxd0GHwueWy3u3Jg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                           <uix:TargetAnchorable.Anchors>
                             <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
                               <uix:Target CVScreenId="6da6df2f-be7b-4ca1-b9ab-e5de54e19d75" CvElementArea="926, 887, 92, 38" CvTextArea="945, 899, 55, 12" CvTextArgument="Fortifier" CvType="Button" DesignTimeRectangle="926, 886, 94, 40" ElementType="Text" Guid="1c2a5db9-26d3-4b0d-a78d-ba71b8a8ae4b" SearchSteps="FuzzySelector, CV">
@@ -318,7 +358,7 @@
                           </sap:WorkflowViewStateService.ViewState>
                           <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Modular'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,190" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ba4362d6-313c-4546-b306-facdcab7afaf" Version="V4">
                             <uix:NClick.Target>
-                              <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="a1583c12-8cce-43a8-8512-cdd954d851a8" ContentHash="HMNwx7zaM0W3syjwApqbwg" CvTextArea="1059, 925, 52, 11" CvTextArgument="Modular" CvType="Text" DesignTimeRectangle="1019, 713, 94, 40" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aaname='Modular' type='' tag='LABEL' class='btn btn-primary' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Modular' /&gt;" Guid="677b61a0-9dd3-4086-9e1c-8c0ec07cd0b8" InformativeScreenshot="d550e52ae791208dc4c2bcde660268f8.png" Reference="BkxQ1887pEidR6av2KDcrw/ApDymFFsTEiCEiALkEJ1Cg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                              <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="a1583c12-8cce-43a8-8512-cdd954d851a8" ContentHash="HMNwx7zaM0W3syjwApqbwg" CvTextArea="1059, 925, 52, 11" CvTextArgument="Modular" CvType="Text" DesignTimeRectangle="1019, 713, 94, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aaname='Modular' type='' tag='LABEL' class='btn btn-primary' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Modular' /&gt;" Guid="677b61a0-9dd3-4086-9e1c-8c0ec07cd0b8" InformativeScreenshot="d550e52ae791208dc4c2bcde660268f8.png" Reference="BkxQ1887pEidR6av2KDcrw/ApDymFFsTEiCEiALkEJ1Cg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                                 <uix:TargetAnchorable.Anchors>
                                   <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
                                     <uix:Target CVScreenId="a1583c12-8cce-43a8-8512-cdd954d851a8" CvElementArea="955, 914, 88, 36" CvTextArea="972, 925, 52, 12" CvTextArgument="Fortifier" CvType="Button" DesignTimeRectangle="926, 713, 94, 40" ElementType="Text" Guid="2a20438f-5f78-4ea4-a541-82d303756bbd" SearchSteps="FuzzySelector, CV">
@@ -355,7 +395,7 @@
                                 </sap:WorkflowViewStateService.ViewState>
                                 <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type modular value" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,242" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="DebuggerApi" ScopeIdentifier="ba4362d6-313c-4546-b306-facdcab7afaf" Version="V4">
                                   <uix:NTypeInto.Target>
-                                    <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="653d8d80-75ec-4c4e-867b-8be01aa1a028" ContentHash="YDkFPaHhDkqIP703kTB0aw" CvElementArea="1209, 837, 376, 43" CvType="InputBox" DesignTimeRectangle="1197, 947, 348, 42" ElementType="InputBox" Guid="690a7f5f-c2e9-4912-aa0c-90fd9a6ff4ad" InformativeScreenshot="c7eb0ee3f585ca47e49dbefa8677b4a1.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/mXjRFBSGnUuXWwsJYs89Ag" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                                    <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="653d8d80-75ec-4c4e-867b-8be01aa1a028" ContentHash="YDkFPaHhDkqIP703kTB0aw" CvElementArea="1209, 837, 376, 43" CvType="InputBox" DesignTimeRectangle="1197, 947, 348, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" Guid="690a7f5f-c2e9-4912-aa0c-90fd9a6ff4ad" InformativeScreenshot="c7eb0ee3f585ca47e49dbefa8677b4a1.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/mXjRFBSGnUuXWwsJYs89Ag" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                                       <uix:TargetAnchorable.Anchors>
                                         <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                                           <uix:Target CVScreenId="653d8d80-75ec-4c4e-867b-8be01aa1a028" CvElementArea="949, 839, 88, 36" CvTextArea="967, 851, 51, 11" CvTextArgument="Modular" CvType="Button" DesignTimeRectangle="953, 948, 94, 40" ElementType="Text" Guid="f3b612a6-f172-409e-a907-5f3fe22989b2" SearchSteps="FuzzySelector, CV">
@@ -463,7 +503,7 @@
                               </scg:List>
                             </uix:NSelectItem.Items>
                             <uix:NSelectItem.Target>
-                              <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="4e08d1ce-a377-42df-9982-122077fe5ce2" ContentHash="Gn_1EY8bekCgoNnDGSud9Q" CvElementArea="1594, 1023, 102, 46" CvType="InputBox" DesignTimeRectangle="1597, 1025, 98, 42" ElementType="DropDown" Guid="3c213f8f-eead-4f6c-a7bf-94fb109a354b" InformativeScreenshot="c52681e146f7534db93a5d209195f561.png" Reference="BkxQ1887pEidR6av2KDcrw/eXBnefpXzUubEm9FtceOXg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                              <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="4e08d1ce-a377-42df-9982-122077fe5ce2" ContentHash="Gn_1EY8bekCgoNnDGSud9Q" CvElementArea="1594, 1023, 102, 46" CvType="InputBox" DesignTimeRectangle="1597, 1025, 98, 42" ElementType="DropDown" ElementVisibilityArgument="Interactive" Guid="3c213f8f-eead-4f6c-a7bf-94fb109a354b" InformativeScreenshot="c52681e146f7534db93a5d209195f561.png" Reference="BkxQ1887pEidR6av2KDcrw/eXBnefpXzUubEm9FtceOXg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                                 <uix:TargetAnchorable.Anchors>
                                   <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                                     <uix:Target CVScreenId="4e08d1ce-a377-42df-9982-122077fe5ce2" CvElementArea="1300, 1023, 102, 46" CvType="InputBox" DesignTimeRectangle="1303, 1025, 98, 42" ElementType="DropDown" Guid="f8fe0903-07eb-4b59-99a2-57bfd73e5ea1" SearchSteps="Selector, CV">

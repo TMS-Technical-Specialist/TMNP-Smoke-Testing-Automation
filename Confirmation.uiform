@@ -1,0 +1,75 @@
+﻿{
+  "Metadata": {
+    "Id": "7629abc5-3801-43c8-ba3a-1a6a9ef0ddb6",
+    "Kind": "FormIo"
+  },
+  "DesignProperties": {
+    "Title": "Reminder: Prerequisites",
+    "Theme": "Default",
+    "ShowInTaskbar": false,
+    "ShowMargin": false,
+    "CustomStyle": ""
+  },
+  "Data": {
+    "components": [
+      {
+        "label": "Pre-requisite Checklist:",
+        "disabled": true,
+        "tableView": true,
+        "defaultValue": "** Ensure that SmokeTestingTestData excel file is configured\n** Manually set your computer date and time to match with your client's current TimeZone.\n** Login to TMNP\n** Add Blank printer and set it to default printer.\n** Set system/cloud_printing/use_qz_tray = false",
+        "key": "prereqText",
+        "type": "textarea",
+        "input": true
+      },
+      {
+        "label": "I have completed all prerequisites.",
+        "tableView": false,
+        "key": "prereqCheck",
+        "type": "checkbox",
+        "input": true,
+        "defaultValue": false
+      },
+      {
+        "label": "Proceed",
+        "theme": "success",
+        "block": true,
+        "disabled": true,
+        "tableView": false,
+        "key": "proceedButton",
+        "logic": [
+          {
+            "name": "Enable Proceed Button",
+            "trigger": {
+              "type": "simple",
+              "simple": {
+                "show": true,
+                "when": "prereqCheck",
+                "eq": "true"
+              }
+            },
+            "actions": [
+              {
+                "name": "enable button",
+                "type": "property",
+                "property": {
+                  "label": "Disabled",
+                  "value": "disabled",
+                  "type": "boolean"
+                },
+                "state": false
+              },
+              {
+                "name": "test",
+                "type": "value",
+                "value": "data.buttonClick = \"test\";\nreturn result"
+              }
+            ]
+          }
+        ],
+        "type": "button",
+        "input": true,
+        "saveOnEnter": false
+      }
+    ]
+  }
+}
