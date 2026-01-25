@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Click_Finish" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Click_Finish" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -76,30 +76,58 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Click_Finish" sap:VirtualizedContainerService.HintSize="1289,623.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Click_Finish" sap:VirtualizedContainerService.HintSize="647.6,580" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,486" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsDisplayNameAuto="True" ScopeGuid="1edf6414-9e16-4f94-9ba8-3e84b508c36c" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="483.2,556.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsDisplayNameAuto="True" ScopeGuid="1edf6414-9e16-4f94-9ba8-3e84b508c36c" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,245" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,312.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Finish'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1edf6414-9e16-4f94-9ba8-3e84b508c36c" Version="V5">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,60.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,240.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Finish'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,180.8" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1edf6414-9e16-4f94-9ba8-3e84b508c36c" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="localhost/disposebottles" CVScreenId="02a36810-d797-4e7b-8098-961e5accd128" CvElementArea="1729, 537, 79, 38" CvTextArea="1747, 550, 41, 12" CvTextArgument="Finish" CvType="Button" DesignTimeRectangle="1731, 540, 75, 34" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='_submit__finish' tag='INPUT' class='btn btn- btn btn-outline-primary mr-2' name='_submit' parentclass='float-right' parentid='wizardpage_div' parentname='theform' type='submit' /&gt;" Guid="7b024a03-d75f-443a-8f8b-20a6d7972ec6" InformativeScreenshot="7de46b695fb1604ef829e39ffc3528b2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="02a36810-d797-4e7b-8098-961e5accd128" CvElementArea="1643, 538, 81, 38" CvTextArea="1660, 549, 46, 13" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="1645, 540, 78, 34" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='_submit__cancel' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='submit' class='btn btn- btn btn-outline-primary mr-2' matching:class='fuzzy' fuzzylevel:class='0.0' name='_submit' parentclass='float-right' parentid='wizardpage_div' parentname='theform' /&gt;" Guid="f489109f-12f6-436b-92c4-d0a5e9630618" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="0.5" DisplayName="Click 'Finish'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,186.4" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1edf6414-9e16-4f94-9ba8-3e84b508c36c" Version="V5">
               <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="localhost/disposebottles" CVScreenId="02a36810-d797-4e7b-8098-961e5accd128" CvElementArea="1729, 537, 79, 38" CvTextArea="1747, 550, 41, 12" CvTextArgument="Finish" CvType="Button" DesignTimeRectangle="1731, 540, 75, 34" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='_submit__finish' tag='INPUT' class='btn btn- btn btn-outline-primary mr-2' name='_submit' parentclass='float-right' parentid='wizardpage_div' parentname='theform' type='submit' /&gt;" Guid="7b024a03-d75f-443a-8f8b-20a6d7972ec6" InformativeScreenshot="7de46b695fb1604ef829e39ffc3528b2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
+                <uix:TargetAnchorable BrowserURL="localhost/feedpatient" CVScreenId="2344b137-e88b-474b-a9c0-f9e5a5f77b72" CvElementArea="1738, 515, 78, 39" CvTextArea="1756, 527, 41, 13" CvTextArgument="Finish" CvType="Button" DesignTimeRectangle="1741, 518, 74, 34" ElementType="Button" ElementVisibilityArgument="Visible" FullSelectorArgument="&lt;webctrl id='_submit__finish' tag='INPUT' /&gt;" Guid="17c6dc7c-09b0-49ca-8c16-950a75932e41" InformativeScreenshot="2eac90a56598fa501be44c8ba94a834f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Complete">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                      <uix:Target CVScreenId="02a36810-d797-4e7b-8098-961e5accd128" CvElementArea="1643, 538, 81, 38" CvTextArea="1660, 549, 46, 13" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="1645, 540, 78, 34" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='_submit__cancel' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='submit' class='btn btn- btn btn-outline-primary mr-2' matching:class='fuzzy' fuzzylevel:class='0.0' name='_submit' parentclass='float-right' parentid='wizardpage_div' parentname='theform' /&gt;" Guid="f489109f-12f6-436b-92c4-d0a5e9630618" SearchSteps="FuzzySelector, CV" />
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="2344b137-e88b-474b-a9c0-f9e5a5f77b72" CvElementArea="1652, 516, 82, 37" CvTextArea="1670, 527, 45, 13" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="1654, 518, 79, 34" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='_submit__cancel' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='submit' aaname='Cancel' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Cancel' /&gt;" Guid="bdec5cdb-808e-468b-b508-1f8ae3309563" SearchSteps="FuzzySelector, CV" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
