@@ -113,9 +113,10 @@
       <AssemblyReference>System.Collections.Specialized</AssemblyReference>
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC___Edit_Breastmilk___Fortifier___Modular" sap:VirtualizedContainerService.HintSize="647.6,3641.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC___Edit_Breastmilk___Fortifier___Modular" sap:VirtualizedContainerService.HintSize="791.6,3641.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="isMilkTypeSupported" />
       <Variable x:TypeArguments="x:String" Name="uiCalOz" />
@@ -613,7 +614,7 @@ $"       First Mix to cal = {firstMixToCal}" +
 (modularTracking != "0" ? $"\n       Modular value = {modularStartingCalValue} Unit = {modularUnit}" : "" )</CSharpValue>
                   </InArgument>
                   <InArgument x:TypeArguments="x:Boolean" x:Key="inTestResult">
-                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25" xml:space="preserve">patientName.Contains(GlobalVariables.testPatient["LastName"].ToString() + ", " + GlobalVariables.testPatient["FirstName"].ToString()) &amp;&amp;
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26" xml:space="preserve">patientName.Contains(GlobalVariables.testPatient["LastName"].ToString() + ", " + GlobalVariables.testPatient["FirstName"].ToString()) &amp;&amp;
 orderType == "Standard" &amp;&amp;
 orderPriority == "Primary" &amp;&amp;
 orderBase == "Breastmilk" &amp;&amp;
@@ -623,7 +624,7 @@ firstAdditive.ToLower().Contains("pwd") &amp;&amp;
 firstMixToCal == "22" &amp;&amp;
 secondAdditive.ToLower().Contains("mct") &amp;&amp;
 modularTracking != "0" ?  modularStartingCalValue == $"5.{new string('0', (int)GlobalVariables.appSettings["ui/decimal/rounding/ml"])}" &amp;&amp; modularUnit == expectedUnit : true &amp;&amp;
-isMilkTypeSupported ? orderMilkType != "" &amp;&amp; orderCalOz == $"20.{new string('0', (int)GlobalVariables.appSettings["ui/decimal/rounding/default"])}" : true</CSharpValue>
+isMilkTypeSupported ? orderMilkType != "" &amp;&amp; orderCalOz ==((int)GlobalVariables.appSettings["ui/decimal/rounding/cals"] == 0 ? "20" : $"20.{new string('0', (int)GlobalVariables.appSettings["ui/decimal/rounding/cals"])}") : true</CSharpValue>
                   </InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>

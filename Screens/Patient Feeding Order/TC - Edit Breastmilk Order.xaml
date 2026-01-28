@@ -119,9 +119,10 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC___Edit_EBM_Order" sap:VirtualizedContainerService.HintSize="647.6,4212.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC___Edit_EBM_Order" sap:VirtualizedContainerService.HintSize="791.6,4264.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataRow" Name="testPatient" />
       <Variable x:TypeArguments="x:Boolean" Name="isMilkTypeSupported" />
@@ -132,7 +133,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="552.8,295.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="552,295.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -181,7 +182,7 @@
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
     </Sequence>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="552.8,1816" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="552,1816" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -284,7 +285,7 @@
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
     </Sequence>
-    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="552.8,2078.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="552,2130.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="orderMilkType" />
         <Variable x:TypeArguments="x:String" Name="orderCalOz" />
@@ -294,13 +295,13 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Nutrition Platform ™(22)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="519.2,1995.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="de061f2b-7723-4586-b878-aeb6671a85d0" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Nutrition Platform ™(22)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="518.4,2047.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="de061f2b-7723-4586-b878-aeb6671a85d0" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="485.6,1751.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484.8,1763.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="patientName" />
                 <Variable x:TypeArguments="x:String" Name="orderType" />
@@ -314,7 +315,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NGetText DisplayName="Get Text 'Patient'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,146.4" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="de061f2b-7723-4586-b878-aeb6671a85d0" Version="V4">
+              <uix:NGetText DisplayName="Get Text 'Patient'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="451.2,146.4" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="de061f2b-7723-4586-b878-aeb6671a85d0" Version="V4">
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="89027ec4-0a7f-468c-a8ef-d5090efe0157" ContentHash="rRRl9kRMnUKZTWIY88fR8w" CvElementArea="295, 372, 781, 54" CvType="InputBox" DesignTimeRectangle="295, 376, 780, 51" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='orderBaby_tr' tag='DIV' /&gt;" Guid="38af4f8d-bfc1-4668-81d1-3dfa85951a9a" InformativeScreenshot="00e9c29a28d27a4339e04cfe48ae0345.png" Reference="BkxQ1887pEidR6av2KDcrw/xd7lMEJ98kqWqCIRDANQUw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
@@ -330,7 +331,7 @@
                   </OutArgument>
                 </uix:NGetText.TextString>
               </uix:NGetText>
-              <uix:NGetText DisplayName="Get Text 'Order Type'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,146.4" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="de061f2b-7723-4586-b878-aeb6671a85d0" Version="V4">
+              <uix:NGetText DisplayName="Get Text 'Order Type'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="451.2,146.4" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="de061f2b-7723-4586-b878-aeb6671a85d0" Version="V4">
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="89027ec4-0a7f-468c-a8ef-d5090efe0157" ContentHash="daU178lG-kKUeZIxtIrqjQ" CvElementArea="294, 577, 780, 46" CvType="InputBox" DesignTimeRectangle="295, 580, 780, 42" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='orderType' tag='SELECT' type='' class='form-control' aaname='Order Type:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="57dbb0bf-fbc0-4036-baf3-188395fa599f" InformativeScreenshot="d73bdaa09fa528072ef1f6c7bf697763.png" Reference="BkxQ1887pEidR6av2KDcrw/sj-_mLYRMk-XxmDCodPBYw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
@@ -346,7 +347,7 @@
                   </OutArgument>
                 </uix:NGetText.TextString>
               </uix:NGetText>
-              <uix:NGetText DisplayName="Get Text 'Order Priority'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,146.4" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="de061f2b-7723-4586-b878-aeb6671a85d0" Version="V4">
+              <uix:NGetText DisplayName="Get Text 'Order Priority'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="451.2,146.4" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="de061f2b-7723-4586-b878-aeb6671a85d0" Version="V4">
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="89027ec4-0a7f-468c-a8ef-d5090efe0157" ContentHash="dGEjRgOj7kWpsGUPv5DO-g" CvElementArea="293, 673, 780, 45" CvType="InputBox" DesignTimeRectangle="295, 676, 780, 42" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='orderPriority' tag='SELECT' type='' class='form-control' aaname='Order Priority:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="b9420fd2-d515-434d-ad57-0dee1e95d677" InformativeScreenshot="e49d2b09616b5cdcbcb8b9b515c9ae3e.png" Reference="BkxQ1887pEidR6av2KDcrw/AHL1ngNaukeMU-7SCHZJ9A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
@@ -362,7 +363,7 @@
                   </OutArgument>
                 </uix:NGetText.TextString>
               </uix:NGetText>
-              <uix:NGetText DisplayName="Get Text 'Order Base'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,146.4" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="de061f2b-7723-4586-b878-aeb6671a85d0" Version="V4">
+              <uix:NGetText DisplayName="Get Text 'Order Base'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="451.2,146.4" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="de061f2b-7723-4586-b878-aeb6671a85d0" Version="V4">
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="89027ec4-0a7f-468c-a8ef-d5090efe0157" ContentHash="sMQhn08C6kOL7inA-1p6mw" CvElementArea="294, 769, 781, 45" CvType="InputBox" DesignTimeRectangle="295, 772, 780, 42" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='orderBase' tag='SELECT' type='' class='form-control' aaname='Order Base:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="fa7e6ae7-2065-43bd-baf1-53f3cff5067e" InformativeScreenshot="8834d40462172a1c0c20470171b3d1d0.png" Reference="BkxQ1887pEidR6av2KDcrw/uw8gu-nNm0OW83SB332trg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
@@ -378,7 +379,7 @@
                   </OutArgument>
                 </uix:NGetText.TextString>
               </uix:NGetText>
-              <uix:NGetText DisplayName="Get Text 'Milk Base'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,146.4" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="de061f2b-7723-4586-b878-aeb6671a85d0" Version="V4">
+              <uix:NGetText DisplayName="Get Text 'Milk Base'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="451.2,146.4" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="de061f2b-7723-4586-b878-aeb6671a85d0" Version="V4">
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="89027ec4-0a7f-468c-a8ef-d5090efe0157" ContentHash="jG4ErXL5tku7xeFTYnikfQ" CvElementArea="295, 866, 779, 44" CvType="InputBox" DesignTimeRectangle="295, 868, 780, 42" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='orderMilkBase' tag='SELECT' type='' class='form-control' aaname='Milk Base:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="ecb10f54-a060-4cff-a579-ee0e61079319" InformativeScreenshot="04b346809ea8965ca3f34871765d6ee2.png" Reference="BkxQ1887pEidR6av2KDcrw/V9tJsrOstE-iFM376gf5UQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
@@ -394,9 +395,9 @@
                   </OutArgument>
                 </uix:NGetText.TextString>
               </uix:NGetText>
-              <uix:NGetText DisplayName="Get Text 'Feed Volume (mL)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,146.4" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="de061f2b-7723-4586-b878-aeb6671a85d0" Version="V4">
+              <uix:NGetText DisplayName="Get Text 'Feed Volume (mL)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="451.2,146.4" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="de061f2b-7723-4586-b878-aeb6671a85d0" Version="V4">
                 <uix:NGetText.Target>
-                  <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="89027ec4-0a7f-468c-a8ef-d5090efe0157" ContentHash="kX_2jBP370iVoTkkzx7OQw" CvElementArea="1093, 769, 779, 46" CvType="InputBox" DesignTimeRectangle="1095, 707, 779, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='orderRouteVolume' tag='INPUT' type='text' class='form-control ' aaname='Feed Volume (mL):' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="b19ec6b8-fc95-4e20-9054-6e85f04f1650" InformativeScreenshot="d758a7645a61381d07be1d7066872275.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/-Yee5lGbDEiHnHoc1p1Qng" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                  <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="89027ec4-0a7f-468c-a8ef-d5090efe0157" ContentHash="5zByZoJ4HESaRLH-W7Klyw" CvElementArea="1093, 769, 779, 46" CvType="InputBox" DesignTimeRectangle="1095, 707, 779, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='orderRouteVolume' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='text' class='form-control ' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='Feed Volume (mL):' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="b19ec6b8-fc95-4e20-9054-6e85f04f1650" InformativeScreenshot="d758a7645a61381d07be1d7066872275.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/-Yee5lGbDEiHnHoc1p1Qng" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
                       <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                         <uix:Target CVScreenId="5d6808f9-b662-48fc-8963-cdab2b13376f" CvTextArea="1092, 682, 114, 13" CvTextArgument="Feed Volume (mL)" CvType="Text" DesignTimeRectangle="1095, 681, 111, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='orderRouteVolume_label' matching:id='fuzzy' fuzzylevel:id='0.0' tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='Feed Volume (mL)' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Feed Volume (mL)' /&gt;" Guid="12f9cda4-c607-4d9e-b46c-e5cf6d6907c8" SearchSteps="FuzzySelector, CV" />
@@ -410,7 +411,7 @@
                   </OutArgument>
                 </uix:NGetText.TextString>
               </uix:NGetText>
-              <If sap:VirtualizedContainerService.HintSize="452,580" sap2010:WorkflowViewState.IdRef="If_1">
+              <If sap:VirtualizedContainerService.HintSize="451.2,584.8" sap2010:WorkflowViewState.IdRef="If_1">
                 <If.Condition>
                   <InArgument x:TypeArguments="x:Boolean">
                     <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">isMilkTypeSupported</CSharpValue>
@@ -474,7 +475,7 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,94.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -483,7 +484,7 @@
                   </Sequence>
                 </If.Else>
               </If>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Test Result - Invoke Workflow File (Components\\Update Test Result.xaml)" sap:VirtualizedContainerService.HintSize="452,227" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Utilities\\Update Test Result.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Test Result - Invoke Workflow File (Components\\Update Test Result.xaml)" sap:VirtualizedContainerService.HintSize="451.2,234.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Utilities\\Update Test Result.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="x:String" x:Key="inScenarioName">Edit Order</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="inFailureReason">
@@ -504,13 +505,13 @@ $"       Milk Base = {orderMilkBase}\n" +
 $"       Feed Volume = {orderFeedVolume}"</CSharpValue>
                   </InArgument>
                   <InArgument x:TypeArguments="x:Boolean" x:Key="inTestResult">
-                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35" xml:space="preserve">patientName.Contains(testPatient["LastName"].ToString() + ", " + testPatient["FirstName"].ToString()) &amp;&amp;
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48" xml:space="preserve">patientName.Contains(testPatient["LastName"].ToString() + ", " + testPatient["FirstName"].ToString()) &amp;&amp;
 orderType == "Standard" &amp;&amp;
 orderPriority == "Primary" &amp;&amp;
 orderBase == "Breastmilk" &amp;&amp;
 orderMilkBase.ToLower() == inMilkBase.ToLower() &amp;&amp;
 orderFeedVolume == $"10.{new string('0', (int)GlobalVariables.appSettings["ui/decimal/rounding/default"])}" &amp;&amp;
-isMilkTypeSupported ? orderMilkType != "" &amp;&amp; orderCalOz == $"20.{new string('0', (int)GlobalVariables.appSettings["ui/decimal/rounding/default"])}" : true</CSharpValue>
+isMilkTypeSupported ? orderMilkType != "" &amp;&amp; orderCalOz ==((int)GlobalVariables.appSettings["ui/decimal/rounding/cals"] == 0 ? "20" : $"20.{new string('0', (int)GlobalVariables.appSettings["ui/decimal/rounding/cals"])}") : true</CSharpValue>
                   </InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
