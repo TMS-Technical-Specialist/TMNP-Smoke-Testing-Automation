@@ -121,18 +121,10 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Add_Order_Additives" sap:VirtualizedContainerService.HintSize="1281,3146" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Add_Order_Additives" sap:VirtualizedContainerService.HintSize="971.6,3288" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:Int32" Name="index">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:Int32" Name="roundingCalDecimal">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="index" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="roundingCalDecimal" />
       <Variable x:TypeArguments="x:String" Name="uiCalOz" />
       <Variable x:TypeArguments="x:String" Name="modularTracking" />
     </Sequence.Variables>
@@ -141,15 +133,15 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="List of additives template" sap:VirtualizedContainerService.HintSize="592,254" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+    <ui:CommentOut DisplayName="List of additives template" sap:VirtualizedContainerService.HintSize="588.8,253.6" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,143" sap2010:WorkflowViewState.IdRef="Sequence_17">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,143.2" sap2010:WorkflowViewState.IdRef="Sequence_17">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:BuildDataTable DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="416,83" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;additiveName&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;isModular&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; default=&quot;false&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;endCal&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;additiveName&gt;pwd&lt;/additiveName&gt;&#xA;    &lt;isModular&gt;false&lt;/isModular&gt;&#xA;    &lt;endCal&gt;22&lt;/endCal&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;additiveName&gt;mct&lt;/additiveName&gt;&#xA;    &lt;isModular&gt;false&lt;/isModular&gt;&#xA;    &lt;endCal&gt;24&lt;/endCal&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;additiveName&gt;pwd&lt;/additiveName&gt;&#xA;    &lt;isModular&gt;true&lt;/isModular&gt;&#xA;    &lt;endCal&gt;5&lt;/endCal&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;">
+          <ui:BuildDataTable DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="416,83.2" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;additiveName&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;isModular&quot; msdata:Caption=&quot;&quot; type=&quot;xs:boolean&quot; default=&quot;false&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;endCal&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;additiveName&gt;pwd&lt;/additiveName&gt;&#xA;    &lt;isModular&gt;false&lt;/isModular&gt;&#xA;    &lt;endCal&gt;22&lt;/endCal&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;additiveName&gt;mct&lt;/additiveName&gt;&#xA;    &lt;isModular&gt;false&lt;/isModular&gt;&#xA;    &lt;endCal&gt;24&lt;/endCal&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;additiveName&gt;pwd&lt;/additiveName&gt;&#xA;    &lt;isModular&gt;true&lt;/isModular&gt;&#xA;    &lt;endCal&gt;5&lt;/endCal&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;">
             <ui:BuildDataTable.DataTable>
               <OutArgument x:TypeArguments="sd:DataTable">
                 <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">inAdditives</CSharpReference>
@@ -159,7 +151,7 @@
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="592,211" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="588.8,212" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -201,13 +193,13 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(12)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="592,2658" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="ba4362d6-313c-4546-b306-facdcab7afaf" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(12)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="588.8,2799.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="ba4362d6-313c-4546-b306-facdcab7afaf" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="558,2417" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="555.2,2555.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:List(x:String)" Name="additiveList" />
             </Sequence.Variables>
@@ -216,7 +208,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll 'Additive'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="524,251" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="10" ScopeIdentifier="ba4362d6-313c-4546-b306-facdcab7afaf" Version="V5">
+            <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll 'Additive'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="521.6,325.6" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="10" ScopeIdentifier="ba4362d6-313c-4546-b306-facdcab7afaf" Version="V5">
               <uix:NMouseScroll.SearchedElement>
                 <uix:SearchedElement>
                   <uix:SearchedElement.OutUiElement>
@@ -225,7 +217,7 @@
                   <uix:SearchedElement.Target>
                     <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="9ac1daab-2a1c-4b6c-82e6-31ca8167e163" CvElementArea="381, 783, 486, 37" CvType="InputBox" DesignTimeRectangle="388, 785, 477, 34" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' /&gt;&lt;webctrl aria-role='textbox' tableRow='2' tag='SPAN' /&gt;" Guid="78842a8e-63a0-427c-8660-a84673f1ab5a" InformativeScreenshot="55fa69832ab79ade53ab6d3755cea8cc.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
                       <uix:TargetAnchorable.Anchors>
-                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
                           <uix:Target CVScreenId="9ac1daab-2a1c-4b6c-82e6-31ca8167e163" CvTextArea="386, 753, 49, 11" CvTextArgument="Additive" CvType="Text" DesignTimeRectangle="375, 742, 504, 34" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl class='align-middle' type='' tag='TH' aaname='Additive' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Additive' /&gt;" Guid="397eb166-b78b-4ec2-9d84-ba19f7c2898b" SearchSteps="FuzzySelector, CV" />
                           <uix:Target CVScreenId="9ac1daab-2a1c-4b6c-82e6-31ca8167e163" CvElementArea="892, 786, 74, 32" CvTextArea="907, 796, 45, 10" CvTextArgument="Fortifier" CvType="Button" DesignTimeRectangle="892, 785, 75, 32" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl type='' tag='LABEL' class='btn btn-primary active' aaname='Fortifier' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Fortifier' /&gt;" Guid="81cfee97-c67f-4c36-aa5d-fdd7bfdf0a56" SearchSteps="FuzzySelector, CV" />
                         </scg:List>
@@ -240,7 +232,7 @@
               <uix:NMouseScroll.Target>
                 <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="b874c0b5-67ba-49a2-bafb-761d93418424" CvElementArea="381, 783, 486, 37" CvType="InputBox" DesignTimeRectangle="388, 785, 477, 34" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' /&gt;&lt;webctrl aria-role='textbox' tableRow='2' tag='SPAN' colName='Additive' id='select2-fortifier_array__1-container' parentid='fortifier_table' parentname='orders' /&gt;" Guid="a45fb199-6fff-46cc-ae82-9fa3838bf2ac" InformativeScreenshot="8f5a69d6d874e31fc48b378d1df79e13.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
                       <uix:Target CVScreenId="b874c0b5-67ba-49a2-bafb-761d93418424" CvTextArea="386, 753, 49, 11" CvTextArgument="Additive" CvType="Text" DesignTimeRectangle="375, 742, 504, 34" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' matching:id='fuzzy' fuzzylevel:id='0.0' tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' aaname='Additive' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' colName='Additive' parentid='fortifier_table' parentname='orders' check:innerText='Additive' /&gt;" Guid="d3671466-c7de-4db8-8209-a96b96cd71d4" SearchSteps="FuzzySelector, CV" />
                       <uix:Target CVScreenId="b874c0b5-67ba-49a2-bafb-761d93418424" CvElementArea="892, 786, 74, 32" CvTextArea="907, 796, 45, 10" CvTextArgument="Fortifier" CvType="Button" DesignTimeRectangle="892, 785, 75, 32" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' matching:id='fuzzy' fuzzylevel:id='0.0' tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' aaname='Fortifier' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' parentclass='btn-group btn-group-toggle' parentid='fortifier_table' parentname='orders' check:innerText='Fortifier' /&gt;" Guid="80f1d451-4e84-4c98-86a4-ec6071525c9a" SearchSteps="FuzzySelector, CV" />
                     </scg:List>
@@ -248,7 +240,7 @@
                 </uix:TargetAnchorable>
               </uix:NMouseScroll.Target>
             </uix:NMouseScroll>
-            <uix:NGetAttributeGeneric x:TypeArguments="scg:List(x:String)" Attribute="items" DisplayName="Get additive list" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="524,196" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_2" ScopeIdentifier="ba4362d6-313c-4546-b306-facdcab7afaf" Version="V4">
+            <uix:NGetAttributeGeneric x:TypeArguments="scg:List(x:String)" Attribute="items" DisplayName="Get additive list" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="521.6,204" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_2" ScopeIdentifier="ba4362d6-313c-4546-b306-facdcab7afaf" Version="V4">
               <uix:NGetAttributeGeneric.Result>
                 <OutArgument x:TypeArguments="scg:List(x:String)">
                   <CSharpReference x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">additiveList</CSharpReference>
@@ -265,19 +257,19 @@
                 </uix:TargetAnchorable>
               </uix:NGetAttributeGeneric.Target>
             </uix:NGetAttributeGeneric>
-            <ui:ForEachRow ColumnNames="{x:Null}" DisplayName="For Each additives to be added" sap:VirtualizedContainerService.HintSize="524,1908" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow ColumnNames="{x:Null}" DisplayName="For Each additives to be added" sap:VirtualizedContainerService.HintSize="521.6,1960" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="item" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="522,1733" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="520,1781.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If sap:VirtualizedContainerService.HintSize="488,405" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If sap:VirtualizedContainerService.HintSize="486.4,408" sap2010:WorkflowViewState.IdRef="If_1">
                       <If.Condition>
                         <InArgument x:TypeArguments="x:Boolean">
                           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">index &gt; 0</CSharpValue>
@@ -314,7 +306,7 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <uix:NSelectItem DisplayName="Select additive name" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="488,190" sap2010:WorkflowViewState.IdRef="NSelectItem_4" ScopeIdentifier="ba4362d6-313c-4546-b306-facdcab7afaf" Version="V4">
+                    <uix:NSelectItem DisplayName="Select additive name" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486.4,193.6" sap2010:WorkflowViewState.IdRef="NSelectItem_4" ScopeIdentifier="ba4362d6-313c-4546-b306-facdcab7afaf" Version="V4">
                       <uix:NSelectItem.Item>
                         <InArgument x:TypeArguments="x:String">
                           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">additiveList.FirstOrDefault(additive =&gt; additive.ToLower().Contains(item["additiveName"].ToString().ToLower()))</CSharpValue>
@@ -343,20 +335,20 @@
                         </uix:TargetAnchorable>
                       </uix:NSelectItem.Target>
                     </uix:NSelectItem>
-                    <If sap:VirtualizedContainerService.HintSize="488,1078" sap2010:WorkflowViewState.IdRef="If_5">
+                    <If sap:VirtualizedContainerService.HintSize="486.4,1116" sap2010:WorkflowViewState.IdRef="If_5">
                       <If.Condition>
                         <InArgument x:TypeArguments="x:Boolean">
                           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">(bool)item["isModular"]</CSharpValue>
                         </InArgument>
                       </If.Condition>
                       <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,707" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="484.8,729.6" sap2010:WorkflowViewState.IdRef="Sequence_14">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Modular'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,190" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ba4362d6-313c-4546-b306-facdcab7afaf" Version="V4">
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Modular'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="451.2,193.6" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ba4362d6-313c-4546-b306-facdcab7afaf" Version="V4">
                             <uix:NClick.Target>
                               <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="a1583c12-8cce-43a8-8512-cdd954d851a8" ContentHash="HMNwx7zaM0W3syjwApqbwg" CvTextArea="1059, 925, 52, 11" CvTextArgument="Modular" CvType="Text" DesignTimeRectangle="1019, 713, 94, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='fortifier_table' tag='TABLE' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aaname='Modular' type='' tag='LABEL' class='btn btn-primary' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Modular' /&gt;" Guid="677b61a0-9dd3-4086-9e1c-8c0ec07cd0b8" InformativeScreenshot="d550e52ae791208dc4c2bcde660268f8.png" Reference="BkxQ1887pEidR6av2KDcrw/ApDymFFsTEiCEiALkEJ1Cg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                                 <uix:TargetAnchorable.Anchors>
@@ -380,20 +372,20 @@
                               </uix:TargetAnchorable>
                             </uix:NClick.Target>
                           </uix:NClick>
-                          <If sap:VirtualizedContainerService.HintSize="452,457" sap2010:WorkflowViewState.IdRef="If_6">
+                          <If sap:VirtualizedContainerService.HintSize="451.2,472" sap2010:WorkflowViewState.IdRef="If_6">
                             <If.Condition>
                               <InArgument x:TypeArguments="x:Boolean">
                                 <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">modularTracking != "0"</CSharpValue>
                               </InArgument>
                             </If.Condition>
                             <If.Then>
-                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,302" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,313.6" sap2010:WorkflowViewState.IdRef="Sequence_12">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type modular value" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,242" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="DebuggerApi" ScopeIdentifier="ba4362d6-313c-4546-b306-facdcab7afaf" Version="V4">
+                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type modular value" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,249.6" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="DebuggerApi" ScopeIdentifier="ba4362d6-313c-4546-b306-facdcab7afaf" Version="V4">
                                   <uix:NTypeInto.Target>
                                     <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="653d8d80-75ec-4c4e-867b-8be01aa1a028" ContentHash="YDkFPaHhDkqIP703kTB0aw" CvElementArea="1209, 837, 376, 43" CvType="InputBox" DesignTimeRectangle="1197, 947, 348, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" Guid="690a7f5f-c2e9-4912-aa0c-90fd9a6ff4ad" InformativeScreenshot="c7eb0ee3f585ca47e49dbefa8677b4a1.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/mXjRFBSGnUuXWwsJYs89Ag" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                                       <uix:TargetAnchorable.Anchors>
@@ -416,14 +408,14 @@
                                   </uix:NTypeInto.Target>
                                   <uix:NTypeInto.Text>
                                     <InArgument x:TypeArguments="x:String">
-                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_70">item["endCal"].ToString() + $".{new string('0', roundingCalDecimal)}"</CSharpValue>
+                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_74">item["endCal"].ToString()</CSharpValue>
                                     </InArgument>
                                   </uix:NTypeInto.Text>
                                 </uix:NTypeInto>
                               </Sequence>
                             </If.Then>
                             <If.Else>
-                              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -436,13 +428,13 @@
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,241" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="484.8,252.8" sap2010:WorkflowViewState.IdRef="Sequence_15">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NSelectItem DisplayName="Select mix to cal" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,181" sap2010:WorkflowViewState.IdRef="NSelectItem_5" ScopeIdentifier="ba4362d6-313c-4546-b306-facdcab7afaf" Version="V4">
+                          <uix:NSelectItem DisplayName="Select mix to cal" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="451.2,188.8" sap2010:WorkflowViewState.IdRef="NSelectItem_5" ScopeIdentifier="ba4362d6-313c-4546-b306-facdcab7afaf" Version="V4">
                             <uix:NSelectItem.Item>
                               <InArgument x:TypeArguments="x:String">
                                 <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_73" xml:space="preserve">roundingCalDecimal == 0 ?  item["endCal"].ToString() : item["endCal"].ToString()  + $".{new string('0', roundingCalDecimal)}"</CSharpValue>

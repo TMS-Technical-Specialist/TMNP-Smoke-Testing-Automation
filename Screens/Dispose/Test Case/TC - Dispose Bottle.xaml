@@ -109,7 +109,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC___Dispose_Bottle" sap:VirtualizedContainerService.HintSize="1276,2421" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC___Dispose_Bottle" sap:VirtualizedContainerService.HintSize="647.6,2637.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="successMessage" />
       <Variable x:TypeArguments="x:Boolean" Name="isDisposed" />
@@ -119,51 +119,54 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="554,122" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="553.6,121.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Sequence>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="554,1968" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="553.6,2184.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Nutrition Platform ™" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="520,1876" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsDisplayNameAuto="True" ScopeGuid="365d1006-0ef2-4cea-8976-3400c0344724" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Nutrition Platform ™" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="518.4,2092.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsDisplayNameAuto="True" ScopeGuid="365d1006-0ef2-4cea-8976-3400c0344724" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,1635" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484.8,1848.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="disposalReasonsList" />
+              </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NGoToUrl DisplayName="Go To URL - " sap:VirtualizedContainerService.HintSize="452,123" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" ScopeIdentifier="365d1006-0ef2-4cea-8976-3400c0344724" Version="V5">
+              <uix:NGoToUrl DisplayName="Go To URL - " sap:VirtualizedContainerService.HintSize="451.2,126.4" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" ScopeIdentifier="365d1006-0ef2-4cea-8976-3400c0344724" Version="V5">
                 <uix:NGoToUrl.Url>
                   <InArgument x:TypeArguments="x:String">
                     <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">GlobalVariablesNamespace.GlobalVariables.websiteUrl + "/disposebottles"</CSharpValue>
                   </InArgument>
                 </uix:NGoToUrl.Url>
               </uix:NGoToUrl>
-              <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each collection label" sap:VirtualizedContainerService.HintSize="452,433" sap2010:WorkflowViewState.IdRef="ForEach`1_1">
+              <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each collection label" sap:VirtualizedContainerService.HintSize="451.2,448" sap2010:WorkflowViewState.IdRef="ForEach`1_1">
                 <ui:ForEach.Body>
                   <ActivityAction x:TypeArguments="x:String">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,302" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="449.6,313.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Scan Container(s)'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,242" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="365d1006-0ef2-4cea-8976-3400c0344724" Version="V4">
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Scan Container(s)'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,249.6" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="365d1006-0ef2-4cea-8976-3400c0344724" Version="V4">
                         <uix:NTypeInto.Target>
                           <uix:TargetAnchorable BrowserURL="localhost/disposebottles" CVScreenId="e4272293-de09-4710-8c92-0717a109bd45" ContentHash="7030_1butkS91gzrqCA45A" CvElementArea="350, 301, 1465, 44" CvType="InputBox" DesignTimeRectangle="357, 303, 1458, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='bottle' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='text' class='multiscan form-control scanbottle form-control form-control' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="ca90f49f-70ea-4e94-a70d-3fcc075fb052" InformativeScreenshot="50e0fff571b529f53d77446f763ea538.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/m9IKtxNvfUWcaCH7q4ZdHw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                             <uix:TargetAnchorable.Anchors>
@@ -188,7 +191,7 @@
                   </InArgument>
                 </ui:ForEach.Values>
               </ui:ForEach>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,227" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="365d1006-0ef2-4cea-8976-3400c0344724" Version="V5">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="451.2,232" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="365d1006-0ef2-4cea-8976-3400c0344724" Version="V5">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/disposebottles" CVScreenId="e4272293-de09-4710-8c92-0717a109bd45" CvElementArea="1739, 468, 69, 37" CvTextArea="1756, 481, 34, 12" CvTextArgument="Next" CvType="Button" DesignTimeRectangle="1741, 470, 66, 34" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='_submit__next' tag='INPUT' /&gt;" Guid="7b79dc9c-6d70-478d-acbb-7aa5a1947cd9" InformativeScreenshot="47b9db3e0e59d4dc59d7fe33abe8d101.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
                 </uix:NClick.Target>
@@ -203,28 +206,88 @@
                   </uix:VerifyExecutionOptions>
                 </uix:NClick.VerifyOptions>
               </uix:NClick>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Reason for disposal'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,288" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="SameAsCard" ScopeIdentifier="365d1006-0ef2-4cea-8976-3400c0344724" Text="Bottle has Expired[k(Tab)]" Version="V5">
-                <uix:NTypeInto.Target>
-                  <uix:TargetAnchorable BrowserURL="localhost/disposebottles" CVScreenId="5247b4b8-1f98-40d7-9cb4-87352f7ee4d6" CvElementArea="348, 379, 1465, 44" CvType="InputBox" DesignTimeRectangle="357, 381, 1458, 42" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='dispose_reason' matching:id='fuzzy' fuzzylevel:id='0.0' tag='SELECT' type='' class='form-control' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="53016ace-9f1c-4e16-a089-22c5082e058a" InformativeScreenshot="139a207feefa9d945ea25bb20302737e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="451.2,60.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,342.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Reason for disposal'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,282.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="SameAsCard" ScopeIdentifier="365d1006-0ef2-4cea-8976-3400c0344724" Text="Bottle has Expired[k(Tab)]" Version="V5">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="localhost/disposebottles" CVScreenId="5247b4b8-1f98-40d7-9cb4-87352f7ee4d6" CvElementArea="348, 379, 1465, 44" CvType="InputBox" DesignTimeRectangle="357, 381, 1458, 42" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='dispose_reason' matching:id='fuzzy' fuzzylevel:id='0.0' tag='SELECT' type='' class='form-control' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="53016ace-9f1c-4e16-a089-22c5082e058a" InformativeScreenshot="139a207feefa9d945ea25bb20302737e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="5247b4b8-1f98-40d7-9cb4-87352f7ee4d6" CvTextArea="356, 362, 123, 15" CvTextArgument="Reason for disposal" CvType="Text" DesignTimeRectangle="357, 360, 1458, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Reason for disposal' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Reason for disposal' /&gt;" Guid="4c30c889-0632-4d5b-8ef5-60fb7768f173" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                      <uix:NTypeInto.VerifyOptions>
+                        <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionTypeIntoOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                        </uix:VerifyExecutionTypeIntoOptions>
+                      </uix:NTypeInto.VerifyOptions>
+                    </uix:NTypeInto>
+                  </Sequence>
+                </ui:CommentOut.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:CommentOut>
+              <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="items" DisplayName="Get Attribute 'Reason for disposal'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="451.2,204" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" ScopeIdentifier="365d1006-0ef2-4cea-8976-3400c0344724" Version="V5">
+                <uix:NGetAttributeGeneric.Result>
+                  <OutArgument x:TypeArguments="x:String">
+                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">disposalReasonsList</CSharpReference>
+                  </OutArgument>
+                </uix:NGetAttributeGeneric.Result>
+                <uix:NGetAttributeGeneric.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/disposebottles" CVScreenId="6f87a5c5-882a-4c2b-b27c-94756562e488" CvElementArea="359, 357, 1457, 45" CvType="InputBox" DesignTimeRectangle="365, 360, 1458, 42" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='dispose_reason' tag='SELECT' type='' class='form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="be90d82d-ffd8-470e-9813-322780bfe47f" InformativeScreenshot="7bc68be0c1b6bc833df2a81d02971982.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
                     <uix:TargetAnchorable.Anchors>
                       <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                        <uix:Target CVScreenId="5247b4b8-1f98-40d7-9cb4-87352f7ee4d6" CvTextArea="356, 362, 123, 15" CvTextArgument="Reason for disposal" CvType="Text" DesignTimeRectangle="357, 360, 1458, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Reason for disposal' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Reason for disposal' /&gt;" Guid="4c30c889-0632-4d5b-8ef5-60fb7768f173" SearchSteps="FuzzySelector, CV" />
+                        <uix:Target CVScreenId="6f87a5c5-882a-4c2b-b27c-94756562e488" CvTextArea="364, 340, 123, 15" CvTextArgument="Reason for disposal" CvType="Text" DesignTimeRectangle="365, 339, 1458, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Reason for disposal' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Reason for disposal' /&gt;" Guid="f51875b5-8565-4266-b9e2-abcf7e9803f4" SearchSteps="FuzzySelector, CV" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
                   </uix:TargetAnchorable>
-                </uix:NTypeInto.Target>
-                <uix:NTypeInto.VerifyOptions>
-                  <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                    <uix:VerifyExecutionTypeIntoOptions.Retry>
-                      <InArgument x:TypeArguments="x:Boolean" />
-                    </uix:VerifyExecutionTypeIntoOptions.Retry>
-                    <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                      <InArgument x:TypeArguments="x:Double" />
-                    </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                  </uix:VerifyExecutionTypeIntoOptions>
-                </uix:NTypeInto.VerifyOptions>
-              </uix:NTypeInto>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Finish'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,227" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="365d1006-0ef2-4cea-8976-3400c0344724" Version="V5">
+                </uix:NGetAttributeGeneric.Target>
+              </uix:NGetAttributeGeneric>
+              <uix:NSelectItem DisplayName="Select Item 'Reason for disposal'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="451.2,197.6" sap2010:WorkflowViewState.IdRef="NSelectItem_1" ScopeIdentifier="365d1006-0ef2-4cea-8976-3400c0344724" Version="V5">
+                <uix:NSelectItem.Item>
+                  <InArgument x:TypeArguments="x:String">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">disposalReasonsList.Split(new string[] { " | " }, StringSplitOptions.None)[1]</CSharpValue>
+                  </InArgument>
+                </uix:NSelectItem.Item>
+                <uix:NSelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="7">
+                    <x:String></x:String>
+                    <x:String>Milk has expired</x:String>
+                    <x:String>Milk has been compromised</x:String>
+                    <x:String>Baby going to different hospital</x:String>
+                    <x:String>Baby has been discharged</x:String>
+                    <x:String>Baby has been transferred</x:String>
+                    <x:String>Other</x:String>
+                  </scg:List>
+                </uix:NSelectItem.Items>
+                <uix:NSelectItem.Target>
+                  <uix:TargetAnchorable BrowserURL="localhost/disposebottles" CVScreenId="6f87a5c5-882a-4c2b-b27c-94756562e488" CvElementArea="359, 357, 1457, 45" CvType="InputBox" DesignTimeRectangle="365, 360, 1458, 42" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='dispose_reason' tag='SELECT' type='' class='form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="a90ee511-2224-4991-9967-9924c4f78ad9" InformativeScreenshot="7bc68be0c1b6bc833df2a81d02971982.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="6f87a5c5-882a-4c2b-b27c-94756562e488" CvTextArea="364, 340, 123, 15" CvTextArgument="Reason for disposal" CvType="Text" DesignTimeRectangle="365, 339, 1458, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Reason for disposal' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Reason for disposal' /&gt;" Guid="59fa4655-7713-40c5-84f3-eddeb2345b76" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NSelectItem.Target>
+              </uix:NSelectItem>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Finish'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="451.2,232" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="365d1006-0ef2-4cea-8976-3400c0344724" Version="V5">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/disposebottles" CVScreenId="0bade972-789a-4f3b-bc0e-148e6d95b2cf" CvElementArea="1730, 466, 79, 39" CvTextArea="1748, 478, 42, 13" CvTextArgument="Finish" CvType="Button" DesignTimeRectangle="1732, 468, 75, 34" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='_submit__finish' tag='INPUT' /&gt;" Guid="1a6fcb98-c4df-4552-b426-a8689acbf286" InformativeScreenshot="490581e9267fcd132bab2e0b55f7a01f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
                 </uix:NClick.Target>
@@ -239,7 +302,7 @@
                   </uix:VerifyExecutionOptions>
                 </uix:NClick.VerifyOptions>
               </uix:NClick>
-              <ui:UiElementExists DisplayName="Check Success Message" sap:VirtualizedContainerService.HintSize="452,139" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+              <ui:UiElementExists DisplayName="Check Success Message" sap:VirtualizedContainerService.HintSize="451.2,143.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                 <ui:UiElementExists.Exists>
                   <OutArgument x:TypeArguments="x:Boolean">
                     <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">isDisposed</CSharpReference>
@@ -253,7 +316,7 @@
                   </ui:Target>
                 </ui:UiElementExists.Target>
               </ui:UiElementExists>
-              <uix:NGetText DisplayName="Get Success Message" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,136" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="365d1006-0ef2-4cea-8976-3400c0344724" Version="V5">
+              <uix:NGetText DisplayName="Get Success Message" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="451.2,139.2" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="365d1006-0ef2-4cea-8976-3400c0344724" Version="V5">
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/disposebottles" CVScreenId="5e66435d-2aeb-4399-be53-10456a495a07" CvElementArea="352, 292, 1464, 49" CvType="InputBox" DesignTimeRectangle="357, 292, 1458, 51" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl isleaf='1' parentid='wizardpage_div' tag='DIV' /&gt;" Guid="7d383cae-0d5d-4cb1-9170-0790c6b6d6e7" InformativeScreenshot="a8e008dea51d6bee5be431165aea91f5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
                 </uix:NGetText.Target>
