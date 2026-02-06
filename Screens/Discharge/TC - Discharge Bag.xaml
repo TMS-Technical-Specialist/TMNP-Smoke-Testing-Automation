@@ -108,7 +108,7 @@
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC___Discharge_Bag" sap:VirtualizedContainerService.HintSize="1104,6552" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC___Discharge_Bag" sap:VirtualizedContainerService.HintSize="647.6,7131.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="failureReason" />
       <Variable x:TypeArguments="x:Boolean" Name="testCaseResult" />
@@ -118,7 +118,22 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="614,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get App Settings Value - Invoke Workflow File (Utilities\\Get App Settings Value.xaml)" sap:VirtualizedContainerService.HintSize="614.4,180.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="Utilities\\Get App Settings Value.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get test patient - Invoke Workflow File (Utilities\\Get test patient.xaml)" sap:VirtualizedContainerService.HintSize="614.4,180.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="Utilities\\Get test patient.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Test Patient from DB - Invoke Workflow File (Utilities\\Get Test Patient from DB.xaml)" sap:VirtualizedContainerService.HintSize="614.4,180.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_32" UnSafe="False" WorkflowFileName="Utilities\\Get Test Patient from DB.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="614.4,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -146,31 +161,31 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="614,260" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="614.4,264" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click sidebar discharge bag submenu - Invoke Workflow File (Components\\Buttons\\Discharge Menu\\Click sidebar discharge bag submenu.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Components\\Buttons\\Discharge Menu\\Click sidebar discharge bag submenu.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click sidebar discharge bag submenu - Invoke Workflow File (Components\\Buttons\\Discharge Menu\\Click sidebar discharge bag submenu.xaml)" sap:VirtualizedContainerService.HintSize="416,172" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Components\\Buttons\\Discharge Menu\\Click sidebar discharge bag submenu.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <scg:Dictionary x:TypeArguments="x:String, Argument" />
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="614,5781" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="614.4,5813.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="580,5689" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" IsDisplayNameAuto="True" ScopeGuid="48662e42-faef-43e6-9861-17bd9fb1a9ae" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="579.2,5721.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" IsDisplayNameAuto="True" ScopeGuid="48662e42-faef-43e6-9861-17bd9fb1a9ae" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="546,5448" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="545.6,5477.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
               <Sequence.Variables>
                 <Variable x:TypeArguments="s:String[]" Name="bagList" />
                 <Variable x:TypeArguments="x:String" Name="bagLocationStorage" />
@@ -182,7 +197,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="No Scanned Bag" sap:VirtualizedContainerService.HintSize="512,57" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence DisplayName="No Scanned Bag" sap:VirtualizedContainerService.HintSize="512,60.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="hardStopMessage" />
                 </Sequence.Variables>
@@ -240,7 +255,7 @@ hardStopMessage.Contains($"Please scan at least one {GlobalVariables.appSettings
                   </ui:MultipleAssign.AssignOperations>
                 </ui:MultipleAssign>
               </Sequence>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="API Call - Invoke Workflow File (Utilities\\API Call.xaml)" sap:VirtualizedContainerService.HintSize="512,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="Utilities\\API Call.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="API Call - Invoke Workflow File (Utilities\\API Call.xaml)" sap:VirtualizedContainerService.HintSize="512,184.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="Utilities\\API Call.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="x:String" x:Key="endpoint">get-baby/2</InArgument>
                   <OutArgument x:TypeArguments="njl:JObject" x:Key="responseData">
@@ -248,7 +263,7 @@ hardStopMessage.Contains($"Please scan at least one {GlobalVariables.appSettings
                   </OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Print Bag - Invoke Workflow File (Components\\Print Bag.xaml)" sap:VirtualizedContainerService.HintSize="512,234" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Components\\Print Bag.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Print Bag - Invoke Workflow File (Components\\Print Bag.xaml)" sap:VirtualizedContainerService.HintSize="512,241.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Components\\Print Bag.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <OutArgument x:TypeArguments="s:String[]" x:Key="outBagList">
                     <CSharpReference x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">bagList</CSharpReference>
@@ -262,7 +277,7 @@ hardStopMessage.Contains($"Please scan at least one {GlobalVariables.appSettings
                   </OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click sidebar discharge bag submenu - Invoke Workflow File (Components\\Buttons\\Discharge Menu\\Click sidebar discharge bag submenu.xaml)" sap:VirtualizedContainerService.HintSize="512,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Components\\Buttons\\Discharge Menu\\Click sidebar discharge bag submenu.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click sidebar discharge bag submenu - Invoke Workflow File (Components\\Buttons\\Discharge Menu\\Click sidebar discharge bag submenu.xaml)" sap:VirtualizedContainerService.HintSize="512,184.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Components\\Buttons\\Discharge Menu\\Click sidebar discharge bag submenu.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <scg:Dictionary x:TypeArguments="x:String, Argument" />
                 </ui:InvokeWorkflowFile.Arguments>

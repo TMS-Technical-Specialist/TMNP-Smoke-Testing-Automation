@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ClickNext" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ClickNext" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -76,30 +76,52 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ClickNext" sap:VirtualizedContainerService.HintSize="716.4000000000001,507.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ClickNext" sap:VirtualizedContainerService.HintSize="647.6,874.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="483.2,484" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsDisplayNameAuto="True" ScopeGuid="1edf6414-9e16-4f94-9ba8-3e84b508c36c" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="552,851.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsDisplayNameAuto="True" ScopeGuid="1edf6414-9e16-4f94-9ba8-3e84b508c36c" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,244" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="518.4,607.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,182.4" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1edf6414-9e16-4f94-9ba8-3e84b508c36c" Version="V5">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484.8,355.2" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,240.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,180.8" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1edf6414-9e16-4f94-9ba8-3e84b508c36c" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="localhost/receivedonors" CVScreenId="425d4206-fc76-4201-9f73-080f2e5f2934" ContentHash="k8KAWOl0m0qZ_oKG6JPzVQ" CvElementArea="1738, 654, 70, 37" CvTextArea="1755, 666, 33, 12" CvTextArgument="Next" CvType="Button" DesignTimeRectangle="1740, 978, 66, 34" ElementType="Button" ElementVisibilityArgument="Visible" FullSelectorArgument="&lt;webctrl id='_submit__next' tag='INPUT' /&gt;" Guid="629ec91a-a3c2-498c-9105-6d6aba980022" InformativeScreenshot="2902c12da6199cfd957be8cd7e40153c.png" Reference="BkxQ1887pEidR6av2KDcrw/WSJg-VbNvEmw0iOaXLka0g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Complete">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="425d4206-fc76-4201-9f73-080f2e5f2934" CvElementArea="1650, 654, 84, 37" CvTextArea="1669, 665, 45, 13" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="1653, 978, 79, 34" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='_submit__cancel' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='submit' class='btn btn- btn btn-outline-primary mr-2' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='Cancel' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Cancel' /&gt;" Guid="401d02bc-0baf-4833-a836-bb75f5acf652" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="0.5" DisplayName="Click 'Next'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="484.8,186.4" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1edf6414-9e16-4f94-9ba8-3e84b508c36c" Version="V5">
               <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="localhost/receivedonors" CVScreenId="425d4206-fc76-4201-9f73-080f2e5f2934" ContentHash="k8KAWOl0m0qZ_oKG6JPzVQ" CvElementArea="1738, 654, 70, 37" CvTextArea="1755, 666, 33, 12" CvTextArgument="Next" CvType="Button" DesignTimeRectangle="1740, 978, 66, 34" ElementType="Button" ElementVisibilityArgument="Visible" FullSelectorArgument="&lt;webctrl id='_submit__next' tag='INPUT' /&gt;" Guid="629ec91a-a3c2-498c-9105-6d6aba980022" InformativeScreenshot="2902c12da6199cfd957be8cd7e40153c.png" Reference="BkxQ1887pEidR6av2KDcrw/WSJg-VbNvEmw0iOaXLka0g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Complete">
+                <uix:TargetAnchorable BrowserURL="localhost/receivedonors" CVScreenId="ee76eee4-c6fe-4970-b4b4-9625924ae1e5" CvElementArea="1747, 999, 70, 37" CvTextArea="1764, 1011, 35, 12" CvTextArgument="Next" CvType="Button" DesignTimeRectangle="1749, 1001, 66, 34" ElementType="Button" ElementVisibilityArgument="Visible" FullSelectorArgument="&lt;webctrl id='_submit__next' tag='INPUT' aaname='Next' value='Next' /&gt;" Guid="69d98f6f-9d40-425e-ae1d-de9959dc5743" InformativeScreenshot="3835278f5dd5cfc3ed28b8f94d9ef0dd.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Complete">
                   <uix:TargetAnchorable.Anchors>
                     <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target CVScreenId="425d4206-fc76-4201-9f73-080f2e5f2934" CvElementArea="1650, 654, 84, 37" CvTextArea="1669, 665, 45, 13" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="1653, 978, 79, 34" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='_submit__cancel' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='submit' class='btn btn- btn btn-outline-primary mr-2' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='Cancel' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Cancel' /&gt;" Guid="401d02bc-0baf-4833-a836-bb75f5acf652" SearchSteps="FuzzySelector, CV" />
+                      <uix:Target CVScreenId="ee76eee4-c6fe-4970-b4b4-9625924ae1e5" CvElementArea="1660, 999, 83, 37" CvTextArea="1677, 1010, 46, 13" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="1662, 1001, 79, 34" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='_submit__cancel' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='submit' aaname='Cancel' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' value='Cancel' check:text='Cancel' /&gt;" Guid="2bc441f5-7624-4392-ab13-44ae899ab79a" SearchSteps="FuzzySelector, CV" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>

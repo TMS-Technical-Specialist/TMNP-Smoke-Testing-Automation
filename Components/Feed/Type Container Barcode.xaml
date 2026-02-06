@@ -110,25 +110,25 @@
       <AssemblyReference>System.Collections.Specialized</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Type_Container_Barcode" sap:VirtualizedContainerService.HintSize="820.4000000000001,1332" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Type_Container_Barcode" sap:VirtualizedContainerService.HintSize="1062,1375" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Get_Hard_Stop_Message" sap:VirtualizedContainerService.HintSize="552,1308.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Get_Hard_Stop_Message" sap:VirtualizedContainerService.HintSize="554,1352" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Chrome Nutrition Platform ™(9)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="518.4,1225.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="05c426e3-0a52-42a6-986a-98adc1e3997d" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Chrome Nutrition Platform ™(9)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="520,1269" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="05c426e3-0a52-42a6-986a-98adc1e3997d" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484.8,985.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,1024" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <Sequence.Variables>
                 <Variable x:TypeArguments="ui:UiElement" Name="outUIElement" />
               </Sequence.Variables>
@@ -137,14 +137,14 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If DisplayName="If - Multiple Feed Settings is turned on" sap:VirtualizedContainerService.HintSize="451.2,924" sap2010:WorkflowViewState.IdRef="If_1">
+              <If DisplayName="If - Multiple Feed Settings is turned on" sap:VirtualizedContainerService.HintSize="452,958" sap2010:WorkflowViewState.IdRef="If_1">
                 <If.Condition>
                   <InArgument x:TypeArguments="x:Boolean">
                     <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">(bool)GlobalVariables.appSettings["feed/allow_multiple_bottles"]</CSharpValue>
                   </InArgument>
                 </If.Condition>
                 <If.Then>
-                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,491.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,508" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Int32" Name="index" />
                     </Sequence.Variables>
@@ -153,29 +153,23 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type container barcode" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="05c426e3-0a52-42a6-986a-98adc1e3997d" Version="V4">
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Scan Container(s)'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,259" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="DebuggerApi" ScopeIdentifier="05c426e3-0a52-42a6-986a-98adc1e3997d" Version="V5">
                       <uix:NTypeInto.Target>
-                        <uix:TargetAnchorable BrowserURL="localhost/feedpatient" CVScreenId="e2893ef3-2d5f-47be-b38d-5517576223b2" ContentHash="Wk-vV7bFxUOd02koGtFGhQ" CvElementArea="397, 549, 1374, 42" CvType="InputBox" DesignTimeRectangle="403, 551, 1367, 39" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='bottle' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='text' class='scanbottle form-control form-control' matching:class='fuzzy' fuzzylevel:class='0.0' name='bottle' parentclass='card-body' parentid='wizardpage_div' /&gt;" Guid="e0d89d47-5fec-4cc7-9f67-d85102341597" InformativeScreenshot="6bcddb5dbdb12b7e77c59b696e6003e9.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/tiRxA_WFlUSVGxGxrOkQWg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                        <uix:TargetAnchorable BrowserURL="localhost/feedbottles" CVScreenId="d6648944-5d2e-4e4c-baa1-6c0b0ce8aeb5" CvElementArea="359, 500, 1463, 45" CvType="InputBox" DesignTimeRectangle="365, 502, 1458, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='bottle_for_list' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='text' class='multiscan form-control scanbottle form-control form-control' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' name='bottle_for_list' parentclass='form-group' parentid='wizardpage_div' parentname='theform' /&gt;" Guid="ddb6087d-c7f9-456e-b992-21aeff1842f4" InformativeScreenshot="8c911c3213af5a5e93a02417bf4a7088.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                           <uix:TargetAnchorable.Anchors>
                             <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                              <uix:Target CVScreenId="e2893ef3-2d5f-47be-b38d-5517576223b2" DesignTimeRectangle="403, 531, 1367, 17" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' parentclass='card-body' parentid='wizardpage_div' parentname='theform' /&gt;" Guid="6fb82913-e262-411f-853b-439efe0eeb38" SearchSteps="FuzzySelector" />
+                              <uix:Target CVScreenId="d6648944-5d2e-4e4c-baa1-6c0b0ce8aeb5" DesignTimeRectangle="365, 481, 1458, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='bottle_for_list_label' matching:id='fuzzy' fuzzylevel:id='0.0' tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' parentclass='form-group' parentid='wizardpage_div' parentname='theform' /&gt;" Guid="d5c7226f-1895-4340-a4ad-f10f9caf5d5a" SearchSteps="FuzzySelector" />
                             </scg:List>
                           </uix:TargetAnchorable.Anchors>
                         </uix:TargetAnchorable>
                       </uix:NTypeInto.Target>
                       <uix:NTypeInto.Text>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">inContainerBarcode + "[k(Enter)]"</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">inContainerBarcode + "[k(Enter)]"</CSharpValue>
                         </InArgument>
                       </uix:NTypeInto.Text>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
                     </uix:NTypeInto>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,180.8" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="05c426e3-0a52-42a6-986a-98adc1e3997d" Version="V4">
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="05c426e3-0a52-42a6-986a-98adc1e3997d" Version="V4">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="localhost/feedbottles" CVScreenId="c0c6ca3c-0e9e-4203-9093-315bec31751d" ContentHash="SgJOzBodO0eGTV1TycPFQA" CvElementArea="1486, 553, 48, 27" CvTextArea="1498, 560, 23, 10" CvTextArgument="Next" CvType="Button" DesignTimeRectangle="1487, 554, 45, 24" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='_submit__next' tag='INPUT' /&gt;" Guid="af58f5bb-fb89-4806-beee-f014d48bc4bc" InformativeScreenshot="0cfa3e1fcde0b21a002bedd10c7e0cc0.png" Reference="BkxQ1887pEidR6av2KDcrw/7TchqLqTQUa3BhIAOh6_ag" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
                           <uix:TargetAnchorable.Anchors>
@@ -189,14 +183,14 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,301.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,314" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type container barcode" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,241.6" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="05c426e3-0a52-42a6-986a-98adc1e3997d" Version="V4">
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type container barcode" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,250" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="05c426e3-0a52-42a6-986a-98adc1e3997d" Version="V4">
                       <uix:NTypeInto.Target>
                         <uix:TargetAnchorable BrowserURL="localhost/feedpatient" CVScreenId="e2893ef3-2d5f-47be-b38d-5517576223b2" ContentHash="Wk-vV7bFxUOd02koGtFGhQ" CvElementArea="397, 549, 1374, 42" CvType="InputBox" DesignTimeRectangle="403, 551, 1367, 39" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='bottle' matching:id='fuzzy' fuzzylevel:id='0.0' tag='INPUT' type='text' class='scanbottle form-control form-control' matching:class='fuzzy' fuzzylevel:class='0.0' name='bottle' parentclass='card-body' parentid='wizardpage_div' /&gt;" Guid="e0d89d47-5fec-4cc7-9f67-d85102341597" InformativeScreenshot="6bcddb5dbdb12b7e77c59b696e6003e9.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/tiRxA_WFlUSVGxGxrOkQWg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                           <uix:TargetAnchorable.Anchors>
