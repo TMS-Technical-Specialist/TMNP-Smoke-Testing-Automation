@@ -146,7 +146,7 @@
       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Select_Restore_Location_Logic" sap:VirtualizedContainerService.HintSize="2614,9612" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Select_Restore_Location_Logic" sap:VirtualizedContainerService.HintSize="997,9612" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="hasModular" />
       <Variable x:TypeArguments="x:String" Name="modularTracking" />
@@ -608,7 +608,7 @@
                             <Variable x:TypeArguments="njl:JArray" Name="freezerLocations" />
                             <Variable x:TypeArguments="x:Boolean" Name="displayFreezerRestoreLocation">
                               <Variable.Default>
-                                <Literal x:TypeArguments="x:Boolean" Value="True" />
+                                <Literal x:TypeArguments="x:Boolean" />
                               </Variable.Default>
                             </Variable>
                             <Variable x:TypeArguments="njl:JArray" Name="deepFreezerLocations" />
@@ -640,7 +640,7 @@
                           <If sap:VirtualizedContainerService.HintSize="478,390" sap2010:WorkflowViewState.IdRef="If_27">
                             <If.Condition>
                               <InArgument x:TypeArguments="x:Boolean">
-                                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_294">deepFreezerLocations != null &amp;&amp; deepFreezerLocations.Count &gt; 0</CSharpValue>
+                                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_302">deepFreezerLocations != null &amp;&amp; deepFreezerLocations.Count &gt; 0 &amp;&amp; inIsDisplayFreezer</CSharpValue>
                               </InArgument>
                             </If.Condition>
                             <If.Then>
@@ -678,7 +678,7 @@
                           <If sap:VirtualizedContainerService.HintSize="478,390" sap2010:WorkflowViewState.IdRef="If_26">
                             <If.Condition>
                               <InArgument x:TypeArguments="x:Boolean">
-                                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_297">freezerLocations != null &amp;&amp; freezerLocations.Count &gt; 0 &amp;&amp; (deepFreezerLocations == null &amp;&amp; deepFreezerLocations.Count == 0 &amp;&amp; !displayFreezerRestoreLocation)</CSharpValue>
+                                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_303">freezerLocations != null &amp;&amp; freezerLocations.Count &gt; 0 &amp;&amp; ((deepFreezerLocations == null || deepFreezerLocations.Count == 0) &amp;&amp; !displayFreezerRestoreLocation) &amp;&amp; inIsDisplayFreezer</CSharpValue>
                               </InArgument>
                             </If.Condition>
                             <If.Then>
