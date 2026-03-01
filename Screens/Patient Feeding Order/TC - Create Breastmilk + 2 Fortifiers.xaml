@@ -1,5 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="TC___Create_Breastmilk___2_Fortifiers" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="inOrderName" Type="InArgument(x:String)" />
     <x:Property Name="inMilkBase" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
@@ -119,24 +120,24 @@
       <AssemblyReference>System.Private.Xml</AssemblyReference>
       <AssemblyReference>NPOI.Core</AssemblyReference>
       <AssemblyReference>TMNP Smoke Testing Automation.Core</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC___Create_Breastmilk___2_Fortifiers" sap:VirtualizedContainerService.HintSize="1184,2786" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC___Create_Breastmilk___2_Fortifiers" sap:VirtualizedContainerService.HintSize="997,2903" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="uiCalOz" />
       <Variable x:TypeArguments="x:Int32" Name="roundingCalDecimal" />
       <Variable x:TypeArguments="x:Int32" Name="roundingMlDecimal" />
       <Variable x:TypeArguments="sd:DataRow" Name="orderDetails" />
+      <Variable x:TypeArguments="sd:DataTable" Name="additives" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="518,882" sap2010:WorkflowViewState.IdRef="Sequence_15">
-      <Sequence.Variables>
-        <Variable x:TypeArguments="sd:DataTable" Name="additives" />
-      </Sequence.Variables>
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="518,898" sap2010:WorkflowViewState.IdRef="Sequence_15">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -197,7 +198,7 @@
           </OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create Order Template - Invoke Workflow File (Components\\Create Order Template.xaml)" sap:VirtualizedContainerService.HintSize="478,234" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Components\\Manage Patient Feeding Order\\Create Order Template.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create Order Template - Invoke Workflow File (Components\\Create Order Template.xaml)" sap:VirtualizedContainerService.HintSize="478,250" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Components\\Manage Patient Feeding Order\\Create Order Template.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="inMilkBase">
             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">inMilkBase</CSharpValue>
@@ -213,14 +214,14 @@
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="518,829" sap2010:WorkflowViewState.IdRef="Sequence_16">
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="518,869" sap2010:WorkflowViewState.IdRef="Sequence_16">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(5)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,737" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="d261946d-3479-4521-b374-cb7d63381c58" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(5)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,777" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="d261946d-3479-4521-b374-cb7d63381c58" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
@@ -271,7 +272,7 @@
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
     </Sequence>
-    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="518,1052" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="518,1113" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="numberOfSearchResult" />
       </Sequence.Variables>
@@ -281,30 +282,34 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Search Order Template - Invoke Workflow File (Components\\Manage Patient Feeding Order\\Search Order Template.xaml)" sap:VirtualizedContainerService.HintSize="484,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Components\\Manage Patient Feeding Order\\Search Order Template.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Search Order Template - Invoke Workflow File (Components\\Manage Patient Feeding Order\\Search Order Template.xaml)" sap:VirtualizedContainerService.HintSize="484,234" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Components\\Manage Patient Feeding Order\\Search Order Template.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:Boolean" x:Key="inIsActive">True</InArgument>
-          <InArgument x:TypeArguments="x:Int32" x:Key="inCal">24</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="inAdditive">pwd</InArgument>
+          <InArgument x:TypeArguments="x:Double" x:Key="inCal">
+            <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">(double)additives.AsEnumerable().Where(row =&gt; !(bool)row["isModular"]).Last()["endCal"]</CSharpValue>
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="inAdditive">
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">additives.Rows[0]["additiveName"].ToString()</CSharpValue>
+          </InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="inOrderBase">Breastmilk</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="inMilkBase">
             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">inMilkBase</CSharpValue>
           </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,792" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" IsDisplayNameAuto="True" ScopeGuid="b7b1755f-7d4d-42d7-94b3-7d850d346d94" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,796" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" IsDisplayNameAuto="True" ScopeGuid="b7b1755f-7d4d-42d7-94b3-7d850d346d94" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,551" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,555" sap2010:WorkflowViewState.IdRef="Sequence_9">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NGetText DisplayName="Get Text 'Total Found 1'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,139" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="b7b1755f-7d4d-42d7-94b3-7d850d346d94" Version="V4">
+              <uix:NGetText DisplayName="Get Text 'Total Found 1'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,143" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="b7b1755f-7d4d-42d7-94b3-7d850d346d94" Version="V4">
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/orders" CVScreenId="485ef4d0-dad1-40ca-9757-70456a21066c" ContentHash="E8q0eHoZjUSwObxWUVmeeQ" CvType="AnyWordGroup" DesignTimeRectangle="205, 287, 1590, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='footer-count' parentid='app' tag='DIV' /&gt;" Guid="7f995a2a-05d5-419b-9336-fb50e5608a2a" InformativeScreenshot="7ba1ea97455cfc285d4b1032d6458bcc.png" Reference="BkxQ1887pEidR6av2KDcrw/bMc2k1On8kOZxEdouUYo1g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
                 </uix:NGetText.Target>
