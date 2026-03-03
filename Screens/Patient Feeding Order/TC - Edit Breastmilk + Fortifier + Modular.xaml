@@ -629,7 +629,7 @@
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="x:String" x:Key="inScenarioName">Edit Order</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="inFailureReason">
-                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20" xml:space="preserve">$"• Edit {inMilkBase} + Fortifier + Modular order\n" +
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27" xml:space="preserve">$"• Edit {inMilkBase} + Fortifier + Modular order\n" +
 "      • Expected output: \n" +
 $"       Patient name format = {GlobalVariables.testPatient["LastName"].ToString()}, {GlobalVariables.testPatient["FirstName"].ToString()} (barcode) {((DateTime)GlobalVariables.testPatient["DateOfBirth"]).ToString("MM/dd/yyyy") }\n" +
 $"       Order Type = Standard\n" +
@@ -640,7 +640,7 @@ $"       Feed Volume = 10.{new string('0', (int)GlobalVariables.appSettings["ui/
 $"       Number of fortifier = 1\n" +
 $"       Number of modular = 1\n" +
 $"       First Mix to cal = 22\n" +
-(modularTracking != "0" ? $"       Modular value = 5.{new string('0', (int)GlobalVariables.appSettings["ui/decimal/rounding/ml"])} Unit = {expectedUnit}\n" : "" ) +
+(modularTracking != "0" ? $"       Modular value = 0.2{((int)GlobalVariables.appSettings["ui/decimal/rounding/ml"] == 0 ? "" : new string('0', (int)GlobalVariables.appSettings["ui/decimal/rounding/ml"] - 1))} Unit = {expectedUnit}\n" : "" ) +
 $"      • Actual Output: \n" +
 $"       Patient name format = {patientName}\n" +
 $"       Order Type = {orderType}\n" +
@@ -654,7 +654,7 @@ $"       First Mix to cal = {firstMixToCal}" +
 (modularTracking != "0" ? $"\n       Modular value = {modularStartingCalValue} Unit = {modularUnit}" : "" )</CSharpValue>
                   </InArgument>
                   <InArgument x:TypeArguments="x:Boolean" x:Key="inTestResult">
-                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26" xml:space="preserve">patientName.Contains(GlobalVariables.testPatient["LastName"].ToString() + ", " + GlobalVariables.testPatient["FirstName"].ToString()) &amp;&amp;
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28" xml:space="preserve">patientName.Contains(GlobalVariables.testPatient["LastName"].ToString() + ", " + GlobalVariables.testPatient["FirstName"].ToString()) &amp;&amp;
 orderType == "Standard" &amp;&amp;
 orderPriority == "Primary" &amp;&amp;
 orderBase == "Breastmilk" &amp;&amp;
@@ -663,7 +663,7 @@ orderFeedVolume == $"10.{new string('0', (int)GlobalVariables.appSettings["ui/de
 firstAdditive.ToLower().Contains("pwd") &amp;&amp;
 firstMixToCal == "22" &amp;&amp;
 secondAdditive.ToLower().Contains("mct") &amp;&amp;
-modularTracking != "0" ?  modularStartingCalValue == $"5.{new string('0', (int)GlobalVariables.appSettings["ui/decimal/rounding/ml"])}" &amp;&amp; modularUnit == expectedUnit : true &amp;&amp;
+modularTracking != "0" ?  modularStartingCalValue == $"0.2{((int)GlobalVariables.appSettings["ui/decimal/rounding/ml"] == 0 ? "" : new string('0', (int)GlobalVariables.appSettings["ui/decimal/rounding/ml"] - 1))}" &amp;&amp; modularUnit == expectedUnit : true &amp;&amp;
 isMilkTypeSupported ? orderMilkType != "" &amp;&amp; orderCalOz ==((int)GlobalVariables.appSettings["ui/decimal/rounding/cals"] == 0 ? "20" : $"20.{new string('0', (int)GlobalVariables.appSettings["ui/decimal/rounding/cals"])}") : true</CSharpValue>
                   </InArgument>
                 </ui:InvokeWorkflowFile.Arguments>

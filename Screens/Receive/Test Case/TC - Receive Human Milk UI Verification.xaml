@@ -120,7 +120,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC___Receive_Human_Milk_UI_Verification" sap:VirtualizedContainerService.HintSize="1062,8895" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC___Receive_Human_Milk_UI_Verification" sap:VirtualizedContainerService.HintSize="1094,8895" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="isVolumeRequired" />
       <Variable x:TypeArguments="x:String" Name="ehmDisplayNameShort" />
@@ -1080,7 +1080,7 @@
                     </uix:TargetAnchorable>
                   </uix:NTypeInto.Target>
                 </uix:NTypeInto>
-                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Location'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,259" sap2010:WorkflowViewState.IdRef="NTypeInto_24" InteractionMode="SameAsCard" ScopeIdentifier="a9f4fb41-cefa-4bcc-91d8-be3f9ccd8bf2" Text="Ref[k(Enter)]" Version="V5">
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Location'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,259" sap2010:WorkflowViewState.IdRef="NTypeInto_24" InteractionMode="SameAsCard" ScopeIdentifier="a9f4fb41-cefa-4bcc-91d8-be3f9ccd8bf2" Version="V5">
                   <uix:NTypeInto.Target>
                     <uix:TargetAnchorable BrowserURL="localhost/receive" CVScreenId="81a764c4-ee0b-477b-9158-e19c5cde858f" CvElementArea="1583, 595, 265, 45" CvType="InputBox" DesignTimeRectangle="1586, 598, 260, 42" ElementVisibilityArgument="Interactive" Guid="2f6b870c-f5e2-4864-913a-db009d72a9d9" InformativeScreenshot="bac0f34aaba4b27ed2869fcdcfe060d0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
                       <uix:TargetAnchorable.Anchors>
@@ -1095,6 +1095,11 @@
                       </uix:TargetAnchorable.FullSelectorArgument>
                     </uix:TargetAnchorable>
                   </uix:NTypeInto.Target>
+                  <uix:NTypeInto.Text>
+                    <InArgument x:TypeArguments="x:String">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_281">responseLocationData["locationName"].ToString() + "[k(Enter)]"</CSharpValue>
+                    </InArgument>
+                  </uix:NTypeInto.Text>
                 </uix:NTypeInto>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click Next Button - Invoke Workflow File (Components\\Buttons\\Click Next Button.xaml)" sap:VirtualizedContainerService.HintSize="416,186" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click Next Button.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
