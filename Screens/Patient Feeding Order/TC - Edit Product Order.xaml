@@ -127,7 +127,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC___Edit_Product_Order" sap:VirtualizedContainerService.HintSize="997,5165" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC___Edit_Product_Order" sap:VirtualizedContainerService.HintSize="997,5246" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="isMilkTypeSupported" />
       <Variable x:TypeArguments="x:String" Name="uiCalOz" />
@@ -310,7 +310,7 @@
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="x:Boolean" x:Key="inIsActive">True</InArgument>
                   <InArgument x:TypeArguments="x:Double" x:Key="inCal">
-                    <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">(double)additives.AsEnumerable().Where(row =&gt; !(bool)row["isModular"]).Last()["endCal"]</CSharpValue>
+                    <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">inWithAdditive ? (double)additives.AsEnumerable().Where(row =&gt; !(bool)row["isModular"]).Last()["endCal"] : Convert.ToDouble(orderDetails["Base Product Cal"])</CSharpValue>
                   </InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="inAdditive">
                     <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_38">inWithAdditive ? additives.Rows[0]["additiveName"].ToString() : ""</CSharpValue>
@@ -335,13 +335,13 @@
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
     </Sequence>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="590,768" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="590,808" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(6)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,676" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="c8d7f3df-dcff-4479-abbc-a1c02670c8f1" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(6)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,716" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="c8d7f3df-dcff-4479-abbc-a1c02670c8f1" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
@@ -371,7 +371,7 @@
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
     </Sequence>
-    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="552,2374.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="590,2415" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="isMilkTypeFieldsHidden" />
       </Sequence.Variables>
@@ -380,7 +380,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(3)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="518.4,2291.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" ScopeGuid="fb587dd0-76ea-4d05-b560-4031c3b65bab" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(3)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="519,2332" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" ScopeGuid="fb587dd0-76ea-4d05-b560-4031c3b65bab" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
