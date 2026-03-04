@@ -99,7 +99,7 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC - Dose - Split Powder Product to Assigned Patient" sap:VirtualizedContainerService.HintSize="1368,1099" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC - Dose - Split Powder Product to Assigned Patient" sap:VirtualizedContainerService.HintSize="997,1276" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="njl:JObject" Name="patientResponseData" />
       <Variable x:TypeArguments="x:String" Name="failureReason" />
@@ -112,16 +112,27 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="450,435" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="450,612" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="productName" />
+      </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Dosing Scenario Product - Invoke Workflow File (Utilities\\Get Dosing Scenario Product.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Utilities\\Get Dosing Scenario Product.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <OutArgument x:TypeArguments="x:String" x:Key="outProductName">
+            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">productName</CSharpReference>
+          </OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="inScenarioName">Split Powder Product to Unassigned Patient</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Receieve Product - Invoke Workflow File (Components\\Receieve Product.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Components\\Receieve Product.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="s:String[]" x:Key="inProducts">
-            <CSharpValue x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">new string[] { "Enfamil Infant PWD" }</CSharpValue>
+            <CSharpValue x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">new string[] { productName }</CSharpValue>
           </InArgument>
           <OutArgument x:TypeArguments="sd:DataTable" x:Key="outReceiveProducts">
             <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">receivedProduct</CSharpReference>
@@ -149,7 +160,7 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Dosing - Invoke Workflow File (Components\\Dosing.xaml)" sap:VirtualizedContainerService.HintSize="416,241" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Components\\Dosing.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:Double" x:Key="inVolume">50</InArgument>
+          <InArgument x:TypeArguments="x:Double" x:Key="inVolume">5</InArgument>
           <InArgument x:TypeArguments="x:Int32" x:Key="inNoOfContainers">4</InArgument>
           <InArgument x:TypeArguments="x:Boolean" x:Key="inStep2IsAssignedToPatient">True</InArgument>
           <InArgument x:TypeArguments="x:Boolean" x:Key="inStep1IsProductBarcodes">True</InArgument>
