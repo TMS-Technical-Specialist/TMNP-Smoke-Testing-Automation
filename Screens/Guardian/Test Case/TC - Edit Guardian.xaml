@@ -32,6 +32,12 @@
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
       <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -101,9 +107,10 @@
       <AssemblyReference>System.Linq.Parallel</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC___Edit_Guardian" sap:VirtualizedContainerService.HintSize="612.4000000000001,6277.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC___Edit_Guardian" sap:VirtualizedContainerService.HintSize="1000,6784" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataRow" Name="guardian" />
       <Variable x:TypeArguments="sd:DataTable" Name="guardianNameList" />
@@ -117,13 +124,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="516.8,1045.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="641,1048" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="483.2,242.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="484,242" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -177,7 +184,7 @@
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
-      <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="483.2,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Guardian">
+      <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="484,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Guardian">
         <ui:ReadRange.DataTable>
           <OutArgument x:TypeArguments="sd:DataTable">
             <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">guardianNameList</CSharpReference>
@@ -189,7 +196,7 @@
           </InArgument>
         </ui:ReadRange.WorkbookPath>
       </ui:ReadRange>
-      <Assign sap:VirtualizedContainerService.HintSize="483.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign sap:VirtualizedContainerService.HintSize="484,175" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="sd:DataRow">
             <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">guardian</CSharpReference>
@@ -201,19 +208,19 @@
           </InArgument>
         </Assign.Value>
       </Assign>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Nutrition Platform ™(18)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="483.2,416.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="83833d0a-eb9c-4062-9eb3-06a7d769b2c2" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Nutrition Platform ™(18)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,419" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="83833d0a-eb9c-4062-9eb3-06a7d769b2c2" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,176.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,178" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NGoToUrl DisplayName="Go To URL - " sap:VirtualizedContainerService.HintSize="416,115.2" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" ScopeIdentifier="83833d0a-eb9c-4062-9eb3-06a7d769b2c2" Version="V4">
+              <uix:NGoToUrl DisplayName="Go To URL - " sap:VirtualizedContainerService.HintSize="416,116" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" ScopeIdentifier="83833d0a-eb9c-4062-9eb3-06a7d769b2c2" Version="V4">
                 <uix:NGoToUrl.Url>
                   <InArgument x:TypeArguments="x:String">
                     <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">$"{GlobalVariables.websiteUrl}/guardians"</CSharpValue>
@@ -228,30 +235,30 @@
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
     </Sequence>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="516.8,1956.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="641,1962" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Nutrition Platform ™(22)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="483.2,1864.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="d27c79bd-ff57-4646-92aa-439466e23298" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Nutrition Platform ™(22)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,1870" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="d27c79bd-ff57-4646-92aa-439466e23298" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,1624.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1629" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'BUTTON'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d27c79bd-ff57-4646-92aa-439466e23298" Version="V4">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'BUTTON'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,190" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d27c79bd-ff57-4646-92aa-439466e23298" Version="V4">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/guardians" CVScreenId="bc3c83d7-a286-4564-bb38-1231f4c02a22" ContentHash="Ip8AF9adoEWlWov0BBddjg" CvElementArea="289, 294, 52, 37" CvType="Button" DesignTimeRectangle="291, 296, 50, 35" ElementType="Button" ElementVisibilityArgument="Visible" FullSelectorArgument="&lt;webctrl parentid='app' tag='BUTTON' /&gt;" Guid="f975256f-23db-4811-bb65-0ad368df4034" InformativeScreenshot="2e76124f93f1a9c0cc77021cbe7e81c8.png" Reference="BkxQ1887pEidR6av2KDcrw/BihFzbUkyEKh-wbZLbeo5w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Complete" />
                 </uix:NClick.Target>
               </uix:NClick>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DelayBefore="0.5" DisplayName="Type Into 'Last Name'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="d27c79bd-ff57-4646-92aa-439466e23298" Version="V4">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DelayBefore="0.5" DisplayName="Type Into 'Last Name'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,251" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="d27c79bd-ff57-4646-92aa-439466e23298" Version="V4">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/guardians" CVScreenId="751c4435-6435-4ae2-8743-6aa3275cd4ae" ContentHash="d3yu-WGfEkqd7FxNKdMtVw" CvElementArea="363, 342, 141, 42" CvType="InputBox" DesignTimeRectangle="366, 344, 138, 39" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" Guid="8bd0243c-a8f0-4505-b024-a172e42c11b9" InformativeScreenshot="6fff164f0bb7d5b90a03a43e33fd9c79.png" Reference="BkxQ1887pEidR6av2KDcrw/RnfPHwvfiEOialCVjJhmpA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
@@ -267,7 +274,7 @@
                   </InArgument>
                 </uix:NTypeInto.Text>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'First Name'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="d27c79bd-ff57-4646-92aa-439466e23298" Version="V4">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'First Name'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,251" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="d27c79bd-ff57-4646-92aa-439466e23298" Version="V4">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/guardians" CVScreenId="630192a0-c0f5-4426-951c-72e509a26d55" ContentHash="eZyRq3_KqU2N8A7anhmavA" CvElementArea="521, 342, 141, 42" CvType="InputBox" DesignTimeRectangle="524, 344, 137, 39" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl class='outline-0 rounded-lg w-full p-2 border border-[#AAAAAA] disabled:bg-[#EEEEEE]' tag='INPUT' type='text' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="18397f33-2f8c-415c-99a2-86738a34e797" InformativeScreenshot="9898a515e20e4cdb577930ac98b000ae.png" Reference="BkxQ1887pEidR6av2KDcrw/EJ_a52iGjUK-UEzFEfAUFQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
@@ -283,7 +290,7 @@
                   </InArgument>
                 </uix:NTypeInto.Text>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Date of Birth'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="d27c79bd-ff57-4646-92aa-439466e23298" Version="V4">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Date of Birth'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,251" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="d27c79bd-ff57-4646-92aa-439466e23298" Version="V4">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/guardians" CVScreenId="630192a0-c0f5-4426-951c-72e509a26d55" ContentHash="N9CeeiWLokiHLmMTkj2zDQ" CvElementArea="678, 342, 142, 42" CvType="InputBox" DesignTimeRectangle="681, 344, 138, 39" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl class='outline-0 rounded-lg w-full p-2 border border-[#AAAAAA] disabled:bg-[#EEEEEE]' tag='INPUT' type='text' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="351f5848-6da7-44d6-b9df-716d5cb4760e" InformativeScreenshot="d42b450a0420e955cdd3e7eb629a79e1.png" Reference="BkxQ1887pEidR6av2KDcrw/ul549IXXSECaYSEYY2Lwsg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
@@ -299,7 +306,7 @@
                   </InArgument>
                 </uix:NTypeInto.Text>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Account Number'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="d27c79bd-ff57-4646-92aa-439466e23298" Version="V4">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Account Number'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,251" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="d27c79bd-ff57-4646-92aa-439466e23298" Version="V4">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/guardians" CVScreenId="630192a0-c0f5-4426-951c-72e509a26d55" ContentHash="3TwBrtTYS0WBX1YGfkij5A" CvElementArea="836, 342, 140, 42" CvType="InputBox" DesignTimeRectangle="839, 344, 137, 39" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl class='outline-0 rounded-lg w-full p-2 border border-[#AAAAAA] disabled:bg-[#EEEEEE]' tag='INPUT' type='text' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="2d09bd82-d3c5-47b5-bf4e-e2b428a9d62a" InformativeScreenshot="5a89c3796e997f78c24e990491d23d17.png" Reference="BkxQ1887pEidR6av2KDcrw/P3LSrBb3qU2ofSZ42n8A1w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
@@ -326,12 +333,12 @@
                   </InArgument>
                 </uix:NTypeInto.Text>
               </uix:NTypeInto>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Click for Actions'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189.6" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d27c79bd-ff57-4646-92aa-439466e23298" Version="V4">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Click for Actions'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,190" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d27c79bd-ff57-4646-92aa-439466e23298" Version="V4">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/guardians" CVScreenId="39504aa3-2fe2-4e35-a799-f662e7d74512" ContentHash="kmZbC27zV0-tqA61j7xqLw" CvElementArea="300, 364, 30, 29" CvType="Icon" DesignTimeRectangle="303, 367, 24, 24" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='dropdownMenuButton' tag='SPAN' /&gt;" Guid="712921b0-5f51-4244-bce7-8ec43c085110" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEzSURBVEhLvZa/DgFBEMa9jvAISq+BJ+ABdCgV4gEQlU7UWj06IlxI/Gn8bTUj3yV7WbN77MmaS37h1s733YzZvU2drw+SJMUH/o2T4Sy4UGt8oGI3oFxzRdnGMgTfC51N+Ns0uBhxNj4awqg82FK6tnCiMtjSdHM2dJwMe5MTZeqm6DeQOWK53kdDlIgLJQUaXNdqiKfjwb9iy/TNEP/ZL2WMI1tfhpqxhkkaxBVoWg3xJHyyL/QsI0MfjRKH3kCRIRY1n+gLaBuG2DX4REW+vTbuS/2dMcbjFNA2DLFg+URQHR0J1/72jMbUpUyH83t4j08eD6DtbAhR3RCZeDFMWlJ9zFZiHWtJxZtGfFmIL3wgurWpLEU3byD6elL4aCDnF7BC9IihED1EcWORY+I/EDd8AcpxaO313FMdAAAAAElFTkSuQmCC" InformativeScreenshot="892b5002830daa14a8ed5f1eda57c769.png" Reference="BkxQ1887pEidR6av2KDcrw/apwcT8IHsUGh_yUQoRl3Kg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
                 </uix:NClick.Target>
               </uix:NClick>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Edit'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,182" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d27c79bd-ff57-4646-92aa-439466e23298" Version="V4">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Edit'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,183" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d27c79bd-ff57-4646-92aa-439466e23298" Version="V4">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/guardians" CVScreenId="8b63f1d7-6eef-43e0-b505-f59f78e6bacf" ContentHash="zPPty0Hrfk-R6F_PnQpAdw" CvTextArea="370, 441, 26, 12" CvTextArgument="Edit" CvType="Text" DesignTimeRectangle="312, 436, 144, 26" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='action-button' parentid='app' tag='BUTTON' /&gt;" Guid="40778f9f-2fd7-4b7d-80af-4c4025d54143" InformativeScreenshot="6dbfbaba7440da6c85e6f1ff69c590be.png" Reference="BkxQ1887pEidR6av2KDcrw/6tuwx3ZVw0iUPVbFUJfayQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
@@ -350,19 +357,19 @@
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
     </Sequence>
-    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="516.8,3252" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="641,3751" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Nutrition Platform ™(23)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="483.2,3168.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Nutrition Platform ™(23)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="607,3668" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,2928.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="573,3427" sap2010:WorkflowViewState.IdRef="Sequence_10">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="firstName" />
                 <Variable x:TypeArguments="x:String" Name="lastName" />
@@ -379,7 +386,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NGetText DisplayName="Get Text 'First Name'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,142.4" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
+              <uix:NGetText DisplayName="Get Text 'First Name'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="539,143" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="a87deb71-3afb-4158-8679-d112431072ec" ContentHash="PseXuN8790SqqVvT87811A" CvElementArea="354, 343, 722, 45" CvType="InputBox" DesignTimeRectangle="356, 345, 719, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='motherFirstName' tag='INPUT' type='text' class='form-control ' aaname='First Name:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="3f6addce-e5a5-4884-b004-262543e52616" InformativeScreenshot="fd34671f20eb8a84db618fdbcfc837ee.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/kubthBDfAEiC6aObhXgfXA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
@@ -395,7 +402,7 @@
                   </OutArgument>
                 </uix:NGetText.TextString>
               </uix:NGetText>
-              <uix:NGetText DisplayName="Get Text 'Last Name'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,142.4" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
+              <uix:NGetText DisplayName="Get Text 'Last Name'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="539,143" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="a87deb71-3afb-4158-8679-d112431072ec" ContentHash="5JLaM-wbDUS7b9h3EQR7Lw" CvElementArea="355, 439, 721, 44" CvType="InputBox" DesignTimeRectangle="356, 441, 719, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='motherLastName' tag='INPUT' type='text' class='form-control ' aaname='Last Name:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="ca7ba5b6-d36f-48c5-91e4-2b69c896d3a3" InformativeScreenshot="1488d0943e7b3cb2005986fccda38362.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/rb8wh7-hwUypHabX8QRXMQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
@@ -411,7 +418,7 @@
                   </OutArgument>
                 </uix:NGetText.TextString>
               </uix:NGetText>
-              <uix:NGetText DisplayName="Get Text 'MRN'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,142.4" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
+              <uix:NGetText DisplayName="Get Text 'MRN'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="539,143" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="a87deb71-3afb-4158-8679-d112431072ec" ContentHash="_vgkh1jOOU2yVeCUpQKhCw" CvElementArea="356, 674, 720, 45" CvType="InputBox" DesignTimeRectangle="356, 677, 719, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" Guid="bd230cfc-9019-4d4d-bfb9-a1fe7e80259d" InformativeScreenshot="87975ffff0a0bdb896ca1501a4b800dd.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/8viTi24-2U6ZweVMSB79xA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
@@ -443,7 +450,7 @@
                   </OutArgument>
                 </uix:NGetText.TextString>
               </uix:NGetText>
-              <uix:NGetText DisplayName="Get Text 'Account Number'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,142.4" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
+              <uix:NGetText DisplayName="Get Text 'Account Number'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="539,143" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="a87deb71-3afb-4158-8679-d112431072ec" ContentHash="ggJOwsMoh0yRXrMG0R7C5Q" CvElementArea="355, 771, 721, 44" CvType="InputBox" DesignTimeRectangle="356, 773, 719, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" Guid="fe0e61b2-ea35-4d89-9895-8994f299bc29" InformativeScreenshot="6cf6ff10806b212a3d5a40365c8883fb.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/-CxU6Lr2-keV0yP53Iz9BQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
@@ -475,7 +482,7 @@
                   </OutArgument>
                 </uix:NGetText.TextString>
               </uix:NGetText>
-              <uix:NGetText DisplayName="Get Text Phone Number" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,142.4" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
+              <uix:NGetText DisplayName="Get Text Phone Number" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="539,143" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="a87deb71-3afb-4158-8679-d112431072ec" ContentHash="jIK8ErdH602ViD7HxnTVFA" CvElementArea="356, 867, 719, 44" CvType="InputBox" DesignTimeRectangle="356, 869, 719, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='motherPhoneNumber' tag='INPUT' type='text' class='form-control ' aaname='Phone Number:   Use 11 digit format' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="0a3fcfaf-8e08-4924-a3d8-85449d49c4bb" InformativeScreenshot="526a7ac26201567b41ef0ea1e8ddb90e.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/zaWsg00jsU6ZnCWihqSycA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
@@ -491,39 +498,91 @@
                   </OutArgument>
                 </uix:NGetText.TextString>
               </uix:NGetText>
-              <uix:NGetText DisplayName="Get Text Cell Number" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,142.4" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
-                <uix:NGetText.Target>
-                  <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="a87deb71-3afb-4158-8679-d112431072ec" ContentHash="kHkyfF3hu0q6zHBjN_0lMw" CvElementArea="355, 963, 721, 44" CvType="InputBox" DesignTimeRectangle="356, 965, 719, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='motherCellNumber' tag='INPUT' type='text' class='form-control ' aaname='Cell Number:   Use 11 digit format' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="97ded7e9-8385-4961-9045-fd5189e0d7ed" InformativeScreenshot="17a5b5ae9dce3258edfadbaa5b0c6c72.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/gwr9kuXw4ki5jubyWDGSYA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
-                    <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                        <uix:Target CVScreenId="a87deb71-3afb-4158-8679-d112431072ec" CvElementArea="442, 939, 17, 17" CvTextArea="354, 940, 225, 12" CvTextArgument="Cell Number: Use 11 digit format" CvType="CheckBox" DesignTimeRectangle="356, 939, 225, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='motherCellNumber_label' tag='LABEL' type='' class='' aaname='Cell Number:   Use 11 digit format' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Cell Number:   Use 11 digit format' /&gt;" Guid="0c5a8c86-87b4-4970-b143-22b038a532d9" SearchSteps="FuzzySelector, CV" />
-                      </scg:List>
-                    </uix:TargetAnchorable.Anchors>
-                  </uix:TargetAnchorable>
-                </uix:NGetText.Target>
-                <uix:NGetText.TextString>
-                  <OutArgument x:TypeArguments="x:String">
-                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_16">cellNumber</CSharpReference>
-                  </OutArgument>
-                </uix:NGetText.TextString>
-              </uix:NGetText>
-              <uix:NGetText DisplayName="Get Text 'Email Address'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,142.4" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
-                <uix:NGetText.Target>
-                  <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="9e44c592-305c-4988-ac68-21d35a8a87ad" ContentHash="ENRVlkGxKUOLsIEmcaDwWA" CvElementArea="354, 937, 722, 44" CvType="InputBox" DesignTimeRectangle="356, 939, 719, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='motherEmail' tag='INPUT' type='text' class='form-control email_address' aaname='Email Address:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="bb208a95-0fc8-433b-892a-4c61304131f1" InformativeScreenshot="ba75dd5e94aab9660ea3f67acff2eaa5.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/8y5Sy0jAcUme3zeyzhHWng" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
-                    <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                        <uix:Target CVScreenId="9e44c592-305c-4988-ac68-21d35a8a87ad" CvTextArea="354, 914, 92, 13" CvTextArgument="Email Address:" CvType="Text" DesignTimeRectangle="356, 913, 91, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='motherEmail_label' tag='LABEL' type='' class='' aaname='Email Address:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Email Address:' /&gt;" Guid="fd79a6c5-00e8-4a9d-86fc-8c579103c140" SearchSteps="FuzzySelector, CV" />
-                      </scg:List>
-                    </uix:TargetAnchorable.Anchors>
-                  </uix:TargetAnchorable>
-                </uix:NGetText.Target>
-                <uix:NGetText.TextString>
-                  <OutArgument x:TypeArguments="x:String">
-                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_17">emailAddress</CSharpReference>
-                  </OutArgument>
-                </uix:NGetText.TextString>
-              </uix:NGetText>
-              <uix:NGetText DisplayName="Get Text 'Date of Birth'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,142.4" sap2010:WorkflowViewState.IdRef="NGetText_8" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
+              <If sap:VirtualizedContainerService.HintSize="539,358" sap2010:WorkflowViewState.IdRef="If_1">
+                <If.Condition>
+                  <InArgument x:TypeArguments="x:Boolean">
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_83">(bool)GlobalVariables.appSettings["mother/sms_texting"]</CSharpValue>
+                  </InArgument>
+                </If.Condition>
+                <If.Then>
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,194" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NGetText DisplayName="Get Text Cell Number" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,134" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="a87deb71-3afb-4158-8679-d112431072ec" ContentHash="kHkyfF3hu0q6zHBjN_0lMw" CvElementArea="355, 963, 721, 44" CvType="InputBox" DesignTimeRectangle="356, 965, 719, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='motherCellNumber' tag='INPUT' type='text' class='form-control ' aaname='Cell Number:   Use 11 digit format' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="97ded7e9-8385-4961-9045-fd5189e0d7ed" InformativeScreenshot="17a5b5ae9dce3258edfadbaa5b0c6c72.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/gwr9kuXw4ki5jubyWDGSYA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="a87deb71-3afb-4158-8679-d112431072ec" CvElementArea="442, 939, 17, 17" CvTextArea="354, 940, 225, 12" CvTextArgument="Cell Number: Use 11 digit format" CvType="CheckBox" DesignTimeRectangle="356, 939, 225, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='motherCellNumber_label' tag='LABEL' type='' class='' aaname='Cell Number:   Use 11 digit format' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Cell Number:   Use 11 digit format' /&gt;" Guid="0c5a8c86-87b4-4970-b143-22b038a532d9" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NGetText.Target>
+                      <uix:NGetText.TextString>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_16">cellNumber</CSharpReference>
+                        </OutArgument>
+                      </uix:NGetText.TextString>
+                    </uix:NGetText>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <If sap:VirtualizedContainerService.HintSize="539,358" sap2010:WorkflowViewState.IdRef="If_2">
+                <If.Condition>
+                  <InArgument x:TypeArguments="x:Boolean">
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_84">(bool)GlobalVariables.appSettings["mother/send_email"]</CSharpValue>
+                  </InArgument>
+                </If.Condition>
+                <If.Then>
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,194" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NGetText DisplayName="Get Text 'Email Address'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,134" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="9e44c592-305c-4988-ac68-21d35a8a87ad" ContentHash="ENRVlkGxKUOLsIEmcaDwWA" CvElementArea="354, 937, 722, 44" CvType="InputBox" DesignTimeRectangle="356, 939, 719, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='motherEmail' tag='INPUT' type='text' class='form-control email_address' aaname='Email Address:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="bb208a95-0fc8-433b-892a-4c61304131f1" InformativeScreenshot="ba75dd5e94aab9660ea3f67acff2eaa5.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/8y5Sy0jAcUme3zeyzhHWng" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="9e44c592-305c-4988-ac68-21d35a8a87ad" CvTextArea="354, 914, 92, 13" CvTextArgument="Email Address:" CvType="Text" DesignTimeRectangle="356, 913, 91, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='motherEmail_label' tag='LABEL' type='' class='' aaname='Email Address:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Email Address:' /&gt;" Guid="fd79a6c5-00e8-4a9d-86fc-8c579103c140" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NGetText.Target>
+                      <uix:NGetText.TextString>
+                        <OutArgument x:TypeArguments="x:String">
+                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_17">emailAddress</CSharpReference>
+                        </OutArgument>
+                      </uix:NGetText.TextString>
+                    </uix:NGetText>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <uix:NGetText DisplayName="Get Text 'Date of Birth'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="539,143" sap2010:WorkflowViewState.IdRef="NGetText_8" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="9f362820-cc35-4036-8d19-01eaaa3e1b12" ContentHash="u861Q8-r70mc9D_i5tPtgg" CvType="AnyWordGroup" DesignTimeRectangle="1095, 491, 719, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='app' tag='INPUT' type='' class='dp__input dp__input_icon_pad' aaname='' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="38e308f6-5b66-4c63-a4ab-d55873dc7af8" InformativeScreenshot="2e757b1a478b5009949735745071a2bd.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/9P9HbOxXU0SkK4STlxK79Q" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
@@ -539,7 +598,7 @@
                   </OutArgument>
                 </uix:NGetText.TextString>
               </uix:NGetText>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'First Name'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'First Name'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="539,251" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="a87deb71-3afb-4158-8679-d112431072ec" ContentHash="PseXuN8790SqqVvT87811A" CvElementArea="354, 343, 722, 45" CvType="InputBox" DesignTimeRectangle="356, 345, 719, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='motherFirstName' tag='INPUT' type='text' class='form-control ' aaname='First Name:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="3f6addce-e5a5-4884-b004-262543e52616" InformativeScreenshot="fd34671f20eb8a84db618fdbcfc837ee.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/kubthBDfAEiC6aObhXgfXA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
@@ -555,7 +614,7 @@
                   </InArgument>
                 </uix:NTypeInto.Text>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Last Name'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Last Name'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="539,251" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="a87deb71-3afb-4158-8679-d112431072ec" ContentHash="5JLaM-wbDUS7b9h3EQR7Lw" CvElementArea="355, 439, 721, 44" CvType="InputBox" DesignTimeRectangle="356, 441, 719, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='motherLastName' tag='INPUT' type='text' class='form-control ' aaname='Last Name:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="ca7ba5b6-d36f-48c5-91e4-2b69c896d3a3" InformativeScreenshot="1488d0943e7b3cb2005986fccda38362.png" IsResponsive="True" Reference="BkxQ1887pEidR6av2KDcrw/rb8wh7-hwUypHabX8QRXMQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
@@ -571,7 +630,7 @@
                   </InArgument>
                 </uix:NTypeInto.Text>
               </uix:NTypeInto>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Save'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Save'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="539,227" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/guardians/edit.php" CVScreenId="6b998bd5-27b1-4ad1-a1cc-1479185490d3" ContentHash="9zPA_rc4eEiL94obLz2rzg" CvElementArea="354, 1005, 65, 37" CvTextArea="370, 1016, 31, 12" CvTextArgument="Save" CvType="Button" DesignTimeRectangle="356, 1007, 62, 34" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='submitmothers' tag='INPUT' /&gt;" Guid="83bdf34b-ad9e-40fc-9ffe-6356b9631a63" InformativeScreenshot="380550b9724abf04d20372a283368925.png" Reference="BkxQ1887pEidR6av2KDcrw/_6vJv3iVsEOMKeRi8DRb0A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
@@ -592,12 +651,12 @@
                   </uix:VerifyExecutionOptions>
                 </uix:NClick.VerifyOptions>
               </uix:NClick>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'BUTTON'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189.6" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'BUTTON'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="539,190" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/guardians" CVScreenId="c173f37b-eed5-4bee-a579-57bc44e70d56" ContentHash="pB-cmEszp0GjAAQPEExTqA" CvElementArea="289, 303, 52, 37" CvType="Button" DesignTimeRectangle="291, 305, 50, 35" ElementType="Button" ElementVisibilityArgument="Visible" FullSelectorArgument="&lt;webctrl parentid='app' tag='BUTTON' /&gt;" Guid="71f9d9aa-63cf-41c3-8ebd-29b7f16064d0" InformativeScreenshot="2c3f003d984d6cf4b57813a53d4aed78.png" Reference="BkxQ1887pEidR6av2KDcrw/oJ46_9U890u3F2JZieNTFw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Complete" />
                 </uix:NClick.Target>
               </uix:NClick>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DelayBefore="0.5" DisplayName="Type Into 'Last Name'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DelayBefore="0.5" DisplayName="Type Into 'Last Name'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="539,251" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/guardians" CVScreenId="c634f27c-3691-420d-8d4f-a432b53455bf" ContentHash="ZKMxK4xj4kqZp2qlc9QpQA" CvElementArea="364, 350, 340, 43" CvType="InputBox" DesignTimeRectangle="366, 353, 337, 39" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" Guid="6d9a7747-f7ae-4dd1-9a35-538c2183b76d" InformativeScreenshot="28eb2901e27788ca9644b3f9a53ef86c.png" Reference="BkxQ1887pEidR6av2KDcrw/QuZ90c262Eq9yOr3RNYOrw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
@@ -613,7 +672,7 @@
                   </InArgument>
                 </uix:NTypeInto.Text>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'First Name'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'First Name'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="539,251" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/guardians" CVScreenId="630192a0-c0f5-4426-951c-72e509a26d55" ContentHash="eZyRq3_KqU2N8A7anhmavA" CvElementArea="521, 342, 141, 42" CvType="InputBox" DesignTimeRectangle="524, 344, 137, 39" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl class='outline-0 rounded-lg w-full p-2 border border-[#AAAAAA] disabled:bg-[#EEEEEE]' tag='INPUT' type='text' aaname='' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="18397f33-2f8c-415c-99a2-86738a34e797" InformativeScreenshot="9898a515e20e4cdb577930ac98b000ae.png" Reference="BkxQ1887pEidR6av2KDcrw/EJ_a52iGjUK-UEzFEfAUFQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
@@ -629,7 +688,7 @@
                   </InArgument>
                 </uix:NTypeInto.Text>
               </uix:NTypeInto>
-              <uix:NGetText DisplayName="Get Text search result" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,142.4" sap2010:WorkflowViewState.IdRef="NGetText_9" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
+              <uix:NGetText DisplayName="Get Text search result" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="539,143" sap2010:WorkflowViewState.IdRef="NGetText_9" ScopeIdentifier="61c01e2d-c4b5-4d9f-a570-e6107974982c" Version="V4">
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable BrowserURL="localhost/guardians" CVScreenId="cd8302b2-21ad-474a-9b45-91e47b23ffa0" ContentHash="QA7482Q2V0Sm7FaH0WkGJA" CvType="AnyWordGroup" DesignTimeRectangle="304, 460, 1456, 35" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='footer-count' parentid='app' tag='DIV' /&gt;" Guid="e3ee6155-ef1c-433c-bd4b-14db649539fe" InformativeScreenshot="75287ddd6984b6abf6519aee67cf66be.png" Reference="BkxQ1887pEidR6av2KDcrw/ycIgQGO4w0yuBfJL8beWQQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
                     <uix:TargetAnchorable.Anchors>
@@ -645,20 +704,19 @@
                   </OutArgument>
                 </uix:NGetText.TextString>
               </uix:NGetText>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Test Result - Invoke Workflow File (Utilities\\Update Test Result.xaml)" sap:VirtualizedContainerService.HintSize="416,168.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Utilities\\Update Test Result.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Test Result - Invoke Workflow File (Utilities\\Update Test Result.xaml)" sap:VirtualizedContainerService.HintSize="539,227" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Utilities\\Update Test Result.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="x:Boolean" x:Key="inSaveResult">True</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="inScenarioName">Edit Guardian</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="inFailureReason">
-                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_80" xml:space="preserve">$"•Edit Guardian. Update First and Last Name. \n" +
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_85" xml:space="preserve">$"•Edit Guardian. Update First and Last Name. \n" +
 "      • Expected output: \n" +
 $"      First Name = {guardian["FirstName"].ToString()}\n " +
 $"      Last Name = {guardian["LastName"].ToString()}\n" +
 $"      {mrnUI} = {mrnUI.Replace(" ", "") +guardian["MRN"].ToString()}\n" +
 $"      {accountNumberUI} = {accountNumberUI.Replace(" ", "") +guardian["AccountNumber"].ToString()}\n" +
 $"      Phone Number = {guardian["PhoneNumber"].ToString()}\n" +
-$"      Cell Number = {guardian["CellphoneNumber"].ToString()}\n" +
-$"      Email Address = {guardian["EmailAddress"].ToString()}\n" + 
+((bool)GlobalVariables.appSettings["mother/sms_texting"] ? $"      Cell Number = {guardian["CellphoneNumber"].ToString()}\n" : "") +
+((bool)GlobalVariables.appSettings["mother/send_email"] ? $"      Email Address = {guardian["EmailAddress"].ToString()}\n" : "") +
 $"      Date of Birth = {((DateTime)guardian["DateOfBirth"]).ToString("MM/dd/yyyy")}\n" + 
 $"      First Name after update = {guardian["FirstName"].ToString()+ " UPDATED"}\n" +
 $"      Last Name after update = {guardian["LastName"].ToString()+ "UPDATED"}\n" +
@@ -672,13 +730,13 @@ $"      Date of Birth = {dateOfBirth}\n" +
 $"      Search Result = {searchResultAfterUpdate}"</CSharpValue>
                   </InArgument>
                   <InArgument x:TypeArguments="x:Boolean" x:Key="inTestResult">
-                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_81" xml:space="preserve">guardian["FirstName"].ToString() == firstName &amp;&amp;
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_86" xml:space="preserve">guardian["FirstName"].ToString() == firstName &amp;&amp;
 guardian["LastName"].ToString() == lastName &amp;&amp;
 mrnUI.Replace(" ", "") +guardian["MRN"].ToString() == mrn &amp;&amp;
 accountNumberUI.Replace(" ", "") +guardian["AccountNumber"] == accountNumber &amp;&amp;
 guardian["PhoneNumber"].ToString() == new string(phoneNumber.Where(Char.IsDigit).ToArray()) &amp;&amp;
-guardian["CellphoneNumber"].ToString() == new string(cellNumber.Where(Char.IsDigit).ToArray()) &amp;&amp;
-guardian["EmailAddress"].ToString() == emailAddress &amp;&amp;
+((bool)GlobalVariables.appSettings["mother/sms_texting"] ? guardian["CellphoneNumber"].ToString() == new string(cellNumber.Where(Char.IsDigit).ToArray()) : true) &amp;&amp;
+((bool)GlobalVariables.appSettings["mother/send_email"] ? guardian["EmailAddress"].ToString() == emailAddress : true) &amp;&amp;
 ((DateTime)guardian["DateOfBirth"]).ToString("MM/dd/yyyy") == dateOfBirth &amp;&amp;
 searchResultAfterUpdate == "Total Found: 1"</CSharpValue>
                   </InArgument>
