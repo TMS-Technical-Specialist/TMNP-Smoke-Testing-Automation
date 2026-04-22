@@ -41,6 +41,10 @@
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>System.Linq.Expressions</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -97,58 +101,60 @@
       <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC___View_Guardian_Information" sap:VirtualizedContainerService.HintSize="846.8000000000001,3452.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC___View_Guardian_Information" sap:VirtualizedContainerService.HintSize="846.8000000000001,3238.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="552,121.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="713.6,121.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Sequence>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="552,668" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="713.6,668" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Manage Patient - Search Patient - Invoke Workflow File (Components\\Manage Patient\\Manage Patient - Search Patient.xaml)" sap:VirtualizedContainerService.HintSize="416,232.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Components\\Manage Patient\\Manage Patient - Search Patient.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Manage Patient - Search Patient - Invoke Workflow File (Components\\Manage Patient\\Manage Patient - Search Patient.xaml)" sap:VirtualizedContainerService.HintSize="680,232.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Components\\Manage Patient\\Manage Patient - Search Patient.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="sd:DataRow" x:Key="inPatient">
             <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">GlobalVariables.testPatient</CSharpValue>
           </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click Patient List Action Button - Invoke Workflow File (Components\\Buttons\\Click Patient List Action Button.xaml)" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click Patient List Action Button.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click Patient List Action Button - Invoke Workflow File (Components\\Buttons\\Click Patient List Action Button.xaml)" sap:VirtualizedContainerService.HintSize="680,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click Patient List Action Button.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <scg:Dictionary x:TypeArguments="x:String, Argument" />
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click Edit Action Button - Invoke Workflow File (Components\\Buttons\\Click Edit Action Button.xaml)" sap:VirtualizedContainerService.HintSize="416,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click Edit Action Button.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click Edit Action Button - Invoke Workflow File (Components\\Buttons\\Click Edit Action Button.xaml)" sap:VirtualizedContainerService.HintSize="680,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click Edit Action Button.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <scg:Dictionary x:TypeArguments="x:String, Argument" />
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="552,2640" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="713.6,2425.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="518.4,2556.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsDisplayNameAuto="True" ScopeGuid="080b4beb-c732-427b-9c24-f3b2738f7f22" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="518.4,2342.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsDisplayNameAuto="True" ScopeGuid="080b4beb-c732-427b-9c24-f3b2738f7f22" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484.8,2276.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484.8,2102.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="editURLValue" />
                 <Variable x:TypeArguments="x:String" Name="viewGuardianURL" />
@@ -199,20 +205,20 @@
                   </uix:TargetAnchorable>
                 </uix:NClick.Target>
               </uix:NClick>
-              <If sap:VirtualizedContainerService.HintSize="451.2,1304.8" sap2010:WorkflowViewState.IdRef="If_1">
+              <If sap:VirtualizedContainerService.HintSize="451.2,606.4" sap2010:WorkflowViewState.IdRef="If_1">
                 <If.Condition>
                   <InArgument x:TypeArguments="x:Boolean">
                     <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">GlobalVariablesNamespace.GlobalVariables.permissionResponseData["viewmothers"].Value&lt;bool&gt;("value")</CSharpValue>
                   </InArgument>
                 </If.Condition>
                 <If.Then>
-                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,772" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,240.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'View Guardian Informati…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189.6" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="080b4beb-c732-427b-9c24-f3b2738f7f22" Version="V5">
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'View Guardian Informati…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,180.8" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="080b4beb-c732-427b-9c24-f3b2738f7f22" Version="V5">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="localhost/babies/view.php" CVScreenId="1ae0ab15-c012-452d-b606-f59b8df5e45a" CvElementArea="1121, 730, 258, 45" CvTextArea="1141, 744, 215, 16" CvTextArgument="View Guardian Information" CvType="Button" DesignTimeRectangle="1123, 732, 254, 42" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tag='A' parentid='legacyPage' rowName='Guardian&amp;apos;s Name:' tableCol='2' /&gt;" Guid="564db831-87b6-4aa1-b6ca-0df9fe442843" InformativeScreenshot="4ab2f2e1fae63f691ad8c7f76c653d50.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
                           <uix:TargetAnchorable.Anchors>
@@ -223,67 +229,64 @@
                         </uix:TargetAnchorable>
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NGetUrl DisplayName="Get URL" sap:VirtualizedContainerService.HintSize="416,122.4" sap2010:WorkflowViewState.IdRef="NGetUrl_2" ScopeIdentifier="080b4beb-c732-427b-9c24-f3b2738f7f22" Version="V5">
-                      <uix:NGetUrl.CurrentUrl>
-                        <OutArgument x:TypeArguments="x:String">
-                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">viewGuardianURL</CSharpReference>
-                        </OutArgument>
-                      </uix:NGetUrl.CurrentUrl>
-                    </uix:NGetUrl>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn">
-                      <ui:LogMessage.Message>
-                        <InArgument x:TypeArguments="x:Object">
-                          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">editURLValue + " - " + viewGuardianURL</CSharpValue>
-                        </InArgument>
-                      </ui:LogMessage.Message>
-                    </ui:LogMessage>
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Test Result - Invoke Workflow File (Utilities\\Update Test Result.xaml)" sap:VirtualizedContainerService.HintSize="416,224" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Utilities\\Update Test Result.xaml">
-                      <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="inScenarioName">View Mother Info</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="inFailureReason">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4" xml:space="preserve">$"• View Mother Info\n" +
-"      • Expected output: \n" +
-$"      Edit Guardian URL = {GlobalVariables.websiteUrl + "/guardians/edit.php?id=1"}\n " +
-$"      View Guardian Information = {GlobalVariables.websiteUrl + "/guardians/view.php?id=1"}\n" +
-$"     • Actual Output: \n" + 
-$"      Edit Guardian URL = {editURLValue}\n " +
-$"      View Guardian Information = {viewGuardianURL}"</CSharpValue>
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:Boolean" x:Key="inTestResult">
-                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6" xml:space="preserve">(GlobalVariables.websiteUrl + "/guardians/edit.php?id=1" == editURLValue) &amp;&amp;
-(GlobalVariables.websiteUrl + "/guardians/view.php?id=1") == viewGuardianURL</CSharpValue>
-                        </InArgument>
-                      </ui:InvokeWorkflowFile.Arguments>
-                    </ui:InvokeWorkflowFile>
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,403.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,227.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Test Result - Invoke Workflow File (Components\\Update Test Result.xaml)" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Utilities\\Update Test Result.xaml">
-                      <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="inScenarioName">View Mother Info</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="inFailureReason">Manage Guardians - viewmothers - View Guardian Button is Hidden</InArgument>
-                        <InArgument x:TypeArguments="x:Boolean" x:Key="inTestResult">
-                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">Convert.ToBoolean(GlobalVariablesNamespace.GlobalVariables.permissionResponseData["viewmothers"]["value"])</CSharpValue>
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:Boolean" x:Key="inSaveResult">True</InArgument>
-                      </ui:InvokeWorkflowFile.Arguments>
-                    </ui:InvokeWorkflowFile>
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,167.2" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error">
                       <ui:LogMessage.Message>
                         <InArgument x:TypeArguments="x:Object">
-                          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">"Manage Guardians - viewmothers - View Guardian Button is Hidden"</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">"View Guardian Information - viewmothers - View Guardian Button is Hidden"</CSharpValue>
                         </InArgument>
                       </ui:LogMessage.Message>
                     </ui:LogMessage>
                   </Sequence>
                 </If.Else>
               </If>
+              <uix:NGetUrl DisplayName="Get URL" sap:VirtualizedContainerService.HintSize="451.2,122.4" sap2010:WorkflowViewState.IdRef="NGetUrl_2" ScopeIdentifier="080b4beb-c732-427b-9c24-f3b2738f7f22" Version="V5">
+                <uix:NGetUrl.CurrentUrl>
+                  <OutArgument x:TypeArguments="x:String">
+                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">viewGuardianURL</CSharpReference>
+                  </OutArgument>
+                </uix:NGetUrl.CurrentUrl>
+              </uix:NGetUrl>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="451.2,176" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn">
+                <ui:LogMessage.Message>
+                  <InArgument x:TypeArguments="x:Object">
+                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">editURLValue + " - " + viewGuardianURL</CSharpValue>
+                  </InArgument>
+                </ui:LogMessage.Message>
+              </ui:LogMessage>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Test Result - Invoke Workflow File (Utilities\\Update Test Result.xaml)" sap:VirtualizedContainerService.HintSize="451.2,225.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Utilities\\Update Test Result.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="inScenarioName">View Mother Info</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="inFailureReason">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18" xml:space="preserve">$"• View Mother Info\n" +
+"      • Expected output: \n" +
+$"      Edit Guardian URL = {GlobalVariables.websiteUrl}/guardians/edit.php?id=1\n" +
+$"      View Guardian Information = {GlobalVariables.websiteUrl}/guardians/view.php?id=1\n" +
+$"     • Actual Output: \n" + 
+$"      Edit Guardian URL = {editURLValue}\n" +
+(
+    Convert.ToBoolean(
+        GlobalVariablesNamespace.GlobalVariables.permissionResponseData["viewmothers"]["value"]
+    )
+        ? $"      View Guardian Information = {viewGuardianURL}"
+        : $"      View Guardian Information = View Guardian Information - viewmothers - View Guardian Button is Hidden\n"
+)</CSharpValue>
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:Boolean" x:Key="inTestResult">
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17" xml:space="preserve">(GlobalVariables.websiteUrl + "/guardians/edit.php?id=1" == editURLValue) &amp;&amp;
+(((GlobalVariables.websiteUrl + "/guardians/view.php?id=1") == viewGuardianURL) &amp;&amp; Convert.ToBoolean(GlobalVariablesNamespace.GlobalVariables.permissionResponseData["viewmothers"]["value"]
+    ))</CSharpValue>
+                  </InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
             </Sequence>
           </ActivityAction>
         </uix:NApplicationCard.Body>
