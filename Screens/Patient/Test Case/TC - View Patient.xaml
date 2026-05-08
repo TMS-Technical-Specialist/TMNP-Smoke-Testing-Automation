@@ -120,9 +120,11 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.CV</AssemblyReference>
       <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC___View_Patient" sap:VirtualizedContainerService.HintSize="846.8000000000001,5280.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC___View_Patient" sap:VirtualizedContainerService.HintSize="843.6,5699.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="mrnUI" />
       <Variable x:TypeArguments="x:String" Name="accountNumberUI" />
@@ -188,19 +190,19 @@
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="587.2,4502.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="587.2,4920.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="553.6,4419.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsDisplayNameAuto="True" ScopeGuid="76fcdaf6-c0e2-439e-8090-e8ca14da8b6c" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="553.6,4837.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsDisplayNameAuto="True" ScopeGuid="76fcdaf6-c0e2-439e-8090-e8ca14da8b6c" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="520,4179.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="520,4597.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="patientsNameValue" />
                 <Variable x:TypeArguments="x:String" Name="mrnValue" />
@@ -232,14 +234,14 @@
                   </uix:TargetAnchorable>
                 </uix:NClick.Target>
               </uix:NClick>
-              <If sap:VirtualizedContainerService.HintSize="486.4,3928" sap2010:WorkflowViewState.IdRef="If_2">
+              <If sap:VirtualizedContainerService.HintSize="486.4,4346.4" sap2010:WorkflowViewState.IdRef="If_2">
                 <If.Condition>
                   <InArgument x:TypeArguments="x:Boolean">
                     <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">GlobalVariablesNamespace.GlobalVariables.permissionResponseData["viewbabies"].Value&lt;bool&gt;("value")</CSharpValue>
                   </InArgument>
                 </If.Condition>
                 <If.Then>
-                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="484.8,3338.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="484.8,3755.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -386,28 +388,60 @@
                       </uix:NGetUrl.CurrentUrl>
                     </uix:NGetUrl>
                     <uix:NNavigateBrowser DisplayName="Navigate Browser - Go Back" sap:VirtualizedContainerService.HintSize="451.2,124" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_1" ScopeIdentifier="76fcdaf6-c0e2-439e-8090-e8ca14da8b6c" Version="V5" />
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Print Patient Barcode'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="451.2,189.6" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="76fcdaf6-c0e2-439e-8090-e8ca14da8b6c" Version="V5">
-                      <uix:NClick.Target>
-                        <uix:TargetAnchorable BrowserURL="localhost/babies/view.php" CVScreenId="ab2f8620-1e36-40f4-ad8f-b1ce4032f655" CvElementArea="1686, 355, 189, 38" CvTextArea="1712, 367, 136, 12" CvTextArgument="Print Patient Barcode" CvType="Button" DesignTimeRectangle="1688, 358, 186, 34" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Print Patient Barcode' parentid='legacyPage' tag='A' innertext='Print Patient Barcode' parentclass='d-flex flex-column' visibleinnertext='Print Patient Barcode' /&gt;" Guid="a4e03060-e0c1-42ca-9abd-d005f609f436" InformativeScreenshot="25518711a085c89fa1920611b3e32ecc.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
-                      </uix:NClick.Target>
-                    </uix:NClick>
-                    <uix:NGetText DisplayName="Get Text 'Scan the patient's barc…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="451.2,142.4" sap2010:WorkflowViewState.IdRef="NGetText_9" ScopeIdentifier="76fcdaf6-c0e2-439e-8090-e8ca14da8b6c" Version="V5">
-                      <uix:NGetText.Target>
-                        <uix:TargetAnchorable BrowserURL="localhost/printbabylabel" CVScreenId="144b0e21-2621-4883-a970-88c06a30f298" CvElementArea="731, 354, 726, 45" CvType="InputBox" DesignTimeRectangle="731, 357, 726, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='form-control scanme' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' parentid='app' /&gt;" Guid="051406b0-8959-4f85-bd3a-02f6def8ee48" InformativeScreenshot="ca6bee9c03bc93fb38bae5dfd335a830.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
-                          <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                              <uix:Target CVScreenId="144b0e21-2621-4883-a970-88c06a30f298" DesignTimeRectangle="731, 338, 726, 19" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='app' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='DIV' type='' parentclass='flex w-full flex-col' /&gt;" Guid="e51da985-a8e8-4e52-ac50-5ec3ef344d41" SearchSteps="FuzzySelector" />
-                            </scg:List>
-                          </uix:TargetAnchorable.Anchors>
-                        </uix:TargetAnchorable>
-                      </uix:NGetText.Target>
-                      <uix:NGetText.TextString>
-                        <OutArgument x:TypeArguments="x:String">
-                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">printPatientBarcodeValue</CSharpReference>
-                        </OutArgument>
-                      </uix:NGetText.TextString>
-                    </uix:NGetText>
-                    <uix:NNavigateBrowser DisplayName="Navigate Browser - Go Back" sap:VirtualizedContainerService.HintSize="451.2,124" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_2" ScopeIdentifier="76fcdaf6-c0e2-439e-8090-e8ca14da8b6c" Version="V5" />
+                    <If sap:VirtualizedContainerService.HintSize="451.2,872.8" sap2010:WorkflowViewState.IdRef="If_3">
+                      <If.Condition>
+                        <InArgument x:TypeArguments="x:Boolean">
+                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_36">GlobalVariablesNamespace.GlobalVariables.permissionResponseData["printbabybarcodes"].Value&lt;bool&gt;("value")</CSharpValue>
+                        </InArgument>
+                      </If.Condition>
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,507.2" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Print Patient Barcode'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189.6" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="76fcdaf6-c0e2-439e-8090-e8ca14da8b6c" Version="V5">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="localhost/babies/view.php" CVScreenId="ab2f8620-1e36-40f4-ad8f-b1ce4032f655" CvElementArea="1686, 355, 189, 38" CvTextArea="1712, 367, 136, 12" CvTextArgument="Print Patient Barcode" CvType="Button" DesignTimeRectangle="1688, 358, 186, 34" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Print Patient Barcode' parentid='legacyPage' tag='A' innertext='Print Patient Barcode' parentclass='d-flex flex-column' visibleinnertext='Print Patient Barcode' /&gt;" Guid="a4e03060-e0c1-42ca-9abd-d005f609f436" InformativeScreenshot="25518711a085c89fa1920611b3e32ecc.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                          <uix:NGetText DisplayName="Get Text 'Scan the patient's barc…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,142.4" sap2010:WorkflowViewState.IdRef="NGetText_9" ScopeIdentifier="76fcdaf6-c0e2-439e-8090-e8ca14da8b6c" Version="V5">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable BrowserURL="localhost/printbabylabel" CVScreenId="144b0e21-2621-4883-a970-88c06a30f298" CvElementArea="731, 354, 726, 45" CvType="InputBox" DesignTimeRectangle="731, 357, 726, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='form-control scanme' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' parentid='app' /&gt;" Guid="051406b0-8959-4f85-bd3a-02f6def8ee48" InformativeScreenshot="ca6bee9c03bc93fb38bae5dfd335a830.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="144b0e21-2621-4883-a970-88c06a30f298" DesignTimeRectangle="731, 338, 726, 19" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='app' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='DIV' type='' parentclass='flex w-full flex-col' /&gt;" Guid="e51da985-a8e8-4e52-ac50-5ec3ef344d41" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                            <uix:NGetText.TextString>
+                              <OutArgument x:TypeArguments="x:String">
+                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">printPatientBarcodeValue</CSharpReference>
+                              </OutArgument>
+                            </uix:NGetText.TextString>
+                          </uix:NGetText>
+                          <uix:NNavigateBrowser DisplayName="Navigate Browser - Go Back" sap:VirtualizedContainerService.HintSize="416,115.2" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_2" ScopeIdentifier="76fcdaf6-c0e2-439e-8090-e8ca14da8b6c" Version="V5" />
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,227.2" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,167.2" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error">
+                            <ui:LogMessage.Message>
+                              <InArgument x:TypeArguments="x:Object">
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">"Manage Patients - printbabybarcodes - Print Patient Barcode Button is Hidden"</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Message>
+                          </ui:LogMessage>
+                        </Sequence>
+                      </If.Else>
+                    </If>
                     <If sap:VirtualizedContainerService.HintSize="451.2,606.4" sap2010:WorkflowViewState.IdRef="If_1">
                       <If.Condition>
                         <InArgument x:TypeArguments="x:Boolean">
@@ -492,7 +526,7 @@
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="x:String" x:Key="inScenarioName">View Patient</InArgument>
                         <InArgument x:TypeArguments="x:String" x:Key="inFailureReason">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30" xml:space="preserve">$"• View Patient. \n" +
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35" xml:space="preserve">$"• View Patient. \n" +
 "      • Expected output: \n" +
 $"      Patients Name = {GlobalVariables.testPatient["LastName"]}, {GlobalVariables.testPatient["FirstName"]}\n" +
 $"      {mrnUI} = {GlobalVariables.testPatient["MRNNumber"]}\n" +
@@ -515,12 +549,14 @@ $"      Bed = {bedNumberValue}\n" +
 $"      Guardian's Name = {guardiansName}\n" +
 $"      Sibling = {siblingsValue}\n" +
 $"      Edit Information URL = {editInformationURL}\n" +
-$"      Print Patient Barcode = {printPatientBarcodeValue}\n" +
 (
-    Convert.ToBoolean(
-        GlobalVariablesNamespace.GlobalVariables.permissionResponseData["viewmothers"]["value"]
-    )
-        ? $"      View Guardian Information URL = {viewGuardianInformationURL}"
+    Convert.ToBoolean(GlobalVariablesNamespace.GlobalVariables.permissionResponseData["printbabybarcodes"]["value"])
+		? $"      Print Patient Barcode = {printPatientBarcodeValue}\n"
+		 : $"      Print Patient Barcode = Manage Patients - printbabybarcodes - Print Patient Barcode Button is Hidden\n"
+) +
+(
+    Convert.ToBoolean(GlobalVariablesNamespace.GlobalVariables.permissionResponseData["viewmothers"]["value"])
+        ? $"      View Guardian Information URL = {viewGuardianInformationURL}\n"
         : $"      View Guardian Information URL = View Patient Information - viewmothers - View Guardian Button is Hidden\n"
 )</CSharpValue>
                         </InArgument>
