@@ -115,7 +115,7 @@
       <AssemblyReference>System.Collections.Specialized</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC___Discharge_Patient" sap:VirtualizedContainerService.HintSize="843.6,3847.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC___Discharge_Patient" sap:VirtualizedContainerService.HintSize="1004,1608" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="failureReason" />
       <Variable x:TypeArguments="x:Boolean" Name="testCaseResult" />
@@ -125,7 +125,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="615.2,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="588,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -154,6 +154,7 @@
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
     <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="615.2,916" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="588,260" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -215,6 +216,13 @@
       </If>
     </Sequence>
     <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="615.2,2415.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click sidebar discharge patient submenu - Invoke Workflow File (Components\\Buttons\\Discharge Menu\\Click sidebar discharge patient submenu.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="Components\\Buttons\\Discharge Menu\\Click sidebar discharge patient submenu.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <scg:Dictionary x:TypeArguments="x:String, Argument" />
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+    </Sequence>
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="588,837" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -222,12 +230,14 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="580,2323.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsDisplayNameAuto="True" ScopeGuid="deaec656-f319-4e87-a416-14a4ef616cb0" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="554,745" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsDisplayNameAuto="True" ScopeGuid="deaec656-f319-4e87-a416-14a4ef616cb0" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
             <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="546.4,2083.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="520,504" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <Sequence.Variables>
                 <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="patientElements" />
               </Sequence.Variables>
@@ -237,6 +247,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <Sequence DisplayName="No Patients Selected" sap:VirtualizedContainerService.HintSize="512.8,56.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence DisplayName="No Patients Selected" sap:VirtualizedContainerService.HintSize="486,57" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="patient" />
                   <Variable x:TypeArguments="x:String" Name="hardStopMessage" />
@@ -551,6 +562,257 @@ hardStopMessage.Contains("Please select a Patient to discharge.")</CSharpValue>
                         <ui:AssignOperation.Value>
                           <InArgument x:TypeArguments="x:String">
                             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_75" xml:space="preserve">failureReason + "\n" +
+              <If DisplayName="If" sap:VirtualizedContainerService.HintSize="486,385" sap2010:WorkflowViewState.IdRef="If_1">
+                <If.Condition>
+                  <InArgument x:TypeArguments="x:Boolean">
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_82">!GlobalVariables.permissionResponseData["addorders"].Value&lt;bool&gt;("value") || !GlobalVariables.permissionResponseData["editorders"].Value&lt;bool&gt;("value") || !GlobalVariables.permissionResponseData["manageorders"].Value&lt;bool&gt;("value")</CSharpValue>
+                  </InArgument>
+                </If.Condition>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="484,90" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="484,165" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Sequence DisplayName="Discharge Patient that has sibling" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="dischargeConfirmationText" />
+                        <Variable x:TypeArguments="njl:JObject" Name="deactivatedPatient" />
+                        <Variable x:TypeArguments="ui:UiElement" Name="outputSuccessElement" />
+                        <Variable x:TypeArguments="x:String" Name="successMessage" />
+                        <Variable x:TypeArguments="x:Boolean" Name="dischargeAnotherPatientButton" />
+                        <Variable x:TypeArguments="x:Boolean" Name="disposePatientInventoryButton" />
+                        <Variable x:TypeArguments="njl:JObject" Name="patientToDischarge" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="API Call - Invoke Workflow File (Utilities\\API Call.xaml)" sap:VirtualizedContainerService.HintSize="478,250" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="Utilities\\API Call.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="endpoint">get-baby/2</InArgument>
+                          <OutArgument x:TypeArguments="njl:JObject" x:Key="responseData">
+                            <CSharpReference x:TypeArguments="njl:JObject" sap2010:WorkflowViewState.IdRef="CSharpReference`1_31">patientToDischarge</CSharpReference>
+                          </OutArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                      <Sequence DisplayName="Create Test Order" sap:VirtualizedContainerService.HintSize="478,57" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create Order Template - Invoke Workflow File (Components\\Manage Patient Feeding Order\\Create Order Template.xaml)" sap:VirtualizedContainerService.HintSize="416,234" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_25" UnSafe="False" WorkflowFileName="Components\\Manage Patient Feeding Order\\Create Order Template.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InArgument x:TypeArguments="x:String" x:Key="inPatientBarcode">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_67">patientToDischarge["babyBarcode"].ToString()</CSharpValue>
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="inMilkBase">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_64">GlobalVariables.appSettings["EBM_display_name_short"].ToString() + " Only"</CSharpValue>
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="inOrderBase">Breastmilk</InArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                        </ui:InvokeWorkflowFile>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Save'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,181" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="deaec656-f319-4e87-a416-14a4ef616cb0" Version="V4">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="717d950f-b465-49e0-9e8d-940ac3b1230d" ContentHash="ns-EX7RNn0Wq-a98cU4xIA" CvElementArea="275, 1015, 62, 35" CvTextArea="291, 1026, 28, 12" CvTextArgument="Save" CvType="Button" DesignTimeRectangle="277, 1016, 59, 32" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='submitorders' tag='INPUT' /&gt;" Guid="d7e5d4fd-c6ee-4de6-95d4-8e217a48a50d" InformativeScreenshot="cb726dbdfb194bc90b9ac0bfa020d0b2.png" Reference="BkxQ1887pEidR6av2KDcrw/w6DqP8YmaEufJ-eUz9hWog" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                                  <uix:Target CVScreenId="717d950f-b465-49e0-9e8d-940ac3b1230d" CvElementArea="338, 1015, 73, 35" CvTextArea="354, 1026, 40, 11" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="340, 1016, 70, 32" ElementType="Button" FuzzySelectorArgument="&lt;webctrl parentid='ordersCard' tag='BUTTON' type='' class='btn btn-outline-primary' aaname='Cancel' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Cancel' /&gt;" Guid="ce3836c8-0d60-43ab-b8b3-ed2efb3353a9" SearchSteps="FuzzySelector, CV" />
+                                  <uix:Target CVScreenId="717d950f-b465-49e0-9e8d-940ac3b1230d" CvTextArea="275, 830, 73, 11" CvTextArgument="Label Notes:" CvType="Text" DesignTimeRectangle="277, 828, 73, 17" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='orderLabelNotes_label' tag='LABEL' type='' class='' aaname='Label Notes:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Label Notes:' /&gt;" Guid="64278308-3680-4e44-a6a0-029cb34a4a47" SearchSteps="FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click sidebar discharge patient submenu - Invoke Workflow File (Components\\Buttons\\Discharge Menu\\Click sidebar discharge patient submenu.xaml)" sap:VirtualizedContainerService.HintSize="478,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_27" UnSafe="False" WorkflowFileName="Components\\Buttons\\Discharge Menu\\Click sidebar discharge patient submenu.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                      <uix:NSelectItem DisplayName="Select Patient" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,190" sap2010:WorkflowViewState.IdRef="NSelectItem_3" ScopeIdentifier="deaec656-f319-4e87-a416-14a4ef616cb0" Version="V5">
+                        <uix:NSelectItem.Item>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_54">$"{patientToDischarge["babyBarcode"]}: {patientToDischarge["babyLastName"]}, {patientToDischarge["babyFirstName"]}"</CSharpValue>
+                          </InArgument>
+                        </uix:NSelectItem.Item>
+                        <uix:NSelectItem.Target>
+                          <uix:TargetAnchorable BrowserURL="localhost/babies/discharge" CVScreenId="628127a4-16c9-431c-b4f3-3b2753f06796" CvElementArea="350, 416, 1461, 44" CvType="InputBox" DesignTimeRectangle="356, 418, 1458, 42" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aria-role='combobox' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' tag='SPAN' type='' class='select2-selection select2-selection--single' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' parentclass='selection' parentid='wizardpage_div' parentname='theform' /&gt;" Guid="2c6a27df-f37e-4566-8f5a-1dd7343b17ad" InformativeScreenshot="f3a1680542a391a803c6cdf234f37643.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target CVScreenId="628127a4-16c9-431c-b4f3-3b2753f06796" DesignTimeRectangle="356, 397, 1458, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='Please select the Patient you wish to discharge' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' parentclass='card-body' parentid='wizardpage_div' parentname='theform' /&gt;" Guid="de781f4e-0928-4cc2-8137-5e1ea621481f" SearchSteps="FuzzySelector" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NSelectItem.Target>
+                      </uix:NSelectItem>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click Next Button - Invoke Workflow File (Components\\Buttons\\Click Next Button.xaml)" sap:VirtualizedContainerService.HintSize="478,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click Next Button.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                      <uix:NGetText ContinueOnError="True" DisplayName="Get Confirmation Message" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,143" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="deaec656-f319-4e87-a416-14a4ef616cb0" Version="V5">
+                        <uix:NGetText.Target>
+                          <uix:TargetAnchorable BrowserURL="localhost/babies/discharge" CVScreenId="8ec4cbc8-4311-4636-9d86-e3120c314b34" CvType="AnyWordGroup" DesignTimeRectangle="356, 326, 1458, 28" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='P' parentclass='card-body' parentid='wizardpage_div' parentname='theform' /&gt;" Guid="f8640b86-4155-4ac0-87e5-a1a8a094c021" InformativeScreenshot="9ce1c6821e1744258838b89f5befd542.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
+                        </uix:NGetText.Target>
+                        <uix:NGetText.TextString>
+                          <OutArgument x:TypeArguments="x:String">
+                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">dischargeConfirmationText</CSharpReference>
+                          </OutArgument>
+                        </uix:NGetText.TextString>
+                      </uix:NGetText>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click Finish - Invoke Workflow File (Components\\Buttons\\Click Finish.xaml)" sap:VirtualizedContainerService.HintSize="478,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click Finish.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                      <uix:NCheckState DisplayName="Check Success Message" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="478,57" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="deaec656-f319-4e87-a416-14a4ef616cb0" Version="V5">
+                        <uix:NCheckState.IfExists>
+                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,194" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NGetText DisplayName="Get Text" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,134" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="deaec656-f319-4e87-a416-14a4ef616cb0" Version="V5">
+                              <uix:NGetText.InUiElement>
+                                <InArgument x:TypeArguments="ui:UiElement">
+                                  <CSharpValue x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">outputSuccessElement</CSharpValue>
+                                </InArgument>
+                              </uix:NGetText.InUiElement>
+                              <uix:NGetText.TextString>
+                                <OutArgument x:TypeArguments="x:String">
+                                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_15">successMessage</CSharpReference>
+                                </OutArgument>
+                              </uix:NGetText.TextString>
+                            </uix:NGetText>
+                          </Sequence>
+                        </uix:NCheckState.IfExists>
+                        <uix:NCheckState.IfNotExists>
+                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_1">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">
+                                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_16">successMessage</CSharpReference>
+                                </OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">"Doesn't appear"</CSharpValue>
+                                </InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </uix:NCheckState.IfNotExists>
+                        <uix:NCheckState.OutUiElement>
+                          <OutArgument x:TypeArguments="ui:UiElement">
+                            <CSharpReference x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpReference`1_17">outputSuccessElement</CSharpReference>
+                          </OutArgument>
+                        </uix:NCheckState.OutUiElement>
+                        <uix:NCheckState.Target>
+                          <uix:TargetAnchorable BrowserURL="localhost/babies/discharge" CVScreenId="96531dd3-2daf-4965-bc02-7f1987d0cdef" DesignTimeRectangle="295, 326, 754, 51" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl isleaf='1' parentid='legacyPage' tag='DIV' class='alert alert-success' parentclass='card-body' /&gt;" Guid="7ff2ee9f-0d8d-4f96-b28a-b03764d3b612" InformativeScreenshot="cf0c5d70855ba9781eadb84255710c32.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+                        </uix:NCheckState.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NCheckState>
+                      <ui:UiElementExists DisplayName="Check discharge another Patient Button" sap:VirtualizedContainerService.HintSize="478,139" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                        <ui:UiElementExists.Exists>
+                          <OutArgument x:TypeArguments="x:Boolean">
+                            <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_18">dischargeAnotherPatientButton</CSharpReference>
+                          </OutArgument>
+                        </ui:UiElementExists.Exists>
+                        <ui:UiElementExists.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="989ac25d-53ca-4c15-8407-9fa2bb7473dd" InformativeScreenshot="859b4a29d9537a146d240de19dbe71ee" TimeoutMS="10">
+                            <ui:Target.Selector>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">$"&lt;webctrl parentid='legacyPage' tag='A' aaname='Discharge another Patient' href='{GlobalVariables.websiteUrl}/babies/discharge/' innertext='Discharge another Patient' parentclass='d-flex justify-content-start mb-4' visibleinnertext='Discharge another Patient' /&gt;"</CSharpValue>
+                              </InArgument>
+                            </ui:Target.Selector>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:UiElementExists.Target>
+                      </ui:UiElementExists>
+                      <ui:UiElementExists DisplayName="Check Dispose Patient Inventory Button" sap:VirtualizedContainerService.HintSize="478,139" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                        <ui:UiElementExists.Exists>
+                          <OutArgument x:TypeArguments="x:Boolean">
+                            <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_19">disposePatientInventoryButton</CSharpReference>
+                          </OutArgument>
+                        </ui:UiElementExists.Exists>
+                        <ui:UiElementExists.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="15a2d529-235d-4db7-a610-e8e141f70c4c" InformativeScreenshot="e7872a811333d3e487902fd7a32d2ca9">
+                            <ui:Target.Selector>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">$"&lt;webctrl aaname='Dispose Patient’s Inventory' parentid='legacyPage' tag='A' href='{GlobalVariables.websiteUrl}/disposebottles/' innertext='Dispose Patient’s Inventory' parentclass='d-flex justify-content-start mb-4' visibleinnertext='Dispose Patient’s Inventory' /&gt;"</CSharpValue>
+                              </InArgument>
+                            </ui:Target.Selector>
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:UiElementExists.Target>
+                      </ui:UiElementExists>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="API Call - Invoke Workflow File (Utilities\\API Call.xaml)" sap:VirtualizedContainerService.HintSize="478,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Utilities\\API Call.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="endpoint">get-baby/2</InArgument>
+                          <OutArgument x:TypeArguments="njl:JObject" x:Key="responseData">
+                            <CSharpReference x:TypeArguments="njl:JObject" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">deactivatedPatient</CSharpReference>
+                          </OutArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Patient Status - Invoke Workflow File (Components\\Manage Patient\\Update Patient Status.xaml)" sap:VirtualizedContainerService.HintSize="478,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Components\\Manage Patient\\Update Patient Status.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="x:Boolean" x:Key="inIsInactive">False</InArgument>
+                          <InArgument x:TypeArguments="njl:JObject" x:Key="inPatientToUpdate">
+                            <CSharpValue x:TypeArguments="njl:JObject" sap2010:WorkflowViewState.IdRef="CSharpValue`1_62">patientToDischarge</CSharpValue>
+                          </InArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,173" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+                        <ui:MultipleAssign.AssignOperations>
+                          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                              <ui:AssignOperation.To>
+                                <OutArgument x:TypeArguments="x:String">
+                                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">failureReason</CSharpReference>
+                                </OutArgument>
+                              </ui:AssignOperation.To>
+                              <ui:AssignOperation.Value>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_75" xml:space="preserve">failureReason + "\n" +
 $"       • Discharge Patient that has sibling\n" +
 $"        • Expected output\n" +
 $"         Confirmation Message = Are you sure you would like to discharge {patientToDischarge["babyLastName"]}, {patientToDischarge["babyFirstName"]} ({patientToDischarge["babyBarcode"]})?\n"+
@@ -566,18 +828,18 @@ $"         Success Message = {successMessage}\n"+
 $"         Buttons Should appear: Discharge another Patient = {dischargeAnotherPatientButton}, Dispose Patient's Inventory = {disposePatientInventoryButton}\n" +
 $"         Mother Status = {(deactivatedPatient["mother"]["motherActive"].ToString() == "1" ? "Active" : "Inactive")}\n" +
 $"         Has active order = {deactivatedPatient["active_orders"].Count() &gt; 0}"</CSharpValue>
-                          </InArgument>
-                        </ui:AssignOperation.Value>
-                      </ui:AssignOperation>
-                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
-                        <ui:AssignOperation.To>
-                          <OutArgument x:TypeArguments="x:Boolean">
-                            <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">testCaseResult</CSharpReference>
-                          </OutArgument>
-                        </ui:AssignOperation.To>
-                        <ui:AssignOperation.Value>
-                          <InArgument x:TypeArguments="x:Boolean">
-                            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_80" xml:space="preserve">testCaseResult &amp;&amp;
+                                </InArgument>
+                              </ui:AssignOperation.Value>
+                            </ui:AssignOperation>
+                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                              <ui:AssignOperation.To>
+                                <OutArgument x:TypeArguments="x:Boolean">
+                                  <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">testCaseResult</CSharpReference>
+                                </OutArgument>
+                              </ui:AssignOperation.To>
+                              <ui:AssignOperation.Value>
+                                <InArgument x:TypeArguments="x:Boolean">
+                                  <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_80" xml:space="preserve">testCaseResult &amp;&amp;
 dischargeConfirmationText == $"Are you sure you would like to discharge {patientToDischarge["babyLastName"]}, {patientToDischarge["babyFirstName"]} ({patientToDischarge["babyBarcode"]})?" &amp;&amp;
 deactivatedPatient["babyActive"].ToString()  == "0" &amp;&amp;
 successMessage == $"{patientToDischarge["babyLastName"]}, {patientToDischarge["babyFirstName"]} ({patientToDischarge["babyBarcode"]}) has been successfully discharged." &amp;&amp;
@@ -806,6 +1068,227 @@ deactivatedPatient["mother"]["motherActive"].ToString() == "1" &amp;&amp;
                         <ui:AssignOperation.Value>
                           <InArgument x:TypeArguments="x:String">
                             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_77" xml:space="preserve">failureReason + "\n" +
+                                </InArgument>
+                              </ui:AssignOperation.Value>
+                            </ui:AssignOperation>
+                          </scg:List>
+                        </ui:MultipleAssign.AssignOperations>
+                      </ui:MultipleAssign>
+                    </Sequence>
+                    <Sequence DisplayName="Discharge Patient that has no sibling" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="dischargeConfirmationText" />
+                        <Variable x:TypeArguments="njl:JObject" Name="deactivatedPatient" />
+                        <Variable x:TypeArguments="ui:UiElement" Name="outputSuccessElement" />
+                        <Variable x:TypeArguments="x:String" Name="successMessage" />
+                        <Variable x:TypeArguments="x:Boolean" Name="dischargeAnotherPatientButton" />
+                        <Variable x:TypeArguments="x:Boolean" Name="disposePatientInventoryButton" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Sequence DisplayName="Create Test Order" sap:VirtualizedContainerService.HintSize="478,507" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create Order Template - Invoke Workflow File (Components\\Manage Patient Feeding Order\\Create Order Template.xaml)" sap:VirtualizedContainerService.HintSize="416,234" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="Components\\Manage Patient Feeding Order\\Create Order Template.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InArgument x:TypeArguments="x:String" x:Key="inPatientBarcode">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_57">GlobalVariables.testPatientFromDB["babyBarcode"].ToString()</CSharpValue>
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="inMilkBase">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">GlobalVariables.appSettings["EBM_display_name_short"].ToString() + " Only"</CSharpValue>
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="inOrderBase">Breastmilk</InArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                        </ui:InvokeWorkflowFile>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Save'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,181" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="deaec656-f319-4e87-a416-14a4ef616cb0" Version="V4">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="localhost/orders/edit.php" CVScreenId="717d950f-b465-49e0-9e8d-940ac3b1230d" ContentHash="ns-EX7RNn0Wq-a98cU4xIA" CvElementArea="275, 1015, 62, 35" CvTextArea="291, 1026, 28, 12" CvTextArgument="Save" CvType="Button" DesignTimeRectangle="277, 1016, 59, 32" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='submitorders' tag='INPUT' /&gt;" Guid="d7e5d4fd-c6ee-4de6-95d4-8e217a48a50d" InformativeScreenshot="cb726dbdfb194bc90b9ac0bfa020d0b2.png" Reference="BkxQ1887pEidR6av2KDcrw/w6DqP8YmaEufJ-eUz9hWog" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                                  <uix:Target CVScreenId="717d950f-b465-49e0-9e8d-940ac3b1230d" CvElementArea="338, 1015, 73, 35" CvTextArea="354, 1026, 40, 11" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="340, 1016, 70, 32" ElementType="Button" FuzzySelectorArgument="&lt;webctrl parentid='ordersCard' tag='BUTTON' type='' class='btn btn-outline-primary' aaname='Cancel' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Cancel' /&gt;" Guid="ce3836c8-0d60-43ab-b8b3-ed2efb3353a9" SearchSteps="FuzzySelector, CV" />
+                                  <uix:Target CVScreenId="717d950f-b465-49e0-9e8d-940ac3b1230d" CvTextArea="275, 830, 73, 11" CvTextArgument="Label Notes:" CvType="Text" DesignTimeRectangle="277, 828, 73, 17" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='orderLabelNotes_label' tag='LABEL' type='' class='' aaname='Label Notes:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Label Notes:' /&gt;" Guid="64278308-3680-4e44-a6a0-029cb34a4a47" SearchSteps="FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click sidebar discharge patient submenu - Invoke Workflow File (Components\\Buttons\\Discharge Menu\\Click sidebar discharge patient submenu.xaml)" sap:VirtualizedContainerService.HintSize="478,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Components\\Buttons\\Discharge Menu\\Click sidebar discharge patient submenu.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                      <uix:NSelectItem DisplayName="Select Patient" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,190" sap2010:WorkflowViewState.IdRef="NSelectItem_4" ScopeIdentifier="deaec656-f319-4e87-a416-14a4ef616cb0" Version="V5">
+                        <uix:NSelectItem.Item>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_58">$"{GlobalVariables.testPatientFromDB["babyBarcode"]}: {GlobalVariables.testPatientFromDB["babyLastName"]}, {GlobalVariables.testPatientFromDB["babyFirstName"]}"</CSharpValue>
+                          </InArgument>
+                        </uix:NSelectItem.Item>
+                        <uix:NSelectItem.Target>
+                          <uix:TargetAnchorable BrowserURL="localhost/babies/discharge" CVScreenId="628127a4-16c9-431c-b4f3-3b2753f06796" CvElementArea="350, 416, 1461, 44" CvType="InputBox" DesignTimeRectangle="356, 418, 1458, 42" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aria-role='combobox' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' tag='SPAN' type='' class='select2-selection select2-selection--single' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' parentclass='selection' parentid='wizardpage_div' parentname='theform' /&gt;" Guid="2c6a27df-f37e-4566-8f5a-1dd7343b17ad" InformativeScreenshot="f3a1680542a391a803c6cdf234f37643.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="None">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target CVScreenId="628127a4-16c9-431c-b4f3-3b2753f06796" DesignTimeRectangle="356, 397, 1458, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' matching:class='fuzzy' fuzzylevel:class='0.0' aaname='Please select the Patient you wish to discharge' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' parentclass='card-body' parentid='wizardpage_div' parentname='theform' /&gt;" Guid="de781f4e-0928-4cc2-8137-5e1ea621481f" SearchSteps="FuzzySelector" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NSelectItem.Target>
+                      </uix:NSelectItem>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click Next Button - Invoke Workflow File (Components\\Buttons\\Click Next Button.xaml)" sap:VirtualizedContainerService.HintSize="478,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click Next Button.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                      <uix:NGetText ContinueOnError="True" DisplayName="Get Confirmation Message" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,143" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="deaec656-f319-4e87-a416-14a4ef616cb0" Version="V5">
+                        <uix:NGetText.Target>
+                          <uix:TargetAnchorable BrowserURL="localhost/babies/discharge" CVScreenId="8ec4cbc8-4311-4636-9d86-e3120c314b34" CvType="AnyWordGroup" DesignTimeRectangle="356, 326, 1458, 28" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='P' parentclass='card-body' parentid='wizardpage_div' parentname='theform' /&gt;" Guid="f8640b86-4155-4ac0-87e5-a1a8a094c021" InformativeScreenshot="9ce1c6821e1744258838b89f5befd542.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
+                        </uix:NGetText.Target>
+                        <uix:NGetText.TextString>
+                          <OutArgument x:TypeArguments="x:String">
+                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_20">dischargeConfirmationText</CSharpReference>
+                          </OutArgument>
+                        </uix:NGetText.TextString>
+                      </uix:NGetText>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click Finish - Invoke Workflow File (Components\\Buttons\\Click Finish.xaml)" sap:VirtualizedContainerService.HintSize="478,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click Finish.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                      <uix:NCheckState DisplayName="Check Success Message" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="478,57" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="deaec656-f319-4e87-a416-14a4ef616cb0" Version="V5">
+                        <uix:NCheckState.IfExists>
+                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,194" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NGetText DisplayName="Get Text" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,134" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="deaec656-f319-4e87-a416-14a4ef616cb0" Version="V5">
+                              <uix:NGetText.InUiElement>
+                                <InArgument x:TypeArguments="ui:UiElement">
+                                  <CSharpValue x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">outputSuccessElement</CSharpValue>
+                                </InArgument>
+                              </uix:NGetText.InUiElement>
+                              <uix:NGetText.TextString>
+                                <OutArgument x:TypeArguments="x:String">
+                                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_21">successMessage</CSharpReference>
+                                </OutArgument>
+                              </uix:NGetText.TextString>
+                            </uix:NGetText>
+                          </Sequence>
+                        </uix:NCheckState.IfExists>
+                        <uix:NCheckState.IfNotExists>
+                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_2">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">
+                                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_22">successMessage</CSharpReference>
+                                </OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">"Doesn't appear"</CSharpValue>
+                                </InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </uix:NCheckState.IfNotExists>
+                        <uix:NCheckState.OutUiElement>
+                          <OutArgument x:TypeArguments="ui:UiElement">
+                            <CSharpReference x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpReference`1_23">outputSuccessElement</CSharpReference>
+                          </OutArgument>
+                        </uix:NCheckState.OutUiElement>
+                        <uix:NCheckState.Target>
+                          <uix:TargetAnchorable BrowserURL="localhost/babies/discharge" CVScreenId="96531dd3-2daf-4965-bc02-7f1987d0cdef" DesignTimeRectangle="295, 326, 754, 51" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl isleaf='1' parentid='legacyPage' tag='DIV' class='alert alert-success' parentclass='card-body' /&gt;" Guid="7ff2ee9f-0d8d-4f96-b28a-b03764d3b612" InformativeScreenshot="cf0c5d70855ba9781eadb84255710c32.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+                        </uix:NCheckState.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NCheckState>
+                      <ui:UiElementExists DisplayName="Check discharge another Patient Button" sap:VirtualizedContainerService.HintSize="478,139" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+                        <ui:UiElementExists.Exists>
+                          <OutArgument x:TypeArguments="x:Boolean">
+                            <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_24">dischargeAnotherPatientButton</CSharpReference>
+                          </OutArgument>
+                        </ui:UiElementExists.Exists>
+                        <ui:UiElementExists.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="989ac25d-53ca-4c15-8407-9fa2bb7473dd" InformativeScreenshot="859b4a29d9537a146d240de19dbe71ee" TimeoutMS="10">
+                            <ui:Target.Selector>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">$"&lt;webctrl parentid='legacyPage' tag='A' aaname='Discharge another Patient' href='{GlobalVariables.websiteUrl}/babies/discharge/' innertext='Discharge another Patient' parentclass='d-flex justify-content-start mb-4' visibleinnertext='Discharge another Patient' /&gt;"</CSharpValue>
+                              </InArgument>
+                            </ui:Target.Selector>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:UiElementExists.Target>
+                      </ui:UiElementExists>
+                      <ui:UiElementExists DisplayName="Check Dispose Patient Inventory Button" sap:VirtualizedContainerService.HintSize="478,139" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                        <ui:UiElementExists.Exists>
+                          <OutArgument x:TypeArguments="x:Boolean">
+                            <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_25">disposePatientInventoryButton</CSharpReference>
+                          </OutArgument>
+                        </ui:UiElementExists.Exists>
+                        <ui:UiElementExists.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="15a2d529-235d-4db7-a610-e8e141f70c4c" InformativeScreenshot="e7872a811333d3e487902fd7a32d2ca9">
+                            <ui:Target.Selector>
+                              <InArgument x:TypeArguments="x:String">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_36">$"&lt;webctrl aaname='Dispose Patient’s Inventory' parentid='legacyPage' tag='A' href='{GlobalVariables.websiteUrl}/disposebottles/' innertext='Dispose Patient’s Inventory' parentclass='d-flex justify-content-start mb-4' visibleinnertext='Dispose Patient’s Inventory' /&gt;"</CSharpValue>
+                              </InArgument>
+                            </ui:Target.Selector>
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:UiElementExists.Target>
+                      </ui:UiElementExists>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="API Call - Invoke Workflow File (Utilities\\API Call.xaml)" sap:VirtualizedContainerService.HintSize="478,250" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Utilities\\API Call.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="endpoint">get-baby/1</InArgument>
+                          <OutArgument x:TypeArguments="njl:JObject" x:Key="responseData">
+                            <CSharpReference x:TypeArguments="njl:JObject" sap2010:WorkflowViewState.IdRef="CSharpReference`1_26">deactivatedPatient</CSharpReference>
+                          </OutArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Patient Status - Invoke Workflow File (Components\\Manage Patient\\Update Patient Status.xaml)" sap:VirtualizedContainerService.HintSize="478,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Components\\Manage Patient\\Update Patient Status.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="x:Boolean" x:Key="inIsInactive">False</InArgument>
+                          <InArgument x:TypeArguments="njl:JObject" x:Key="inPatientToUpdate">
+                            <CSharpValue x:TypeArguments="njl:JObject" sap2010:WorkflowViewState.IdRef="CSharpValue`1_59">GlobalVariables.testPatientFromDB</CSharpValue>
+                          </InArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478,173" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+                        <ui:MultipleAssign.AssignOperations>
+                          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                              <ui:AssignOperation.To>
+                                <OutArgument x:TypeArguments="x:String">
+                                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_27">failureReason</CSharpReference>
+                                </OutArgument>
+                              </ui:AssignOperation.To>
+                              <ui:AssignOperation.Value>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_77" xml:space="preserve">failureReason + "\n" +
 $"       • Discharge Patient that has no sibling\n" +
 $"        • Expected output\n" +
 $"         Confirmation Message = Are you sure you would like to discharge {GlobalVariables.testPatientFromDB["babyLastName"]}, {GlobalVariables.testPatientFromDB["babyFirstName"]} ({GlobalVariables.testPatientFromDB["babyBarcode"]})?\n"+
@@ -821,18 +1304,18 @@ $"         Success Message = {successMessage}\n"+
 $"         Buttons Should appear: Discharge another Patient = {dischargeAnotherPatientButton}, Dispose Patient's Inventory = {disposePatientInventoryButton}\n" +
 $"         Mother Status = {(deactivatedPatient["mother"]["motherActive"].ToString() == "1" ? "Active" : "Inactive")}\n" +
 $"         Has active order = {deactivatedPatient["active_orders"].Count() &gt; 0}"</CSharpValue>
-                          </InArgument>
-                        </ui:AssignOperation.Value>
-                      </ui:AssignOperation>
-                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
-                        <ui:AssignOperation.To>
-                          <OutArgument x:TypeArguments="x:Boolean">
-                            <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_28">testCaseResult</CSharpReference>
-                          </OutArgument>
-                        </ui:AssignOperation.To>
-                        <ui:AssignOperation.Value>
-                          <InArgument x:TypeArguments="x:Boolean">
-                            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_81" xml:space="preserve">testCaseResult &amp;&amp;
+                                </InArgument>
+                              </ui:AssignOperation.Value>
+                            </ui:AssignOperation>
+                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                              <ui:AssignOperation.To>
+                                <OutArgument x:TypeArguments="x:Boolean">
+                                  <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_28">testCaseResult</CSharpReference>
+                                </OutArgument>
+                              </ui:AssignOperation.To>
+                              <ui:AssignOperation.Value>
+                                <InArgument x:TypeArguments="x:Boolean">
+                                  <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_81" xml:space="preserve">testCaseResult &amp;&amp;
 dischargeConfirmationText == $"Are you sure you would like to discharge {GlobalVariables.testPatientFromDB["babyLastName"]}, {GlobalVariables.testPatientFromDB["babyFirstName"]} ({GlobalVariables.testPatientFromDB["babyBarcode"]})?" &amp;&amp;
 deactivatedPatient["babyActive"].ToString()  == "0" &amp;&amp;
 successMessage == $"{GlobalVariables.testPatientFromDB["babyLastName"]}, {GlobalVariables.testPatientFromDB["babyFirstName"]} ({GlobalVariables.testPatientFromDB["babyBarcode"]}) has been successfully discharged." &amp;&amp;
@@ -840,13 +1323,16 @@ dischargeAnotherPatientButton &amp;&amp;
 disposePatientInventoryButton &amp;&amp;
 deactivatedPatient["mother"]["motherActive"].ToString() == "0" &amp;&amp;
 (GlobalVariables.appSettings["order/wait_hours_after_discharge_to_deactivate_orders"].ToString() == "0" ?  deactivatedPatient["active_orders"].Count() == 0 :  deactivatedPatient["active_orders"].Count() &gt; 0)</CSharpValue>
-                          </InArgument>
-                        </ui:AssignOperation.Value>
-                      </ui:AssignOperation>
-                    </scg:List>
-                  </ui:MultipleAssign.AssignOperations>
-                </ui:MultipleAssign>
-              </Sequence>
+                                </InArgument>
+                              </ui:AssignOperation.Value>
+                            </ui:AssignOperation>
+                          </scg:List>
+                        </ui:MultipleAssign.AssignOperations>
+                      </ui:MultipleAssign>
+                    </Sequence>
+                  </Sequence>
+                </If.Else>
+              </If>
             </Sequence>
           </ActivityAction>
         </uix:NApplicationCard.Body>
@@ -855,13 +1341,13 @@ deactivatedPatient["mother"]["motherActive"].ToString() == "0" &amp;&amp;
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
     </Sequence>
-    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="615,313" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="588,308" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Test Result - Invoke Workflow File (Utilities\\Update Test Result.xaml)" sap:VirtualizedContainerService.HintSize="416,230" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="Utilities\\Update Test Result.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Test Result - Invoke Workflow File (Utilities\\Update Test Result.xaml)" sap:VirtualizedContainerService.HintSize="416,225" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="Utilities\\Update Test Result.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="inScenarioName">Patient Discharge</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="inFailureReason">
