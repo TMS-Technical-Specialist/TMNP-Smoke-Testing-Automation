@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="TC___Discharge_Patient" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap2010:WorkflowViewState.IdRef="TC___Discharge_Patient_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="TC___Discharge_Patient" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap2010:WorkflowViewState.IdRef="TC___Discharge_Patient_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>GlobalConstantsNamespace</x:String>
@@ -99,7 +99,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC___Discharge_Patient" sap:VirtualizedContainerService.HintSize="716.4000000000001,7914.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC___Discharge_Patient" sap:VirtualizedContainerService.HintSize="843.6,8571.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="selectedPatientFromDischargeSideMenu" />
       <Variable x:TypeArguments="sd:DataRow" Name="patient" />
@@ -119,7 +119,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="516.8,174.4" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="552,174.4" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataRow">
           <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_17">patient</CSharpReference>
@@ -131,61 +131,110 @@
         </InArgument>
       </Assign.Value>
     </Assign>
-    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="516.8,765.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="552,1422.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(2)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="483.2,673.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="429adff1-ab26-4f6c-adb1-2e8536784c32" Version="V2">
-        <uix:NApplicationCard.Body>
-          <ActivityAction x:TypeArguments="x:Object">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-            </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,433.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Discharge From SideBar" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189.6" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="429adff1-ab26-4f6c-adb1-2e8536784c32" Version="V4">
-                <uix:NClick.Target>
-                  <uix:TargetAnchorable BrowserURL="localhost/dosing" CVScreenId="f7881a2f-73e0-4a60-8d40-c23032eb8d95" ContentHash="Bw-Yz_8Gv0mVaaAQ_auxtw" CvTextArea="60, 671, 57, 15" CvTextArgument="Discharge" CvType="Text" DesignTimeRectangle="61, 666, 132, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Discharge' tag='SPAN' /&gt;" Guid="883c1dcf-2187-42f8-93c9-303e5c9c7c44" InformativeScreenshot="69ea1f79ac30889b7092b06b954cd43e.png" Reference="BkxQ1887pEidR6av2KDcrw/mzK8hLBasE61sapAb0NhKw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
-                    <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                        <uix:Target CVScreenId="f7881a2f-73e0-4a60-8d40-c23032eb8d95" CvElementArea="21, 664, 25, 25" CvType="Icon" DesignTimeRectangle="26, 666, 35, 24" FullSelectorArgument="&lt;webctrl class='icon-wrapper' idx='10' tag='SPAN' /&gt;" Guid="ae02c8d3-1457-43b6-b2ef-8a2459625021" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACcAAAAcCAYAAADiHqZbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADiSURBVFhHY/g/iAEDusBgAqOOIxcMXcetO/Xqf9XyO/9dWs791yw6DubTE2A47uSdj//jp14FOwaGYQ4EiYPAk7c/4JiWAMNxIMeAHDFlx2MUy0FiIAxyPLLDQWK0ciRWx2GLPpjjQA4BycMwKESxqacGINlx6ADkOFAo0wIMUsc9/N/r406c40BRSX/HpRJ2HMhBIP6gdByIPWhDDgZGHQcHo44jFwx6xyGVcyCLYa0PEI2OYfUoOkDWg81TlAC440AGg0IAH8ZmObI+ajcAMKJ1MIFRx5ELRh1HLhh1HLkAAGCmZVp7BjtvAAAAAElFTkSuQmCC" SearchSteps="Selector, CV" />
-                      </scg:List>
-                    </uix:TargetAnchorable.Anchors>
-                  </uix:TargetAnchorable>
-                </uix:NClick.Target>
-              </uix:NClick>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Discharge Patient from side menu" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,182.4" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="429adff1-ab26-4f6c-adb1-2e8536784c32" Version="V4">
-                <uix:NClick.Target>
-                  <uix:TargetAnchorable BrowserURL="localhost/dosing" CVScreenId="1bf559c5-7e04-40c9-ae8c-4a31212dc8b3" ContentHash="JKU9t5wN0Eqth4mK1fckfg" CvTextArea="61, 707, 94, 15" CvTextArgument="Discharge Patient" CvType="Text" DesignTimeRectangle="9, 698, 208, 31" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Discharge Patient' tag='A' /&gt;" Guid="a1324645-b7bc-4db2-8d39-be1d39737660" InformativeScreenshot="8f38167e60789f6c6d6ec7ccb4c1a5bf.png" Reference="BkxQ1887pEidR6av2KDcrw/FWiQkIRqsUGk2shxPYYe7g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
-                    <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                        <uix:Target CVScreenId="1bf559c5-7e04-40c9-ae8c-4a31212dc8b3" CvTextArea="60, 671, 57, 16" CvTextArgument="Discharge" CvType="Text" DesignTimeRectangle="61, 666, 132, 24" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Discharge' tag='SPAN' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Discharge' /&gt;" Guid="aa9a78ba-e4d1-4c1f-aa42-8e9486cb78a4" SearchSteps="FuzzySelector, CV" />
-                      </scg:List>
-                    </uix:TargetAnchorable.Anchors>
-                  </uix:TargetAnchorable>
-                </uix:NClick.Target>
-              </uix:NClick>
-            </Sequence>
-          </ActivityAction>
-        </uix:NApplicationCard.Body>
-        <uix:NApplicationCard.TargetApp>
-          <uix:TargetApp Area="0, 0, 0, 0" ContentHash="SzUctO1y00Wbr8SUYCttKw" Reference="BkxQ1887pEidR6av2KDcrw/q2Ly0r_mQEyRm8sNcdjiLw" Selector="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" Version="V2">
-            <uix:TargetApp.Url>
-              <InArgument x:TypeArguments="x:String">
-                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">GlobalVariables.websiteUrl</CSharpValue>
+      <If sap:VirtualizedContainerService.HintSize="518.4,1330.4" sap2010:WorkflowViewState.IdRef="If_1">
+        <If.Condition>
+          <InArgument x:TypeArguments="x:Boolean">
+            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">GlobalVariablesNamespace.GlobalVariables.permissionResponseData["dischargebabies"].Value&lt;bool&gt;("value")</CSharpValue>
+          </InArgument>
+        </If.Condition>
+        <If.Then>
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="516.8,733.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Browser(2)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="483.2,673.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="429adff1-ab26-4f6c-adb1-2e8536784c32" Version="V2">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,433.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Discharge From SideBar" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,189.6" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="429adff1-ab26-4f6c-adb1-2e8536784c32" Version="V4">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="localhost/dosing" CVScreenId="f7881a2f-73e0-4a60-8d40-c23032eb8d95" ContentHash="Bw-Yz_8Gv0mVaaAQ_auxtw" CvTextArea="60, 671, 57, 15" CvTextArgument="Discharge" CvType="Text" DesignTimeRectangle="61, 666, 132, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Discharge' tag='SPAN' /&gt;" Guid="883c1dcf-2187-42f8-93c9-303e5c9c7c44" InformativeScreenshot="69ea1f79ac30889b7092b06b954cd43e.png" Reference="BkxQ1887pEidR6av2KDcrw/mzK8hLBasE61sapAb0NhKw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="f7881a2f-73e0-4a60-8d40-c23032eb8d95" CvElementArea="21, 664, 25, 25" CvType="Icon" DesignTimeRectangle="26, 666, 35, 24" FullSelectorArgument="&lt;webctrl class='icon-wrapper' idx='10' tag='SPAN' /&gt;" Guid="ae02c8d3-1457-43b6-b2ef-8a2459625021" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACcAAAAcCAYAAADiHqZbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADiSURBVFhHY/g/iAEDusBgAqOOIxcMXcetO/Xqf9XyO/9dWs791yw6DubTE2A47uSdj//jp14FOwaGYQ4EiYPAk7c/4JiWAMNxIMeAHDFlx2MUy0FiIAxyPLLDQWK0ciRWx2GLPpjjQA4BycMwKESxqacGINlx6ADkOFAo0wIMUsc9/N/r406c40BRSX/HpRJ2HMhBIP6gdByIPWhDDgZGHQcHo44jFwx6xyGVcyCLYa0PEI2OYfUoOkDWg81TlAC440AGg0IAH8ZmObI+ajcAMKJ1MIFRx5ELRh1HLhh1HLkAAGCmZVp7BjtvAAAAAElFTkSuQmCC" SearchSteps="Selector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Discharge Patient from side menu" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,182.4" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="429adff1-ab26-4f6c-adb1-2e8536784c32" Version="V4">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="localhost/dosing" CVScreenId="1bf559c5-7e04-40c9-ae8c-4a31212dc8b3" ContentHash="JKU9t5wN0Eqth4mK1fckfg" CvTextArea="61, 707, 94, 15" CvTextArgument="Discharge Patient" CvType="Text" DesignTimeRectangle="9, 698, 208, 31" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Discharge Patient' tag='A' /&gt;" Guid="a1324645-b7bc-4db2-8d39-be1d39737660" InformativeScreenshot="8f38167e60789f6c6d6ec7ccb4c1a5bf.png" Reference="BkxQ1887pEidR6av2KDcrw/FWiQkIRqsUGk2shxPYYe7g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="1bf559c5-7e04-40c9-ae8c-4a31212dc8b3" CvTextArea="60, 671, 57, 16" CvTextArgument="Discharge" CvType="Text" DesignTimeRectangle="61, 666, 132, 24" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Discharge' tag='SPAN' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Discharge' /&gt;" Guid="aa9a78ba-e4d1-4c1f-aa42-8e9486cb78a4" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="0, 0, 0, 0" ContentHash="SzUctO1y00Wbr8SUYCttKw" Reference="BkxQ1887pEidR6av2KDcrw/q2Ly0r_mQEyRm8sNcdjiLw" Selector="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" Version="V2">
+                  <uix:TargetApp.Url>
+                    <InArgument x:TypeArguments="x:String">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">GlobalVariables.websiteUrl</CSharpValue>
+                    </InArgument>
+                  </uix:TargetApp.Url>
+                </uix:TargetApp>
+              </uix:NApplicationCard.TargetApp>
+            </uix:NApplicationCard>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="516.8,467.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Test Result - Invoke Workflow File (Components\\Update Test Result.xaml)" sap:VirtualizedContainerService.HintSize="483.2,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Utilities\\Update Test Result.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="inScenarioName">Discharge Patient</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="inFailureReason">Discharge Patients - dischargebabies - Hard Stop: Area access denied</InArgument>
+                <InArgument x:TypeArguments="x:Boolean" x:Key="inTestResult">
+                  <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_36">Convert.ToBoolean(GlobalVariablesNamespace.GlobalVariables.permissionResponseData["dischargebabies"]["value"])</CSharpValue>
+                </InArgument>
+                <InArgument x:TypeArguments="x:Boolean" x:Key="inSaveResult">True</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="" sap:VirtualizedContainerService.HintSize="483.2,117.6" sap2010:WorkflowViewState.IdRef="MessageBox_1">
+              <ui:MessageBox.Text>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_38">"Discharge Patients - dischargebabies - Hard Stop: Area access denied"</CSharpValue>
+                </InArgument>
+              </ui:MessageBox.Text>
+            </ui:MessageBox>
+            <Throw sap:VirtualizedContainerService.HintSize="483.2,113.6" sap2010:WorkflowViewState.IdRef="Throw_1">
+              <InArgument x:TypeArguments="s:Exception">
+                <CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37" xml:space="preserve">new ApplicationException(
+"Discharge Patients - dischargebabies - Hard Stop: Area access denied"
+)</CSharpValue>
               </InArgument>
-            </uix:TargetApp.Url>
-          </uix:TargetApp>
-        </uix:NApplicationCard.TargetApp>
-      </uix:NApplicationCard>
+            </Throw>
+          </Sequence>
+        </If.Else>
+      </If>
     </Sequence>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="516.8,6644" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="552,6644" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
