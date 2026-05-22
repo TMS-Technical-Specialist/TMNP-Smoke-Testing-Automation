@@ -50,6 +50,10 @@
       <x:String>UiPath.Shared.Activities.Business</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -117,21 +121,72 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
       <AssemblyReference>NPOI.Core</AssemblyReference>
       <AssemblyReference>TMNP Smoke Testing Automation.Core</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Receieve_Product" sap:VirtualizedContainerService.HintSize="1281,3459" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Receieve_Product" sap:VirtualizedContainerService.HintSize="838.8000000000001,4150.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Receieve Product Process" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="644,3436" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="f6eed12e-11b6-456b-9821-6156a693af9c" Version="V2">
+    <If sap:VirtualizedContainerService.HintSize="643.2,695.2" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Condition>
+        <InArgument x:TypeArguments="x:Boolean">
+          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_105">GlobalVariablesNamespace.GlobalVariables.permissionResponseData["receiveformula"].Value&lt;bool&gt;("value")</CSharpValue>
+        </InArgument>
+      </If.Condition>
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,89.6" sap2010:WorkflowViewState.IdRef="Sequence_33">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,467.2" sap2010:WorkflowViewState.IdRef="Sequence_34">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Test Result - Invoke Workflow File (Components\\Update Test Result.xaml)" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Utilities\\Update Test Result.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="inScenarioName" xml:space="preserve">EHM +  Fortifiers</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="inFailureReason">Receive Product - receiveformula - Receive Product Button is Hidden</InArgument>
+              <InArgument x:TypeArguments="x:Boolean" x:Key="inTestResult">
+                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_106">Convert.ToBoolean(GlobalVariablesNamespace.GlobalVariables.permissionResponseData["receiveformula"]["value"])</CSharpValue>
+              </InArgument>
+              <InArgument x:TypeArguments="x:Boolean" x:Key="inSaveResult">True</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="" sap:VirtualizedContainerService.HintSize="416,117.6" sap2010:WorkflowViewState.IdRef="MessageBox_1">
+            <ui:MessageBox.Text>
+              <InArgument x:TypeArguments="x:Object">
+                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_107">"Receive Product - receiveformula - Receive Product Button is Hidden"</CSharpValue>
+              </InArgument>
+            </ui:MessageBox.Text>
+          </ui:MessageBox>
+          <Throw sap:VirtualizedContainerService.HintSize="416,113.6" sap2010:WorkflowViewState.IdRef="Throw_1">
+            <InArgument x:TypeArguments="s:Exception">
+              <CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_108" xml:space="preserve">new ApplicationException(
+"Receive Product - receiveformula - Receive Product Button is Hidden"
+)</CSharpValue>
+            </InArgument>
+          </Throw>
+        </Sequence>
+      </If.Else>
+    </If>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Receieve Product Process" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="643.2,3432" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="f6eed12e-11b6-456b-9821-6156a693af9c" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="610,3195" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="609.6,3192" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Default="0" Name="index" />
               <Variable x:TypeArguments="scg:List(x:String)" Name="productDropdown" />
@@ -141,18 +196,18 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click sidebar Receive Menu - Invoke Workflow File (Components\\Buttons\\Click sidebar Receive Menu.xaml)" sap:VirtualizedContainerService.HintSize="576,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click sidebar Receive Menu.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Click sidebar Receive Menu - Invoke Workflow File (Components\\Buttons\\Click sidebar Receive Menu.xaml)" sap:VirtualizedContainerService.HintSize="576,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Components\\Buttons\\Click sidebar Receive Menu.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <scg:Dictionary x:TypeArguments="x:String, Argument" />
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Receive Product'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="576,190" sap2010:WorkflowViewState.IdRef="NClick_10" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f6eed12e-11b6-456b-9821-6156a693af9c" Version="V4">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Receive Product'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="576,189.6" sap2010:WorkflowViewState.IdRef="NClick_10" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f6eed12e-11b6-456b-9821-6156a693af9c" Version="V4">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="localhost" CVScreenId="cc832dcc-09f1-4c4c-be44-200b0cb52c13" ContentHash="N9BF0TpRSk6y4FQez61AMA" CvTextArea="72, 506, 103, 13" CvTextArgument="Receive Product" CvType="Text" DesignTimeRectangle="9, 495, 250, 39" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Receive Product' tag='A' /&gt;" Guid="6efc9132-045e-4680-871c-9079ea389b9d" InformativeScreenshot="ff7bba8a591a32dfde173ad1e22b87e3.png" Reference="BkxQ1887pEidR6av2KDcrw/XksOzm-f1kePvvSNlzOzRg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nutrition Platform ™' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None" />
               </uix:NClick.Target>
             </uix:NClick>
-            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="576,123" sap2010:WorkflowViewState.IdRef="Delay_1" />
-            <uix:NGetAttributeGeneric x:TypeArguments="scg:List(x:String)" Attribute="items" DisplayName="Get product dropdown list" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="576,196" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_8" ScopeIdentifier="f6eed12e-11b6-456b-9821-6156a693af9c" Version="V5">
+            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="576,122.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <uix:NGetAttributeGeneric x:TypeArguments="scg:List(x:String)" Attribute="items" DisplayName="Get product dropdown list" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="576,195.2" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_8" ScopeIdentifier="f6eed12e-11b6-456b-9821-6156a693af9c" Version="V5">
               <uix:NGetAttributeGeneric.Result>
                 <OutArgument x:TypeArguments="scg:List(x:String)">
                   <CSharpReference x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_23">productDropdown</CSharpReference>
